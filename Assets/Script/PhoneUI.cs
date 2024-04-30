@@ -6,6 +6,10 @@ public class UI : MonoBehaviour
 {
 
     public GameObject ui_Phone;
+    public GameObject ui_WikiView;
+    public GameObject ui_TwitterView;
+    public GameObject ui_GalleryView;
+    public GameObject ui_TodoView;
 
     public void checkPhone()
     {
@@ -17,22 +21,22 @@ public class UI : MonoBehaviour
 
     public void OnClickWiki()
     {
-
+        ui_WikiView.SetActive(true);
     }
 
     public void OnClickTwitter()
     {
-
+        ui_TwitterView.SetActive(true);
     }
 
     public void OnClickGallery()
     {
-
+        ui_GalleryView.SetActive(true);
     }
 
     public void OnClickTodo()
     {
-
+        ui_TodoView.SetActive(true);
     }
 
     public void OnClickkCall()
@@ -49,6 +53,10 @@ public class UI : MonoBehaviour
     void Start()
     {
         ui_Phone.SetActive(false);
+        ui_GalleryView.SetActive(false);
+        ui_TodoView.SetActive(false);
+        ui_TwitterView.SetActive(false);
+        ui_WikiView.SetActive(false);
     }
 
     // Update is called once per frame

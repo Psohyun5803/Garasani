@@ -1213,10 +1213,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui_Phone: {fileID: 1642320112}
-  ui_WikiView: {fileID: 0}
-  ui_TwitterView: {fileID: 0}
-  ui_GalleryView: {fileID: 0}
-  ui_TodoView: {fileID: 0}
+  ui_WikiView: {fileID: 1181532428}
+  ui_TwitterView: {fileID: 38276775}
+  ui_GalleryView: {fileID: 975437309}
+  ui_TodoView: {fileID: 353335470}
 --- !u!1 &913080533
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,12 +11,18 @@ public class UI : MonoBehaviour
     public GameObject ui_GalleryView;
     public GameObject ui_TodoView;
 
+
     public void checkPhone()
     {
         if (Input.GetKey(KeyCode.Tab))
         {
             ui_Phone.SetActive(true);
+
         }
+    }
+    public void OffPhone()
+    {
+        ui_Phone.SetActive(false);
     }
 
     public void OnClickWiki()
@@ -62,6 +68,8 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkPhone();
+        checkPhone(); 
     }
+
+   
 }

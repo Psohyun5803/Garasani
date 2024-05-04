@@ -30,9 +30,19 @@ public class UI : MonoBehaviour
         ui_WikiView.SetActive(true);
     }
 
+    public void OffWiki()
+    {
+        ui_WikiView.SetActive(false);
+    }
+
     public void OnClickTwitter()
     {
         ui_TwitterView.SetActive(true);
+    }
+
+    public void OffTwittwer()
+    {
+        ui_TwitterView.SetActive(false);
     }
 
     public void OnClickGallery()
@@ -40,9 +50,20 @@ public class UI : MonoBehaviour
         ui_GalleryView.SetActive(true);
     }
 
+    public void OffGallery()
+    {
+        ui_GalleryView.SetActive(false);
+    }
+
+
     public void OnClickTodo()
     {
         ui_TodoView.SetActive(true);
+    }
+
+    public void OffTodo()
+    {
+        ui_TodoView.SetActive(false);
     }
 
     public void OnClickkCall()

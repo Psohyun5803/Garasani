@@ -100,7 +100,6 @@ public class customize : MonoBehaviour
         hood_back.SetActive(true);
         eye1.SetActive(true); //기본 눈 1
         hair1.SetActive(true); // 기본 헤어 1
-
     }
     public void move() 
     {
@@ -199,14 +198,20 @@ public class customize : MonoBehaviour
         img2.SetActive(false);
        
         sizetransform(Player_front);
-        
-        
         sizetransform(Player_back);
         sizetransform(Player_left);
         sizetransform(Player_right);
+
         eyesize();
         hoodsize();
         hairsize();
+
+        Vector3 newPosition = new Vector3(1000, 500, 0);
+        Player_front.transform.position = newPosition;
+        Player_back.transform.position = newPosition;
+        Player_left.transform.position = newPosition;
+        Player_right.transform.position = newPosition;
+
         sceneflag = 1;
         SceneManager.LoadScene("prologue");
     }

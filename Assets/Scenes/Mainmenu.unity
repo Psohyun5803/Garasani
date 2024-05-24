@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d8e21e0a254f42b5e844b04f60f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartScene: PlayerTest
+  StartScene: customize
 --- !u!114 &55830292
 MonoBehaviour:
   m_ObjectHideFlags: 0

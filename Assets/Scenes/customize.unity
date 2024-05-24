@@ -1070,7 +1070,7 @@ MonoBehaviour:
   Player_back: {fileID: 1728050519}
   hairtxt: {fileID: 2013489445}
   eyetxt: {fileID: 1927626290}
-  Speed: 80
+  Speed: 300
 --- !u!4 &447351833
 Transform:
   m_ObjectHideFlags: 0

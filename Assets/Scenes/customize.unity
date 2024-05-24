@@ -1070,6 +1070,7 @@ MonoBehaviour:
   Player_back: {fileID: 1728050519}
   hairtxt: {fileID: 2013489445}
   eyetxt: {fileID: 1927626290}
+  Speed: 80
 --- !u!4 &447351833
 Transform:
   m_ObjectHideFlags: 0
@@ -3782,6 +3783,7 @@ GameObject:
   - component: {fileID: 1527804845}
   - component: {fileID: 1527804844}
   - component: {fileID: 1527804843}
+  - component: {fileID: 1527804846}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3863,6 +3865,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1527804846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527804842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e6b7ac986db24a4fa67811c26cf212d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraSpeed: 5
+  player: {fileID: 162435492}
 --- !u!1 &1529627803
 GameObject:
   m_ObjectHideFlags: 0

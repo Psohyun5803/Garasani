@@ -85,7 +85,7 @@ public class customize : MonoBehaviour
 
     string[] hair = new string[5] { "    헤어01", "    헤어02", "    헤어03", "    헤어04", "    헤어05" }; 
     string[] eye = new string[5] { "    눈01", "    눈02", "    눈03", "    눈04", "    눈05" };
-    
+    [SerializeField] private float Speed;
 
     // Start is called before the first frame update
     void Start() //커스텀씬에서의 플레이어 모형 기본값을 세팅해줍니다
@@ -106,50 +106,90 @@ public class customize : MonoBehaviour
     {
         if (sceneflag != 0) //커스텀씬에서는 못 움직이던 플레이어가 프롤로그씬에서는 움직일 수 있게합니다 .
         {
+
+            float X = Input.GetAxisRaw("Horizontal");
+            float Y = Input.GetAxisRaw("Vertical");
+            transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
+
             if (Input.GetKey(KeyCode.W))
             {
                 playeroff();
                 Player_back.SetActive(true);
 
-                Player_back.transform.Translate(Vector2.up); //움직일때는 꼭 4가지의 이미지를 같이 가지고 다녀야합니다
-                Player_front.transform.Translate(Vector2.up);
-                Player_left.transform.Translate(Vector2.up);
-                Player_right.transform.Translate(Vector2.up);
-               
             }
             if (Input.GetKey(KeyCode.S))
             {
                 playeroff();
                 Player_front.SetActive(true);
 
-                Player_back.transform.Translate(Vector2.down);
-                Player_front.transform.Translate(Vector2.down);
-                Player_left.transform.Translate(Vector2.down);
-                Player_right.transform.Translate(Vector2.down);
             }
             if (Input.GetKey(KeyCode.A))
             {
                 playeroff();
                 Player_left.SetActive(true);
 
-
-                Player_back.transform.Translate(Vector2.left);
-                Player_front.transform.Translate(Vector2.left);
-                Player_left.transform.Translate(Vector2.left);
-                Player_right.transform.Translate(Vector2.left);
             }
             if (Input.GetKey(KeyCode.D))
             {
                 playeroff();
                 Player_right.SetActive(true);
 
-
-                Player_back.transform.Translate(Vector2.right);
-                Player_front.transform.Translate(Vector2.right);
-                Player_left.transform.Translate(Vector2.right);
-                Player_right.transform.Translate(Vector2.right);
             }
+
+            Player_back.transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
+            Player_front.transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
+            Player_left.transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
+            Player_right.transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
+
+            /* if (Input.GetKey(KeyCode.W))
+             {
+                 playeroff();
+                 Player_back.SetActive(true);
+
+                 Player_back.transform.Translate(Vector2.up); //움직일때는 꼭 4가지의 이미지를 같이 가지고 다녀야합니다
+                 Player_front.transform.Translate(Vector2.up);
+                 Player_left.transform.Translate(Vector2.up);
+                 Player_right.transform.Translate(Vector2.up);
+
+                 /*Player_back.transform.Translate(Vector2.up); //움직일때는 꼭 4가지의 이미지를 같이 가지고 다녀야합니다
+                 Player_front.transform.Translate(Vector2.up);
+                 Player_left.transform.Translate(Vector2.up);
+                 Player_right.transform.Translate(Vector2.up);
+
+             }
+             if (Input.GetKey(KeyCode.S))
+             {
+                 playeroff();
+                 Player_front.SetActive(true);
+
+                 Player_back.transform.Translate(Vector2.down);
+                 Player_front.transform.Translate(Vector2.down);
+                 Player_left.transform.Translate(Vector2.down);
+                 Player_right.transform.Translate(Vector2.down);
+             }
+             if (Input.GetKey(KeyCode.A))
+             {
+                 playeroff();
+                 Player_left.SetActive(true);
+
+
+                 Player_back.transform.Translate(Vector2.left);
+                 Player_front.transform.Translate(Vector2.left);
+                 Player_left.transform.Translate(Vector2.left);
+                 Player_right.transform.Translate(Vector2.left);
+             }
+             if (Input.GetKey(KeyCode.D))
+             {
+                 playeroff();
+                 Player_right.SetActive(true);
+
+
+                 Player_back.transform.Translate(Vector2.right);
+                 Player_front.transform.Translate(Vector2.right);
+                 Player_left.transform.Translate(Vector2.right);
+                 Player_right.transform.Translate(Vector2.right); */
         }
+        
 
 
     }

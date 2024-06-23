@@ -10,13 +10,24 @@ public class UI : MonoBehaviour
     public GameObject ui_TwitterView;
     public GameObject ui_GalleryView;
     public GameObject ui_TodoView;
+    private bool phone_onoff;
+    private bool isTabPressed;
 
 
     public void checkPhone()
     {
-        if (Input.GetKey(KeyCode.Tab))
+        if (phone_onoff == false)
         {
             ui_Phone.SetActive(true);
+            phone_onoff = true;
+            Debug.Log("phone on: " + phone_onoff.ToString());
+
+        }
+        else
+        {
+            ui_Phone.SetActive(false);
+            phone_onoff = false;
+            Debug.Log("phone off: " + phone_onoff.ToString());
 
         }
     }
@@ -84,12 +95,23 @@ public class UI : MonoBehaviour
         ui_TodoView.SetActive(false);
         ui_TwitterView.SetActive(false);
         ui_WikiView.SetActive(false);
+        phone_onoff = false;
+        isTabPressed = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        checkPhone(); 
+        if (Input.GetKeyDown(KeyCode.Tab) && !isTabPressed)
+        {
+            checkPhone();
+            isTabPressed = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            isTabPressed = false;
+        }
     }
 
    

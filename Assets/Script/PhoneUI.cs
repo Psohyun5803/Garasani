@@ -11,6 +11,16 @@ public class UI : MonoBehaviour
     public GameObject ui_TwitterView;
     public GameObject ui_GalleryView;
     public GameObject ui_TodoView;
+    public GameObject ui_CallMessageView;
+
+    public GameObject Wiki_Button;
+    public GameObject Twitter_Button;
+    public GameObject Gallery_Button;
+    public GameObject Todo_Button;
+    public GameObject Call_Button;
+    public GameObject Message_Button;
+    public GameObject Setting_Button;
+
 
 
 
@@ -38,8 +48,11 @@ public class UI : MonoBehaviour
 
     public void OnClickIcon()
     {
-        ui_Phone.transform.position -= new Vector3(35, 0, 0);
-        switch (GetButtonName())
+        string clickIcon = GetButtonName();
+        if(clickIcon!="CallButton" && clickIcon!="MessageButton")
+            ui_Phone.transform.position -= new Vector3(35, 0, 0);
+
+        switch (clickIcon)
         {
             case "TwitterButton":
                 ui_TwitterView.SetActive(true);
@@ -52,6 +65,13 @@ public class UI : MonoBehaviour
                 break;
             case "GalleryButton":
                 ui_GalleryView.SetActive(true);
+                break;
+            case "CallButton":
+            case "MessageButton":
+                ui_CallMessageView.SetActive(true);
+                break;
+            case "SettingButton":
+                OnClickSetting();
                 break;
         }
     }
@@ -84,17 +104,19 @@ public class UI : MonoBehaviour
 
     }
 
-    public void OnClickkCall()
+    public void OnClickSetting()
     {
-        Debug.Log("Call not Available");
-    }
+        Wiki_Button.SetActive(false);
+        Message_Button.SetActive(false);
+        Call_Button.SetActive(false);
+        Todo_Button.SetActive(false);
+        Gallery_Button.SetActive(false);
+        Twitter_Button.SetActive(false);
+        Setting_Button.SetActive(false);
 
-    public void OnClickMessage()
-    {
-        Debug.Log("Message not Available");
     }
    
-    // Start is called before the first frame update
+
     void Start()
     {
         ui_Phone.SetActive(false);
@@ -102,11 +124,20 @@ public class UI : MonoBehaviour
         ui_TodoView.SetActive(false);
         ui_TwitterView.SetActive(false);
         ui_WikiView.SetActive(false);
+        ui_CallMessageView.SetActive(false);
         phone_onoff = false;
         isTabPressed = false;
+
+        Wiki_Button.SetActive(true);
+        Message_Button.SetActive(true);
+        Call_Button.SetActive(true);
+        Todo_Button.SetActive(true);
+        Gallery_Button.SetActive(true);
+        Twitter_Button.SetActive(true);
+        Setting_Button.SetActive(true);
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab) && !isTabPressed)
@@ -118,6 +149,11 @@ public class UI : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Tab))
         {
             isTabPressed = false;
+        }
+
+        if(ui_CallMessageView.activeSelf && Input.GetMouseButtonDown(0))
+        {
+            ui_CallMessageView.SetActive(false);
         }
     }
 

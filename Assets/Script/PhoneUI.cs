@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class UI : MonoBehaviour
 {
@@ -12,58 +13,75 @@ public class UI : MonoBehaviour
     public GameObject ui_TodoView;
 
 
+
+    private bool phone_onoff;
+    private bool isTabPressed;
+
+
     public void checkPhone()
     {
-        if (Input.GetKey(KeyCode.Tab))
+        if (phone_onoff == false)
         {
             ui_Phone.SetActive(true);
+            phone_onoff = true;
+            Debug.Log("phone on: " + phone_onoff.ToString());
+
+        }
+        else
+        {
+            ui_Phone.SetActive(false);
+            phone_onoff = false;
+            Debug.Log("phone off: " + phone_onoff.ToString());
 
         }
     }
-    public void OffPhone()
+
+    public void OnClickIcon()
     {
-        ui_Phone.SetActive(false);
+        ui_Phone.transform.position -= new Vector3(35, 0, 0);
+        switch (GetButtonName())
+        {
+            case "TwitterButton":
+                ui_TwitterView.SetActive(true);
+                break;
+            case "WikiButton":
+                ui_WikiView.SetActive(true);
+                break;
+            case "TodoButton":
+                ui_TodoView.SetActive(true);
+                break;
+            case "GalleryButton":
+                ui_GalleryView.SetActive(true);
+                break;
+        }
     }
 
-    public void OnClickWiki()
+    public void OnClickOff()
     {
-        ui_WikiView.SetActive(true);
+        ui_Phone.transform.position += new Vector3(35, 0, 0);
+        switch (GetButtonName())
+        {
+            case "OffTwitter":
+                ui_TwitterView.SetActive(false);
+                break;
+            case "OffWiki":
+                ui_WikiView.SetActive(false);
+                break;
+            case "OffTodo":
+                ui_TodoView.SetActive(false);
+                break;
+            case "OffGallery":
+                ui_GalleryView.SetActive(false);
+                break;
+        }
+
     }
 
-    public void OffWiki()
+    public string GetButtonName()
     {
-        ui_WikiView.SetActive(false);
-    }
+        string ButtonName = EventSystem.current.currentSelectedGameObject.name;
+        return ButtonName;
 
-    public void OnClickTwitter()
-    {
-        ui_TwitterView.SetActive(true);
-    }
-
-    public void OffTwittwer()
-    {
-        ui_TwitterView.SetActive(false);
-    }
-
-    public void OnClickGallery()
-    {
-        ui_GalleryView.SetActive(true);
-    }
-
-    public void OffGallery()
-    {
-        ui_GalleryView.SetActive(false);
-    }
-
-
-    public void OnClickTodo()
-    {
-        ui_TodoView.SetActive(true);
-    }
-
-    public void OffTodo()
-    {
-        ui_TodoView.SetActive(false);
     }
 
     public void OnClickkCall()
@@ -84,12 +102,23 @@ public class UI : MonoBehaviour
         ui_TodoView.SetActive(false);
         ui_TwitterView.SetActive(false);
         ui_WikiView.SetActive(false);
+        phone_onoff = false;
+        isTabPressed = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        checkPhone(); 
+        if (Input.GetKeyDown(KeyCode.Tab) && !isTabPressed)
+        {
+            checkPhone();
+            isTabPressed = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            isTabPressed = false;
+        }
     }
 
    

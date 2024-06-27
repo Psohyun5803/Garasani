@@ -21,11 +21,13 @@ public class UI : MonoBehaviour
     public GameObject Message_Button;
     public GameObject Setting_Button;
 
-
+    public GameObject[] viewList = new GameObject[4];
 
 
     private bool phone_onoff;
     private bool isTabPressed;
+    private bool isViewOn = false;
+
 
 
     public void checkPhone()
@@ -48,59 +50,138 @@ public class UI : MonoBehaviour
 
     public void OnClickIcon()
     {
-        string clickIcon = GetButtonName();
-        if(clickIcon!="CallButton" && clickIcon!="MessageButton")
-            ui_Phone.transform.position -= new Vector3(35, 0, 0);
-
-        switch (clickIcon)
+        while (!isViewOn)
         {
-            case "TwitterButton":
-                ui_TwitterView.SetActive(true);
-                break;
-            case "WikiButton":
-                ui_WikiView.SetActive(true);
-                break;
-            case "TodoButton":
-                ui_TodoView.SetActive(true);
-                break;
-            case "GalleryButton":
-                ui_GalleryView.SetActive(true);
-                break;
-            case "CallButton":
-            case "MessageButton":
-                ui_CallMessageView.SetActive(true);
-                break;
-            case "SettingButton":
-                OnClickSetting();
-                break;
+            string clickIcon = GetButtonName();
+            if (clickIcon != "CallButton" && clickIcon != "MessageButton")
+                ui_Phone.transform.position -= new Vector3(40, 0, 0);
+
+            isViewOn = true;
+            switch (clickIcon)
+            {
+                case "TwitterButton":
+                    ui_TwitterView.SetActive(true);
+                    break;
+                case "WikiButton":
+                    ui_WikiView.SetActive(true);
+                    break;
+                case "TodoButton":
+                    ui_TodoView.SetActive(true);
+                    break;
+                case "GalleryButton":
+                    ui_GalleryView.SetActive(true);
+                    break;
+                case "CallButton":
+                case "MessageButton":
+                    ui_CallMessageView.SetActive(true);
+                    break;
+                case "SettingButton":
+                    OnClickSetting();
+                    break;
+            }
         }
+        
     }
 
     public void OnClickOff()
     {
-        ui_Phone.transform.position += new Vector3(35, 0, 0);
+        ui_Phone.transform.position += new Vector3(40, 0, 0);
+        isViewOn = false;
+        Debug.Log("view off" + isViewOn.ToString());
+
         switch (GetButtonName())
         {
             case "OffTwitter":
                 ui_TwitterView.SetActive(false);
+                Debug.Log("twitter off");
                 break;
             case "OffWiki":
                 ui_WikiView.SetActive(false);
+                Debug.Log("wiki off");
                 break;
             case "OffTodo":
                 ui_TodoView.SetActive(false);
+                Debug.Log("todo off");
                 break;
             case "OffGallery":
                 ui_GalleryView.SetActive(false);
+                Debug.Log("gallery off");
                 break;
         }
 
     }
 
+    public void OnClickPre()
+    {
+        string clickIcon = GetParentName();
+        Debug.Log(clickIcon.ToString());
+        Debug.Log("Pre 실행중");
+
+        int nowView = -1;
+        for(int i = 0; i < viewList.Length; i++)
+        {
+            if (viewList[i].name.Equals(clickIcon))
+            {
+                nowView = i;
+                break;
+            }
+        }
+
+        if (nowView > 0)
+        {
+            int preView = nowView - 1;
+            Debug.Log($"Changing from {nowView} to {preView}");
+            if (viewList[nowView] != null && viewList[preView] != null)
+            {
+                viewList[nowView].SetActive(false);
+                viewList[preView].SetActive(true);
+            }
+        }
+
+
+    }
+
+    public void OnClickNext()
+    {
+        string clickIcon = GetParentName();
+        int nowView = -1;
+        Debug.Log("Next 실행중");
+        Debug.Log(clickIcon);
+        for (int i = 0; i < viewList.Length; i++)
+        {
+            if (viewList[i].name.Equals(clickIcon))
+            {
+                nowView = i;
+                Debug.Log(nowView);
+                break;
+            }
+        }
+
+        if (nowView >= 0 && nowView < viewList.Length - 1)
+        {
+            int nextView = nowView + 1;
+            Debug.Log(nextView);
+            if(viewList[nowView] != null && viewList[nextView] != null)
+            {
+                viewList[nowView].SetActive(false);
+                viewList[nextView].SetActive(true);
+            }
+            
+        }
+    }
     public string GetButtonName()
     {
         string ButtonName = EventSystem.current.currentSelectedGameObject.name;
         return ButtonName;
+
+    }
+
+    public string GetParentName()
+    {
+        GameObject clickedObject = EventSystem.current.currentSelectedGameObject;
+        string parentName = clickedObject.transform.parent.name;
+
+        return parentName;
 
     }
 
@@ -154,6 +235,7 @@ public class UI : MonoBehaviour
         if(ui_CallMessageView.activeSelf && Input.GetMouseButtonDown(0))
         {
             ui_CallMessageView.SetActive(false);
+            isViewOn = false;
         }
     }
 

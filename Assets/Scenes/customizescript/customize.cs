@@ -93,7 +93,7 @@ public class customize : MonoBehaviour
 
     //public InputField playernameinput;
     public static string playername ;
-    [SerializeField] private InputField usernameinput;
+    //[SerializeField] private InputField usernameinput;
     private void Awake()
     {
         eyec = () => { eyeclosefun(); };
@@ -183,8 +183,8 @@ public class customize : MonoBehaviour
         Player_right.transform.position = newPosition;
 
         sceneflag = 1;
-        playername = usernameinput.text;
-        SceneManager.LoadScene("prologue");
+        //playername = usernameinput.text;
+        SceneManager.LoadScene("prologuebeta");
     }
    
     public void sizetransform(GameObject a) //게임오브젝트를 매개변수로 받아서 크기와 위치를 조정해줍니다.

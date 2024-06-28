@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Script/LightSetting.cs.meta
+guid: 2cbecaac560472b4a8df16145ae2870d
+========
+guid: bb30f724327704f4e8e142ef64a9bcc7
+>>>>>>>> YoonJo:Assets/Script/DoubleClickButton.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

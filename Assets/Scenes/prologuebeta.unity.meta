@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/prologuebeta.unity.meta
 guid: 7f52f33351642ef4abcf9efba113cbbb
+========
+guid: abcf49810b78020459e9443df9b638ab
+folderAsset: yes
+>>>>>>>> origin/feature/proto:Assets/Phone_Setting.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

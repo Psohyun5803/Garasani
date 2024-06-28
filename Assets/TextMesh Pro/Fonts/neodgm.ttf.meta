@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/TextMesh Pro/Fonts/PF스타더스트 Bold.ttf.meta
+guid: 970fa2e7d3d1d2143a9871797d50d44f
+========
+guid: 36b31e1f61080e24fbc5afb0e1fa06a2
+>>>>>>>> origin/feature/proto:Assets/TextMesh Pro/Fonts/neodgm.ttf.meta
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+<<<<<<<< HEAD:Assets/TextMesh Pro/Fonts/PF스타더스트 Bold.ttf.meta
+  - PF????? Bold
+========
+  - NeoDunggeunmo
+>>>>>>>> origin/feature/proto:Assets/TextMesh Pro/Fonts/neodgm.ttf.meta
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

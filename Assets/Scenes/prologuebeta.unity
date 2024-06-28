@@ -842,8 +842,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '!!!'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d92755682b68906438506d469297067f, type: 2}
-  m_sharedMaterial: {fileID: -7450916457284528656, guid: d92755682b68906438506d469297067f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1184,7 +1184,7 @@ SpriteRenderer:
   m_Size: {x: 57.059998, y: 32.402725}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1631087464
@@ -1370,12 +1370,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cfb9277b58b9a50498f462b431e7e87c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c5ebd16ab3bcda844850e2589e8f52e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 54, y: 5.0097656}
+  m_Size: {x: 28.8, y: 10.799999}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1486,7 +1486,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6afe4f746ab244da6a270b319ad7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryWindow: {fileID: 1536828061}
 --- !u!1 &2032295664
 GameObject:
   m_ObjectHideFlags: 0

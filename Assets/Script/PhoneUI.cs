@@ -89,7 +89,10 @@ public class UI : MonoBehaviour
         isViewOn = false;
         Debug.Log("view off" + isViewOn.ToString());
 
-        switch (GetButtonName())
+        string clickIcon = GetButtonName();
+        Debug.Log("Button name: " + GetButtonName());
+
+        switch (clickIcon)
         {
             case "OffTwitter":
                 ui_TwitterView.SetActive(false);
@@ -100,13 +103,28 @@ public class UI : MonoBehaviour
                 Debug.Log("wiki off");
                 break;
             case "OffTodo":
-                ui_TodoView.SetActive(false);
-                Debug.Log("todo off");
+                //ui_TodoView.SetActive(false);
+                //Debug.Log("todo off");
+                //break;
+                if (ui_TodoView == null)
+                {
+                    Debug.LogError("ui_TodoView is not assigned in the inspector.");
+                }
+                else
+                {
+                    ui_TodoView.SetActive(false);
+                    Debug.Log("todo off");
+                    Debug.Log("Todo view active status: " + ui_TodoView.activeSelf);
+                }
                 break;
             case "OffGallery":
                 ui_GalleryView.SetActive(false);
                 Debug.Log("gallery off");
                 break;
+            default:
+                Debug.LogWarning("Unknown button name: " + clickIcon);
+                break;
+
         }
 
     }

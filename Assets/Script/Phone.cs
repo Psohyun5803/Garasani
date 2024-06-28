@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UI : MonoBehaviour
+public class Phone : MonoBehaviour
 {
 
     public GameObject ui_Phone;
@@ -29,6 +29,8 @@ public class UI : MonoBehaviour
 
     public GameObject ui_LightSet;
     public GameObject ui_SoundSet;
+
+
 
 
     private bool phone_onoff;
@@ -85,12 +87,12 @@ public class UI : MonoBehaviour
                     break;
                 case "SettingButton":
                     OnClickSetting(0);
-                 
+
                     ui_SettingView.SetActive(true);
                     break;
             }
         }
-        
+
     }
 
     public void OnClickOff()
@@ -135,7 +137,7 @@ public class UI : MonoBehaviour
         Debug.Log("Pre Ω««‡¡ﬂ");
 
         int nowView = -1;
-        for(int i = 0; i < viewList.Length; i++)
+        for (int i = 0; i < viewList.Length; i++)
         {
             if (viewList[i].name.Equals(clickIcon))
             {
@@ -178,12 +180,12 @@ public class UI : MonoBehaviour
         {
             int nextView = nowView + 1;
             Debug.Log(nextView);
-            if(viewList[nowView] != null && viewList[nextView] != null)
+            if (viewList[nowView] != null && viewList[nextView] != null)
             {
                 viewList[nowView].SetActive(false);
                 viewList[nextView].SetActive(true);
             }
-            
+
         }
     }
     public string GetButtonName()
@@ -210,7 +212,7 @@ public class UI : MonoBehaviour
         {
             ui_warning.SetActive(false);
             ui_warning_Call.SetActive(false);
-           
+
         }
         else if (ui_warning_Exit.activeSelf)
         {
@@ -222,7 +224,7 @@ public class UI : MonoBehaviour
         Application.Quit();
 #endif
             }
-            else if(click.Equals("cancel_button"))
+            else if (click.Equals("cancel_button"))
             {
                 ui_warning.SetActive(false);
                 ui_warning_Exit.SetActive(false);
@@ -231,10 +233,10 @@ public class UI : MonoBehaviour
         }
     }
 
- 
+
     public void OnClickSetting(int flag)
     {
-        if(flag == 1)
+        if (flag == 1)
         {
             Wiki_Button.SetActive(true);
             Message_Button.SetActive(true);
@@ -243,7 +245,7 @@ public class UI : MonoBehaviour
             Gallery_Button.SetActive(true);
             Twitter_Button.SetActive(true);
             Setting_Button.SetActive(true);
-           
+
         }
         else
         {
@@ -255,14 +257,14 @@ public class UI : MonoBehaviour
             Twitter_Button.SetActive(false);
             Setting_Button.SetActive(false);
         }
-        
+
 
     }
 
     public void onClickLighting()
     {
         ui_LightSet.SetActive(true);
-            
+
     }
 
     public void onClickSound()
@@ -278,7 +280,7 @@ public class UI : MonoBehaviour
             Screen.fullScreen = true;
     }
 
-    
+
     public void OnClickMain()
     {
         ui_SettingView.SetActive(false);
@@ -287,7 +289,7 @@ public class UI : MonoBehaviour
 
     }
 
-    
+
     public void OnClickExit()
     {
         Debug.Log("Exit");
@@ -336,10 +338,10 @@ public class UI : MonoBehaviour
             isTabPressed = false;
         }
 
-        
+       
 
-        }
     }
+}
 
    
 

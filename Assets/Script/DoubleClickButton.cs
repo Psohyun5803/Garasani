@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro; // TextMeshPro를 사용하기 위해 추가
 using System.Collections;
 
 public class DoubleClickToggleButton : MonoBehaviour
@@ -13,6 +14,10 @@ public class DoubleClickToggleButton : MonoBehaviour
     private float clickDelay = 0.5f; // 더블 클릭 감지 시간 간격
     private bool isOriginal = true; // 현재 이미지가 원래 이미지인지 여부
 
+    public TextMeshProUGUI itemNameText; // 아이템 이름을 표시할 TextMeshProUGUI
+    public TextMeshProUGUI itemInfoText; // 아이템 설명을 표시할 TextMeshProUGUI
+    public TextMeshProUGUI itemName; // 아이템 이름
+    public TextMeshProUGUI itemInfo; // 아이템 설명
     void Start()
     {
         button.onClick.AddListener(OnButtonClick);
@@ -40,6 +45,9 @@ public class DoubleClickToggleButton : MonoBehaviour
             }
             isOriginal = !isOriginal; // 이미지 상태 토글
             clickCount = 0;
+
+            // 아이템 이름과 설명 업데이트
+            UpdateItemInfo();
         }
         else
         {
@@ -53,5 +61,12 @@ public class DoubleClickToggleButton : MonoBehaviour
         {
             clickCount = 0; // 더블 클릭 간격이 지나면 클릭 횟수 초기화
         }
+    }
+
+    void UpdateItemInfo()
+    {
+        itemNameText.text = itemName.text;
+        itemInfoText.text = itemInfo.text;
+        Debug.Log($"아이템 이름: {itemName}, 아이템 설명: {itemInfo}");
     }
 }

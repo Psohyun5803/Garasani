@@ -27,6 +27,9 @@ public class UI : MonoBehaviour
     public GameObject ui_warning_Exit;
     public GameObject ui_warning_Call;
 
+    public GameObject ui_LightSet;
+    public GameObject ui_SoundSet;
+
 
     private bool phone_onoff;
     private bool isTabPressed;
@@ -258,13 +261,13 @@ public class UI : MonoBehaviour
 
     public void onClickLighting()
     {
-        
+        ui_LightSet.SetActive(true);
             
     }
 
     public void onClickSound()
     {
-        
+        ui_SoundSet.SetActive(true);
     }
 
     public void onClickFullScreen()
@@ -315,6 +318,8 @@ public class UI : MonoBehaviour
         ui_warning.SetActive(false);
         ui_warning_Call.SetActive(false);
         ui_warning_Exit.SetActive(false);
+        ui_LightSet.SetActive(false);
+        ui_SoundSet.SetActive(false);
     }
 
 

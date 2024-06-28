@@ -111,7 +111,7 @@ public class Prologuescript : MonoBehaviour
     }
     void tutorialload()
     {
-        SceneManager.LoadScene("tutorial");
+        SceneManager.LoadScene("Pro_Map");
     }
     
     void 말풍선활성화()

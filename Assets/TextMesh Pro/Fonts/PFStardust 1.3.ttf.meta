@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/TextMesh Pro/Fonts/PF스타더스트 Bold.ttf.meta
-guid: 970fa2e7d3d1d2143a9871797d50d44f
-========
-guid: 36b31e1f61080e24fbc5afb0e1fa06a2
->>>>>>>> origin/feature/proto:Assets/TextMesh Pro/Fonts/neodgm.ttf.meta
+guid: 81f332f5d05dbf34fae97a19e60b901f
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -13,11 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-<<<<<<<< HEAD:Assets/TextMesh Pro/Fonts/PF스타더스트 Bold.ttf.meta
-  - PF????? Bold
-========
-  - NeoDunggeunmo
->>>>>>>> origin/feature/proto:Assets/TextMesh Pro/Fonts/neodgm.ttf.meta
+  - PFStardust
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

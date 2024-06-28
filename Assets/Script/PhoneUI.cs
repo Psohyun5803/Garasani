@@ -31,7 +31,7 @@ public class UI : MonoBehaviour
     private bool phone_onoff;
     private bool isTabPressed;
     private bool isViewOn = false;
-
+    private bool isFullScreen = true;
 
 
     public void checkPhone()
@@ -269,7 +269,10 @@ public class UI : MonoBehaviour
 
     public void onClickFullScreen()
     {
-
+        if (isFullScreen)
+            Screen.fullScreen = false;
+        else
+            Screen.fullScreen = true;
     }
 
     

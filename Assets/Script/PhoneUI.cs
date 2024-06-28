@@ -12,6 +12,7 @@ public class UI : MonoBehaviour
     public GameObject ui_GalleryView;
     public GameObject ui_TodoView;
     public GameObject ui_CallMessageView;
+    public GameObject ui_SettingView;
 
     public GameObject Wiki_Button;
     public GameObject Twitter_Button;
@@ -53,7 +54,7 @@ public class UI : MonoBehaviour
         while (!isViewOn)
         {
             string clickIcon = GetButtonName();
-            if (clickIcon != "CallButton" && clickIcon != "MessageButton")
+            if (clickIcon != "CallButton" && clickIcon != "MessageButton" && clickIcon != "SettingButton")
                 ui_Phone.transform.position -= new Vector3(40, 0, 0);
 
             isViewOn = true;
@@ -77,6 +78,8 @@ public class UI : MonoBehaviour
                     break;
                 case "SettingButton":
                     OnClickSetting();
+                    ui_Phone.SetActive(false);
+                    ui_SettingView.SetActive(true);
                     break;
             }
         }
@@ -213,6 +216,7 @@ public class UI : MonoBehaviour
         ui_TwitterView.SetActive(false);
         ui_WikiView.SetActive(false);
         ui_CallMessageView.SetActive(false);
+        ui_SettingView.SetActive(false);
         phone_onoff = false;
         isTabPressed = false;
 

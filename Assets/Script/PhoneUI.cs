@@ -103,19 +103,8 @@ public class UI : MonoBehaviour
                 Debug.Log("wiki off");
                 break;
             case "OffTodo":
-                //ui_TodoView.SetActive(false);
-                //Debug.Log("todo off");
-                //break;
-                if (ui_TodoView == null)
-                {
-                    Debug.LogError("ui_TodoView is not assigned in the inspector.");
-                }
-                else
-                {
-                    ui_TodoView.SetActive(false);
-                    Debug.Log("todo off");
-                    Debug.Log("Todo view active status: " + ui_TodoView.activeSelf);
-                }
+                ui_TodoView.SetActive(false);
+                Debug.Log("todo off");
                 break;
             case "OffGallery":
                 ui_GalleryView.SetActive(false);

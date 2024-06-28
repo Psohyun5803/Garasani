@@ -11,7 +11,6 @@ public class UI : MonoBehaviour
     public GameObject ui_TwitterView;
     public GameObject ui_GalleryView;
     public GameObject ui_TodoView;
-    public GameObject ui_CallMessageView;
     public GameObject ui_SettingView;
 
     public GameObject Wiki_Button;
@@ -23,6 +22,10 @@ public class UI : MonoBehaviour
     public GameObject Setting_Button;
 
     public GameObject[] viewList = new GameObject[4];
+
+    public GameObject ui_warning;
+    public GameObject ui_warning_Exit;
+    public GameObject ui_warning_Call;
 
 
     private bool phone_onoff;
@@ -51,7 +54,7 @@ public class UI : MonoBehaviour
 
     public void OnClickIcon()
     {
-        while (!isViewOn)
+        if (!isViewOn)
         {
             string clickIcon = GetButtonName();
             if (clickIcon != "CallButton" && clickIcon != "MessageButton" && clickIcon != "SettingButton")
@@ -74,11 +77,12 @@ public class UI : MonoBehaviour
                     break;
                 case "CallButton":
                 case "MessageButton":
-                    ui_CallMessageView.SetActive(true);
+                    ui_warning.SetActive(true);
+                    ui_warning_Call.SetActive(true);
                     break;
                 case "SettingButton":
-                    OnClickSetting();
-                    ui_Phone.SetActive(false);
+                    OnClickSetting(0);
+                 
                     ui_SettingView.SetActive(true);
                     break;
             }
@@ -195,27 +199,104 @@ public class UI : MonoBehaviour
 
     }
 
-    public void OnClickSetting()
+    public void onClickWarning()
     {
-        Wiki_Button.SetActive(false);
-        Message_Button.SetActive(false);
-        Call_Button.SetActive(false);
-        Todo_Button.SetActive(false);
-        Gallery_Button.SetActive(false);
-        Twitter_Button.SetActive(false);
-        Setting_Button.SetActive(false);
+        isViewOn = false;
+        string click = GetButtonName();
+        if (ui_warning_Call.activeSelf)
+        {
+            ui_warning.SetActive(false);
+            ui_warning_Call.SetActive(false);
+           
+        }
+        else if (ui_warning_Exit.activeSelf)
+        {
+            if (click.Equals("ok_button"))
+            {
+#if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+            }
+            else if(click.Equals("cancel_button"))
+            {
+                ui_warning.SetActive(false);
+                ui_warning_Exit.SetActive(false);
+            }
+
+        }
+    }
+
+ 
+    public void OnClickSetting(int flag)
+    {
+        if(flag == 1)
+        {
+            Wiki_Button.SetActive(true);
+            Message_Button.SetActive(true);
+            Call_Button.SetActive(true);
+            Todo_Button.SetActive(true);
+            Gallery_Button.SetActive(true);
+            Twitter_Button.SetActive(true);
+            Setting_Button.SetActive(true);
+           
+        }
+        else
+        {
+            Wiki_Button.SetActive(false);
+            Message_Button.SetActive(false);
+            Call_Button.SetActive(false);
+            Todo_Button.SetActive(false);
+            Gallery_Button.SetActive(false);
+            Twitter_Button.SetActive(false);
+            Setting_Button.SetActive(false);
+        }
+        
 
     }
-   
+
+    public void onClickLighting()
+    {
+        
+            
+    }
+
+    public void onClickSound()
+    {
+        
+    }
+
+    public void onClickFullScreen()
+    {
+
+    }
+
+    
+    public void OnClickMain()
+    {
+        ui_SettingView.SetActive(false);
+        OnClickSetting(1);
+        isViewOn = false;
+
+    }
+
+    
+    public void OnClickExit()
+    {
+        Debug.Log("Exit");
+        ui_warning.SetActive(true);
+        ui_warning_Exit.SetActive(true);
+    }
+
 
     void Start()
     {
-        ui_Phone.SetActive(false);
+        ui_Phone.SetActive(true);
         ui_GalleryView.SetActive(false);
         ui_TodoView.SetActive(false);
         ui_TwitterView.SetActive(false);
         ui_WikiView.SetActive(false);
-        ui_CallMessageView.SetActive(false);
         ui_SettingView.SetActive(false);
         phone_onoff = false;
         isTabPressed = false;
@@ -227,6 +308,10 @@ public class UI : MonoBehaviour
         Gallery_Button.SetActive(true);
         Twitter_Button.SetActive(true);
         Setting_Button.SetActive(true);
+
+        ui_warning.SetActive(false);
+        ui_warning_Call.SetActive(false);
+        ui_warning_Exit.SetActive(false);
     }
 
 
@@ -243,12 +328,10 @@ public class UI : MonoBehaviour
             isTabPressed = false;
         }
 
-        if(ui_CallMessageView.activeSelf && Input.GetMouseButtonDown(0))
-        {
-            ui_CallMessageView.SetActive(false);
-            isViewOn = false;
+        
+
         }
     }
 
    
-}
+

@@ -76,20 +76,33 @@ public class customize : MonoBehaviour
     public GameObject Player_left;
     public GameObject Player_right;
     public GameObject Player_back;
+    public GameObject eyeclose;
     public TMP_Text hairtxt;
     public TMP_Text eyetxt;
-
+    public GameObject[] Playermotion;
     int eyenum = 0; //적용될 눈모양을 결정하는 변수입니다
     int hairnum = 0; //적용될 헤어모양을 결정하는 변수입니다
-    int sceneflag = 0; //커스텀씬과 프롤로그씬을 구별하는 플래그입니다!
+    public static int sceneflag = 0; //커스텀씬과 프롤로그씬을 구별하는 플래그입니다!
 
     string[] hair = new string[5] { "    헤어01", "    헤어02", "    헤어03", "    헤어04", "    헤어05" }; 
     string[] eye = new string[5] { "    눈01", "    눈02", "    눈03", "    눈04", "    눈05" };
     [SerializeField] private float Speed;
-
+    public static Action eyec;
+    public static Action eyeo;
     // Start is called before the first frame update
+
+    //public InputField playernameinput;
+    public static string playername ;
+    [SerializeField] private InputField usernameinput;
+    private void Awake()
+    {
+        eyec = () => { eyeclosefun(); };
+        eyeo = () => { puton(); };
+        
+    }
     void Start() //커스텀씬에서의 플레이어 모형 기본값을 세팅해줍니다
     {
+        Playermotion = new GameObject[4]{Player_front,Player_back,Player_left,Player_right };
         Player_front.SetActive(true); //플레이어의 앞모습 
         Player_back.SetActive(false);
         Player_left.SetActive(false);
@@ -103,7 +116,7 @@ public class customize : MonoBehaviour
     }
     public void move() 
     {
-        if (sceneflag != 0) //커스텀씬에서는 못 움직이던 플레이어가 프롤로그씬에서는 움직일 수 있게합니다 .
+        if (sceneflag >1) //커스텀씬에서는 못 움직이던 플레이어가 프롤로그씬에서는 움직일 수 있게합니다 .
         {
 
             float X = Input.GetAxisRaw("Horizontal");
@@ -134,59 +147,16 @@ public class customize : MonoBehaviour
                 Player_right.SetActive(true);
 
             }
+            for(int i=0; i<4;i++)
+            {
+                Playermotion[i].transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
+            }
+           // Player_back.transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
+            //Player_front.transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
+            //Player_left.transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
+            //Player_right.transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
 
-            Player_back.transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
-            Player_front.transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
-            Player_left.transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
-            Player_right.transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
-
-            /* if (Input.GetKey(KeyCode.W))
-             {
-                 playeroff();
-                 Player_back.SetActive(true);
-
-                 Player_back.transform.Translate(Vector2.up); //움직일때는 꼭 4가지의 이미지를 같이 가지고 다녀야합니다
-                 Player_front.transform.Translate(Vector2.up);
-                 Player_left.transform.Translate(Vector2.up);
-                 Player_right.transform.Translate(Vector2.up);
-
-                 /*Player_back.transform.Translate(Vector2.up); //움직일때는 꼭 4가지의 이미지를 같이 가지고 다녀야합니다
-                 Player_front.transform.Translate(Vector2.up);
-                 Player_left.transform.Translate(Vector2.up);
-                 Player_right.transform.Translate(Vector2.up);
-
-             }
-             if (Input.GetKey(KeyCode.S))
-             {
-                 playeroff();
-                 Player_front.SetActive(true);
-
-                 Player_back.transform.Translate(Vector2.down);
-                 Player_front.transform.Translate(Vector2.down);
-                 Player_left.transform.Translate(Vector2.down);
-                 Player_right.transform.Translate(Vector2.down);
-             }
-             if (Input.GetKey(KeyCode.A))
-             {
-                 playeroff();
-                 Player_left.SetActive(true);
-
-
-                 Player_back.transform.Translate(Vector2.left);
-                 Player_front.transform.Translate(Vector2.left);
-                 Player_left.transform.Translate(Vector2.left);
-                 Player_right.transform.Translate(Vector2.left);
-             }
-             if (Input.GetKey(KeyCode.D))
-             {
-                 playeroff();
-                 Player_right.SetActive(true);
-
-
-                 Player_back.transform.Translate(Vector2.right);
-                 Player_front.transform.Translate(Vector2.right);
-                 Player_left.transform.Translate(Vector2.right);
-                 Player_right.transform.Translate(Vector2.right); */
+            
         }
         
 
@@ -213,6 +183,7 @@ public class customize : MonoBehaviour
         Player_right.transform.position = newPosition;
 
         sceneflag = 1;
+        playername = usernameinput.text;
         SceneManager.LoadScene("prologue");
     }
    
@@ -250,6 +221,7 @@ public class customize : MonoBehaviour
         sizetransform(eye3_right);
         sizetransform(eye4_right);
         sizetransform(eye5_right);
+        sizetransform(eyeclose);
 
 
 
@@ -356,6 +328,8 @@ public class customize : MonoBehaviour
         eye3_right.SetActive(false);
         eye4_right.SetActive(false);
         eye5_right.SetActive(false);
+
+        eyeclose.SetActive(false);
     }
     public void hairoff() // 위와 동일합니다
     {
@@ -384,6 +358,13 @@ public class customize : MonoBehaviour
         hair5_back.SetActive(false);
 
 
+    }
+    public void eyeclosefun() //플레이어 눈 감는 모션
+    {
+        eyeoff();
+        eyeclose.SetActive(true);
+        Debug.Log("눈 감는 모션");
+        
     }
     public void puton() // 커스텀된 eye와 hair를 착용할 수 있게 하는 함수입니다.
     {
@@ -494,7 +475,11 @@ public class customize : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        puton();
+        if(sceneflag==0)
+        {
+            puton();
+        }
+       
         move(); 
 
         

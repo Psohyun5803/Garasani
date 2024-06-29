@@ -38,7 +38,6 @@ public class Phone : MonoBehaviour
     private bool isViewOn = false;
     private bool isFullScreen = true;
 
-
     public void checkPhone()
     {
         if (phone_onoff == false)

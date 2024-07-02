@@ -6,6 +6,11 @@ public class InventoryOpener : MonoBehaviour
 {
     public GameObject inventoryWindow;
 
+    void Start()
+    {
+        inventoryWindow.SetActive(false);
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))

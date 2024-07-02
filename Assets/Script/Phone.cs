@@ -38,7 +38,6 @@ public class Phone : MonoBehaviour
     private bool isViewOn = false;
     private bool isFullScreen = true;
 
-
     public void checkPhone()
     {
         if (phone_onoff == false)
@@ -53,8 +52,13 @@ public class Phone : MonoBehaviour
             ui_Phone.SetActive(false);
             phone_onoff = false;
             Debug.Log("phone off: " + phone_onoff.ToString());
+            ui_WikiView.SetActive(false);
+            ui_TwitterView.SetActive(false);
+            ui_GalleryView.SetActive(false);
+            ui_TodoView.SetActive(false);
+            ui_SettingView.SetActive(false);
 
-        }
+}
     }
 
     public void OnClickIcon()
@@ -300,7 +304,7 @@ public class Phone : MonoBehaviour
 
     void Start()
     {
-        ui_Phone.SetActive(true);
+        ui_Phone.SetActive(false);
         ui_GalleryView.SetActive(false);
         ui_TodoView.SetActive(false);
         ui_TwitterView.SetActive(false);

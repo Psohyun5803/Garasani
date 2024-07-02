@@ -25,7 +25,9 @@ public class ObjectInteraction : MonoBehaviour
             Debug.Log("마우스 감지" + objectName);
 
             Vector3 mousePosition = Input.mousePosition; //커서 좌표 가져옴 
-            worldPosition = Camera.main.ScreenToWorldPoint(mousePosition); //커서좌표 월드좌표로 변환
+            //worldPosition = Camera.main.ScreenToWorldPoint(mousePosition); //커서좌표 월드좌표로 변환
+            worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, Camera.main.nearClipPlane));
+
             ActiveInteraction(); //상태창 on
         }
         

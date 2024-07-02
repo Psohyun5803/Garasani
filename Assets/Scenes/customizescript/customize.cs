@@ -23,6 +23,14 @@ public class customize : MonoBehaviour
     public GameObject eye4;
     public GameObject eye5;
 
+    public GameObject 團隸eye1;
+    public GameObject 團隸eye2;
+    public GameObject 團隸eye3;
+    public GameObject 團隸eye4;
+    public GameObject 團隸eye5;
+
+
+
     public GameObject eye1_left;
     public GameObject eye2_left;
     public GameObject eye3_left;
@@ -40,6 +48,12 @@ public class customize : MonoBehaviour
     public GameObject hair3;
     public GameObject hair4;
     public GameObject hair5;
+
+    public GameObject 團隸hair1;
+    public GameObject 團隸hair2;
+    public GameObject 團隸hair3;
+    public GameObject 團隸hair4;
+    public GameObject 團隸hair5;
 
     public GameObject hair1_left;
     public GameObject hair2_left;
@@ -91,8 +105,12 @@ public class customize : MonoBehaviour
     public static Action eyeo;
     // Start is called before the first frame update
 
-    //public InputField playernameinput;
+    public TMP_Text playernameinput;
+    public TMP_Text playerbirthinput;
     public static string playername ;
+    public static string playerbirth;
+    //public static string finalplayername;
+
     //[SerializeField] private InputField usernameinput;
     private void Awake()
     {
@@ -183,7 +201,8 @@ public class customize : MonoBehaviour
         Player_right.transform.position = newPosition;
 
         sceneflag = 1;
-        //playername = usernameinput.text;
+        playername = playernameinput.text;
+        playerbirth = playerbirthinput.text;
         SceneManager.LoadScene("prologuebeta");
     }
    
@@ -317,6 +336,12 @@ public class customize : MonoBehaviour
         eye4.SetActive(false);
         eye5.SetActive(false);
 
+        團隸eye1.SetActive(false);
+        團隸eye2.SetActive(false);
+        團隸eye3.SetActive(false);
+        團隸eye4.SetActive(false);
+        團隸eye5.SetActive(false);
+
         eye1_left.SetActive(false);
         eye2_left.SetActive(false);
         eye3_left.SetActive(false);
@@ -338,6 +363,12 @@ public class customize : MonoBehaviour
         hair3.SetActive(false);
         hair4.SetActive(false);
         hair5.SetActive(false);
+
+        團隸hair1.SetActive(false);
+        團隸hair2.SetActive(false);
+        團隸hair3.SetActive(false);
+        團隸hair4.SetActive(false);
+        團隸hair5.SetActive(false);
 
         hair1_left.SetActive(false);
         hair2_left.SetActive(false);
@@ -376,6 +407,7 @@ public class customize : MonoBehaviour
                     eye1.SetActive(true);
                     eye1_right.SetActive(true);
                     eye1_left.SetActive(true);
+                    團隸eye1.SetActive(true);
                     break;
                 }
             case 1:
@@ -384,6 +416,7 @@ public class customize : MonoBehaviour
                     eye2.SetActive(true);
                     eye2_right.SetActive(true);
                     eye2_left.SetActive(true);
+                    團隸eye2.SetActive(true);
                     break;
                 }
             case 2:
@@ -392,6 +425,7 @@ public class customize : MonoBehaviour
                     eye3.SetActive(true);
                     eye3_right.SetActive(true);
                     eye3_left.SetActive(true);
+                    團隸eye3.SetActive(true);
                     break;
                 }
             case 3:
@@ -400,6 +434,7 @@ public class customize : MonoBehaviour
                     eye4.SetActive(true);
                     eye4_right.SetActive(true);
                     eye4_left.SetActive(true);
+                    團隸eye4.SetActive(true);
                     break;
                 }
             case 4:
@@ -408,6 +443,7 @@ public class customize : MonoBehaviour
                     eye5.SetActive(true);
                     eye5_right.SetActive(true);
                     eye5_left.SetActive(true);
+                    團隸eye5.SetActive(true);
                     break;
                 }
             default:
@@ -422,6 +458,7 @@ public class customize : MonoBehaviour
                 {
                     hairoff();
                     hair1.SetActive(true);
+                    團隸hair1.SetActive(true);
                     hair1_left.SetActive(true);
                     hair1_right.SetActive(true);
                     hair1_back.SetActive(true);
@@ -431,6 +468,7 @@ public class customize : MonoBehaviour
             case 1:
                 {
                     hairoff();
+                    團隸hair2.SetActive(true);
                     hair2.SetActive(true);
                     hair2_left.SetActive(true);
                     hair2_right.SetActive(true);
@@ -441,6 +479,7 @@ public class customize : MonoBehaviour
                 {
                     hairoff();
                     hair3.SetActive(true);
+                    團隸hair3.SetActive(true);
                     hair3_left.SetActive(true);
                     hair3_right.SetActive(true);
                     hair3_back.SetActive(true);
@@ -450,6 +489,7 @@ public class customize : MonoBehaviour
                 {
                     hairoff();
                     hair4.SetActive(true);
+                    團隸hair4.SetActive(true);
                     hair4_left.SetActive(true);
                     hair4_right.SetActive(true);
                     hair4_back.SetActive(true);
@@ -459,6 +499,7 @@ public class customize : MonoBehaviour
                 {
                     hairoff();
                     hair5.SetActive(true);
+                    團隸hair5.SetActive(true);
                     hair5_left.SetActive(true);
                     hair5_right.SetActive(true);
                     hair5_back.SetActive(true);

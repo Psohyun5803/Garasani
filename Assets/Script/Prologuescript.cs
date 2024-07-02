@@ -21,6 +21,7 @@ public class Prologuescript : MonoBehaviour
     public GameObject Button1;
     public GameObject 암전;
     public GameObject dark;
+    public TMP_Text 이름;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,7 @@ public class Prologuescript : MonoBehaviour
     {
         말풍선.SetActive(true);
         대사.text = text[textflag++];
+        이름.text = customize.playername;
 
     }
     public void buttondown1() // 대사가 이어서 나올 때
@@ -58,6 +60,7 @@ public class Prologuescript : MonoBehaviour
             말풍선.SetActive(true);
 
             대사.text = text[textflag];
+            이름.text = customize.playername;
             textflag++;
             if (textflag == 2) // 두리번 거리는 모션이 들어갈 부분 
             {

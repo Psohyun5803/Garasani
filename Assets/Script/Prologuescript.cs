@@ -25,6 +25,8 @@ public class Prologuescript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(customize.playername);
+        Debug.Log(customize.playerbirth);
         ´À³¦Ç¥.SetActive(false);
         ¸»Ç³¼±.SetActive(false);
         dark.SetActive(false);

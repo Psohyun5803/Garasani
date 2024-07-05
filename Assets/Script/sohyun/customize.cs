@@ -103,6 +103,8 @@ public class customize : MonoBehaviour
     [SerializeField] private float Speed;
     public static Action eyec;
     public static Action eyeo;
+    public static Action<float,float> playertrans;
+    public static int moveflag = 1;
     // Start is called before the first frame update
 
     public TMP_Text playernameinput;
@@ -116,7 +118,8 @@ public class customize : MonoBehaviour
     {
         eyec = () => { eyeclosefun(); };
         eyeo = () => { puton(); };
-        
+        playertrans = (float x, float y) => { playertransform(x,y); };
+
     }
     void Start() //커스텀씬에서의 플레이어 모형 기본값을 세팅해줍니다
     {
@@ -134,7 +137,7 @@ public class customize : MonoBehaviour
     }
     public void move() 
     {
-        if (sceneflag >1) //커스텀씬에서는 못 움직이던 플레이어가 프롤로그씬에서는 움직일 수 있게합니다 .
+        if (sceneflag >1 &&moveflag ==1) //커스텀씬에서는 못 움직이던 플레이어가 프롤로그씬에서는 움직일 수 있게합니다 .
         {
 
             float X = Input.GetAxisRaw("Horizontal");
@@ -205,7 +208,17 @@ public class customize : MonoBehaviour
         playerbirth = playerbirthinput.text;
         SceneManager.LoadScene("prologuebeta");
     }
-   
+    public void playertransform(float x, float y)
+
+    {
+        Vector3 newPosition = new Vector3(x+192, y+384, 0);
+
+       
+        Player_front.transform.position = newPosition;
+        Player_back.transform.position = newPosition;
+        Player_left.transform.position = newPosition;
+        Player_right.transform.position = newPosition;
+    }
     public void sizetransform(GameObject a) //게임오브젝트를 매개변수로 받아서 크기와 위치를 조정해줍니다.
     {
         GameObject p = a;

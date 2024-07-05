@@ -21,6 +21,9 @@ public class tutorialscript : MonoBehaviour
     public GameObject InteractionView;
     public TMP_Text 설명;
     public GameObject 찢겨진부적;
+    public GameObject 찢겨진부적설명;
+    public GameObject 에어팟설명;
+    public GameObject 키링설명;
     private RectTransform interactionViewRectTransform;
     public Vector3 mousePosition; //마우스 커서 좌표
     public Vector3 worldPosition; //마우스 커서 월드좌표
@@ -94,7 +97,7 @@ public class tutorialscript : MonoBehaviour
 
     // Update is called once per frame
     int clickflag = 0;
-    
+    int gotoflag = 0; 
     void Update()
     {
         if (Input.GetKey(KeyCode.LeftShift))
@@ -125,13 +128,24 @@ public class tutorialscript : MonoBehaviour
                             내용.text = "문이 열렸다";
                             clickflag = 1;
                 }
-                else if (clickflag==1&& clickobj.name == "열차사이문")
+                else if (clickflag>=1&& clickobj.name == "열차사이문")
                 {
                    
                         말풍선.SetActive(true);
                         이름.text = "System";
-                        내용.text = "다음 칸으로 이동한다";
+                        if (gotoflag<3)
+                        {
+                        내용.text = "열차를 조금 더 둘러보자. ";
+                        }
+                        else
+                        {
+                            내용.text = "다음 칸으로 이동한다";
+                            
+                            SceneManager.LoadScene("Pro_map2 beta");
+                        }   
+                       
                         clickflag = 2;
+                         
                     
                 }
                 else if (clickobj.name=="찢겨진부적")
@@ -140,6 +154,8 @@ public class tutorialscript : MonoBehaviour
                     이름.text = "System";
                     내용.text = "[찢겨진 부적] : 영문을 알 수 없는 글씨가 쓰여진 종이. 섬뜩하게 찢겨져있다. ";
                     clickobj.SetActive(false);
+                    찢겨진부적설명.SetActive(false);
+                    gotoflag++;
                 }
                 else if (clickobj.name == "에어팟한쪽")
                 {
@@ -147,6 +163,8 @@ public class tutorialscript : MonoBehaviour
                     이름.text = "System";
                     내용.text = "[누군가 두고 내린 에어팟 한쪽]을 가방에 챙겼다";
                     clickobj.SetActive(false);
+                    에어팟설명.SetActive(false);
+                    gotoflag++;
                 }
                 else if (clickobj.name== "키링")
                 {
@@ -154,6 +172,8 @@ public class tutorialscript : MonoBehaviour
                     이름.text = "System";
                     내용.text = "[누군가 흘린 키링]을 가방에 챙겼다.";
                     clickobj.SetActive(false);
+                    키링설명.SetActive(false);
+                    gotoflag++;
                 }
 
 

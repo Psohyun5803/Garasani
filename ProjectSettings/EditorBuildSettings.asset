@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pro_Map.unity
     guid: cd3bab99930d0af43a5f00cf04f50fc8
+  - enabled: 1
+    path: Assets/Scenes/Pro_map1 beta.unity
+    guid: fc2174c80d494aa449e5a1d3e391785d
   m_configObjects: {}

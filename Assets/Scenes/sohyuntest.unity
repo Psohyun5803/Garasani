@@ -2346,7 +2346,6 @@ MonoBehaviour:
   Speed: 300
   playernameinput: {fileID: 1214604409}
   playerbirthinput: {fileID: 1711125102}
-  Player: {fileID: 97002348}
 --- !u!4 &447351833
 Transform:
   m_ObjectHideFlags: 0
@@ -7121,7 +7120,7 @@ Canvas:
   m_GameObject: {fileID: 1477473014}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 1527804844}
   m_PlaneDistance: 100
   m_PixelPerfect: 0

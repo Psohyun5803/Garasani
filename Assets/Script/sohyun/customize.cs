@@ -149,8 +149,8 @@ public class customize : MonoBehaviour
         hood_back.SetActive(true);
         eye1.SetActive(true); //기본 눈 1
         hair1.SetActive(true); // 기본 헤어 1
-        coroutine = breathfront();
-        StartCoroutine(coroutine);
+        //coroutine = breathfront();
+        //StartCoroutine(coroutine);
 
     }
     public void move() 

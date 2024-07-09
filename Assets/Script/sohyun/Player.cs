@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
         spriteRenderer.sprite = basebody[0];
         coroutine = breathfront();
         walk = walkmotion();
-        StartCoroutine(walk);
+        //StartCoroutine(walk);
         StartCoroutine(coroutine);
     }
 
@@ -148,6 +148,10 @@ public class Player : MonoBehaviour
 
 
             }
+            else
+            {
+                break;
+            }
         }
     }
 
@@ -193,6 +197,10 @@ public class Player : MonoBehaviour
                     spriteRenderer.sprite = basebody[15];
                     yield return new WaitForSeconds(0.2f);
                 }
+            }
+            else
+            {
+                break;
             }
 
         }

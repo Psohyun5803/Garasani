@@ -108,8 +108,8 @@ public class customize : MonoBehaviour
     public TMP_Text hairtxt;
     public TMP_Text eyetxt;
     public GameObject[] Playermotion;
-    int eyenum = 0; //적용될 눈모양을 결정하는 변수입니다
-    int hairnum = 0; //적용될 헤어모양을 결정하는 변수입니다
+    public static int eyenum = 0; //적용될 눈모양을 결정하는 변수입니다
+    public static int hairnum = 0; //적용될 헤어모양을 결정하는 변수입니다
     public static int sceneflag = 0; //커스텀씬과 프롤로그씬을 구별하는 플래그입니다!
 
     string[] hair = new string[5] { "    헤어01", "    헤어02", "    헤어03", "    헤어04", "    헤어05" }; 
@@ -240,7 +240,7 @@ public class customize : MonoBehaviour
        
         
     }
-   
+   // public GameObject Player;
     public void prologue() //프롤로그씬으로 전환해주는 버튼에 적용한 함수입니다. 플레이어의 사이즈와 위치를 조정해주고 프롤로그씬을 불러옵니다
     {
         img1.SetActive(false);
@@ -251,7 +251,7 @@ public class customize : MonoBehaviour
         sizetransform(Player_back);
         sizetransform(Player_left);
         sizetransform(Player_right);
-
+        //Player.transform.position = new Vector3(1000, 800, 0);
         eyesize();
         hoodsize();
         hairsize();
@@ -266,6 +266,7 @@ public class customize : MonoBehaviour
         sceneflag = 1;
         playername = playernameinput.text;
         playerbirth = playerbirthinput.text;
+        eyeclose.SetActive(false);
         SceneManager.LoadScene("prologuebeta");
     }
     public void playertransform(float x, float y)

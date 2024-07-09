@@ -1,29 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class customtest : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public Sprite[] basebody;
-   
+    public GameObject player;
     int spriteindex = 0;
     int frontflag = 0;
     int leftflag = 0;
     int rightflag = 0;
     int backflag = 0; 
     SpriteRenderer spriteRenderer;
+    public static Action 적용함수;
     private IEnumerator coroutine;
+   
     void Start ()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = basebody[0];
-       // coroutine = breathfront();
-       // StartCoroutine(coroutine);
+        //coroutine = breathfront();
+        //StartCoroutine(coroutine);
     }
 
     void Update()
-    {
-
+    {   
+        move();
         
     }
     void flagreset()
@@ -34,12 +37,23 @@ public class customtest : MonoBehaviour
         backflag = 0;
 
     }
-    void move()
+    public void 적용()
     {
+        spriteRenderer.sprite = basebody[spriteindex];
+        Debug.Log("적용됨");
+    }
+    private float Speed = 0.1f;
+    public void move()
+    {
+        float X = Input.GetAxisRaw("Horizontal");
+        float Y = Input.GetAxisRaw("Vertical");
+        transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
+
         if (Input.GetKey(KeyCode.W))
         {
             spriteindex = 12;
             spriteRenderer.sprite = basebody[spriteindex];
+          
             flagreset();
             backflag = 1;
 
@@ -68,6 +82,7 @@ public class customtest : MonoBehaviour
             rightflag = 1;
 
         }
+        player.transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
 
     }
 
@@ -110,6 +125,10 @@ public class customtest : MonoBehaviour
                 }
 
 
+            }
+            else
+            {
+                break;
             }
                 
 

@@ -47,3 +47,9 @@ TagManager:
   - name: Ground
     uniqueID: 167718407
     locked: 0
+  - name: basebody
+    uniqueID: 900784477
+    locked: 0
+  - name: hair
+    uniqueID: 2506945233
+    locked: 0

@@ -66,7 +66,7 @@ public class Prologuescript : MonoBehaviour
             {
                 말풍선.SetActive(false);
                 Debug.Log("플레이어 앉아서 두리면 거리는 모션");
-                customize.eyec();
+                //customize.eyec();
                 //플레이어 앉아서 두리번 거리는 모션
                 말풍선.SetActive(true);
 

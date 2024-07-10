@@ -16,22 +16,94 @@ public class Player : MonoBehaviour
     SpriteRenderer spriteRenderer;
     public static Action 적용함수;
     private IEnumerator coroutine;
-    private IEnumerator walk;
-
+   
+    private IEnumerator walkfront;
+    private IEnumerator walkright;
+    private IEnumerator walkleft;
+    private IEnumerator walkback;
+    int coroutineflag = 0;
+    int coroutineflag2 = 0;
     void Start ()
     {
         frontflag = 1;
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = basebody[0];
         coroutine = breathfront();
-        walk = walkmotion();
-        //StartCoroutine(walk);
-        StartCoroutine(coroutine);
+      
+        walkfront = walkmotionfront();
+        walkleft = walkmotionleft();
+        walkright = walkmotionright();
+        walkback = walkmotionback();
+      
     }
 
     void Update()
     {   
         move();
+        if ((Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.D))) //누를때
+        {
+
+            if (coroutineflag == 1) // 움직일때
+            {
+
+                StopCoroutine(coroutine);
+                coroutineflag = 0;
+
+            }
+        }
+        else //안누를때
+        {
+            if (coroutineflag2 == 1)
+            {
+                StopAllCoroutines();
+
+                coroutineflag2 = 0;
+                coroutineflag = 0;
+
+            }
+
+            if (coroutineflag == 0)
+            {
+                StartCoroutine(coroutine);
+            }
+        }
+            
+
+
+       /* if ((Input.GetKeyUp(KeyCode.A))|| (Input.GetKeyUp(KeyCode.W))|| (Input.GetKeyUp(KeyCode.S))|| (Input.GetKeyUp(KeyCode.D))) //멈췄을때
+        {
+
+            
+            if (coroutineflag2==1)
+            {
+                StopAllCoroutines();
+                
+                coroutineflag2 = 0;
+                coroutineflag = 0;
+               
+            }
+           
+            if (coroutineflag == 0)
+            {
+                StartCoroutine(coroutine);
+            }
+            
+
+        }
+        else
+        {
+            
+            if (coroutineflag==1) // 움직일때
+            {
+
+                StopCoroutine(coroutine);
+                coroutineflag = 0;
+                
+            }
+           
+        }*/
+        
+
         
     }
     void flagreset()
@@ -56,51 +128,76 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            spriteindex = 12;
-            spriteRenderer.sprite = basebody[spriteindex];
-
             frontflag = 0;
             rightflag = 0;
             leftflag = 0;
             backflag = 1;
+            //spriteindex = 12;
+            //spriteRenderer.sprite = basebody[spriteindex];
+
+           
+            if (coroutineflag2 == 0)
+            {
+                StopAllCoroutines();
+                StartCoroutine(walkback);
+            }
 
         }
-        if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S))
         {
-            spriteindex = 0;
-            spriteRenderer.sprite = basebody[spriteindex];
-            flagreset();
             frontflag = 1;
             rightflag = 0;
             leftflag = 0;
             backflag = 0;
+            //spriteindex = 0;
+            //spriteRenderer.sprite = basebody[spriteindex];
+          
             
 
+           
+            if (coroutineflag2 == 0)
+            {
+                StopAllCoroutines();
+                StartCoroutine(walkfront);
+            }
+
+
         }
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A))
         {
-            spriteindex = 4;
-            spriteRenderer.sprite = basebody[spriteindex];
-            flagreset();
             frontflag = 0;
             rightflag = 0;
             leftflag = 1;
             backflag = 0;
-
+            //spriteindex = 4;
+            //spriteRenderer.sprite = basebody[spriteindex];
+            
+            
+            if (coroutineflag2 == 0)
+            {
+                StopAllCoroutines();
+                StartCoroutine(walkleft);
+            }
         }
-        if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D))
         {
-            spriteindex = 8;
-            spriteRenderer.sprite = basebody[spriteindex];
-            flagreset();
             frontflag = 0;
             rightflag = 1;
             leftflag = 0;
             backflag = 0;
-
+            //spriteindex = 8;
+            //spriteRenderer.sprite = basebody[spriteindex];
+           
+          
+            if (coroutineflag2 == 0)
+            {
+                StopAllCoroutines();
+                StartCoroutine(walkright);
+            }
         }
+       
         player.transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
-
+        
     }
 
 
@@ -108,104 +205,183 @@ public class Player : MonoBehaviour
     {
         while (true)
         {
-            if ((!Input.anyKeyDown))
-            {
-                yield return new WaitForSeconds(0.8f);
+            
+                coroutineflag = 1;
+               
                 if (frontflag == 1)
                 {
+                    Debug.Log("진입3");
 
                     spriteRenderer.sprite = basebody[0];
-                    yield return new WaitForSeconds(0.8f);
+                     
+                   
+                    yield return new WaitForSeconds(0.5f);
+                   
                     spriteRenderer.sprite = basebody[1];
-                    yield return new WaitForSeconds(0.2f);
+                    
+                   
+                    yield return new WaitForSeconds(0.5f);
                 }
 
-                else if (leftflag == 1)
+                if (leftflag == 1)
                 {
+
+               
 
                     spriteRenderer.sprite = basebody[4];
-                    yield return new WaitForSeconds(0.8f);
-                    spriteRenderer.sprite = basebody[5];
-                    yield return new WaitForSeconds(0.2f);
-                }
+                
 
-                else if (rightflag == 1)
+                    yield return new WaitForSeconds(0.5f);
+                
+                    spriteRenderer.sprite = basebody[5];
+                
+
+                     yield return new WaitForSeconds(0.5f);
+                }
+             if (rightflag == 1)
                 {
+
+                   
 
                     spriteRenderer.sprite = basebody[8];
-                    yield return new WaitForSeconds(0.8f);
+                    
+                   
+                    yield return new WaitForSeconds(0.5f);
+                  
                     spriteRenderer.sprite = basebody[9];
-                    yield return new WaitForSeconds(0.2f);
-                }
-                else if (backflag == 1)
+                    
+                    
+                    yield return new WaitForSeconds(0.5f);
+                 }
+            if (backflag == 1)
                 {
 
+                  
                     spriteRenderer.sprite = basebody[12];
-                    yield return new WaitForSeconds(0.8f);
+                    
+                    yield return new WaitForSeconds(0.5f);
+                    
                     spriteRenderer.sprite = basebody[13];
-                    yield return new WaitForSeconds(0.2f);
+                        
+                    
+                   
+                    yield return new WaitForSeconds(0.5f);
                 }
-
-
-            }
+            
             else
             {
-                break;
+                    break;
             }
         }
     }
 
-    private IEnumerator walkmotion()
+
+    private IEnumerator walkmotionfront()
     {
         while(true)
         {
-            if (Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.S)|| Input.GetKey(KeyCode.D))
+            coroutineflag2 = 1;
+            Debug.Log("진입");
+            if (frontflag == 1)
             {
-                Debug.Log("진입");
-                yield return new WaitForSeconds(0.8f);
-                if (frontflag == 1)
-                {
 
-                    spriteRenderer.sprite = basebody[2];
-                    yield return new WaitForSeconds(0.8f);
-                    spriteRenderer.sprite = basebody[3];
-                    yield return new WaitForSeconds(0.2f);
-                }
-
-                else if (leftflag == 1)
-                {
-
-                    spriteRenderer.sprite = basebody[6];
-                    yield return new WaitForSeconds(0.8f);
-                    spriteRenderer.sprite = basebody[7];
-                    yield return new WaitForSeconds(0.2f);
-                }
-
-                else if (rightflag == 1)
-                {
-
-                    spriteRenderer.sprite = basebody[10];
-                    yield return new WaitForSeconds(0.8f);
-                    spriteRenderer.sprite = basebody[11];
-                    yield return new WaitForSeconds(0.2f);
-                }
-                else if (backflag == 1)
-                {
-
-                    spriteRenderer.sprite = basebody[14];
-                    yield return new WaitForSeconds(0.8f);
-                    spriteRenderer.sprite = basebody[15];
-                    yield return new WaitForSeconds(0.2f);
-                }
+                spriteRenderer.sprite = basebody[2];
+                Debug.Log("2");
             }
-            else
+                
+            yield return new WaitForSeconds(0.6f);
+            if (frontflag == 1)
             {
-                break;
+                spriteRenderer.sprite = basebody[3];
+                Debug.Log("3");
             }
+               
+
+            yield return new WaitForSeconds(0.6f);
+        }
+        
+    }
+    private IEnumerator walkmotionleft()
+    {
+        while (true)
+        {
+            coroutineflag2 = 1;
+            Debug.Log("진입");
+            if (leftflag == 1)
+            {
+
+                spriteRenderer.sprite = basebody[6];
+                Debug.Log("2");
+            }
+
+            yield return new WaitForSeconds(0.6f);
+            if (leftflag == 1)
+            {
+                spriteRenderer.sprite = basebody[7];
+                Debug.Log("3");
+            }
+
+
+            yield return new WaitForSeconds(0.6f);
+
 
         }
-    
+
     }
+    private IEnumerator walkmotionright()
+    {
+        while (true)
+        {
+            coroutineflag2 = 1;
+            Debug.Log("진입");
+            if (rightflag == 1)
+            {
+
+                spriteRenderer.sprite = basebody[10];
+                Debug.Log("2");
+            }
+
+            yield return new WaitForSeconds(0.6f);
+            if (rightflag == 1)
+            {
+                spriteRenderer.sprite = basebody[11];
+                Debug.Log("3");
+            }
+
+
+            yield return new WaitForSeconds(0.6f);
+        }
+
+    }
+    private IEnumerator walkmotionback()
+    {
+        while (true)
+        {
+            coroutineflag2 = 1;
+            Debug.Log("진입");
+            if (backflag == 1)
+            {
+
+                spriteRenderer.sprite = basebody[14];
+                Debug.Log("2");
+            }
+
+            yield return new WaitForSeconds(0.6f);
+            if (backflag == 1)
+            {
+                spriteRenderer.sprite = basebody[15];
+                Debug.Log("3");
+            }
+
+
+            yield return new WaitForSeconds(0.6f);
+        }
+
+    }
+
+
+   
+    
             
               
             

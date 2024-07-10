@@ -24,7 +24,7 @@ public class tutorial2 : MonoBehaviour
     void Start()
     {
         Vector3 newposition = door.transform.position;
-        customize.playertrans(newposition.x, newposition.y);
+        Player.playertrans(newposition.x+3, newposition.y);
         말풍선.SetActive(false);
         이름.text = customize.playername;
         내용.text = text[textflag];

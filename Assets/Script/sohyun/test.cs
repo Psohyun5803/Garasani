@@ -24,7 +24,7 @@ public class test : MonoBehaviour
        
         if (customize.sceneflag >= 1)
         {
-            Player.SetActive(true);
+           
             puton();
         }
 
@@ -34,7 +34,7 @@ public class test : MonoBehaviour
     void Update()
     {
 
-        
+       
 
     }
 

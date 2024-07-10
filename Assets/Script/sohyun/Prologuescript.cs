@@ -78,7 +78,7 @@ public class Prologuescript : MonoBehaviour
                 ¸»Ç³¼±.SetActive(false);
                 CameraShake.shake();
                 Debug.Log("Èçµé¸®´Â ¸ð¼Ç ");
-                customize.eyeo();
+                //customize.eyeo();
                 ´À³¦Ç¥.SetActive(true);
                 Invoke("´À³¦Ç¥ºñÈ°¼ºÈ­", 1f);
                 Invoke("¸»Ç³¼±È°¼ºÈ­", 2f);

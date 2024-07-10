@@ -105,6 +105,7 @@ public class customize : MonoBehaviour
     public GameObject Player_right;
     public GameObject Player_back;
     public GameObject eyeclose;
+    //public GameObject Player;//추가
     public TMP_Text hairtxt;
     public TMP_Text eyetxt;
     public GameObject[] Playermotion;
@@ -138,6 +139,8 @@ public class customize : MonoBehaviour
     private IEnumerator coroutine;
     void Start() //커스텀씬에서의 플레이어 모형 기본값을 세팅해줍니다
     {
+        eyenum = 0; //적용될 눈모양을 결정하는 변수입니다
+        hairnum = 0; //
         Playermotion = new GameObject[5]{Player_front,Player_back,Player_left,Player_right ,Player_front1};
         Player_front.SetActive(true); //플레이어의 앞모습 
         Player_back.SetActive(false);
@@ -212,34 +215,7 @@ public class customize : MonoBehaviour
 
 
     }
-    private IEnumerator breathfront()
-    {
-        while(true)
-        {
-            if (!Input.anyKeyDown)
-            {
-                if (Player_front.activeSelf == true )
-                {
-                    Player_front.SetActive(false);
-                    Player_front1.SetActive(true);
-                    yield return new WaitForSeconds(0.8f);
-                   
-                    
-                }
-                else if (Player_front1.activeSelf == true)
-                {
-                    Player_front1.SetActive(false);
-                    Player_front.SetActive(true);
-                    yield return new WaitForSeconds(0.8f);
-                    
-                }
-
-            }
-            
-        }
-       
-        
-    }
+   
    // public GameObject Player;
     public void prologue() //프롤로그씬으로 전환해주는 버튼에 적용한 함수입니다. 플레이어의 사이즈와 위치를 조정해주고 프롤로그씬을 불러옵니다
     {
@@ -267,6 +243,7 @@ public class customize : MonoBehaviour
         playername = playernameinput.text;
         playerbirth = playerbirthinput.text;
         eyeclose.SetActive(false);
+        //Player.transform.position = newPosition; //추가
         SceneManager.LoadScene("prologuebeta");
     }
     public void playertransform(float x, float y)

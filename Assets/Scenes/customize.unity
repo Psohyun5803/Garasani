@@ -6010,7 +6010,6 @@ GameObject:
   - component: {fileID: 1477473016}
   - component: {fileID: 1477473015}
   - component: {fileID: 1477473020}
-  - component: {fileID: 1477473021}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6123,18 +6122,6 @@ MonoBehaviour:
   mainCamera: {fileID: 1527804844}
   shakeRange: 0.05
   duration: 0.5
---- !u!114 &1477473021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1477473014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8550d8fc311075c4aab39e948c9e2a01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1505897701
 GameObject:
   m_ObjectHideFlags: 0

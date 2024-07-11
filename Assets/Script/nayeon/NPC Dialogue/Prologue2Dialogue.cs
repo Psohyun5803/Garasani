@@ -42,7 +42,7 @@ public class Prologue2Dialogue : MonoBehaviour
 
     public IEnumerator Prologue2()
     {
-        contextList = DataManager.instance.GetDialogue(1, 7); // 대화 내용 가져오기
+        contextList = DataManager.instance.GetDialogue(1,7); // 대화 내용 가져오기
         currentDialogueIndex = 0; // 대화 시작 시 인덱스 초기화
         currentContextIndex = 0; // 문장 인덱스 초기화
         if (contextList.Length > 0)
@@ -55,11 +55,12 @@ public class Prologue2Dialogue : MonoBehaviour
 
     public string nameCheck(string name)
     {
-        if (name.CompareTo("player") == 0) //주인공인 경우 이름을 바꿔준다.
-        {
-            name = customize.playername;
-        }
-        return name;
+        return name.Replace("player", customize.playername).Replace("주인공", customize.playername);
+        //if (name.CompareTo("player") == 0) //주인공인 경우 이름을 바꿔준다.
+        //{
+        //    name = customize.playername;
+        //}
+        //return name;
     }
 
     //public void Pro_id1()

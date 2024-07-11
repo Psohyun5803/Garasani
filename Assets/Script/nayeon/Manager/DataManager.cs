@@ -32,6 +32,7 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    
     public Dialogue[] GetDialogue(int _StartNum, int _EndNum)
     {
         List<Dialogue> dialogueList = new List<Dialogue>();

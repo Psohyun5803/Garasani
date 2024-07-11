@@ -15,6 +15,7 @@ public class DialogueParser : MonoBehaviour
             Debug.LogError("CSV file not found: " + _CSVFileName);
             return dialogueList.ToArray();
         }
+
         //엔터 단위로 나눠줄 것 (줄별로 가져올거라서)
         string[] data = csvData.text.Split(new char[]{'\n'});
         

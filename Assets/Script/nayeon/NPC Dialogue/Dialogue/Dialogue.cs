@@ -5,6 +5,9 @@ using UnityEngine;
 [System.Serializable] //인스펙터 창에서 수정할 수 있도록 함 
 public class Dialogue //상속받지 않게 삭제
 {
+    //[Tooltip("ID")]
+    //public int id;
+
     [Tooltip("대사 치는 캐릭터 이름")]
     public string name; //누가 대사를 하는지 
 

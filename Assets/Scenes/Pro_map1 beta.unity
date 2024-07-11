@@ -4426,7 +4426,7 @@ GameObject:
   - component: {fileID: 281132537}
   - component: {fileID: 281132536}
   - component: {fileID: 281132535}
-  - component: {fileID: 281132534}
+  - component: {fileID: 281132539}
   m_Layer: 0
   m_Name: "\uCC22\uACA8\uC9C4\uBD80\uC801"
   m_TagString: Untagged
@@ -4434,21 +4434,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &281132534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281132533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cdc829b698356241a6b4b2932aae882, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractionView: {fileID: 1621639997}
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
 --- !u!212 &281132535
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4588,6 +4573,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &281132539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 281132533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21cb37e655ee81040a65c6b85a79543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionView: {fileID: 1621639997}
+  mousePosition: {x: 0, y: 0, z: 0}
+  worldPosition: {x: 0, y: 0, z: 0}
+  "\uD50C\uB808\uC774\uC5B4\uCDA9\uB3CC": 0
 --- !u!1 &305352419
 GameObject:
   m_ObjectHideFlags: 0
@@ -9832,7 +9833,7 @@ GameObject:
   - component: {fileID: 866006462}
   - component: {fileID: 866006461}
   - component: {fileID: 866006460}
-  - component: {fileID: 866006459}
+  - component: {fileID: 866006464}
   m_Layer: 0
   m_Name: "\uC5D0\uC5B4\uD31F\uD55C\uCABD"
   m_TagString: Untagged
@@ -9840,21 +9841,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &866006459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866006458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cdc829b698356241a6b4b2932aae882, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractionView: {fileID: 877487617}
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
 --- !u!212 &866006460
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9994,6 +9980,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &866006464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866006458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21cb37e655ee81040a65c6b85a79543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionView: {fileID: 877487617}
+  mousePosition: {x: 0, y: 0, z: 0}
+  worldPosition: {x: 0, y: 0, z: 0}
+  "\uD50C\uB808\uC774\uC5B4\uCDA9\uB3CC": 0
 --- !u!1 &870691445
 GameObject:
   m_ObjectHideFlags: 0
@@ -12732,7 +12734,7 @@ GameObject:
   - component: {fileID: 1133299285}
   - component: {fileID: 1133299284}
   - component: {fileID: 1133299283}
-  - component: {fileID: 1133299282}
+  - component: {fileID: 1133299287}
   m_Layer: 0
   m_Name: "\uD0A4\uB9C1"
   m_TagString: Untagged
@@ -12740,21 +12742,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1133299282
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1133299281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cdc829b698356241a6b4b2932aae882, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractionView: {fileID: 1117812813}
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
 --- !u!212 &1133299283
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12894,6 +12881,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1133299287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1133299281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21cb37e655ee81040a65c6b85a79543c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractionView: {fileID: 1117812813}
+  mousePosition: {x: 0, y: 0, z: 0}
+  worldPosition: {x: 0, y: 0, z: 0}
+  "\uD50C\uB808\uC774\uC5B4\uCDA9\uB3CC": 0
 --- !u!1 &1139057060
 GameObject:
   m_ObjectHideFlags: 0

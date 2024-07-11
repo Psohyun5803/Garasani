@@ -119,7 +119,7 @@ public class tutorialscript : MonoBehaviour
             if (hit.collider != null)
             {
                 GameObject clickobj = hit.transform.gameObject;
-                if (clickflag == 0 && clickobj.name == "열차사이문")
+                if (clickflag == 0 && clickobj.name == "열차사이문"&& intertest.충돌아이템명=="열차사이문")
                 {
                     
                        
@@ -148,16 +148,16 @@ public class tutorialscript : MonoBehaviour
                          
                     
                 }
-                else if (clickobj.name=="찢겨진부적")
+                else if (clickobj.name=="찢겨진부적"&& intertest.충돌아이템명 == "찢겨진부적")
                 {
                     말풍선.SetActive(true);
                     이름.text = "System";
-                    내용.text = "[찢겨진 부적] : 영문을 알 수 없는 글씨가 쓰여진 종이. 섬뜩하게 찢겨져있다. ";
+                    내용.text = "[찢겨진 부적] : 영문을 알 수 없는 글씨가 쓰여진 종이.섬뜩하게 찢겨져있다. ";
                     clickobj.SetActive(false);
                     찢겨진부적설명.SetActive(false);
                     gotoflag++;
                 }
-                else if (clickobj.name == "에어팟한쪽")
+                else if (clickobj.name == "에어팟한쪽"&& intertest.충돌아이템명 == "에어팟한쪽")
                 {
                     말풍선.SetActive(true);
                     이름.text = "System";
@@ -166,7 +166,7 @@ public class tutorialscript : MonoBehaviour
                     에어팟설명.SetActive(false);
                     gotoflag++;
                 }
-                else if (clickobj.name== "키링")
+                else if (clickobj.name== "키링"&& intertest.충돌아이템명 == "키링")
                 {
                     말풍선.SetActive(true);
                     이름.text = "System";

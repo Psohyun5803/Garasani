@@ -40,13 +40,14 @@ public class tutorial2 : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
             if (hit.collider != null)
             {
-                Debug.Log("클릭인식");
+                
                 GameObject clickobj = hit.transform.gameObject;
                 if (clickobj.name == "열차사이문")
                 {
                     말풍선.SetActive(true);
                     이름.text = "System";
                     내용.text = "무언가에 걸린듯 문이 열리지 않는다.";
+                    textflag++;
 
                 }
             }
@@ -58,18 +59,36 @@ public class tutorial2 : MonoBehaviour
         {
             textflag++;
         }
-        if (textflag <= 2)
+        if (textflag <= 1)
         {
             이름.text = customize.playername;
             내용.text = text[textflag];
             textflag++;
         }
-        else if (textflag == 3)
+        else if (textflag == 2)
+        {
+            이름.text = customize.playername;
+            내용.text = text[textflag];
+            customize.moveflag = 1;
+            말풍선.SetActive(false);
+            
+        }
+        else if (textflag==3)
         {
             Debug.Log("문열림");
             말풍선.SetActive(false);
-            customize.moveflag = 1;
+            말풍선.SetActive(true);
+            이름.text = customize.playername;
+            내용.text = text[textflag];
+            textflag++;
         }
+
+        else if (textflag > 3)
+        {
+            말풍선.SetActive(false);
+           
+        }
+
     }
     void dontmove()
     {

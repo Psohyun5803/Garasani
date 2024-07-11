@@ -48,6 +48,7 @@ public class intertest: MonoBehaviour
             worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, Camera.main.nearClipPlane));
             if(플레이어충돌==1)
             {
+                Debug.Log("실행");
                 ActiveInteraction();
             }
            //상태창 on

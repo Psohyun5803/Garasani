@@ -100,6 +100,7 @@ public class tutorialscript : MonoBehaviour
     int gotoflag = 0; 
     void Update()
     {
+
         if (Input.GetKey(KeyCode.LeftShift))
         {
             ¸»Ç³¼±.SetActive(true);

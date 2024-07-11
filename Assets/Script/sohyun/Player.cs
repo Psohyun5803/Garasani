@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
     int coroutineflag = 0;
     int coroutineflag2 = 0;
-    int moveflag = 1;
+    public static int moveflag = 1;
     void Start ()
     {
         frontflag = 1;
@@ -65,7 +65,8 @@ public class Player : MonoBehaviour
     
     void Update()
     {
-       
+
+        플레이어이동범위(-4f, 10f, 0f, 2f);
         //move();
         if ((Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.D))) //누를때
         {
@@ -152,13 +153,13 @@ public class Player : MonoBehaviour
 
 
     }
-    /*public void 플레이어이동범위(float x1, float x2,float y1, float y2)
+    public void 플레이어이동범위(float x1, float x2,float y1, float y2)
     {
         if (player.transform.position.x <x1)
         {
-            player.transform.Translate = new Vector3(x1, player.transform.position.y, player.transform.position.z);
+           
         }
-        if(player.transform.position.x >x2)
+        /*if(player.transform.position.x >x2)
         {
             player.transform.Translate = new Vector3(x2, player.transform.position.y, player.transform.position.z);
         }
@@ -169,8 +170,12 @@ public class Player : MonoBehaviour
         if (player.transform.position.y > y2)
         {
             player.transform.Translate = new Vector3(player.transform.position.x, y2, player.transform.position.z);
+        }*/
+        else
+        {
+            moveflag = 1;
         }
-    }*/
+    }
     void flagreset()
     {
         frontflag = 0;
@@ -184,7 +189,7 @@ public class Player : MonoBehaviour
         spriteRenderer.sprite = basebody[spriteindex];
         Debug.Log("적용됨");
     }
-    private float Speed = 0.3f;
+    private float Speed = 0.42f;
     public void move()
     {   
         if(customize.sceneflag>1&&moveflag==1)
@@ -267,8 +272,12 @@ public class Player : MonoBehaviour
                 }
             }
 
+            //player.transform.Translate(new Vector2(Mathf.Clamp(X,-4f,10f), Y) * Time.deltaTime * Speed);
             player.transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
-
+            //Vector3 localPosition;
+            //localPosition = new Vector3(Mathf.Clamp(player.transform.position.x, -4f, 10f),
+            //    (localPosition = player.transform.localPosition).y, localPosition.z);
+            //player.transform.localPosition = localPosition;
         }
        
     }

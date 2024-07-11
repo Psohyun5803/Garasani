@@ -10,6 +10,18 @@ public class Dialogue //상속받지 않게 삭제
 
     [Tooltip("대사내용")]
     public string[] contexts;
+
+    [Tooltip("선택지1")]
+    public string[] chosen1;
+
+    [Tooltip("선택지1 ID")]
+    public int chosen1_ID;
+
+    [Tooltip("선택지2")]
+    public string[] chosen2;
+
+    [Tooltip("선택지2 ID")]
+    public int chosen2_ID;
 }
 
 [System.Serializable]

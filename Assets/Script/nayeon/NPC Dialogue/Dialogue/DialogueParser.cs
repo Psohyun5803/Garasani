@@ -24,13 +24,13 @@ public class DialogueParser : MonoBehaviour
 
             Dialogue dialogue = new Dialogue(); //대사 리스트 생성
             dialogue.name = row[1];
-            Debug.Log(row[1]);
+            //Debug.Log(row[1]);
 
             List<string> contextList = new List<string>();
 
             do{
                 contextList.Add(row[2]);
-                Debug.Log(row[2]);
+                //Debug.Log(row[2]);
                 if (++i < data.Length)
                 {
                     row = data[i].Split(new char[] { ',' });
@@ -43,9 +43,10 @@ public class DialogueParser : MonoBehaviour
 
             dialogue.contexts = contextList.ToArray();
             dialogueList.Add(dialogue); //캐릭터와 대사들로 묶여서 리턴 
-
+           
             
         }
+
         return dialogueList.ToArray();
     }
 

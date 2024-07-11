@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 619817850}
   - component: {fileID: 619817849}
   - component: {fileID: 619817851}
+  - component: {fileID: 619817852}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -180,7 +181,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f10e776c4a704584a8ab2786bc800907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csv_FileName: 
+  csv_FileName: prologue2
+--- !u!114 &619817852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619817848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b40db24fe82bf9047b023124d4d004aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &662888027
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,6 +206,7 @@ GameObject:
   - component: {fileID: 662888029}
   - component: {fileID: 662888028}
   - component: {fileID: 662888031}
+  - component: {fileID: 662888032}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -267,6 +281,20 @@ MonoBehaviour:
   hitLayers:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &662888032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662888027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ea3830d768b4c4990700976ce93fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue_text: {fileID: 1327099492}
+  name: {fileID: 752062273}
 --- !u!1 &705891028
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,9 +378,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Prologuescript, Assembly-CSharp
-        m_MethodName: buttondown1
+      - m_Target: {fileID: 662888032}
+        m_TargetAssemblyTypeName: Prologue2Dialogue, Assembly-CSharp
+        m_MethodName: onClickNextButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -875,7 +903,7 @@ GameObject:
   - component: {fileID: 1909246408}
   m_Layer: 6
   m_Name: npc
-  m_TagString: JM
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

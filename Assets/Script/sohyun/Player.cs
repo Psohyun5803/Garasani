@@ -12,7 +12,9 @@ public class Player : MonoBehaviour
     int frontflag = 0;
     int leftflag = 0;
     int rightflag = 0;
-    int backflag = 0; 
+    int backflag = 0;
+    public static int 충돌flag = 0;
+    
     SpriteRenderer spriteRenderer;
     public static Action 적용함수;
     private IEnumerator coroutine;
@@ -23,9 +25,19 @@ public class Player : MonoBehaviour
     private IEnumerator walkback;
    
     public static Action<float, float> playertrans;
+    public static Action<float, float,float,float> 이동범위;
+    public static Action 앉은자세;
+    public static Action 앉은자세해제;
+   
+
+    public static int sitdown = 0;
+    public static int 두리번 = 0;
+    public static int 버둥 = 0;
+
 
     int coroutineflag = 0;
     int coroutineflag2 = 0;
+    int moveflag = 1;
     void Start ()
     {
         frontflag = 1;
@@ -47,9 +59,13 @@ public class Player : MonoBehaviour
     void Awake()
     {
         playertrans = (float x, float y) => { player이동(x, y); };
+        //이동범위 = (float x1, float x2,float y1, float y2) => { 플레이어이동범위(x1,x2,y1, y2); };
+
     }
+    
     void Update()
-    {   
+    {
+       
         //move();
         if ((Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.D))) //누를때
         {
@@ -136,6 +152,25 @@ public class Player : MonoBehaviour
 
 
     }
+    /*public void 플레이어이동범위(float x1, float x2,float y1, float y2)
+    {
+        if (player.transform.position.x <x1)
+        {
+            player.transform.Translate = new Vector3(x1, player.transform.position.y, player.transform.position.z);
+        }
+        if(player.transform.position.x >x2)
+        {
+            player.transform.Translate = new Vector3(x2, player.transform.position.y, player.transform.position.z);
+        }
+        if (player.transform.position.y <y1 )
+        {
+            player.transform.Translate = new Vector3(player.transform.position.x, y1, player.transform.position.z);
+        }
+        if (player.transform.position.y > y2)
+        {
+            player.transform.Translate = new Vector3(player.transform.position.x, y2, player.transform.position.z);
+        }
+    }*/
     void flagreset()
     {
         frontflag = 0;
@@ -149,10 +184,10 @@ public class Player : MonoBehaviour
         spriteRenderer.sprite = basebody[spriteindex];
         Debug.Log("적용됨");
     }
-    private float Speed = 0.5f;
+    private float Speed = 0.3f;
     public void move()
     {   
-        if(customize.sceneflag>1)
+        if(customize.sceneflag>1&&moveflag==1)
         {
             float X = Input.GetAxisRaw("Horizontal");
             float Y = Input.GetAxisRaw("Vertical");
@@ -245,19 +280,71 @@ public class Player : MonoBehaviour
         {
 
             coroutineflag = 1;
+            if(sitdown==1)
+            {
 
-            if (frontflag == 1)
+            
+                spriteRenderer.sprite = basebody[20];
+
+
+                yield return new WaitForSeconds(0.5f);
+                if (sitdown == 1)
+                {
+                    spriteRenderer.sprite = basebody[21];
+
+                    yield return new WaitForSeconds(0.5f);
+                }
+            }
+            else if (두리번 == 1)
+            {
+
+
+                spriteRenderer.sprite = basebody[16];
+
+
+                yield return new WaitForSeconds(0.5f);
+                if (두리번 == 1)
+                {
+                    spriteRenderer.sprite = basebody[17];
+
+                    yield return new WaitForSeconds(0.5f);
+                }
+            }
+
+            else if (버둥 == 1)
+            {
+
+
+                spriteRenderer.sprite = basebody[18];
+
+
+                yield return new WaitForSeconds(0.5f);
+                if (버둥 == 1)
+                {
+                    spriteRenderer.sprite = basebody[19];
+
+                    yield return new WaitForSeconds(0.5f);
+                }
+            }
+            else if (frontflag == 1)
             {
                 
-
+                
+               
                 spriteRenderer.sprite = basebody[0];
+                
+               
 
 
                 yield return new WaitForSeconds(0.5f);
                 
                 if (frontflag == 1)
                 {
+                   
+                   
                     spriteRenderer.sprite = basebody[1];
+                    
+                   
 
                    
                     yield return new WaitForSeconds(0.5f);
@@ -435,15 +522,27 @@ public class Player : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("충돌감지");
+        충돌flag = 1;
+    }
 
-   
-    
-            
-              
-            
-                
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        Debug.Log("충돌벗어남");
+        충돌flag = 0;
+    }
 
-    
 
-    
+
+
+
+
+
+
+
+
+
+
 }

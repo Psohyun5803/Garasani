@@ -9,7 +9,7 @@ public class StoryManager : MonoBehaviour
         switch (DataManager.instance.csv_FileName)
         {
             case "Dialogue":
-                StartCoroutine(Prologue2Dialogue.instance.Prologue2());            
+                Prologue2Dialogue.instance.prologue2();
                 break;
 
         }

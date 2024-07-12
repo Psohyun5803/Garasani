@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class Prologue2Dialogue : MonoBehaviour
 {
     public static Prologue2Dialogue instance;
     public TMP_Text dialogue_text;
     public TMP_Text name;
-    private int currentDialogueIndex = 0; // 현재 대사 인덱스를 추적하는 변수
+    public TMP_Text chosen1_text;
+    public TMP_Text chosen2_text;
+    int currentIdx;
+    string ChooseFlag = "";
+    public int dialogueID;
+
     private Dialogue[] contextList; // 대화 내용을 저장하는 배열
-    private int currentContextIndex = 0; // 현재 문장 인덱스를 추적하는 변수
 
     public void Awake()
     {
@@ -20,85 +25,95 @@ public class Prologue2Dialogue : MonoBehaviour
         }
     }
 
+    public void prologue2()
+    {
+        while (dialogueID < 4)
+        {
+            dialogueID = 1;
+
+            switch (dialogueID)
+            {
+                case (1):
+                    pro_id1(DataManager.instance.GetDialogue(1, 7));
+                    break;
+                case (2):
+                    pro_id2(DataManager.instance.GetDialogue(8, 8));
+                    break;
+                case (3):
+                    pro_id2(DataManager.instance.GetDialogue(9, 9));
+                    break;
+            }
+        }
+        
+    }
     public void onClickNextButton()
     {
-        if (contextList != null && currentDialogueIndex < contextList.Length)
+        if (contextList != null && currentIdx < contextList.Length - 1)
         {
-            DisplayDialogue(currentDialogueIndex, currentContextIndex);
-            currentContextIndex++; // 다음 문장으로 이동
-
-            if (currentContextIndex >= contextList[currentDialogueIndex].contexts.Length)
-            {
-                currentContextIndex = 0; // 문장 인덱스를 초기화
-                currentDialogueIndex++; // 다음 대사로 이동
-            }
+            currentIdx++; // 다음 문장으로 이동
+            DisplayDialogue();
         }
         else
         {
-            // 대화가 끝난 경우 대화창 끔 
-            DialogueOnOff.instance.ui_Dialogue.SetActive(false);
+            Debug.Log("contextlist 초기화 안됨");
         }
     }
 
-    public IEnumerator Prologue2()
+    public void OnClickChoose()
     {
-        contextList = DataManager.instance.GetDialogue(1,7); // 대화 내용 가져오기
-        currentDialogueIndex = 0; // 대화 시작 시 인덱스 초기화
-        currentContextIndex = 0; // 문장 인덱스 초기화
-        if (contextList.Length > 0)
+        //태그가 1이면 번호 1리턴, 2면 2리턴
+        ChooseFlag = EventSystem.current.currentSelectedGameObject.tag;
+        
+    }
+
+
+    private void DisplayDialogue()
+    {
+        if (contextList == null || contextList.Length == 0 || currentIdx >= contextList.Length)
+            return;
+
+        dialogue_text.text = contextList[currentIdx].contexts;
+        name.text = contextList[currentIdx].name;
+
+        if (!string.IsNullOrEmpty(contextList[currentIdx].chosen1))
         {
-            DisplayDialogue(currentDialogueIndex, currentContextIndex);
+            chosen1_text.text = contextList[currentIdx].chosen1;
+            chosen2_text.text = contextList[currentIdx].chosen2;
         }
-        yield break;
-
-    }
-
-    public string nameCheck(string name)
-    {
-        return name.Replace("player", customize.playername).Replace("주인공", customize.playername);
-        //if (name.CompareTo("player") == 0) //주인공인 경우 이름을 바꿔준다.
-        //{
-        //    name = customize.playername;
-        //}
-        //return name;
-    }
-
-    //public void Pro_id1()
-    //{
-    //    Dialogue[] contextList  = DataManager.instance.GetDialogue(1, 7);
-    //    for(int i = 0; i < contextList.Length; i++)
-    //    {
-    //        name.text = nameCheck(contextList[i].name); //주인공인지 npc인지 구분
-    //        string dialogueText = "";
-    //        foreach (string context in contextList[i].contexts)
-    //        {
-    //            dialogueText += context + "\n"; // 각 문장을 줄바꿈으로 구분
-    //        }
-    //        dialogue_text.text = dialogueText;
-    //        Debug.Log(name.text);
-    //        Debug.Log(dialogue_text.text);
-    //    }
-    //}
-
-    private void DisplayDialogue(int dialogueIndex, int contextIndex)
-    {
-        if (dialogueIndex < contextList.Length && contextIndex < contextList[dialogueIndex].contexts.Length)
+        else
         {
-            name.text = nameCheck(contextList[dialogueIndex].name); // 주인공인지 NPC인지 구분
-            dialogue_text.text = contextList[dialogueIndex].contexts[contextIndex];
-            Debug.Log(name.text);
-            Debug.Log(dialogue_text.text);
+            chosen1_text.text = "";
+            chosen2_text.text = "";
         }
+
+
     }
 
-    //public void Pro_id2()
-    //{
 
-    //}
-    //public void Pro_id3()
-    //{
+    public void pro_id1(Dialogue[] dialogues)
+    {
+        contextList = dialogues; // contextList 초기화
+        currentIdx = 0; // 인덱스 초기화
+        DisplayDialogue();
+        if (ChooseFlag.CompareTo("chosen1") == 0)
+            dialogueID = 2;
+        else dialogueID = 3;
+    }
 
-    //}
+    public void pro_id2(Dialogue[] dialogues)
+    {
+        contextList = dialogues; // contextList 초기화
+        currentIdx = 0; // 인덱스 초기화
+        DisplayDialogue();
+        Debug.Log("id2");
+    }
+    public void pro_id3(Dialogue[] dialogues)
+    {
+        contextList = dialogues; // contextList 초기화
+        currentIdx = 0; // 인덱스 초기화
+        DisplayDialogue();
+        Debug.Log("id3");
+    }
 
 
     // Start is called before the first frame update

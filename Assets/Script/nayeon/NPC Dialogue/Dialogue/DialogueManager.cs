@@ -12,7 +12,7 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text chosen1_text;
     public TMP_Text chosen2_text;
     public int currentIdx;
-    public int ChooseFlag = 0;
+    //public int ChooseFlag = 0;
     public  Dialogue[] contextList;
 
     public void Awake()
@@ -43,15 +43,15 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void OnClickChoose()
-    {
-        Debug.Log("선택지 클릭 확인");
-        //태그가 1이면 번호 1리턴, 2면 2리턴
-        if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen1") == 0)
-            ChooseFlag = 1;
-        else ChooseFlag = 2;
-        Debug.Log(ChooseFlag);
-    }
+    //public void OnClickChoose()
+    //{
+    //    Debug.Log("선택지 클릭 확인");
+    //    //태그가 1이면 번호 1리턴, 2면 2리턴
+    //    if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen1") == 0)
+    //        ChooseFlag = 1;
+    //    else ChooseFlag = 2;
+    //    Debug.Log(ChooseFlag);
+    //}
 
     public void DisplayDialogue(Dialogue[] dialogues)
     {

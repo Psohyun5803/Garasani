@@ -41,10 +41,10 @@ public class DialogueOnOff : MonoBehaviour
                     ui_Dialogue.SetActive(true);
                 }
             }
-            else
-            {
-                Debug.Log("Raycast did not hit any object.");
-            }
+            //else
+            //{
+            //    Debug.Log("Raycast did not hit any object.");
+            //}
         }
     }
     void Update()

@@ -7,7 +7,7 @@ public class DialogueOnOff : MonoBehaviour
     public static DialogueOnOff instance;
     public GameObject ui_Dialogue;
     public float rayDistance = 100f;  // Raycast 거리
-    public LayerMask hitLayers;  // 특정 레이어에 대해 Raycast 적용
+    // public LayerMask hitLayers;  // 특정 레이어에 대해 Raycast 적용
 
     void Awake()
     {
@@ -29,7 +29,9 @@ public class DialogueOnOff : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, rayDistance, hitLayers);
+            //int layerMask = 1 << LayerMask.NameToLayer("Player");
+            RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, rayDistance);
+            
 
             if (hit.collider != null)
             {

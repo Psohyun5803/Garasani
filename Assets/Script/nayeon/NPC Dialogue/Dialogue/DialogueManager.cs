@@ -45,11 +45,12 @@ public class DialogueManager : MonoBehaviour
 
     public void OnClickChoose()
     {
+        Debug.Log("선택지 클릭 확인");
         //태그가 1이면 번호 1리턴, 2면 2리턴
         if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen1") == 0)
             ChooseFlag = 1;
         else ChooseFlag = 2;
-
+        Debug.Log(ChooseFlag);
     }
 
     public void DisplayDialogue(Dialogue[] dialogues)

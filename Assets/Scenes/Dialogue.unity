@@ -207,6 +207,8 @@ GameObject:
   - component: {fileID: 662888028}
   - component: {fileID: 662888031}
   - component: {fileID: 662888032}
+  - component: {fileID: 662888033}
+  - component: {fileID: 662888034}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -293,11 +295,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6ea3830d768b4c4990700976ce93fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueID: 0
+--- !u!114 &662888033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662888027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ce2ad026bd845459ed1a5c65793908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   dialogue_text: {fileID: 1327099492}
   name: {fileID: 752062273}
   chosen1_text: {fileID: 2075476262}
   chosen2_text: {fileID: 898892627}
-  dialogueID: 0
+  currentIdx: 0
+  ChooseFlag: 0
+  contextList: []
+--- !u!114 &662888034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662888027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ece7f30739fdaa48bbb4057fb0d8a73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  raycaster: {fileID: 0}
+  eventSystem: {fileID: 0}
 --- !u!1 &745207001
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,8 +1097,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 662888032}
-        m_TargetAssemblyTypeName: Prologue2Dialogue, Assembly-CSharp
+      - m_Target: {fileID: 662888033}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: onClickNextButton
         m_Mode: 1
         m_Arguments:
@@ -1561,8 +1592,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 662888032}
-        m_TargetAssemblyTypeName: Prologue2Dialogue, Assembly-CSharp
+      - m_Target: {fileID: 662888033}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: OnClickChoose
         m_Mode: 1
         m_Arguments:
@@ -1610,7 +1641,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
+    rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1726,7 +1757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:

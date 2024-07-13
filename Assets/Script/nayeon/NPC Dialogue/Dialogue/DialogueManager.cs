@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     public bool IsDialogueFinished;
     //public int ChooseFlag = 0;
     public  Dialogue[] contextList;
+    public int chooseFlag = 0;
 
     public void Awake()
     {
@@ -65,6 +66,29 @@ public class DialogueManager : MonoBehaviour
             chosen2_text.text = "";
         }
  
+    }
+
+    public void OnClickChoose()
+    {
+        Debug.Log("선택지 클릭 확인");
+        //태그가 1이면 번호 1리턴, 2면 2리턴
+        if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen1") == 0)
+            chooseFlag = 1;
+        else if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen2") == 0)
+            chooseFlag = 2;
+        Debug.Log("Flag" + chooseFlag); ;
+    }
+
+    public void processChoose(Dialogue[] dialogues) //선택지가 있는 대화인 경우 사용 
+    {
+        DialogueManager.instance.Initialize(dialogues);
+    }
+
+    public IEnumerator processing(Dialogue[] dialogues) //선택지가 없는 대화인 경우 사용 
+    {
+        DialogueManager.instance.Initialize(dialogues);
+        yield return new WaitUntil(() => DialogueManager.instance.IsDialogueFinished);
+
     }
 
 }

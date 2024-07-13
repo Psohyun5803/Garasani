@@ -197,6 +197,15 @@ public class Player : MonoBehaviour
             float X = Input.GetAxisRaw("Horizontal");
             float Y = Input.GetAxisRaw("Vertical");
             transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
+            Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+            if (pos.x < 0f) pos.x = 0f;
+            if (pos.x > 1f) pos.x = 1f;
+            if (pos.y < 0f) pos.y = 0f;
+            if (pos.y > 1f) pos.y = 1f;
+            transform.position = Camera.main.ViewportToWorldPoint(pos);
+
+
+           
 
             if (Input.GetKey(KeyCode.W))
             {
@@ -273,6 +282,13 @@ public class Player : MonoBehaviour
             }
 
             //player.transform.Translate(new Vector2(Mathf.Clamp(X,-4f,10f), Y) * Time.deltaTime * Speed);
+           //Vector3 pos = Camera.main.WorldToViewportPoint(transform.position); 
+            //if (pos.x < 0f) pos.x = 0f; 
+            //if (pos.x > 1f) pos.x = 1f; 
+            //if (pos.y < 0f) pos.y = 0f; 
+            //if (pos.y > 1f) pos.y = 1f; 
+            //transform.position = Camera.main.ViewportToWorldPoint(pos);
+        
             player.transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
             //Vector3 localPosition;
             //localPosition = new Vector3(Mathf.Clamp(player.transform.position.x, -4f, 10f),

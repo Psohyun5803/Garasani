@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 35002729}
   - component: {fileID: 35002731}
   - component: {fileID: 35002730}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1639,6 +1639,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144805109}
+  m_CullTransparentMesh: 1
+--- !u!1 &152763511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 152763512}
+  - component: {fileID: 152763514}
+  - component: {fileID: 152763513}
+  m_Layer: 2
+  m_Name: dark
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &152763512
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152763511}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 19.475, y: 10.820624, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 497105283}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &152763513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152763511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.49019608}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &152763514
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152763511}
   m_CullTransparentMesh: 1
 --- !u!1 &168946326
 GameObject:
@@ -3548,7 +3623,7 @@ GameObject:
   - component: {fileID: 264047102}
   - component: {fileID: 264047104}
   - component: {fileID: 264047103}
-  m_Layer: 5
+  m_Layer: 4
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3956,7 +4031,7 @@ GameObject:
   - component: {fileID: 270416885}
   - component: {fileID: 270416887}
   - component: {fileID: 270416886}
-  m_Layer: 5
+  m_Layer: 4
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6278,6 +6353,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 152763512}
   - {fileID: 1982233699}
   m_Father: {fileID: 1219600199}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9121,7 +9197,7 @@ GameObject:
   - component: {fileID: 821063453}
   - component: {fileID: 821063455}
   - component: {fileID: 821063454}
-  m_Layer: 5
+  m_Layer: 4
   m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12175,7 +12251,7 @@ GameObject:
   - component: {fileID: 1184490969}
   - component: {fileID: 1184490970}
   - component: {fileID: 1184490971}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: "\uB0B4\uC6A9"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12664,6 +12740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "\uB9D0\uD48D\uC120": {fileID: 1982233698}
   "\uBC84\uD2BC": {fileID: 1658791058}
+  dark: {fileID: 152763511}
   "\uB0B4\uC6A9": {fileID: 1184490971}
   "\uC774\uB984": {fileID: 2033953571}
   door: {fileID: 1539034247}
@@ -17044,7 +17121,7 @@ GameObject:
   - component: {fileID: 1658791062}
   - component: {fileID: 1658791061}
   - component: {fileID: 1658791060}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19663,7 +19740,7 @@ GameObject:
   - component: {fileID: 1982233699}
   - component: {fileID: 1982233701}
   - component: {fileID: 1982233700}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: "\uB9D0\uD48D\uC120"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20135,7 +20212,7 @@ GameObject:
   - component: {fileID: 2033953573}
   - component: {fileID: 2033953572}
   - component: {fileID: 2033953571}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: "\uC774\uB984"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

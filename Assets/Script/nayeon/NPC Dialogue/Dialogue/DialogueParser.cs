@@ -60,6 +60,9 @@ public class DialogueParser : MonoBehaviour
             dialogue.contexts = dialogue.contexts.Replace("`", ",");
             dialogue.chosen1 = dialogue.chosen1.Replace("`", ",");
             dialogue.chosen2 = dialogue.chosen2.Replace("`", ",");
+            dialogue.contexts = dialogue.contexts.Replace("player", customize.playername);
+            dialogue.chosen1 = dialogue.chosen1.Replace("player", customize.playername);
+            dialogue.chosen2 = dialogue.chosen2.Replace("player", customize.playername);
 
             dialogueList.Add(dialogue); //리스트의 각 요소에 dialgoue 객체 저장 
         }

@@ -9,7 +9,7 @@ public class StoryManager : MonoBehaviour
         switch (DataManager.instance.csv_FileName)
         {
             case "Dialogue": // ***씬 이름 및 csv파일명 변경 필요 (prologue2)***
-                Prologue2Dialogue.instance.prologue2();
+                StartCoroutine(Prologue2Dialogue.instance.prologue2());
                 break;
 
         }

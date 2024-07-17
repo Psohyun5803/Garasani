@@ -126,8 +126,8 @@ public class Prologuescript : MonoBehaviour
         Player.버둥 = 0;
         Player.sitdown = 0;
         Player.두리번 = 0;
-        //SceneManager.LoadScene("Pro_map1 beta");
         SceneManager.LoadScene("Pro_map1 beta");
+        //SceneManager.LoadScene("betamap");
     }
     
     void 말풍선활성화()

@@ -134,17 +134,17 @@ public class Player : MonoBehaviour
     public float distance;
     void FindGround()
     {
-        RaycastHit2D hitinfo;
-        hitinfo = Physics2D.Raycast(transform.position, transform.right, distance);
-        Debug.DrawRay(transform.position, transform.right * distance, Color.yellow);
+        RaycastHit hitinfo;
+        //hitinfo = Physics2D.Raycast(transform.position, transform.right, distance);
+        //Debug.DrawRay(transform.position, transform.right * distance, Color.yellow);
 
         //Debug.Log("ÁøÀÔ");
-        //if(Physics.Raycast(this.transform.position,this.transform.forward,out hitinfo,10f,layermask))
-        //{
-        //    transform.position = new Vector3(transform.position.x, hitinfo.point.y, transform.position.z);//¼öÁ¤
-        //    Debug.Log("µÊ");
+        if(Physics.Raycast(this.transform.position,Vector3.back,out hitinfo,10f,LayerMask.GetMask("ground")))
+        {
+            transform.position = new Vector3(transform.position.x, hitinfo.point.y, transform.position.z);//¼öÁ¤
+            Debug.Log("µÊ");
 
-      //  }
+        }
     }
     float CameraSpeed = 5f;
    

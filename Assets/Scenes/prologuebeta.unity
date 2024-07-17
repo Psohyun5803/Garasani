@@ -242,6 +242,7 @@ MonoBehaviour:
   - {fileID: 821951152, guid: 1f3ed25e4201e2745b0dc3fb37343a81, type: 3}
   - {fileID: -816520166, guid: 1f3ed25e4201e2745b0dc3fb37343a81, type: 3}
   player: {fileID: 1502863316}
+  distance: 0
 --- !u!4 &167392208
 Transform:
   m_ObjectHideFlags: 0
@@ -466,6 +467,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   player: {fileID: 1502863316}
+  distance: 0
 --- !u!1 &427320478
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,6 +587,7 @@ MonoBehaviour:
   - {fileID: 821951152, guid: 1f3ed25e4201e2745b0dc3fb37343a81, type: 3}
   - {fileID: -816520166, guid: 1f3ed25e4201e2745b0dc3fb37343a81, type: 3}
   player: {fileID: 1502863316}
+  distance: 0
 --- !u!4 &427320482
 Transform:
   m_ObjectHideFlags: 0
@@ -719,6 +722,7 @@ MonoBehaviour:
   - {fileID: 821951152, guid: 1f3ed25e4201e2745b0dc3fb37343a81, type: 3}
   - {fileID: -816520166, guid: 1f3ed25e4201e2745b0dc3fb37343a81, type: 3}
   player: {fileID: 1502863316}
+  distance: 0
 --- !u!4 &562197708
 Transform:
   m_ObjectHideFlags: 0
@@ -853,6 +857,7 @@ MonoBehaviour:
   - {fileID: -1745518744, guid: 0539f0bb5963f174bb381b34ad41c595, type: 3}
   - {fileID: 212733961, guid: 0539f0bb5963f174bb381b34ad41c595, type: 3}
   player: {fileID: 1502863316}
+  distance: 0
 --- !u!4 &577979940
 Transform:
   m_ObjectHideFlags: 0
@@ -1330,6 +1335,7 @@ MonoBehaviour:
   - {fileID: 821951152, guid: 1f3ed25e4201e2745b0dc3fb37343a81, type: 3}
   - {fileID: -816520166, guid: 1f3ed25e4201e2745b0dc3fb37343a81, type: 3}
   player: {fileID: 1502863316}
+  distance: 0
 --- !u!4 &906510352
 Transform:
   m_ObjectHideFlags: 0
@@ -1631,6 +1637,7 @@ MonoBehaviour:
   - {fileID: 821951152, guid: 1f3ed25e4201e2745b0dc3fb37343a81, type: 3}
   - {fileID: -816520166, guid: 1f3ed25e4201e2745b0dc3fb37343a81, type: 3}
   player: {fileID: 1502863316}
+  distance: 0
 --- !u!4 &996946451
 Transform:
   m_ObjectHideFlags: 0
@@ -2226,6 +2233,7 @@ MonoBehaviour:
   - {fileID: -1745518744, guid: 0539f0bb5963f174bb381b34ad41c595, type: 3}
   - {fileID: 212733961, guid: 0539f0bb5963f174bb381b34ad41c595, type: 3}
   player: {fileID: 1502863316}
+  distance: 0
 --- !u!4 &1296960727
 Transform:
   m_ObjectHideFlags: 0
@@ -2375,6 +2383,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   player: {fileID: 1502863316}
+  distance: 0
 --- !u!1 &1303527978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2562,6 +2571,7 @@ MonoBehaviour:
   - {fileID: -1745518744, guid: 0539f0bb5963f174bb381b34ad41c595, type: 3}
   - {fileID: 212733961, guid: 0539f0bb5963f174bb381b34ad41c595, type: 3}
   player: {fileID: 1502863316}
+  distance: 0
 --- !u!4 &1416996932
 Transform:
   m_ObjectHideFlags: 0
@@ -2696,6 +2706,7 @@ MonoBehaviour:
   - {fileID: -1745518744, guid: 0539f0bb5963f174bb381b34ad41c595, type: 3}
   - {fileID: 212733961, guid: 0539f0bb5963f174bb381b34ad41c595, type: 3}
   player: {fileID: 1502863316}
+  distance: 0
 --- !u!4 &1489825853
 Transform:
   m_ObjectHideFlags: 0
@@ -3164,6 +3175,7 @@ MonoBehaviour:
   - {fileID: 1916343061, guid: c940e6f8c7a9daf4db357f9a68fcf7e3, type: 3}
   - {fileID: 2121863652, guid: c940e6f8c7a9daf4db357f9a68fcf7e3, type: 3}
   player: {fileID: 1502863316}
+  distance: 0
 --- !u!61 &1642790253
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3355,6 +3367,7 @@ MonoBehaviour:
   - {fileID: -1745518744, guid: 0539f0bb5963f174bb381b34ad41c595, type: 3}
   - {fileID: 212733961, guid: 0539f0bb5963f174bb381b34ad41c595, type: 3}
   player: {fileID: 1502863316}
+  distance: 0
 --- !u!4 &1708740809
 Transform:
   m_ObjectHideFlags: 0
@@ -3413,7 +3426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1779069124}
   - component: {fileID: 1779069125}
-  m_Layer: 5
+  m_Layer: 7
   m_Name: "\uC9C0\uD558\uCCA0 \uC2B9\uAC15\uC7A5 \uBC14\uB2E5"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

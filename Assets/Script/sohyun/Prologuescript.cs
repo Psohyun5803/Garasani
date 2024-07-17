@@ -126,6 +126,7 @@ public class Prologuescript : MonoBehaviour
         Player.¹öµÕ = 0;
         Player.sitdown = 0;
         Player.µÎ¸®¹ø = 0;
+        //SceneManager.LoadScene("Pro_map1 beta");
         SceneManager.LoadScene("Pro_map1 beta");
     }
     

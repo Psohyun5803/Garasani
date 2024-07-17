@@ -9,6 +9,8 @@ TagManager:
   - chosen1
   - chosen2
   - floor
+  - ground
+  - etc
   layers:
   - Default
   - TransparentFX

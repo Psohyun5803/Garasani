@@ -161,7 +161,7 @@ public class Player : MonoBehaviour
             if (pos.y < 0f) pos.y = 0f;
             if (pos.y > 1f) pos.y = 1f;
             transform.position = Camera.main.ViewportToWorldPoint(pos);
-            FindGround();
+           //FindGround();
            
             //player.transform.position = Camera.main.ViewportToWorldPoint(pos); //수정
             
@@ -508,18 +508,54 @@ public class Player : MonoBehaviour
         }
 
     }
-
+   /* private ContactPoint2D contact;
+    private Vector2 pos;
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        moveflag = 1;
         Debug.Log("충돌감지");
         충돌flag = 1;
+        if (!collision.transform.CompareTag("ground"))//밟은 곳이 땅이 아닐 때
+        {
+            moveflag = 0;
+            player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y - 0.1f, player.transform.position.z);
+            
+            Debug.Log("실행");
+            if (frontflag == 1)
+            {
+                Debug.Log("실행");
+                player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y - 0.1f, player.transform.position.z);
+                moveflag = 1;
+            }
+
+        }
+
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+       
+        if (collision.transform.CompareTag("ground"))
+        {
+            moveflag = 1;
+            contact = collision.contacts[^1];
+            pos = contact.point;
+
+            Debug.Log("땅과 충돌");
+        }
+        else
+        {
+            moveflag = 0;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         Debug.Log("충돌벗어남");
         충돌flag = 0;
-    }
+      
+            //player.transform.position = pos;
+        //moveflag = 1;
+    }*/
 
 
 

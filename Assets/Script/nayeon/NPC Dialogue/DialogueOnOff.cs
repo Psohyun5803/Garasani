@@ -8,6 +8,7 @@ public class DialogueOnOff : MonoBehaviour
     public GameObject ui_Dialogue;
     public float rayDistance = 100f;  // Raycast 거리
     // public LayerMask hitLayers;  // 특정 레이어에 대해 Raycast 적용
+    
 
     void Awake()
     {
@@ -41,10 +42,7 @@ public class DialogueOnOff : MonoBehaviour
                     ui_Dialogue.SetActive(true);
                 }
             }
-            //else
-            //{
-            //    Debug.Log("Raycast did not hit any object.");
-            //}
+
         }
     }
     void Update()

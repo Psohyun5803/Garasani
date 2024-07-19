@@ -9,6 +9,7 @@ public class Prologue2Dialogue : MonoBehaviour
 {
     public static Prologue2Dialogue instance;
     public int dialogueID;
+    public bool checkWiki = true; //위키 체크 변수 (임의로 true 설정. 수정필요) **
     public Dialogue[] contextList;
     public void Awake()
     {
@@ -18,7 +19,7 @@ public class Prologue2Dialogue : MonoBehaviour
         }
     }
 
-    public IEnumerator prologue2()
+    public IEnumerator prologue2_1()
     {
         dialogueID = 1;
         Debug.Log("start" + dialogueID);
@@ -137,17 +138,155 @@ public class Prologue2Dialogue : MonoBehaviour
                     contextList = DataManager.instance.GetDialogue(32, 32);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     dialogueID = 15;
-                    DialogueOnOff.instance.ui_Dialogue.SetActive(false); //prologue2 대화 끝 
                     break;
-
+                    
                 default:
                     dialogueID = 15;
                     break;
             }
+          
+        }
+        DialogueOnOff.instance.ui_Dialogue.SetActive(false); //대화창 꺼짐 
+        
+        Debug.Log(StoryManager.instance.sceneNum);
+    }
 
+    public IEnumerator prologue2_2()
+    {
+        while(dialogueID <= 19)
+        {
+            switch (dialogueID) {
+                case (15):
+                    contextList = DataManager.instance.GetDialogue(33, 34);
+                    DialogueManager.instance.processChoose(contextList);
+                    yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
+
+                    if (DialogueManager.instance.chooseFlag == 1)
+                        dialogueID = 16;
+                    else if (DialogueManager.instance.chooseFlag == 2)
+                        dialogueID = 17;
+                    DialogueManager.instance.chooseFlag = 0;
+                    break;
+
+                case (16):
+                    contextList = DataManager.instance.GetDialogue(35, 35);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    dialogueID = 18;
+                    break;
+
+                case (17):
+                    contextList = DataManager.instance.GetDialogue(36, 36);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    dialogueID = 18;
+                    break;
+
+                case (18):
+                    contextList = DataManager.instance.GetDialogue(37, 37);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag != true);
+                    dialogueID = 19;
+                    DialogueManager.instance.clickFlag = false;
+                    break;
+
+                case (19):
+                    contextList = DataManager.instance.GetDialogue(38, 42);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag != true);
+                    dialogueID = 20;
+                    DialogueManager.instance.clickFlag = false;
+                    break;
+
+                default:
+                    dialogueID = 20;
+                    break;
+            }
             
         }
+        DialogueOnOff.instance.ui_Dialogue.SetActive(false); //대화창 꺼짐 
+        
         
     }
 
+    public IEnumerator prologue2_3()
+    {
+        while(dialogueID <= 28)
+        {
+            switch (dialogueID)
+            {
+                case (20):
+                    contextList = DataManager.instance.GetDialogue(43, 45);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    if (checkWiki == true) dialogueID = 20;
+                    else dialogueID = 21;
+                    break;
+
+                case (21):
+                    contextList = DataManager.instance.GetDialogue(46, 46);
+                    DialogueManager.instance.processChoose(contextList);
+                    yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
+
+                    if (DialogueManager.instance.chooseFlag == 1)
+                        dialogueID = 23;
+                    else if (DialogueManager.instance.chooseFlag == 2)
+                        dialogueID = 26;
+                    DialogueManager.instance.chooseFlag = 0;
+                    break;
+
+                case (22):
+                    contextList = DataManager.instance.GetDialogue(47, 47);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag != true);
+                    DialogueManager.instance.clickFlag = false;
+                    dialogueID = 26;
+                    break;
+
+                case (23):
+                    contextList = DataManager.instance.GetDialogue(48, 52);
+                    DialogueManager.instance.processChoose(contextList);
+                    yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
+
+                    if (DialogueManager.instance.chooseFlag == 1)
+                        dialogueID = 24;
+                    else if (DialogueManager.instance.chooseFlag == 2)
+                        dialogueID = 25;
+                    DialogueManager.instance.chooseFlag = 0;
+                    break;
+
+                case (24):
+                    contextList = DataManager.instance.GetDialogue(53, 55);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    dialogueID = 25;
+                    break;
+
+                case (25):
+                    contextList = DataManager.instance.GetDialogue(56, 60);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    dialogueID = 29;
+                    break;
+
+                case (26):
+                    contextList = DataManager.instance.GetDialogue(61, 63);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    dialogueID = 27;
+                    break;
+
+                case (27):
+                    contextList = DataManager.instance.GetDialogue(64, 65);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    dialogueID = 28;
+                    break;
+
+                case (28):
+                    contextList = DataManager.instance.GetDialogue(66, 70);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    dialogueID = 29;
+                    break;
+
+                default:
+                    dialogueID = 29;
+                    break;
+            }
+        }
+        DialogueOnOff.instance.ui_Dialogue.SetActive(false); //대화창 꺼짐 
+    }
 }

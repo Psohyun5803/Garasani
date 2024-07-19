@@ -121,7 +121,8 @@ public class customize : MonoBehaviour
     public static Action<float,float> playertrans;
     public static int moveflag = 1;
     // Start is called before the first frame update
-
+    
+   
     public TMP_Text playernameinput;
     public TMP_Text playerbirthinput;
     public static string playername ;
@@ -152,8 +153,13 @@ public class customize : MonoBehaviour
         hood_back.SetActive(true);
         eye1.SetActive(true); //기본 눈 1
         hair1.SetActive(true); // 기본 헤어 1
-        //coroutine = breathfront();
-        //StartCoroutine(coroutine);
+                               //coroutine = breathfront();
+                               //StartCoroutine(coroutine);
+        
+       
+
+
+
 
     }
     public void move() 

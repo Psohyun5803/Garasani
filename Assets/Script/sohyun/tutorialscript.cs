@@ -112,7 +112,7 @@ public class tutorialscript : MonoBehaviour
         {
             ¸»Ç³¼±.SetActive(false);
         }
-
+        
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

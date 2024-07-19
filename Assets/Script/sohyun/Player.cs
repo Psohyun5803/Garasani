@@ -13,6 +13,11 @@ public class Player : MonoBehaviour
     int leftflag = 0;
     int rightflag = 0;
     int backflag = 0;
+
+    int frontflagok = 1;
+    int leftflagok = 1;
+    int rightflagok = 1;
+    int backflagok = 1;
     public static int 충돌flag = 0;
     
     SpriteRenderer spriteRenderer;
@@ -129,17 +134,17 @@ public class Player : MonoBehaviour
         spriteRenderer.sprite = basebody[spriteindex];
         Debug.Log("적용됨");
     }
-    private float Speed = 0.42f;
+    private float Speed = 5f;//0.42f
     //[SerializeField] LayerMask layermask;
     public float distance;
     void FindGround()
     {
         RaycastHit hitinfo;
         //hitinfo = Physics2D.Raycast(transform.position, transform.right, distance);
-        //Debug.DrawRay(transform.position, transform.right * distance, Color.yellow);
+        Debug.DrawRay(transform.position, Vector2.down, new Color(1,0,0));
 
         //Debug.Log("진입");
-        if(Physics.Raycast(this.transform.position,Vector3.back,out hitinfo,10f,LayerMask.GetMask("ground")))
+        if(Physics.Raycast(transform.position,Vector3.back,out hitinfo,10f,LayerMask.GetMask("ground")))
         {
             transform.position = new Vector3(transform.position.x, hitinfo.point.y, transform.position.z);//수정
             Debug.Log("됨");
@@ -155,13 +160,13 @@ public class Player : MonoBehaviour
             float X = Input.GetAxisRaw("Horizontal");
             float Y = Input.GetAxisRaw("Vertical");
             transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
-            Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
-            if (pos.x < 0f) pos.x = 0f;
-            if (pos.x > 1f) pos.x = 1f;
-            if (pos.y < 0f) pos.y = 0f;
-            if (pos.y > 1f) pos.y = 1f;
-            transform.position = Camera.main.ViewportToWorldPoint(pos);
-           //FindGround();
+            //Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+            //if (pos.x < 0f) pos.x = 0f;
+            //if (pos.x > 1f) pos.x = 1f;
+            //if (pos.y < 0f) pos.y = 0f;
+            //if (pos.y > 1f) pos.y = 1f;
+            //transform.position = Camera.main.ViewportToWorldPoint(pos);
+            //FindGround();
            
             //player.transform.position = Camera.main.ViewportToWorldPoint(pos); //수정
             
@@ -508,54 +513,44 @@ public class Player : MonoBehaviour
         }
 
     }
-   /* private ContactPoint2D contact;
-    private Vector2 pos;
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        moveflag = 1;
-        Debug.Log("충돌감지");
-        충돌flag = 1;
-        if (!collision.transform.CompareTag("ground"))//밟은 곳이 땅이 아닐 때
+     private ContactPoint2D contact;
+     private Vector2 pos;
+     private void OnCollisionEnter2D(Collision2D collision)
+     {
+         
+         Debug.Log("충돌감지");
+         충돌flag = 1;
+         /*if (!collision.transform.CompareTag("ground"))//밟은 곳이 땅이 아닐 때
+         {
+            moveflag = 0;
+           
+
+
+        }*/
+        
+
+           
+
+     }
+     private void OnCollisionStay2D(Collision2D collision)
+     {
+        /*if (!collision.transform.CompareTag("ground"))
         {
             moveflag = 0;
-            player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y - 0.1f, player.transform.position.z);
-            
-            Debug.Log("실행");
-            if (frontflag == 1)
-            {
-                Debug.Log("실행");
-                player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y - 0.1f, player.transform.position.z);
-                moveflag = 1;
-            }
+        }*/
 
-        }
 
-    }
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-       
-        if (collision.transform.CompareTag("ground"))
-        {
-            moveflag = 1;
-            contact = collision.contacts[^1];
-            pos = contact.point;
 
-            Debug.Log("땅과 충돌");
-        }
-        else
-        {
-            moveflag = 0;
-        }
-    }
+     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        Debug.Log("충돌벗어남");
-        충돌flag = 0;
-      
-            //player.transform.position = pos;
-        //moveflag = 1;
-    }*/
+     private void OnCollisionExit2D(Collision2D collision)
+     {
+         Debug.Log("충돌벗어남");
+         충돌flag = 0;
+
+             //player.transform.position = pos;
+         //moveflag = 1;
+     }
 
 
 

@@ -29,6 +29,8 @@ public class 튜토리얼아이템 : MonoBehaviour
     public GameObject 에어팟설명;
     public GameObject 찢겨진부적설명;
 
+    public Inventory inventory; // Inventory 스크립트 참조
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +85,7 @@ public class 튜토리얼아이템 : MonoBehaviour
             내용.text = "[찢겨진 부적] : 영문을 알 수 없는 글씨가 쓰여진 종이.섬뜩하게 찢겨져있다. ";
             찢겨진부적.SetActive(false);
             찢겨진부적설명.SetActive(false);
+            inventory.AddItem("찢겨진부적", "영문을 알 수 없는 글씨가 쓰여진 종이. 섬뜩하게 찢겨져있다.");
             gotoflag++;
             부적flag = 1;
         }
@@ -93,6 +96,7 @@ public class 튜토리얼아이템 : MonoBehaviour
             내용.text = "[누군가 두고 내린 에어팟 한쪽]을 가방에 챙겼다";
             에어팟한쪽.SetActive(false);
             에어팟설명.SetActive(false);
+            inventory.AddItem("에어팟한쪽", "누군가 두고 내린 에어팟 한쪽.");
             gotoflag++;
             에어팟flag = 1;
         }
@@ -103,6 +107,7 @@ public class 튜토리얼아이템 : MonoBehaviour
             내용.text = "[누군가 흘린 키링]을 가방에 챙겼다.";
             키링.SetActive(false);
             키링설명.SetActive(false);
+            inventory.AddItem("키링", "누군가 흘린 키링.");
             gotoflag++;
             키링flag = 1;
            

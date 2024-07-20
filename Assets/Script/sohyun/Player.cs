@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
     {
         Vector3 newPosition = new Vector3(x , y , 0);
         player.transform.position = newPosition;
+        transform.position = newPosition; //
     }
     void Awake()
     {
@@ -66,7 +67,7 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-        플레이어이동범위(-4f, 10f, 0f, 2f);
+        
         //move();
         if ((Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.D))) //누를때
         {
@@ -117,79 +118,36 @@ public class Player : MonoBehaviour
 
 
 
-        /* if ((Input.GetKeyUp(KeyCode.A))|| (Input.GetKeyUp(KeyCode.W))|| (Input.GetKeyUp(KeyCode.S))|| (Input.GetKeyUp(KeyCode.D))) //멈췄을때
-         {
-
-
-             if (coroutineflag2==1)
-             {
-                 StopAllCoroutines();
-
-                 coroutineflag2 = 0;
-                 coroutineflag = 0;
-
-             }
-
-             if (coroutineflag == 0)
-             {
-                 StartCoroutine(coroutine);
-             }
-
-
-         }
-         else
-         {
-
-             if (coroutineflag==1) // 움직일때
-             {
-
-                 StopCoroutine(coroutine);
-                 coroutineflag = 0;
-
-             }
-
-         }*/
-
+  
 
 
     }
-    public void 플레이어이동범위(float x1, float x2,float y1, float y2)
-    {
-        if (player.transform.position.x <x1)
-        {
-           
-        }
-        /*if(player.transform.position.x >x2)
-        {
-            player.transform.Translate = new Vector3(x2, player.transform.position.y, player.transform.position.z);
-        }
-        if (player.transform.position.y <y1 )
-        {
-            player.transform.Translate = new Vector3(player.transform.position.x, y1, player.transform.position.z);
-        }
-        if (player.transform.position.y > y2)
-        {
-            player.transform.Translate = new Vector3(player.transform.position.x, y2, player.transform.position.z);
-        }*/
-        else
-        {
-            moveflag = 1;
-        }
-    }
-    void flagreset()
-    {
-        frontflag = 0;
-        rightflag = 0;
-        leftflag = 0;
-        backflag = 0;
-
-    }
+   
+    
     public void 적용()
     {
         spriteRenderer.sprite = basebody[spriteindex];
         Debug.Log("적용됨");
     }
     private float Speed = 0.42f;
+    //[SerializeField] LayerMask layermask;
+    public float distance;
+    void FindGround()
+    {
+        RaycastHit hitinfo;
+        //hitinfo = Physics2D.Raycast(transform.position, transform.right, distance);
+        //Debug.DrawRay(transform.position, transform.right * distance, Color.yellow);
+
+        //Debug.Log("진입");
+        if(Physics.Raycast(this.transform.position,Vector3.back,out hitinfo,10f,LayerMask.GetMask("ground")))
+        {
+            transform.position = new Vector3(transform.position.x, hitinfo.point.y, transform.position.z);//수정
+            Debug.Log("됨");
+
+        }
+    }
+    float CameraSpeed = 5f;
+   
     public void move()
     {   
         if(customize.sceneflag>1&&moveflag==1)
@@ -197,6 +155,18 @@ public class Player : MonoBehaviour
             float X = Input.GetAxisRaw("Horizontal");
             float Y = Input.GetAxisRaw("Vertical");
             transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
+            Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
+            if (pos.x < 0f) pos.x = 0f;
+            if (pos.x > 1f) pos.x = 1f;
+            if (pos.y < 0f) pos.y = 0f;
+            if (pos.y > 1f) pos.y = 1f;
+            transform.position = Camera.main.ViewportToWorldPoint(pos);
+           //FindGround();
+           
+            //player.transform.position = Camera.main.ViewportToWorldPoint(pos); //수정
+            
+
+
 
             if (Input.GetKey(KeyCode.W))
             {
@@ -273,7 +243,15 @@ public class Player : MonoBehaviour
             }
 
             //player.transform.Translate(new Vector2(Mathf.Clamp(X,-4f,10f), Y) * Time.deltaTime * Speed);
+           //Vector3 pos = Camera.main.WorldToViewportPoint(transform.position); 
+            //if (pos.x < 0f) pos.x = 0f; 
+            //if (pos.x > 1f) pos.x = 1f; 
+            //if (pos.y < 0f) pos.y = 0f; 
+            //if (pos.y > 1f) pos.y = 1f; 
+            //transform.position = Camera.main.ViewportToWorldPoint(pos);
+        
             player.transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
+            
             //Vector3 localPosition;
             //localPosition = new Vector3(Mathf.Clamp(player.transform.position.x, -4f, 10f),
             //    (localPosition = player.transform.localPosition).y, localPosition.z);
@@ -530,18 +508,54 @@ public class Player : MonoBehaviour
         }
 
     }
-
+   /* private ContactPoint2D contact;
+    private Vector2 pos;
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        moveflag = 1;
         Debug.Log("충돌감지");
         충돌flag = 1;
+        if (!collision.transform.CompareTag("ground"))//밟은 곳이 땅이 아닐 때
+        {
+            moveflag = 0;
+            player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y - 0.1f, player.transform.position.z);
+            
+            Debug.Log("실행");
+            if (frontflag == 1)
+            {
+                Debug.Log("실행");
+                player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y - 0.1f, player.transform.position.z);
+                moveflag = 1;
+            }
+
+        }
+
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+       
+        if (collision.transform.CompareTag("ground"))
+        {
+            moveflag = 1;
+            contact = collision.contacts[^1];
+            pos = contact.point;
+
+            Debug.Log("땅과 충돌");
+        }
+        else
+        {
+            moveflag = 0;
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
         Debug.Log("충돌벗어남");
         충돌flag = 0;
-    }
+      
+            //player.transform.position = pos;
+        //moveflag = 1;
+    }*/
 
 
 

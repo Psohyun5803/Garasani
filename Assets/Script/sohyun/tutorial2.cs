@@ -14,7 +14,9 @@ using System;
 public class tutorial2 : MonoBehaviour
 {
     public GameObject ¸»Ç³¼±;
+    private IEnumerator ±ôºý°Å¸²;
     public GameObject ¹öÆ°;
+    public GameObject dark;
     public TMP_Text ³»¿ë;
     public TMP_Text ÀÌ¸§;
     int textflag = 0;
@@ -29,11 +31,22 @@ public class tutorial2 : MonoBehaviour
         ÀÌ¸§.text = customize.playername;
         ³»¿ë.text = text[textflag];
         Invoke("dontmove", 1f);
+        ±ôºý°Å¸² = ±ôºý();
     }
-
+    private IEnumerator ±ôºý()
+    {
+        while (true)
+        {
+            dark.SetActive(true);
+            yield return new WaitForSeconds(2f);
+            dark.SetActive(false);
+            yield return new WaitForSeconds(2f);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
+        StartCoroutine(±ôºý°Å¸²);
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

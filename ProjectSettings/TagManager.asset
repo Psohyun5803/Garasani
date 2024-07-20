@@ -8,6 +8,7 @@ TagManager:
   - NPC
   - chosen1
   - chosen2
+  - chosen3
   layers:
   - Default
   - TransparentFX

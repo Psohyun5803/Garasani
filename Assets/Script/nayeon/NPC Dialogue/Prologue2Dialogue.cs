@@ -11,6 +11,8 @@ public class Prologue2Dialogue : MonoBehaviour
     public int dialogueID;
     public bool checkWiki = true; //위키 체크 변수 (임의로 true 설정. 수정필요) **
     public Dialogue[] contextList;
+
+
     public void Awake()
     {
         if(instance == null)
@@ -32,12 +34,13 @@ public class Prologue2Dialogue : MonoBehaviour
                     contextList = DataManager.instance.GetDialogue(1, 7);
                     DialogueManager.instance.processChoose(contextList);
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
-
+                    Debug.Log("ChooseFlag after case 1: " + DialogueManager.instance.chooseFlag);
                     if (DialogueManager.instance.chooseFlag == 1)
                         dialogueID = 2;
                     else if (DialogueManager.instance.chooseFlag == 2)
                         dialogueID = 3;
                     DialogueManager.instance.chooseFlag = 0;
+
                     break;
 
 
@@ -147,8 +150,7 @@ public class Prologue2Dialogue : MonoBehaviour
           
         }
         DialogueOnOff.instance.ui_Dialogue.SetActive(false); //대화창 꺼짐 
-        
-        Debug.Log(StoryManager.instance.sceneNum);
+       
     }
 
     public IEnumerator prologue2_2()
@@ -183,7 +185,7 @@ public class Prologue2Dialogue : MonoBehaviour
                 case (18):
                     contextList = DataManager.instance.GetDialogue(37, 37);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag != true);
+                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag != false);
                     dialogueID = 19;
                     DialogueManager.instance.clickFlag = false;
                     break;
@@ -191,7 +193,7 @@ public class Prologue2Dialogue : MonoBehaviour
                 case (19):
                     contextList = DataManager.instance.GetDialogue(38, 42);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag != true);
+                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag != false);
                     dialogueID = 20;
                     DialogueManager.instance.clickFlag = false;
                     break;
@@ -209,15 +211,15 @@ public class Prologue2Dialogue : MonoBehaviour
 
     public IEnumerator prologue2_3()
     {
-        while(dialogueID <= 28)
+        while(dialogueID < 29)
         {
             switch (dialogueID)
             {
                 case (20):
                     contextList = DataManager.instance.GetDialogue(43, 45);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    if (checkWiki == true) dialogueID = 20;
-                    else dialogueID = 21;
+                    if (checkWiki == true) dialogueID = 21;
+                    else dialogueID = 22;
                     break;
 
                 case (21):
@@ -235,9 +237,10 @@ public class Prologue2Dialogue : MonoBehaviour
                 case (22):
                     contextList = DataManager.instance.GetDialogue(47, 47);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag != true);
-                    DialogueManager.instance.clickFlag = false;
+                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag != false);
+
                     dialogueID = 26;
+                    DialogueManager.instance.clickFlag = false;
                     break;
 
                 case (23):
@@ -274,10 +277,11 @@ public class Prologue2Dialogue : MonoBehaviour
                     contextList = DataManager.instance.GetDialogue(64, 65);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     dialogueID = 28;
+                    Debug.Log("현재 dialogueID: " + dialogueID);
                     break;
 
                 case (28):
-                    contextList = DataManager.instance.GetDialogue(66, 70);
+                    contextList = DataManager.instance.GetDialogue(66, 69);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     dialogueID = 29;
                     break;

@@ -6,30 +6,34 @@ public class StoryManager : MonoBehaviour
 {
     public static StoryManager instance;
     public int sceneNum;
-
     private void Awake()
     {
         if (instance == null)
         {
-            instance = this;         
+            instance = this;
         }
 
     }
-
+    public bool sceneInitialized= false;
     public void StoryStart()
     {
         switch (DataManager.instance.csv_FileName)
         {
             case "Dialogue": // ***씬 이름 및 csv파일명 변경 필요 (prologue2)***
-                sceneNum = 1;
+                if (!sceneInitialized)
+                {
+                    sceneNum = 1;
+                    sceneInitialized = true;
+                }
                 StartCoroutine(ProceedToNextScene());
                 break;
         }
     }
 
-    private IEnumerator ProceedToNextScene()
+    public IEnumerator ProceedToNextScene()
     {
-        while (sceneNum <= 3)
+        Debug.Log(sceneNum);
+        while (sceneNum < 4)
         {
             switch (sceneNum)
             {
@@ -48,14 +52,8 @@ public class StoryManager : MonoBehaviour
             sceneNum++;
         }
     }
-
-    void Start()
-    {
-        StoryStart();
-    }
-
-    void Update()
-    {
-
-    }
 }
+
+   
+
+

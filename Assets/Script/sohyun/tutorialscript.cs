@@ -13,37 +13,45 @@ using System;
 
 public class tutorialscript : MonoBehaviour
 {
-    public GameObject ¸»Ç³¼±;
-    public GameObject ¹öÆ°;
-
-    public Inventory inventory;
+    public GameObject ë§í’ì„ ;
+    public GameObject ë²„íŠ¼;
 
 
-    private bool isMouseOver = false; //ÇöÀç ¿ÀºêÁ§Æ® À§¿¡ Ä¿¼­°¡ ÀÖ´ÂÁö¿¡ ´ëÇÑ ÇÃ·¡±×
+    private bool isMouseOver = false; //í˜„ì¬ ì˜¤ë¸Œì íŠ¸ ìœ„ì— ì»¤ì„œê°€ ìˆëŠ”ì§€ì— ëŒ€í•œ í”Œë˜ê·¸
     public GameObject InteractionView;
-    public TMP_Text ¼³¸í;
-    public GameObject Âõ°ÜÁøºÎÀû;
-    public GameObject Âõ°ÜÁøºÎÀû¼³¸í;
-    public GameObject ¿¡¾îÆÌ¼³¸í;
-    public GameObject Å°¸µ¼³¸í;
+    public TMP_Text ì„¤ëª…;
+    public GameObject ì°¢ê²¨ì§„ë¶€ì ;
+    public GameObject ì°¢ê²¨ì§„ë¶€ì ì„¤ëª…;
+    public GameObject ì—ì–´íŒŸì„¤ëª…;
+    public GameObject í‚¤ë§ì„¤ëª…;
+    //public GameObject ìŠ¤í¬ë¦½íŠ¸ë§¤ë‹ˆì €;
     private RectTransform interactionViewRectTransform;
-    public Vector3 mousePosition; //¸¶¿ì½º Ä¿¼­ ÁÂÇ¥
-    public Vector3 worldPosition; //¸¶¿ì½º Ä¿¼­ ¿ùµåÁÂÇ¥
+    public Vector3 mousePosition; //ë§ˆìš°ìŠ¤ ì»¤ì„œ ì¢Œí‘œ
+    public Vector3 worldPosition; //ë§ˆìš°ìŠ¤ ì»¤ì„œ ì›”ë“œì¢Œí‘œ
 
-
-    public TMP_Text ³»¿ë;
-    public TMP_Text ÀÌ¸§;
+    public GameObject ì´ë™;
+    public GameObject ëŒ€ì‰¬;
+    public GameObject ì¡°ì‚¬;
+    public GameObject ì¸ë²¤;
+    public TMP_Text ë‚´ìš©;
+    public TMP_Text ì´ë¦„;
     int scriptcounter = 0;
     int objectcounter = 0;
-    string[] text = new string[10] { "À¸...", "¸Ó¸®¸¦ Á» ¼¼°Ô ºÎµúÈù °Å °°Àºµ¥...", "...", "±Ùµ¥ ¿Ö ÀÌ¸® Á¶¿ëÇÏÁö? ¼³¸¶ ¾Æ¹«µµ ¾ø³ª?", "...", "¿­Â÷¸¦ Á» µ¹¾Æ´Ù³àº¼±î.", "...?", "...ÀÌ°Ô ¹«½¼ ¼Ò¸®Áö...?", "¾ÕÂÊ¿¡¼­ Á¡Á¡ ´Ù°¡¿À°í ÀÖ¾î...", "...!" };
-    string[] ¿ÀºêÁ§Æ® = new string[4] { "¹Ù´Ú¿¡ ¶³¾îÁ®ÀÖ´Â Á¾ÀÌ ÂÉ°¡¸®", "ÀÇÀÚ¿¡ ¶³¾îÁ®ÀÖ´Â ¿¡¾îÆÌ ÇÑÂÊ", "ÀÇÀÚ¿¡ ¶³¾îÁ®ÀÖ´Â Å°¸µ", "¿­Â÷»çÀÌ ¹®" };
-    string[] »óÈ£ÀÛ¿ë = new string[4] { "[Âõ°ÜÁø ºÎÀû] : ¿µ¹®À» ¾Ë ¼ö ¾ø´Â ±Û¾¾°¡ ¾²¿©Áø Á¾ÀÌ. ¼¶¶àÇÏ°Ô Âõ°ÜÁ®ÀÖ´Ù.", "[´©±º°¡ µÎ°í ³»¸° ¿¡¾îÆÌ ÇÑÂÊ]À» °¡¹æ¿¡ Ã¬°å´Ù.", "[´©±º°¡ Èê¸° Å°¸µ]À» °¡¹æ¿¡ Ã¬°å´Ù.", "¹«¾ğ°¡¿¡ °É¸° µí ¹®ÀÌ ¿­¸®Áö ¾Ê´Â´Ù" };
+    string[] text = new string[10] { "ìœ¼...", "ë¨¸ë¦¬ë¥¼ ì¢€ ì„¸ê²Œ ë¶€ë”ªíŒ ê±° ê°™ì€ë°...", "...", "ê·¼ë° ì™œ ì´ë¦¬ ì¡°ìš©í•˜ì§€? ì„¤ë§ˆ ì•„ë¬´ë„ ì—†ë‚˜?", "...", "ì—´ì°¨ë¥¼ ì¢€ ëŒì•„ë‹¤ë…€ë³¼ê¹Œ.", "...?", "...ì´ê²Œ ë¬´ìŠ¨ ì†Œë¦¬ì§€...?", "ì•ìª½ì—ì„œ ì ì  ë‹¤ê°€ì˜¤ê³  ìˆì–´...", "...!" };
+    string[] ì˜¤ë¸Œì íŠ¸ = new string[4] { "ë°”ë‹¥ì— ë–¨ì–´ì ¸ìˆëŠ” ì¢…ì´ ìª¼ê°€ë¦¬", "ì˜ìì— ë–¨ì–´ì ¸ìˆëŠ” ì—ì–´íŒŸ í•œìª½", "ì˜ìì— ë–¨ì–´ì ¸ìˆëŠ” í‚¤ë§", "ì—´ì°¨ì‚¬ì´ ë¬¸" };
+    string[] ìƒí˜¸ì‘ìš© = new string[4] { "[ì°¢ê²¨ì§„ ë¶€ì ] : ì˜ë¬¸ì„ ì•Œ ìˆ˜ ì—†ëŠ” ê¸€ì”¨ê°€ ì“°ì—¬ì§„ ì¢…ì´. ì„¬ëœ©í•˜ê²Œ ì°¢ê²¨ì ¸ìˆë‹¤.", "[ëˆ„êµ°ê°€ ë‘ê³  ë‚´ë¦° ì—ì–´íŒŸ í•œìª½]ì„ ê°€ë°©ì— ì±™ê²¼ë‹¤.", "[ëˆ„êµ°ê°€ í˜ë¦° í‚¤ë§]ì„ ê°€ë°©ì— ì±™ê²¼ë‹¤.", "ë¬´ì–¸ê°€ì— ê±¸ë¦° ë“¯ ë¬¸ì´ ì—´ë¦¬ì§€ ì•ŠëŠ”ë‹¤" };
     // Start is called before the first frame update
     void Start()
     {
-        ¸»Ç³¼±.SetActive(true);
-        ÀÌ¸§.text = customize.playername;
-        ³»¿ë.text = text[scriptcounter];
+        ë§í’ì„ .SetActive(true);
+        ì¡°ì‚¬.SetActive(false);
+        ì´ë™.SetActive(false);
+        ëŒ€ì‰¬.SetActive(false);
+        ì¡°ì‚¬.SetActive(false);
+        ì¸ë²¤.SetActive(false);
+
+        ì´ë¦„.text = customize.playername;
+        ë‚´ìš©.text = text[scriptcounter];
         scriptcounter++;
         //interactionViewRectTransform = InteractionView.GetComponent<RectTransform>();
         //InteractionView.SetActive(false);
@@ -52,33 +60,36 @@ public class tutorialscript : MonoBehaviour
     {
         if (scriptcounter <= 5)
         {
-            ÀÌ¸§.text = customize.playername;
-            ³»¿ë.text = text[scriptcounter];
+            ì´ë¦„.text = customize.playername;
+            ë‚´ìš©.text = text[scriptcounter];
             scriptcounter++;
         }
         else if (scriptcounter == 6)
         {
-            ¸»Ç³¼±.SetActive(false);
+            //ìŠ¤í¬ë¦½íŠ¸ë§¤ë‹ˆì €.SetActive(false);
+            ë§í’ì„ .SetActive(false);
+            ëŒ€ì‰¬.SetActive(true);
+            ì´ë™.SetActive(true);
         }
     }
-    /*   private void OnMouseOver() //¾ÆÀÌÅÛ À§¿¡ Ä¿¼­ ÀÖ´Â °Í °¨Áö 
+    /*   private void OnMouseOver() //ì•„ì´í…œ ìœ„ì— ì»¤ì„œ ìˆëŠ” ê²ƒ ê°ì§€ 
        {
-           if (!isMouseOver) //Ä¿¼­°¡ ¿ÀºêÁ§Æ® À§¿¡ ¿Ã¶ó°¬À» ¶§ ÃÖÃÊ 1¹ø¸¸ ½ÇÇà
+           if (!isMouseOver) //ì»¤ì„œê°€ ì˜¤ë¸Œì íŠ¸ ìœ„ì— ì˜¬ë¼ê°”ì„ ë•Œ ìµœì´ˆ 1ë²ˆë§Œ ì‹¤í–‰
            {
                isMouseOver = true;
-               string objectName = gameObject.name; //Ä¿¼­ °¨ÁöÇÑ ¿ÀºêÁ§Æ® ÀÌ¸§ 
-               Debug.Log("¸¶¿ì½º °¨Áö" + objectName);
+               string objectName = gameObject.name; //ì»¤ì„œ ê°ì§€í•œ ì˜¤ë¸Œì íŠ¸ ì´ë¦„ 
+               Debug.Log("ë§ˆìš°ìŠ¤ ê°ì§€" + objectName);
 
-               Vector3 mousePosition = Input.mousePosition; //Ä¿¼­ ÁÂÇ¥ °¡Á®¿È 
+               Vector3 mousePosition = Input.mousePosition; //ì»¤ì„œ ì¢Œí‘œ ê°€ì ¸ì˜´ 
                worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, Camera.main.nearClipPlane));
 
-               ActiveInteraction(); //»óÅÂÃ¢ on
+               ActiveInteraction(); //ìƒíƒœì°½ on
            }
 
        }
        void OnMouseExit()
        {
-           // ¸¶¿ì½º°¡ ¿ÀºêÁ§Æ®¿¡¼­ ¹ş¾î³µÀ» ¶§ ÇÃ·¡±×¸¦ ¸®¼Â
+           // ë§ˆìš°ìŠ¤ê°€ ì˜¤ë¸Œì íŠ¸ì—ì„œ ë²—ì–´ë‚¬ì„ ë•Œ í”Œë˜ê·¸ë¥¼ ë¦¬ì…‹
            isMouseOver = false;
            InteractionView.SetActive(false);
        }
@@ -87,12 +98,12 @@ public class tutorialscript : MonoBehaviour
 
        public void ActiveInteraction()
        {
-           InteractionView.transform.position = (worldPosition); //¿ÀºêÁ§Æ® Ä¿¼­ À§Ä¡·Î »óÅÂÃ¢ ÀÌµ¿ 
-           InteractionView.SetActive(true); //Ä¿¼­ °¨Áö ½Ã »óÅÂÃ¢ on
-           if(gameObject.name=="Âõ°ÜÁøºÎÀû")
+           InteractionView.transform.position = (worldPosition); //ì˜¤ë¸Œì íŠ¸ ì»¤ì„œ ìœ„ì¹˜ë¡œ ìƒíƒœì°½ ì´ë™ 
+           InteractionView.SetActive(true); //ì»¤ì„œ ê°ì§€ ì‹œ ìƒíƒœì°½ on
+           if(gameObject.name=="ì°¢ê²¨ì§„ë¶€ì ")
            {
                objectcounter = 0;
-               ¼³¸í.text = »óÈ£ÀÛ¿ë[objectcounter];
+               ì„¤ëª….text = ìƒí˜¸ì‘ìš©[objectcounter];
            }
        }
     */
@@ -105,81 +116,107 @@ public class tutorialscript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            ¸»Ç³¼±.SetActive(true);
-            ÀÌ¸§.text = "System";
-            ³»¿ë.text = "³Ê¹« ÇÇ°ïÇØ¼­ ´Ş¸± ¼ö ¾ø´Ù.";
+            //ìŠ¤í¬ë¦½íŠ¸ë§¤ë‹ˆì €.SetActive(true);
+            ë§í’ì„ .SetActive(true);
+            ì´ë¦„.text = "System";
+            ë‚´ìš©.text = "ë„ˆë¬´ í”¼ê³¤í•´ì„œ ë‹¬ë¦´ ìˆ˜ ì—†ë‹¤.";
+            ëŒ€ì‰¬.SetActive(false);
+            ì´ë™.SetActive(false);
 
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            ¸»Ç³¼±.SetActive(false);
+            //ìŠ¤í¬ë¦½íŠ¸ë§¤ë‹ˆì €.SetActive(false);
+            ë§í’ì„ .SetActive(false);
+
         }
 
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
-            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
+            //Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
+            //string objectName = gameObject.name; //ì»¤ì„œ ê°ì§€í•œ ì˜¤ë¸Œì íŠ¸ ì´ë¦„ 
+            //Debug.Log("ë§ˆìš°ìŠ¤ í´ë¦­ ê°ì§€" + objectName);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if(Physics.Raycast(ray,out hit))
+            {
+                Debug.Log(hit.transform.gameObject.name);
+
+            }
+            
+        
             if (hit.collider != null)
             {
                 GameObject clickobj = hit.transform.gameObject;
-                if (clickflag == 0 && clickobj.name == "¿­Â÷»çÀÌ¹®" && intertest.Ãæµ¹¾ÆÀÌÅÛ¸í == "¿­Â÷»çÀÌ¹®")
+                Debug.Log(clickobj.name);
+                Debug.Log("í´ë¦­í–ˆìŠµë‹ˆë‹¤");
+                
+                if (clickflag == 0 && clickobj.name == "ì—´ì°¨ì‚¬ì´ë¬¸"&& intertest.ì¶©ëŒì•„ì´í…œëª…=="ì—´ì°¨ì‚¬ì´ë¬¸")
                 {
-
-
-                    ¸»Ç³¼±.SetActive(true);
-                    ÀÌ¸§.text = "System";
-                    ³»¿ë.text = "¹®ÀÌ ¿­·È´Ù";
-                    clickflag = 1;
+                    
+                       
+                            ë§í’ì„ .SetActive(true);
+                            ì´ë¦„.text = "System";
+                            ë‚´ìš©.text = "ë¬¸ì´ ì—´ë ¸ë‹¤";
+                            clickflag = 1;
                 }
-                else if (clickflag >= 1 && clickobj.name == "¿­Â÷»çÀÌ¹®")
+                else if (clickflag>=1&& clickobj.name == "ì—´ì°¨ì‚¬ì´ë¬¸")
                 {
-
-                    ¸»Ç³¼±.SetActive(true);
-                    ÀÌ¸§.text = "System";
-                    if (gotoflag < 3)
-                    {
-                        ³»¿ë.text = "¿­Â÷¸¦ Á¶±İ ´õ µÑ·¯º¸ÀÚ. ";
-                    }
-                    else
-                    {
-                        ³»¿ë.text = "´ÙÀ½ Ä­À¸·Î ÀÌµ¿ÇÑ´Ù";
-
-                        SceneManager.LoadScene("Pro_map2 beta");
-                    }
-
-                    clickflag = 2;
+                   
+                        ë§í’ì„ .SetActive(true);
+                        ì´ë¦„.text = "System";
+                        if (gotoflag<3)
+                        {
+                        ë‚´ìš©.text = "ì—´ì°¨ë¥¼ ì¡°ê¸ˆ ë” ë‘˜ëŸ¬ë³´ì. ";
+                        }
+                        else
+                        {
+                            ë‚´ìš©.text = "ë‹¤ìŒ ì¹¸ìœ¼ë¡œ ì´ë™í•œë‹¤";
+                            
+                            SceneManager.LoadScene("Pro_map2 beta");
+                        }   
+                       
+                        clickflag = 2;
+                         
+                    
                 }
-                else if (clickobj.name == "Âõ°ÜÁøºÎÀû" && intertest.Ãæµ¹¾ÆÀÌÅÛ¸í == "Âõ°ÜÁøºÎÀû")
+                else if (clickobj.name=="ì°¢ê²¨ì§„ë¶€ì "&& intertest.ì¶©ëŒì•„ì´í…œëª… == "ì°¢ê²¨ì§„ë¶€ì ")
                 {
-                    ¸»Ç³¼±.SetActive(true);
-                    ÀÌ¸§.text = "System";
-                    ³»¿ë.text = "[Âõ°ÜÁø ºÎÀû] : ¿µ¹®À» ¾Ë ¼ö ¾ø´Â ±Û¾¾°¡ ¾²¿©Áø Á¾ÀÌ.¼¶¶àÇÏ°Ô Âõ°ÜÁ®ÀÖ´Ù.";
+                    ë§í’ì„ .SetActive(true);
+                    ì´ë¦„.text = "System";
+                    ë‚´ìš©.text = "[ì°¢ê²¨ì§„ ë¶€ì ] : ì˜ë¬¸ì„ ì•Œ ìˆ˜ ì—†ëŠ” ê¸€ì”¨ê°€ ì“°ì—¬ì§„ ì¢…ì´.ì„¬ëœ©í•˜ê²Œ ì°¢ê²¨ì ¸ìˆë‹¤. ";
                     clickobj.SetActive(false);
-                    Âõ°ÜÁøºÎÀû¼³¸í.SetActive(false);
-                    inventory.AddItem("Âõ°ÜÁøºÎÀû", "¿µ¹®À» ¾Ë ¼ö ¾ø´Â ±Û¾¾°¡ ¾²¿©Áø Á¾ÀÌ. ¼¶¶àÇÏ°Ô Âõ°ÜÁ®ÀÖ´Ù.");
+                    ì°¢ê²¨ì§„ë¶€ì ì„¤ëª….SetActive(false);
                     gotoflag++;
                 }
-                else if (clickobj.name == "¿¡¾îÆÌÇÑÂÊ" && intertest.Ãæµ¹¾ÆÀÌÅÛ¸í == "¿¡¾îÆÌÇÑÂÊ")
+                else if (clickobj.name == "ì—ì–´íŒŸí•œìª½"&& intertest.ì¶©ëŒì•„ì´í…œëª… == "ì—ì–´íŒŸí•œìª½")
                 {
-                    ¸»Ç³¼±.SetActive(true);
-                    ÀÌ¸§.text = "System";
-                    ³»¿ë.text = "[´©±º°¡ µÎ°í ³»¸° ¿¡¾îÆÌ ÇÑÂÊ]À» °¡¹æ¿¡ Ã¬°å´Ù";
+                    ë§í’ì„ .SetActive(true);
+                    ì´ë¦„.text = "System";
+                    ë‚´ìš©.text = "[ëˆ„êµ°ê°€ ë‘ê³  ë‚´ë¦° ì—ì–´íŒŸ í•œìª½]ì„ ê°€ë°©ì— ì±™ê²¼ë‹¤";
                     clickobj.SetActive(false);
-                    ¿¡¾îÆÌ¼³¸í.SetActive(false);
-                    inventory.AddItem("¿¡¾îÆÌÇÑÂÊ", "´©±º°¡ µÎ°í ³»¸° ¿¡¾îÆÌ ÇÑÂÊ.");
+                    ì—ì–´íŒŸì„¤ëª….SetActive(false);
                     gotoflag++;
                 }
-                else if (clickobj.name == "Å°¸µ" && intertest.Ãæµ¹¾ÆÀÌÅÛ¸í == "Å°¸µ")
+                else if (clickobj.name== "í‚¤ë§"&& intertest.ì¶©ëŒì•„ì´í…œëª… == "í‚¤ë§")
                 {
-                    ¸»Ç³¼±.SetActive(true);
-                    ÀÌ¸§.text = "System";
-                    ³»¿ë.text = "[´©±º°¡ Èê¸° Å°¸µ]À» °¡¹æ¿¡ Ã¬°å´Ù.";
+                    ë§í’ì„ .SetActive(true);
+                    ì´ë¦„.text = "System";
+                    ë‚´ìš©.text = "[ëˆ„êµ°ê°€ í˜ë¦° í‚¤ë§]ì„ ê°€ë°©ì— ì±™ê²¼ë‹¤.";
                     clickobj.SetActive(false);
-                    Å°¸µ¼³¸í.SetActive(false);
-                    inventory.AddItem("Å°¸µ", "´©±º°¡ Èê¸° Å°¸µ.");
+                    í‚¤ë§ì„¤ëª….SetActive(false);
                     gotoflag++;
                 }
+
+
+
             }
-        }
+            else
+            {
+                Debug.Log("ì¶©ëŒì•„ì´í…œì´ ì—†ìŠµë‹ˆë‹¤");
+            }
+        }*/
     }
+   
 }

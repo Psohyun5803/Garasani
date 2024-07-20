@@ -4157,6 +4157,7 @@ MonoBehaviour:
   "\uD0A4\uB9C1\uC124\uBA85": {fileID: 918141417}
   "\uC5D0\uC5B4\uD31F\uC124\uBA85": {fileID: 246737950}
   "\uCC22\uACA8\uC9C4\uBD80\uC801\uC124\uBA85": {fileID: 1973026943}
+  inventory: {fileID: 637478485}
 --- !u!1 &246737950
 GameObject:
   m_ObjectHideFlags: 0
@@ -9568,6 +9569,7 @@ MonoBehaviour:
   "\uD0A4\uB9C1\uC124\uBA85": {fileID: 918141417}
   "\uC5D0\uC5B4\uD31F\uC124\uBA85": {fileID: 246737950}
   "\uCC22\uACA8\uC9C4\uBD80\uC801\uC124\uBA85": {fileID: 1973026943}
+  inventory: {fileID: 637478485}
 --- !u!1 &637478483
 GameObject:
   m_ObjectHideFlags: 0
@@ -9703,7 +9705,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: b5c89d9b82b1a8b41add0fb45aa7413a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -10124,6 +10126,7 @@ MonoBehaviour:
   "\uD0A4\uB9C1\uC124\uBA85": {fileID: 918141417}
   "\uC5D0\uC5B4\uD31F\uC124\uBA85": {fileID: 246737950}
   "\uCC22\uACA8\uC9C4\uBD80\uC801\uC124\uBA85": {fileID: 1973026943}
+  inventory: {fileID: 637478485}
 --- !u!1 &690399034
 GameObject:
   m_ObjectHideFlags: 0
@@ -16089,7 +16092,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "\uB9D0\uD48D\uC120": {fileID: 1982233698}
   "\uBC84\uD2BC": {fileID: 1658791058}
-  inventory: {fileID: 637478485}
   InteractionView: {fileID: 0}
   "\uC124\uBA85": {fileID: 0}
   "\uCC22\uACA8\uC9C4\uBD80\uC801": {fileID: 0}
@@ -19619,7 +19621,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 916393957}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -26706,6 +26708,7 @@ MonoBehaviour:
   "\uD0A4\uB9C1\uC124\uBA85": {fileID: 918141417}
   "\uC5D0\uC5B4\uD31F\uC124\uBA85": {fileID: 246737950}
   "\uCC22\uACA8\uC9C4\uBD80\uC801\uC124\uBA85": {fileID: 1973026943}
+  inventory: {fileID: 0}
 --- !u!212 &2072680395
 SpriteRenderer:
   m_ObjectHideFlags: 0

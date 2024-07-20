@@ -13,37 +13,47 @@ using System;
 
 public class tutorialscript : MonoBehaviour
 {
-    public GameObject ¸»Ç³¼±;
-    public GameObject ¹öÆ°;
+    public GameObject ï¿½ï¿½Ç³ï¿½ï¿½;
+    public GameObject ï¿½ï¿½Æ°;
 
     public Inventory inventory;
 
 
-    private bool isMouseOver = false; //ÇöÀç ¿ÀºêÁ§Æ® À§¿¡ Ä¿¼­°¡ ÀÖ´ÂÁö¿¡ ´ëÇÑ ÇÃ·¡±×
+    private bool isMouseOver = false; //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½
     public GameObject InteractionView;
-    public TMP_Text ¼³¸í;
-    public GameObject Âõ°ÜÁøºÎÀû;
-    public GameObject Âõ°ÜÁøºÎÀû¼³¸í;
-    public GameObject ¿¡¾îÆÌ¼³¸í;
-    public GameObject Å°¸µ¼³¸í;
+    public TMP_Text ï¿½ï¿½ï¿½ï¿½;
+    public GameObject ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;
+    public GameObject ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;
+    public GameObject ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½;
+    public GameObject Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½;
+    //public GameObject ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½Å´ï¿½ï¿½ï¿½;
     private RectTransform interactionViewRectTransform;
-    public Vector3 mousePosition; //¸¶¿ì½º Ä¿¼­ ÁÂÇ¥
-    public Vector3 worldPosition; //¸¶¿ì½º Ä¿¼­ ¿ùµåÁÂÇ¥
+    public Vector3 mousePosition; //ï¿½ï¿½ï¿½ì½º Ä¿ï¿½ï¿½ ï¿½ï¿½Ç¥
+    public Vector3 worldPosition; //ï¿½ï¿½ï¿½ì½º Ä¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¥
 
-
-    public TMP_Text ³»¿ë;
-    public TMP_Text ÀÌ¸§;
+    public GameObject ï¿½Ìµï¿½;
+    public GameObject ï¿½ë½¬;
+    public GameObject ï¿½ï¿½ï¿½ï¿½;
+    public GameObject ï¿½Îºï¿½;
+    public TMP_Text ï¿½ï¿½ï¿½ï¿½;
+    public TMP_Text ï¿½Ì¸ï¿½;
     int scriptcounter = 0;
     int objectcounter = 0;
-    string[] text = new string[10] { "À¸...", "¸Ó¸®¸¦ Á» ¼¼°Ô ºÎµúÈù °Å °°Àºµ¥...", "...", "±Ùµ¥ ¿Ö ÀÌ¸® Á¶¿ëÇÏÁö? ¼³¸¶ ¾Æ¹«µµ ¾ø³ª?", "...", "¿­Â÷¸¦ Á» µ¹¾Æ´Ù³àº¼±î.", "...?", "...ÀÌ°Ô ¹«½¼ ¼Ò¸®Áö...?", "¾ÕÂÊ¿¡¼­ Á¡Á¡ ´Ù°¡¿À°í ÀÖ¾î...", "...!" };
-    string[] ¿ÀºêÁ§Æ® = new string[4] { "¹Ù´Ú¿¡ ¶³¾îÁ®ÀÖ´Â Á¾ÀÌ ÂÉ°¡¸®", "ÀÇÀÚ¿¡ ¶³¾îÁ®ÀÖ´Â ¿¡¾îÆÌ ÇÑÂÊ", "ÀÇÀÚ¿¡ ¶³¾îÁ®ÀÖ´Â Å°¸µ", "¿­Â÷»çÀÌ ¹®" };
-    string[] »óÈ£ÀÛ¿ë = new string[4] { "[Âõ°ÜÁø ºÎÀû] : ¿µ¹®À» ¾Ë ¼ö ¾ø´Â ±Û¾¾°¡ ¾²¿©Áø Á¾ÀÌ. ¼¶¶àÇÏ°Ô Âõ°ÜÁ®ÀÖ´Ù.", "[´©±º°¡ µÎ°í ³»¸° ¿¡¾îÆÌ ÇÑÂÊ]À» °¡¹æ¿¡ Ã¬°å´Ù.", "[´©±º°¡ Èê¸° Å°¸µ]À» °¡¹æ¿¡ Ã¬°å´Ù.", "¹«¾ð°¡¿¡ °É¸° µí ¹®ÀÌ ¿­¸®Áö ¾Ê´Â´Ù" };
+    string[] text = new string[10] { "ï¿½ï¿½...", "ï¿½Ó¸ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...", "...", "ï¿½Ùµï¿½ ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½? ï¿½ï¿½ï¿½ï¿½ ï¿½Æ¹ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½?", "...", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Æ´Ù³àº¼ï¿½ï¿½.", "...?", "...ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¸ï¿½ï¿½ï¿½...?", "ï¿½ï¿½ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½...", "...!" };
+    string[] ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® = new string[4] { "ï¿½Ù´Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½É°ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ Å°ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½" };
+    string[] ï¿½ï¿½È£ï¿½Û¿ï¿½ = new string[4] { "[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½] : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½.", "[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½]ï¿½ï¿½ ï¿½ï¿½ï¿½æ¿¡ Ã¬ï¿½ï¿½ï¿½.", "[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ê¸° Å°ï¿½ï¿½]ï¿½ï¿½ ï¿½ï¿½ï¿½æ¿¡ Ã¬ï¿½ï¿½ï¿½.", "ï¿½ï¿½ï¿½ð°¡¿ï¿½ ï¿½É¸ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½" };
     // Start is called before the first frame update
     void Start()
     {
-        ¸»Ç³¼±.SetActive(true);
-        ÀÌ¸§.text = customize.playername;
-        ³»¿ë.text = text[scriptcounter];
+        ï¿½ï¿½Ç³ï¿½ï¿½.SetActive(true);
+        ï¿½ï¿½ï¿½ï¿½.SetActive(false);
+        ï¿½Ìµï¿½.SetActive(false);
+        ï¿½ë½¬.SetActive(false);
+        ï¿½ï¿½ï¿½ï¿½.SetActive(false);
+        ï¿½Îºï¿½.SetActive(false);
+
+        ï¿½Ì¸ï¿½.text = customize.playername;
+        ï¿½ï¿½ï¿½ï¿½.text = text[scriptcounter];
         scriptcounter++;
         //interactionViewRectTransform = InteractionView.GetComponent<RectTransform>();
         //InteractionView.SetActive(false);
@@ -52,33 +62,36 @@ public class tutorialscript : MonoBehaviour
     {
         if (scriptcounter <= 5)
         {
-            ÀÌ¸§.text = customize.playername;
-            ³»¿ë.text = text[scriptcounter];
+            ï¿½Ì¸ï¿½.text = customize.playername;
+            ï¿½ï¿½ï¿½ï¿½.text = text[scriptcounter];
             scriptcounter++;
         }
         else if (scriptcounter == 6)
         {
-            ¸»Ç³¼±.SetActive(false);
+            //ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½Å´ï¿½ï¿½ï¿½.SetActive(false);
+            ï¿½ï¿½Ç³ï¿½ï¿½.SetActive(false);
+            ï¿½ë½¬.SetActive(true);
+            ï¿½Ìµï¿½.SetActive(true);
         }
     }
-    /*   private void OnMouseOver() //¾ÆÀÌÅÛ À§¿¡ Ä¿¼­ ÀÖ´Â °Í °¨Áö 
+    /*   private void OnMouseOver() //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ä¿ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
        {
-           if (!isMouseOver) //Ä¿¼­°¡ ¿ÀºêÁ§Æ® À§¿¡ ¿Ã¶ó°¬À» ¶§ ÃÖÃÊ 1¹ø¸¸ ½ÇÇà
+           if (!isMouseOver) //Ä¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¶ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
            {
                isMouseOver = true;
-               string objectName = gameObject.name; //Ä¿¼­ °¨ÁöÇÑ ¿ÀºêÁ§Æ® ÀÌ¸§ 
-               Debug.Log("¸¶¿ì½º °¨Áö" + objectName);
+               string objectName = gameObject.name; //Ä¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ì¸ï¿½ 
+               Debug.Log("ï¿½ï¿½ï¿½ì½º ï¿½ï¿½ï¿½ï¿½" + objectName);
 
-               Vector3 mousePosition = Input.mousePosition; //Ä¿¼­ ÁÂÇ¥ °¡Á®¿È 
+               Vector3 mousePosition = Input.mousePosition; //Ä¿ï¿½ï¿½ ï¿½ï¿½Ç¥ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
                worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, Camera.main.nearClipPlane));
 
-               ActiveInteraction(); //»óÅÂÃ¢ on
+               ActiveInteraction(); //ï¿½ï¿½ï¿½ï¿½Ã¢ on
            }
 
        }
        void OnMouseExit()
        {
-           // ¸¶¿ì½º°¡ ¿ÀºêÁ§Æ®¿¡¼­ ¹þ¾î³µÀ» ¶§ ÇÃ·¡±×¸¦ ¸®¼Â
+           // ï¿½ï¿½ï¿½ì½ºï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î³µï¿½ï¿½ ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½×¸ï¿½ ï¿½ï¿½ï¿½ï¿½
            isMouseOver = false;
            InteractionView.SetActive(false);
        }
@@ -87,12 +100,12 @@ public class tutorialscript : MonoBehaviour
 
        public void ActiveInteraction()
        {
-           InteractionView.transform.position = (worldPosition); //¿ÀºêÁ§Æ® Ä¿¼­ À§Ä¡·Î »óÅÂÃ¢ ÀÌµ¿ 
-           InteractionView.SetActive(true); //Ä¿¼­ °¨Áö ½Ã »óÅÂÃ¢ on
-           if(gameObject.name=="Âõ°ÜÁøºÎÀû")
+           InteractionView.transform.position = (worldPosition); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® Ä¿ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¢ ï¿½Ìµï¿½ 
+           InteractionView.SetActive(true); //Ä¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¢ on
+           if(gameObject.name=="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")
            {
                objectcounter = 0;
-               ¼³¸í.text = »óÈ£ÀÛ¿ë[objectcounter];
+               ï¿½ï¿½ï¿½ï¿½.text = ï¿½ï¿½È£ï¿½Û¿ï¿½[objectcounter];
            }
        }
     */
@@ -105,81 +118,104 @@ public class tutorialscript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            ¸»Ç³¼±.SetActive(true);
-            ÀÌ¸§.text = "System";
-            ³»¿ë.text = "³Ê¹« ÇÇ°ïÇØ¼­ ´Þ¸± ¼ö ¾ø´Ù.";
+            //ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½Å´ï¿½ï¿½ï¿½.SetActive(true);
+            ï¿½ï¿½Ç³ï¿½ï¿½.SetActive(true);
+            ï¿½Ì¸ï¿½.text = "System";
+            ï¿½ï¿½ï¿½ï¿½.text = "ï¿½Ê¹ï¿½ ï¿½Ç°ï¿½ï¿½Ø¼ï¿½ ï¿½Þ¸ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.";
+            ï¿½ë½¬.SetActive(false);
+            ï¿½Ìµï¿½.SetActive(false);
 
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            ¸»Ç³¼±.SetActive(false);
-        }
+            //ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½Å´ï¿½ï¿½ï¿½.SetActive(false);
+            ï¿½ï¿½Ç³ï¿½ï¿½.SetActive(false);
 
-        if (Input.GetMouseButtonDown(0))
+        }
+        
+        /*if (Input.GetMouseButtonDown(0))
         {
-            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
+            //Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
+            //string objectName = gameObject.name; //Ä¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½Ì¸ï¿½ 
+            //Debug.Log("ï¿½ï¿½ï¿½ì½º Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½" + objectName);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if(Physics.Raycast(ray,out hit))
+            {
+                Debug.Log(hit.transform.gameObject.name);
+
+            }
+            
+        
             if (hit.collider != null)
             {
                 GameObject clickobj = hit.transform.gameObject;
-                if (clickflag == 0 && clickobj.name == "¿­Â÷»çÀÌ¹®" && intertest.Ãæµ¹¾ÆÀÌÅÛ¸í == "¿­Â÷»çÀÌ¹®")
+                Debug.Log(clickobj.name);
+                Debug.Log("Å¬ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½");
+                
+                if (clickflag == 0 && clickobj.name == "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½"&& intertest.ï¿½æµ¹ï¿½ï¿½ï¿½ï¿½ï¿½Û¸ï¿½=="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½")
                 {
 
 
-                    ¸»Ç³¼±.SetActive(true);
-                    ÀÌ¸§.text = "System";
-                    ³»¿ë.text = "¹®ÀÌ ¿­·È´Ù";
+                    ï¿½ï¿½Ç³ï¿½ï¿½.SetActive(true);
+                    ï¿½Ì¸ï¿½.text = "System";
+                    ï¿½ï¿½ï¿½ï¿½.text = "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½È´ï¿½";
                     clickflag = 1;
                 }
-                else if (clickflag >= 1 && clickobj.name == "¿­Â÷»çÀÌ¹®")
+                else if (clickflag >= 1 && clickobj.name == "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½")
                 {
 
-                    ¸»Ç³¼±.SetActive(true);
-                    ÀÌ¸§.text = "System";
+                    ï¿½ï¿½Ç³ï¿½ï¿½.SetActive(true);
+                    ï¿½Ì¸ï¿½.text = "System";
                     if (gotoflag < 3)
                     {
-                        ³»¿ë.text = "¿­Â÷¸¦ Á¶±Ý ´õ µÑ·¯º¸ÀÚ. ";
+                        ï¿½ï¿½ï¿½ï¿½.text = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ñ·ï¿½ï¿½ï¿½ï¿½ï¿½. ";
                     }
                     else
                     {
-                        ³»¿ë.text = "´ÙÀ½ Ä­À¸·Î ÀÌµ¿ÇÑ´Ù";
+                        ï¿½ï¿½ï¿½ï¿½.text = "ï¿½ï¿½ï¿½ï¿½ Ä­ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ñ´ï¿½";
 
                         SceneManager.LoadScene("Pro_map2 beta");
                     }
 
                     clickflag = 2;
                 }
-                else if (clickobj.name == "Âõ°ÜÁøºÎÀû" && intertest.Ãæµ¹¾ÆÀÌÅÛ¸í == "Âõ°ÜÁøºÎÀû")
+                else if (clickobj.name == "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" && intertest.ï¿½æµ¹ï¿½ï¿½ï¿½ï¿½ï¿½Û¸ï¿½ == "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")
                 {
-                    ¸»Ç³¼±.SetActive(true);
-                    ÀÌ¸§.text = "System";
-                    ³»¿ë.text = "[Âõ°ÜÁø ºÎÀû] : ¿µ¹®À» ¾Ë ¼ö ¾ø´Â ±Û¾¾°¡ ¾²¿©Áø Á¾ÀÌ.¼¶¶àÇÏ°Ô Âõ°ÜÁ®ÀÖ´Ù.";
+                    ï¿½ï¿½Ç³ï¿½ï¿½.SetActive(true);
+                    ï¿½Ì¸ï¿½.text = "System";
+                    ï¿½ï¿½ï¿½ï¿½.text = "[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½] : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½.";
                     clickobj.SetActive(false);
-                    Âõ°ÜÁøºÎÀû¼³¸í.SetActive(false);
-                    inventory.AddItem("Âõ°ÜÁøºÎÀû", "¿µ¹®À» ¾Ë ¼ö ¾ø´Â ±Û¾¾°¡ ¾²¿©Áø Á¾ÀÌ. ¼¶¶àÇÏ°Ô Âõ°ÜÁ®ÀÖ´Ù.");
+                    ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.SetActive(false);
+                    inventory.AddItem("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½.");
                     gotoflag++;
                 }
-                else if (clickobj.name == "¿¡¾îÆÌÇÑÂÊ" && intertest.Ãæµ¹¾ÆÀÌÅÛ¸í == "¿¡¾îÆÌÇÑÂÊ")
+                else if (clickobj.name == "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" && intertest.ï¿½æµ¹ï¿½ï¿½ï¿½ï¿½ï¿½Û¸ï¿½ == "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")
                 {
-                    ¸»Ç³¼±.SetActive(true);
-                    ÀÌ¸§.text = "System";
-                    ³»¿ë.text = "[´©±º°¡ µÎ°í ³»¸° ¿¡¾îÆÌ ÇÑÂÊ]À» °¡¹æ¿¡ Ã¬°å´Ù";
+                    ï¿½ï¿½Ç³ï¿½ï¿½.SetActive(true);
+                    ï¿½Ì¸ï¿½.text = "System";
+                    ï¿½ï¿½ï¿½ï¿½.text = "[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½]ï¿½ï¿½ ï¿½ï¿½ï¿½æ¿¡ Ã¬ï¿½ï¿½ï¿½";
                     clickobj.SetActive(false);
-                    ¿¡¾îÆÌ¼³¸í.SetActive(false);
-                    inventory.AddItem("¿¡¾îÆÌÇÑÂÊ", "´©±º°¡ µÎ°í ³»¸° ¿¡¾îÆÌ ÇÑÂÊ.");
+                    ï¿½ï¿½ï¿½ï¿½ï¿½Ì¼ï¿½ï¿½ï¿½.SetActive(false);
+                    inventory.AddItem("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Î°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.");
                     gotoflag++;
                 }
-                else if (clickobj.name == "Å°¸µ" && intertest.Ãæµ¹¾ÆÀÌÅÛ¸í == "Å°¸µ")
+                else if (clickobj.name == "Å°ï¿½ï¿½" && intertest.ï¿½æµ¹ï¿½ï¿½ï¿½ï¿½ï¿½Û¸ï¿½ == "Å°ï¿½ï¿½")
                 {
-                    ¸»Ç³¼±.SetActive(true);
-                    ÀÌ¸§.text = "System";
-                    ³»¿ë.text = "[´©±º°¡ Èê¸° Å°¸µ]À» °¡¹æ¿¡ Ã¬°å´Ù.";
+                    ï¿½ï¿½Ç³ï¿½ï¿½.SetActive(true);
+                    ï¿½Ì¸ï¿½.text = "System";
+                    ï¿½ï¿½ï¿½ï¿½.text = "[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ê¸° Å°ï¿½ï¿½]ï¿½ï¿½ ï¿½ï¿½ï¿½æ¿¡ Ã¬ï¿½ï¿½ï¿½.";
                     clickobj.SetActive(false);
-                    Å°¸µ¼³¸í.SetActive(false);
-                    inventory.AddItem("Å°¸µ", "´©±º°¡ Èê¸° Å°¸µ.");
+                    Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.SetActive(false);
+                    inventory.AddItem("Å°ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ê¸° Å°ï¿½ï¿½.");
                     gotoflag++;
                 }
             }
-        }
+            else
+            {
+                Debug.Log("ï¿½æµ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½");
+            }
+        }*/
     }
 }

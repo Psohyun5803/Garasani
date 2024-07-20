@@ -4,12 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - JM
   - NPC
   - chosen1
   - chosen2
   - chosen3
-
   layers:
   - Default
   - TransparentFX
@@ -17,9 +15,9 @@ TagManager:
   - 
   - Water
   - UI
-  - Player
-  - Ground
-  - InteractionView
+  - character
+  - 
+  - 
   - 
   - 
   - 
@@ -47,15 +45,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: ui
-    uniqueID: 2632242589
+  - name: character
+    uniqueID: 366542917
     locked: 0
-  - name: 
-    uniqueID: 167718407
-    locked: 0
-  - name: 
-    uniqueID: 900784477
-    locked: 0
-  - name: 
-    uniqueID: 2506945233
+  - name: UI
+    uniqueID: 1386907181
     locked: 0

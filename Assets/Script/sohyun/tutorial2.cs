@@ -62,6 +62,7 @@ public class tutorial2 : MonoBehaviour
                     내용.text = "무언가에 걸린듯 문이 열리지 않는다.";
                     textflag++;
 
+                    SceneManager.LoadScene("Dialogue");
                 }
             }
         }

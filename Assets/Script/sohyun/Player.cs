@@ -134,7 +134,7 @@ public class Player : MonoBehaviour
         spriteRenderer.sprite = basebody[spriteindex];
         Debug.Log("적용됨");
     }
-    private float Speed = 5f;//0.42f
+    private float Speed = 0.42f;//0.42f
     //[SerializeField] LayerMask layermask;
     public float distance;
     void FindGround()
@@ -518,7 +518,7 @@ public class Player : MonoBehaviour
      private void OnCollisionEnter2D(Collision2D collision)
      {
          
-         Debug.Log("충돌감지");
+         //Debug.Log("충돌감지");
          충돌flag = 1;
          /*if (!collision.transform.CompareTag("ground"))//밟은 곳이 땅이 아닐 때
          {
@@ -545,7 +545,7 @@ public class Player : MonoBehaviour
 
      private void OnCollisionExit2D(Collision2D collision)
      {
-         Debug.Log("충돌벗어남");
+         //Debug.Log("충돌벗어남");
          충돌flag = 0;
 
              //player.transform.position = pos;

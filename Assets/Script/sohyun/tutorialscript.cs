@@ -24,11 +24,15 @@ public class tutorialscript : MonoBehaviour
     public GameObject 찢겨진부적설명;
     public GameObject 에어팟설명;
     public GameObject 키링설명;
+    //public GameObject 스크립트매니저;
     private RectTransform interactionViewRectTransform;
     public Vector3 mousePosition; //마우스 커서 좌표
     public Vector3 worldPosition; //마우스 커서 월드좌표
 
-
+    public GameObject 이동;
+    public GameObject 대쉬;
+    public GameObject 조사;
+    public GameObject 인벤;
     public TMP_Text 내용;
     public TMP_Text 이름;
     int scriptcounter = 0;
@@ -40,6 +44,12 @@ public class tutorialscript : MonoBehaviour
     void Start()
     {
         말풍선.SetActive(true);
+        조사.SetActive(false);
+        이동.SetActive(false);
+        대쉬.SetActive(false);
+        조사.SetActive(false);
+        인벤.SetActive(false);
+
         이름.text = customize.playername;
         내용.text = text[scriptcounter];
         scriptcounter++;
@@ -56,7 +66,10 @@ public class tutorialscript : MonoBehaviour
         }
         else if (scriptcounter==6)
         {
+            //스크립트매니저.SetActive(false);
             말풍선.SetActive(false);
+            대쉬.SetActive(true);
+            이동.SetActive(true);
         }
     }
     /*   private void OnMouseOver() //아이템 위에 커서 있는 것 감지 
@@ -103,23 +116,42 @@ public class tutorialscript : MonoBehaviour
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
+            //스크립트매니저.SetActive(true);
             말풍선.SetActive(true);
             이름.text = "System";
             내용.text = "너무 피곤해서 달릴 수 없다.";
+            대쉬.SetActive(false);
+            이동.SetActive(false);
 
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
+            //스크립트매니저.SetActive(false);
             말풍선.SetActive(false);
+
         }
         
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
-            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
+            //Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
+            //string objectName = gameObject.name; //커서 감지한 오브젝트 이름 
+            //Debug.Log("마우스 클릭 감지" + objectName);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if(Physics.Raycast(ray,out hit))
+            {
+                Debug.Log(hit.transform.gameObject.name);
+
+            }
+            
+        
             if (hit.collider != null)
             {
                 GameObject clickobj = hit.transform.gameObject;
+                Debug.Log(clickobj.name);
+                Debug.Log("클릭했습니다");
+                
                 if (clickflag == 0 && clickobj.name == "열차사이문"&& intertest.충돌아이템명=="열차사이문")
                 {
                     
@@ -180,6 +212,10 @@ public class tutorialscript : MonoBehaviour
 
 
             }
-        }
+            else
+            {
+                Debug.Log("충돌아이템이 없습니다");
+            }
+        }*/
     }
 }

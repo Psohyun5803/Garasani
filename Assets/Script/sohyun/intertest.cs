@@ -28,6 +28,7 @@ public class intertest: MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         Debug.Log("아이템 충돌 감지");
+        충돌아이템명 = null;
         if (collision.gameObject.name == "basebody"|| collision.gameObject.name=="Player")
         {
             플레이어충돌 = 0;
@@ -67,7 +68,7 @@ public class intertest: MonoBehaviour
 
     public void ActiveInteraction()
     {
-        InteractionView.transform.position = (worldPosition); //오브젝트 커서 위치로 상태창 이동 
+        //InteractionView.transform.position = (worldPosition); //오브젝트 커서 위치로 상태창 이동 
         InteractionView.SetActive(true); //커서 감지 시 상태창 on
     }
 

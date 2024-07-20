@@ -28,7 +28,7 @@ public class cameramove : MonoBehaviour
             transform.position = new Vector3(player.transform.position.x,
                              player.transform.position.y, -10);
 
-            Debug.Log("µÇ´ÂÁß");
+            
         }
         else
         {

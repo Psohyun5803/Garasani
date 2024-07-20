@@ -11,11 +11,12 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text name;
     public TMP_Text chosen1_text;
     public TMP_Text chosen2_text;
+    public TMP_Text chosen3_text;
     public int currentIdx;
     public bool IsDialogueFinished;
-    //public int ChooseFlag = 0;
     public  Dialogue[] contextList;
     public int chooseFlag = 0;
+    public bool clickFlag = false;
 
     public void Awake()
     {
@@ -55,15 +56,24 @@ public class DialogueManager : MonoBehaviour
         dialogue_text.text = contextList[currentIdx].contexts;
         name.text = contextList[currentIdx].name;
 
-        if (!string.IsNullOrEmpty(contextList[currentIdx].chosen1))
+        if (!string.IsNullOrEmpty(contextList[currentIdx].chosen1) && string.IsNullOrEmpty(contextList[currentIdx].chosen3))
         {
             chosen1_text.text = contextList[currentIdx].chosen1;
             chosen2_text.text = contextList[currentIdx].chosen2;
+            chosen3_text.text = "";
         }
-        else
+        else if(!string.IsNullOrEmpty(contextList[currentIdx].chosen3) && string.IsNullOrEmpty(contextList[currentIdx].chosen1))
         {
             chosen1_text.text = "";
             chosen2_text.text = "";
+            chosen3_text.text = contextList[currentIdx].chosen3;
+
+        }
+        else if(string.IsNullOrEmpty(contextList[currentIdx].chosen1) && string.IsNullOrEmpty(contextList[currentIdx].chosen3))
+        {
+            chosen1_text.text = "";
+            chosen2_text.text = "";
+            chosen3_text.text = "";
         }
  
     }
@@ -76,18 +86,23 @@ public class DialogueManager : MonoBehaviour
             chooseFlag = 1;
         else if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen2") == 0)
             chooseFlag = 2;
-        Debug.Log("Flag" + chooseFlag); ;
+        else if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen3") == 0)
+            clickFlag = true;
+        Debug.Log("chooseFlag: " + chooseFlag + ", clickFlag: " + clickFlag);
+
     }
+
+  
 
     public void processChoose(Dialogue[] dialogues) //선택지가 있는 대화인 경우 사용 
     {
-        DialogueManager.instance.Initialize(dialogues);
+        Initialize(dialogues);
     }
 
     public IEnumerator processing(Dialogue[] dialogues) //선택지가 없는 대화인 경우 사용 
     {
-        DialogueManager.instance.Initialize(dialogues);
-        yield return new WaitUntil(() => DialogueManager.instance.IsDialogueFinished);
+        Initialize(dialogues);
+        yield return new WaitUntil(() => IsDialogueFinished);
 
     }
 

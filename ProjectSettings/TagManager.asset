@@ -8,9 +8,8 @@ TagManager:
   - NPC
   - chosen1
   - chosen2
-  - floor
-  - ground
-  - etc
+  - chosen3
+
   layers:
   - Default
   - TransparentFX

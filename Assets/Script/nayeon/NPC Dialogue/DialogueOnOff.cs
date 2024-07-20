@@ -8,6 +8,7 @@ public class DialogueOnOff : MonoBehaviour
     public GameObject ui_Dialogue;
     public float rayDistance = 100f;  // Raycast 거리
     // public LayerMask hitLayers;  // 특정 레이어에 대해 Raycast 적용
+    
 
     void Awake()
     {
@@ -29,7 +30,6 @@ public class DialogueOnOff : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            //int layerMask = 1 << LayerMask.NameToLayer("Player");
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction, rayDistance);
             
 
@@ -39,12 +39,10 @@ public class DialogueOnOff : MonoBehaviour
                 if (hit.transform.gameObject.CompareTag("NPC")) // 클릭한 물체 오브젝트가 npc면 대화창 띄움
                 {
                     ui_Dialogue.SetActive(true);
+                    StoryManager.instance.StoryStart();
                 }
             }
-            //else
-            //{
-            //    Debug.Log("Raycast did not hit any object.");
-            //}
+
         }
     }
     void Update()

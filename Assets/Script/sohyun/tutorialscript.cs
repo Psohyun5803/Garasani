@@ -28,7 +28,7 @@ public class tutorialscript : MonoBehaviour
     private RectTransform interactionViewRectTransform;
     public Vector3 mousePosition; //마우스 커서 좌표
     public Vector3 worldPosition; //마우스 커서 월드좌표
-
+    public static int gotoflag =0;
     public GameObject 이동;
     public GameObject 대쉬;
     public GameObject 조사;
@@ -110,10 +110,23 @@ public class tutorialscript : MonoBehaviour
 
     // Update is called once per frame
     int clickflag = 0;
-    int gotoflag = 0;
+    
     void Update()
     {
-
+        if (intertest.충돌아이템명 != null)
+        {
+            대쉬.SetActive(false);
+            이동.SetActive(false);
+            조사.SetActive(true);
+            인벤.SetActive(true);
+        }
+        else
+        {
+            대쉬.SetActive(true);
+            이동.SetActive(true);
+            조사.SetActive(false);
+            인벤.SetActive(false);
+        }
         if (Input.GetKey(KeyCode.LeftShift))
         {
             //스크립트매니저.SetActive(true);

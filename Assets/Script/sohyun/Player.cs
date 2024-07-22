@@ -518,15 +518,17 @@ public class Player : MonoBehaviour
      private void OnCollisionEnter2D(Collision2D collision)
      {
          
-         //Debug.Log("Ãæµ¹°¨Áö");
+
          Ãæµ¹flag = 1;
-         /*if (!collision.transform.CompareTag("ground"))//¹âÀº °÷ÀÌ ¶¥ÀÌ ¾Æ´Ò ¶§
+         if (customize.sceneflag > 1 && (collision.transform.CompareTag("ground")))
          {
-            moveflag = 0;
-           
+            moveflag = 1;
+            Vector2 pos = transform.position;
 
 
-        }*/
+
+
+        }
         
 
            
@@ -534,23 +536,29 @@ public class Player : MonoBehaviour
      }
      private void OnCollisionStay2D(Collision2D collision)
      {
-        /*if (!collision.transform.CompareTag("ground"))
-        {
-            moveflag = 0;
-        }*/
 
+        if (customize.sceneflag > 1 && (collision.transform.CompareTag("ground")))
+        {
+            pos = transform.position;
+            Debug.Log("µÇ°íÀÕÀ½");
+            
+        }
 
 
      }
 
      private void OnCollisionExit2D(Collision2D collision)
      {
-         //Debug.Log("Ãæµ¹¹þ¾î³²");
-         Ãæµ¹flag = 0;
 
-             //player.transform.position = pos;
-         //moveflag = 1;
-     }
+        if (customize.sceneflag > 1 && (collision.transform.CompareTag("ground")))
+        {
+            moveflag = 0;
+           
+            transform.position = pos;
+          
+            
+        }
+    }
 
 
 

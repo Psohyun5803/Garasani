@@ -15,6 +15,7 @@ public class intertest: MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         Debug.Log("아이템 충돌 감지");
         Debug.Log(collision.gameObject.name);
         if (collision.gameObject.name == "basebody"|| collision.gameObject.name=="Player")

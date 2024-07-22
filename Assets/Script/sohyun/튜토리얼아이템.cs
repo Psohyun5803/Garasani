@@ -14,7 +14,7 @@ using System;
 public class 튜토리얼아이템 : MonoBehaviour
 {
     int clickflag = 0;
-    int gotoflag = 0;
+    
     int 키링flag = 0;
     int 에어팟flag = 0;
     int 부적flag = 0;
@@ -63,7 +63,7 @@ public class 튜토리얼아이템 : MonoBehaviour
 
             말풍선.SetActive(true);
             이름.text = "System";
-            if (gotoflag < 3)
+            if (tutorialscript.gotoflag < 3)
             {
                 내용.text = "열차를 조금 더 둘러보자. ";
             }
@@ -86,7 +86,7 @@ public class 튜토리얼아이템 : MonoBehaviour
             찢겨진부적.SetActive(false);
             찢겨진부적설명.SetActive(false);
             inventory.AddItem("찢겨진부적", "영문을 알 수 없는 글씨가 쓰여진 종이. 섬뜩하게 찢겨져있다.");
-            gotoflag++;
+            tutorialscript.gotoflag++;
             부적flag = 1;
         }
         else if (에어팟flag==0&&intertest.충돌아이템명 == "에어팟한쪽")
@@ -97,7 +97,7 @@ public class 튜토리얼아이템 : MonoBehaviour
             에어팟한쪽.SetActive(false);
             에어팟설명.SetActive(false);
             inventory.AddItem("에어팟한쪽", "누군가 두고 내린 에어팟 한쪽.");
-            gotoflag++;
+            tutorialscript.gotoflag++;
             에어팟flag = 1;
         }
         else if (키링flag==0&&intertest.충돌아이템명 == "키링")
@@ -108,16 +108,12 @@ public class 튜토리얼아이템 : MonoBehaviour
             키링.SetActive(false);
             키링설명.SetActive(false);
             inventory.AddItem("키링", "누군가 흘린 키링.");
-            gotoflag++;
+            tutorialscript.gotoflag++;
             키링flag = 1;
            
         }
         
 
     }
-    public void test()
-    {
-        Debug.Log("클릭되엇삼삼");
-    }
-    
+   
 }

@@ -25,7 +25,15 @@ public class intertest: MonoBehaviour
             Debug.Log(충돌아이템명);
         }
     }
-
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "basebody" || collision.gameObject.name == "Player")
+        {
+            플레이어충돌 = 1;
+            충돌아이템명 = gameObject.name;
+            Debug.Log(충돌아이템명);
+        }
+    }
     private void OnCollisionExit2D(Collision2D collision)
     {
         Debug.Log("아이템 충돌 감지");

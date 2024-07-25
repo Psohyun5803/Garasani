@@ -17,7 +17,7 @@ public class tutorialscript : MonoBehaviour
     public GameObject 버튼;
 
 
-    private bool isMouseOver = false; //현재 오브젝트 위에 커서가 있는지에 대한 플래그
+    
     public GameObject InteractionView;
     public TMP_Text 설명;
     public GameObject 찢겨진부적;
@@ -36,7 +36,7 @@ public class tutorialscript : MonoBehaviour
     public TMP_Text 내용;
     public TMP_Text 이름;
     int scriptcounter = 0;
-    int objectcounter = 0;
+    
     string[] text = new string[10] { "으...", "머리를 좀 세게 부딪힌 거 같은데...", "...", "근데 왜 이리 조용하지? 설마 아무도 없나?", "...", "열차를 좀 돌아다녀볼까.", "...?", "...이게 무슨 소리지...?", "앞쪽에서 점점 다가오고 있어...", "...!" };
     string[] 오브젝트 = new string[4] { "바닥에 떨어져있는 종이 쪼가리", "의자에 떨어져있는 에어팟 한쪽", "의자에 떨어져있는 키링", "열차사이 문" };
     string[] 상호작용 = new string[4] { "[찢겨진 부적] : 영문을 알 수 없는 글씨가 쓰여진 종이. 섬뜩하게 찢겨져있다.", "[누군가 두고 내린 에어팟 한쪽]을 가방에 챙겼다.", "[누군가 흘린 키링]을 가방에 챙겼다.", "무언가에 걸린 듯 문이 열리지 않는다" };
@@ -109,7 +109,7 @@ public class tutorialscript : MonoBehaviour
     */
 
     // Update is called once per frame
-    int clickflag = 0;
+   
     
     void Update()
     {

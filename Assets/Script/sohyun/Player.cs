@@ -8,16 +8,16 @@ public class Player : MonoBehaviour
     public Sprite[] basebody;
     public GameObject player;
     int spriteindex = 0;
-    int keydown = 0;
+  
     int frontflag = 0;
     int leftflag = 0;
     int rightflag = 0;
     int backflag = 0;
 
-    int frontflagok = 1;
-    int leftflagok = 1;
-    int rightflagok = 1;
-    int backflagok = 1;
+    
+    
+   
+    
     public static int Ãæµ¹flag = 0;
     
     SpriteRenderer spriteRenderer;
@@ -60,7 +60,8 @@ public class Player : MonoBehaviour
     {
         Vector3 newPosition = new Vector3(x , y , 0);
         player.transform.position = newPosition;
-        transform.position = newPosition; //
+        //transform.position = newPosition; //
+        Debug.Log(gameObject.name);
     }
     void Awake()
     {
@@ -134,7 +135,7 @@ public class Player : MonoBehaviour
         spriteRenderer.sprite = basebody[spriteindex];
         Debug.Log("Àû¿ëµÊ");
     }
-    private float Speed = 0.42f;//0.42f
+    private float Speed = 0.82f;//0.42f
     //[SerializeField] LayerMask layermask;
     public float distance;
     void FindGround()
@@ -151,7 +152,7 @@ public class Player : MonoBehaviour
 
         }
     }
-    float CameraSpeed = 5f;
+  
    
     public void move()
     {   
@@ -540,7 +541,7 @@ public class Player : MonoBehaviour
         if (customize.sceneflag > 1 && (collision.transform.CompareTag("ground")))
         {
             pos = transform.position;
-            Debug.Log("µÇ°íÀÕÀ½");
+            
             
         }
 
@@ -553,8 +554,9 @@ public class Player : MonoBehaviour
         if (customize.sceneflag > 1 && (collision.transform.CompareTag("ground")))
         {
             moveflag = 0;
-           
+
             transform.position = pos;
+           
           
             
         }

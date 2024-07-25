@@ -18,7 +18,7 @@ public class 튜토리얼아이템 : MonoBehaviour
     int 키링flag = 0;
     int 에어팟flag = 0;
     int 부적flag = 0;
-    int 문flag = 0;
+   
     public TMP_Text 내용;
     public TMP_Text 이름;
     public GameObject 말풍선;

@@ -15,11 +15,11 @@ public class DialogueManager : MonoBehaviour
     public int currentIdx;
     public bool IsDialogueFinished;
     public  Dialogue[] contextList;
-    public int chooseFlag = 0; //������ 2���� ��� flag�� 
-    public bool clickFlag = false; //�������� 1���ΰ�� Ŭ�� Ȯ�� 
-    private bool isChosenOne = false; //�������� 1���ΰ��
+    public int chooseFlag = 0; //선택지 대화 flag
+    public bool clickFlag = false; //선택지 1개인경우 click check
+    private bool isChosenOne = false; //선택지 1개인 경우 
 
-    private float delay = 0.05f; //Ÿ���� �ӵ�
+    private float delay = 0.05f; //타이핑 속도 
     private Coroutine typingCoroutine;
     private bool isTyping = false;
 
@@ -44,7 +44,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (contextList != null && currentIdx < contextList.Length - 1)
         {
-            currentIdx++; // ���� �������� �̵�
+            currentIdx++; 
             DisplayDialogue();
         }
         else
@@ -72,7 +72,7 @@ public class DialogueManager : MonoBehaviour
         chosen2_text.text = "";
         name.text = contextList[currentIdx].name;
 
-        if(name.text != customize.playername) //���ΰ��� npc ����,������ ���� ���� 
+        if(name.text != customize.playername) //npc player 구분 
         {
             dialogue_text.alignment = TextAlignmentOptions.Right;
         }
@@ -126,10 +126,8 @@ public class DialogueManager : MonoBehaviour
 
     public void OnClickChoose()
     {
-        Debug.Log("������ Ŭ�� Ȯ��");
-        //�±װ� 1�̸� ��ȣ 1����, 2�� 2����
-        if (isChosenOne)
-            clickFlag = true;
+        if (isChosenOne) //선택지 1개인 경우
+            clickFlag = true; 
         else
         {
             if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen1") == 0)
@@ -141,12 +139,12 @@ public class DialogueManager : MonoBehaviour
 
   
 
-    public void processChoose(Dialogue[] dialogues) //�������� �ִ� ��ȭ�� ��� ��� 
+    public void processChoose(Dialogue[] dialogues) // choose 2
     {
         Initialize(dialogues);
     }
 
-    public IEnumerator processing(Dialogue[] dialogues) //�������� ���� ��ȭ�� ��� ��� 
+    public IEnumerator processing(Dialogue[] dialogues) //choose 1
     {
         Initialize(dialogues);
         yield return new WaitUntil(() => IsDialogueFinished);
@@ -155,7 +153,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        // ���콺 Ŭ������ Ÿ����ȿ�� �ڷ�ƾ ���߰� ��� ��� ���
+        // typing effect
         if (isTyping && EventSystem.current.currentSelectedGameObject != null && EventSystem.current.currentSelectedGameObject.name == "말풍선")
         {
             if (typingCoroutine != null)
@@ -167,7 +165,7 @@ public class DialogueManager : MonoBehaviour
             dialogue_text.text = contextList[currentIdx].contexts;
             isTyping = false;
 
-            ShowChoices(); // ��� ��� ��� �� ������ ���
+            ShowChoices(); 
         }
     }
 }

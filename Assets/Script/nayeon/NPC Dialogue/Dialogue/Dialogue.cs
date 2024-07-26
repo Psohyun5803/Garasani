@@ -26,11 +26,6 @@ public class Dialogue //상속받지 않게 삭제
     [Tooltip("선택지2 ID")]
     public int chosen2_ID;
 
-    [Tooltip("선택지3")] //선택지가 하나인 경우
-    public string chosen3;
-
-    [Tooltip("선택지3 ID")]
-    public int chosen3_ID;
 }
 
 [System.Serializable]

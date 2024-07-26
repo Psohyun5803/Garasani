@@ -155,9 +155,10 @@ public class Prologue2Dialogue : MonoBehaviour
 
     public IEnumerator prologue2_2()
     {
-        while(dialogueID <= 19)
+        while (dialogueID < 21)
         {
-            switch (dialogueID) {
+            switch (dialogueID)
+            {
                 case (15):
                     contextList = DataManager.instance.GetDialogue(33, 34);
                     DialogueManager.instance.processChoose(contextList);
@@ -168,6 +169,7 @@ public class Prologue2Dialogue : MonoBehaviour
                     else if (DialogueManager.instance.chooseFlag == 2)
                         dialogueID = 17;
                     DialogueManager.instance.chooseFlag = 0;
+                    Debug.Log(dialogueID);
                     break;
 
                 case (16):
@@ -184,110 +186,114 @@ public class Prologue2Dialogue : MonoBehaviour
 
                 case (18):
                     contextList = DataManager.instance.GetDialogue(37, 37);
-                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag != false);
+                    DialogueManager.instance.processChoose(contextList);
+                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag);
                     dialogueID = 19;
                     DialogueManager.instance.clickFlag = false;
                     break;
 
                 case (19):
-                    contextList = DataManager.instance.GetDialogue(38, 42);
-                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag != false);
+                    contextList = DataManager.instance.GetDialogue(38, 38);
+                    DialogueManager.instance.processChoose(contextList);
+                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag);
                     dialogueID = 20;
                     DialogueManager.instance.clickFlag = false;
+                    break;
+
+                case (20):
+                    contextList = DataManager.instance.GetDialogue(39, 42);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    dialogueID = 21;
                     break;
 
                 default:
-                    dialogueID = 20;
+                    dialogueID = 21;
                     break;
             }
-            
         }
+
         DialogueOnOff.instance.ui_Dialogue.SetActive(false); //´ëÈ­Ã¢ ²¨Áü 
-        
-        
     }
+
 
     public IEnumerator prologue2_3()
     {
-        while(dialogueID < 29)
+        while(dialogueID < 30)
         {
             switch (dialogueID)
             {
-                case (20):
+                case (21):
                     contextList = DataManager.instance.GetDialogue(43, 45);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    if (checkWiki == true) dialogueID = 21;
-                    else dialogueID = 22;
-                    break;
-
-                case (21):
-                    contextList = DataManager.instance.GetDialogue(46, 46);
-                    DialogueManager.instance.processChoose(contextList);
-                    yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
-
-                    if (DialogueManager.instance.chooseFlag == 1)
-                        dialogueID = 23;
-                    else if (DialogueManager.instance.chooseFlag == 2)
-                        dialogueID = 26;
-                    DialogueManager.instance.chooseFlag = 0;
+                    if (checkWiki == true) dialogueID = 22;
+                    else dialogueID = 23;
                     break;
 
                 case (22):
-                    contextList = DataManager.instance.GetDialogue(47, 47);
-                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag != false);
-
-                    dialogueID = 26;
-                    DialogueManager.instance.clickFlag = false;
-                    break;
-
-                case (23):
-                    contextList = DataManager.instance.GetDialogue(48, 52);
+                    contextList = DataManager.instance.GetDialogue(46, 46);
                     DialogueManager.instance.processChoose(contextList);
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
 
                     if (DialogueManager.instance.chooseFlag == 1)
                         dialogueID = 24;
                     else if (DialogueManager.instance.chooseFlag == 2)
-                        dialogueID = 25;
+                        dialogueID = 27;
                     DialogueManager.instance.chooseFlag = 0;
                     break;
 
+                case (23):
+                    contextList = DataManager.instance.GetDialogue(47, 47);
+                    DialogueManager.instance.processChoose(contextList);
+                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag);
+
+                    dialogueID = 27;
+                    DialogueManager.instance.clickFlag = false;
+                    break;
+
                 case (24):
-                    contextList = DataManager.instance.GetDialogue(53, 55);
-                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    dialogueID = 25;
+                    contextList = DataManager.instance.GetDialogue(48, 52);
+                    DialogueManager.instance.processChoose(contextList);
+                    yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
+
+                    if (DialogueManager.instance.chooseFlag == 1)
+                        dialogueID = 25;
+                    else if (DialogueManager.instance.chooseFlag == 2)
+                        dialogueID = 26;
+                    DialogueManager.instance.chooseFlag = 0;
                     break;
 
                 case (25):
-                    contextList = DataManager.instance.GetDialogue(56, 60);
+                    contextList = DataManager.instance.GetDialogue(53, 55);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    dialogueID = 29;
+                    dialogueID = 30;
                     break;
 
                 case (26):
-                    contextList = DataManager.instance.GetDialogue(61, 63);
+                    contextList = DataManager.instance.GetDialogue(56, 60);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    dialogueID = 27;
+                    dialogueID = 30;
                     break;
 
                 case (27):
-                    contextList = DataManager.instance.GetDialogue(64, 65);
+                    contextList = DataManager.instance.GetDialogue(61, 63);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     dialogueID = 28;
-                    Debug.Log("ÇöÀç dialogueID: " + dialogueID);
                     break;
 
                 case (28):
-                    contextList = DataManager.instance.GetDialogue(66, 69);
+                    contextList = DataManager.instance.GetDialogue(64, 65);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     dialogueID = 29;
                     break;
 
+                case (29):
+                    contextList = DataManager.instance.GetDialogue(66, 69);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    dialogueID = 30;
+                    break;
+
                 default:
-                    dialogueID = 29;
+                    dialogueID = 30;
                     break;
             }
         }

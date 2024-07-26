@@ -15,11 +15,11 @@ public class DialogueManager : MonoBehaviour
     public int currentIdx;
     public bool IsDialogueFinished;
     public  Dialogue[] contextList;
-    public int chooseFlag = 0; //¼±ÅÃÁö 2°³ÀÎ °æ¿ì flag°ª 
-    public bool clickFlag = false; //¼±ÅÃÁö°¡ 1°³ÀÎ°æ¿ì Å¬¸¯ È®ÀÎ 
-    private bool isChosenOne = false; //¼±ÅÃÁö°¡ 1°³ÀÎ°æ¿ì
+    public int chooseFlag = 0; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 2ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ flagï¿½ï¿½ 
+    public bool clickFlag = false; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½Î°ï¿½ï¿½ Å¬ï¿½ï¿½ È®ï¿½ï¿½ 
+    private bool isChosenOne = false; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ï¿½Î°ï¿½ï¿½
 
-    private float delay = 0.05f; //Å¸ÀÌÇÎ ¼Óµµ
+    private float delay = 0.05f; //Å¸ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½
     private Coroutine typingCoroutine;
     private bool isTyping = false;
 
@@ -44,13 +44,13 @@ public class DialogueManager : MonoBehaviour
     {
         if (contextList != null && currentIdx < contextList.Length - 1)
         {
-            currentIdx++; // ´ÙÀ½ ¹®ÀåÀ¸·Î ÀÌµ¿
+            currentIdx++; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
             DisplayDialogue();
         }
         else
         {
             IsDialogueFinished = true;
-            Debug.Log("contextlist ÃÊ±âÈ­ ¾ÈµÊ");
+            Debug.Log("contextlist ï¿½Ê±ï¿½È­ ï¿½Èµï¿½");
         }
     }
 
@@ -72,7 +72,7 @@ public class DialogueManager : MonoBehaviour
         chosen2_text.text = "";
         name.text = contextList[currentIdx].name;
 
-        if(name.text != customize.playername) //ÁÖÀÎ°ø°ú npc ¿ŞÂÊ,¿À¸¥ÂÊ Á¤·Ä ±¸ºĞ 
+        if(name.text != customize.playername) //ï¿½ï¿½ï¿½Î°ï¿½ï¿½ï¿½ npc ï¿½ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
         {
             dialogue_text.alignment = TextAlignmentOptions.Right;
         }
@@ -126,8 +126,8 @@ public class DialogueManager : MonoBehaviour
 
     public void OnClickChoose()
     {
-        Debug.Log("¼±ÅÃÁö Å¬¸¯ È®ÀÎ");
-        //ÅÂ±×°¡ 1ÀÌ¸é ¹øÈ£ 1¸®ÅÏ, 2¸é 2¸®ÅÏ
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ È®ï¿½ï¿½");
+        //ï¿½Â±×°ï¿½ 1ï¿½Ì¸ï¿½ ï¿½ï¿½È£ 1ï¿½ï¿½ï¿½ï¿½, 2ï¿½ï¿½ 2ï¿½ï¿½ï¿½ï¿½
         if (isChosenOne)
             clickFlag = true;
         else
@@ -137,18 +137,16 @@ public class DialogueManager : MonoBehaviour
             else if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen2") == 0)
                 chooseFlag = 2;
         }
-
-        Debug.Log(clickFlag);
     }
 
   
 
-    public void processChoose(Dialogue[] dialogues) //¼±ÅÃÁö°¡ ÀÖ´Â ´ëÈ­ÀÎ °æ¿ì »ç¿ë 
+    public void processChoose(Dialogue[] dialogues) //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 
     {
         Initialize(dialogues);
     }
 
-    public IEnumerator processing(Dialogue[] dialogues) //¼±ÅÃÁö°¡ ¾ø´Â ´ëÈ­ÀÎ °æ¿ì »ç¿ë 
+    public IEnumerator processing(Dialogue[] dialogues) //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ 
     {
         Initialize(dialogues);
         yield return new WaitUntil(() => IsDialogueFinished);
@@ -157,8 +155,8 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        // ¸¶¿ì½º Å¬¸¯À¸·Î Å¸ÀÌÇÎÈ¿°ú ÄÚ·çÆ¾ ¸ØÃß°í ´ë»ç Áï½Ã Ãâ·Â
-        if (isTyping && EventSystem.current.currentSelectedGameObject != null && EventSystem.current.currentSelectedGameObject.name == "¸»Ç³¼±")
+        // ï¿½ï¿½ï¿½ì½º Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½È¿ï¿½ï¿½ ï¿½Ú·ï¿½Æ¾ ï¿½ï¿½ï¿½ß°ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+        if (isTyping && EventSystem.current.currentSelectedGameObject != null && EventSystem.current.currentSelectedGameObject.name == "ë§í’ì„ ")
         {
             if (typingCoroutine != null)
             {
@@ -169,7 +167,7 @@ public class DialogueManager : MonoBehaviour
             dialogue_text.text = contextList[currentIdx].contexts;
             isTyping = false;
 
-            ShowChoices(); // Áï½Ã ´ë»ç Ãâ·Â ÈÄ ¼±ÅÃÁö Ãâ·Â
+            ShowChoices(); // ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         }
     }
 }

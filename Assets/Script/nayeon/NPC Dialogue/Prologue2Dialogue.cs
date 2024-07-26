@@ -185,17 +185,17 @@ public class Prologue2Dialogue : MonoBehaviour
                 case (18):
                     contextList = DataManager.instance.GetDialogue(37, 37);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag != false);
+                    yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
                     dialogueID = 19;
-                    DialogueManager.instance.clickFlag = false;
+                    DialogueManager.instance.chooseFlag = 0;
                     break;
 
                 case (19):
                     contextList = DataManager.instance.GetDialogue(38, 42);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag != false);
+                    yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
                     dialogueID = 20;
-                    DialogueManager.instance.clickFlag = false;
+                    DialogueManager.instance.chooseFlag = 0;
                     break;
 
                 default:
@@ -237,10 +237,10 @@ public class Prologue2Dialogue : MonoBehaviour
                 case (22):
                     contextList = DataManager.instance.GetDialogue(47, 47);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    yield return new WaitUntil(() => DialogueManager.instance.clickFlag != false);
+                    yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
 
                     dialogueID = 26;
-                    DialogueManager.instance.clickFlag = false;
+                    DialogueManager.instance.chooseFlag = 0;
                     break;
 
                 case (23):

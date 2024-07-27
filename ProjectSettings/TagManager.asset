@@ -8,6 +8,8 @@ TagManager:
   - chosen1
   - chosen2
   - chosen3
+  - etc
+  - ground
   layers:
   - Default
   - TransparentFX
@@ -50,4 +52,10 @@ TagManager:
     locked: 0
   - name: UI
     uniqueID: 1386907181
+    locked: 0
+  - name: basebody
+    uniqueID: 3601268923
+    locked: 0
+  - name: etc
+    uniqueID: 1957178137
     locked: 0

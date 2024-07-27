@@ -23,4 +23,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pro_map2 beta.unity
     guid: 4c67f881d2aa66b4a82252667bd0caad
+  - enabled: 0
+    path: Assets/Scenes/betamap.unity
+    guid: f6f2e791898d23444bebdc04ddb9079e
+  - enabled: 1
+    path: Assets/Scenes/sohyuntest.unity
+    guid: 1a51c5d24d7e6054cac7c15df71cb5c3
+  - enabled: 1
+    path: Assets/Scenes/Pro_Map2_npc.unity
+    guid: 8a6f3496121206c4c90d4816a8a264d3
+  - enabled: 1
+    path: Assets/Scenes/Prologue2.unity
+    guid: 89c705106e5fc084ab7138b7cd9df801
   m_configObjects: {}

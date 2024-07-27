@@ -39,6 +39,7 @@ public class Prologuescript : MonoBehaviour
         말풍선.SetActive(true);
         대사.text = text[textflag++];
         이름.text = customize.playername;
+        Player.sitdown = 1;
 
     }
     public void buttondown1() // 대사가 이어서 나올 때
@@ -66,19 +67,25 @@ public class Prologuescript : MonoBehaviour
             {
                 말풍선.SetActive(false);
                 Debug.Log("플레이어 앉아서 두리면 거리는 모션");
-                customize.eyec();
+                Player.sitdown = 0;
+                Player.두리번 = 1;
                 //플레이어 앉아서 두리번 거리는 모션
                 말풍선.SetActive(true);
+               
 
 
 
             }
             if (textflag == 3) // 흔들리는 모션이 들어갈 부분
             {
+                Player.두리번 = 0;
+                Player.sitdown = 1;
                 말풍선.SetActive(false);
                 CameraShake.shake();
                 Debug.Log("흔들리는 모션 ");
-                customize.eyeo();
+                //customize.eyeo();
+                Player.sitdown = 0;
+                Player.버둥 = 1;
                 느낌표.SetActive(true);
                 Invoke("느낌표비활성화", 1f);
                 Invoke("말풍선활성화", 2f);
@@ -116,7 +123,11 @@ public class Prologuescript : MonoBehaviour
     }
     void tutorialload()
     {
+        Player.버둥 = 0;
+        Player.sitdown = 0;
+        Player.두리번 = 0;
         SceneManager.LoadScene("Pro_map1 beta");
+        //SceneManager.LoadScene("sohyuntest");
     }
     
     void 말풍선활성화()

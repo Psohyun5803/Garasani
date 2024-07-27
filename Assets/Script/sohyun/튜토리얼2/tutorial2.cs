@@ -123,7 +123,7 @@ public class tutorial2 : MonoBehaviour
         else if (textflag > 4)
         {
             ¸»Ç³¼±.SetActive(false);
-            SceneManager.LoadScene("Dialogue");
+            SceneManager.LoadScene("Prologue2");
 
         }
 

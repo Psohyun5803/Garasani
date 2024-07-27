@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Images/Chungmoro/B1/[개찰구_안쪽면]지하1층.png.meta
-guid: 90696255f7ee9814499086a114b09476
-========
-guid: b4605745c91dfd747a4fe6cd7a9e247d
->>>>>>>> feature/customize:Assets/Images/Chungmoro/B1/[우측면]주인공_기본착장_임시.png.meta
+guid: 6206e62aa981abc43a3ef8d866788219
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

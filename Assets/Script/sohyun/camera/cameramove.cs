@@ -24,11 +24,15 @@ public class cameramove : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
-            //플레이어의 위치와 연동
-            transform.position = new Vector3(player.transform.position.x,
-                             player.transform.position.y, -10);
+            /*Vector3 velo = Vector3.zero;
 
-            
+            //플레이어의 위치와 연동
+            Vector3 movepos = new Vector3(player.transform.position.x, player.transform.position.y, -10);
+            transform.position = Vector3.SmoothDamp(transform.position, movepos,ref velo, 0.1f);*/
+            transform.position = new Vector3(player.transform.position.x,
+                            player.transform.position.y, -10);
+
+
         }
         else
         {

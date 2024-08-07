@@ -5,13 +5,11 @@ using UnityEngine;
 public class btnimagechan : MonoBehaviour
 {
 
-    public Sprite[] btnimg;
-    SpriteRenderer spriteRenderer;
+  
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = btnimg[0];
+        customize.sceneflag = 2;
         
     }
 
@@ -21,8 +19,5 @@ public class btnimagechan : MonoBehaviour
         
     }
 
-    public void onclickbtn()
-    {
-        spriteRenderer.sprite = btnimg[1];
-    }
+   
 }

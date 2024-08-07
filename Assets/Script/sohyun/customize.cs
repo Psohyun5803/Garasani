@@ -23,12 +23,12 @@ public class customize : MonoBehaviour
     public GameObject eye4;
     public GameObject eye5;
 
-    public GameObject eye1_1;
+  /*  public GameObject eye1_1;
     public GameObject eye2_1;
     public GameObject eye3_1;
     public GameObject eye4_1;
     public GameObject eye5_1;
-
+  */
     public GameObject πŒ¡ıeye1;
     public GameObject πŒ¡ıeye2;
     public GameObject πŒ¡ıeye3;
@@ -55,11 +55,11 @@ public class customize : MonoBehaviour
     public GameObject hair4;
     public GameObject hair5;
 
-    public GameObject hair1_1;
+   /* public GameObject hair1_1;
     public GameObject hair2_1;
     public GameObject hair3_1;
     public GameObject hair4_1;
-    public GameObject hair5_1;
+    public GameObject hair5_1;*/
 
     public GameObject πŒ¡ıhair1;
     public GameObject πŒ¡ıhair2;
@@ -86,7 +86,7 @@ public class customize : MonoBehaviour
     public GameObject hair5_back;
 
     public GameObject hood_front;
-    public GameObject hood_front_1;
+   //public GameObject hood_front_1;
     public GameObject hood_left;
     public GameObject hood_right;
     public GameObject hood_back;
@@ -286,11 +286,11 @@ public class customize : MonoBehaviour
         sizetransform(eye4);
         sizetransform(eye5);
 
-        sizetransform(eye1_1);
+       /* sizetransform(eye1_1);
         sizetransform(eye2_1);
         sizetransform(eye3_1);
         sizetransform(eye4_1);
-        sizetransform(eye5_1);
+        sizetransform(eye5_1);*/
 
         sizetransform(eye1_left);
         sizetransform(eye2_left);
@@ -316,11 +316,11 @@ public class customize : MonoBehaviour
         sizetransform(hair4);
         sizetransform(hair5);
 
-        sizetransform(hair1_1);
+       /* sizetransform(hair1_1);
         sizetransform(hair2_1);
         sizetransform(hair3_1);
         sizetransform(hair4_1);
-        sizetransform(hair5_1);
+        sizetransform(hair5_1);*/
 
         sizetransform(hair1_left);
         sizetransform(hair2_left);
@@ -343,7 +343,7 @@ public class customize : MonoBehaviour
     }
     public void hoodsize() //ªÁ¿Ã¡Ó ¡∂¡§«‘ºˆ∏¶ ∏µÁ »ƒµÂ∆º ¿ÃπÃ¡ˆø° ¿˚øÎ«’¥œ¥Ÿ
     {
-        sizetransform(hood_front_1);
+       // sizetransform(hood_front_1);
         sizetransform(hood_front);
         sizetransform(hood_back);
         sizetransform(hood_left);
@@ -407,11 +407,11 @@ public class customize : MonoBehaviour
         eye4.SetActive(false);
         eye5.SetActive(false);
 
-        eye1_1.SetActive(false);
+      /*  eye1_1.SetActive(false);
         eye2_1.SetActive(false);
         eye3_1.SetActive(false);
         eye4_1.SetActive(false);
-        eye5_1.SetActive(false);
+        eye5_1.SetActive(false);*/
 
         πŒ¡ıeye1.SetActive(false);
         πŒ¡ıeye2.SetActive(false);
@@ -441,11 +441,11 @@ public class customize : MonoBehaviour
         hair4.SetActive(false);
         hair5.SetActive(false);
 
-        hair1_1.SetActive(false);
+      /*  hair1_1.SetActive(false);
         hair2_1.SetActive(false);
         hair3_1.SetActive(false);
         hair4_1.SetActive(false);
-        hair5_1.SetActive(false);
+        hair5_1.SetActive(false);*/
 
         πŒ¡ıhair1.SetActive(false);
         πŒ¡ıhair2.SetActive(false);
@@ -488,7 +488,7 @@ public class customize : MonoBehaviour
                 {
                     eyeoff();
                     eye1.SetActive(true);
-                    eye1_1.SetActive(true);
+                    //eye1_1.SetActive(true);
                     eye1_right.SetActive(true);
                     eye1_left.SetActive(true);
                     πŒ¡ıeye1.SetActive(true);
@@ -498,7 +498,7 @@ public class customize : MonoBehaviour
                 {
                     eyeoff();
                     eye2.SetActive(true);
-                    eye2_1.SetActive(true);
+                    //eye2_1.SetActive(true);
                     eye2_right.SetActive(true);
                     eye2_left.SetActive(true);
                     πŒ¡ıeye2.SetActive(true);
@@ -508,7 +508,7 @@ public class customize : MonoBehaviour
                 {
                     eyeoff();
                     eye3.SetActive(true);
-                    eye3_1.SetActive(true);
+                    //eye3_1.SetActive(true);
                     eye3_right.SetActive(true);
                     eye3_left.SetActive(true);
                     πŒ¡ıeye3.SetActive(true);
@@ -518,7 +518,7 @@ public class customize : MonoBehaviour
                 {
                     eyeoff();
                     eye4.SetActive(true);
-                    eye4_1.SetActive(true);
+                    //eye4_1.SetActive(true);
                     eye4_right.SetActive(true);
                     eye4_left.SetActive(true);
                     πŒ¡ıeye4.SetActive(true);
@@ -528,7 +528,7 @@ public class customize : MonoBehaviour
                 {
                     eyeoff();
                     eye5.SetActive(true);
-                    eye5_1.SetActive(true);
+                    //eye5_1.SetActive(true);
                     eye5_right.SetActive(true);
                     eye5_left.SetActive(true);
                     πŒ¡ıeye5.SetActive(true);
@@ -546,7 +546,7 @@ public class customize : MonoBehaviour
                 {
                     hairoff();
                     hair1.SetActive(true);
-                    hair1_1.SetActive(true);
+                    //hair1_1.SetActive(true);
                     πŒ¡ıhair1.SetActive(true);
                     hair1_left.SetActive(true);
                     hair1_right.SetActive(true);
@@ -559,7 +559,7 @@ public class customize : MonoBehaviour
                     hairoff();
                     πŒ¡ıhair2.SetActive(true);
                     hair2.SetActive(true);
-                    hair2_1.SetActive(true);
+                    //hair2_1.SetActive(true);
                     hair2_left.SetActive(true);
                     hair2_right.SetActive(true);
                     hair2_back.SetActive(true);
@@ -569,7 +569,7 @@ public class customize : MonoBehaviour
                 {
                     hairoff();
                     hair3.SetActive(true);
-                    hair3_1.SetActive(true);
+                    //hair3_1.SetActive(true);
                     πŒ¡ıhair3.SetActive(true);
                     hair3_left.SetActive(true);
                     hair3_right.SetActive(true);
@@ -580,7 +580,7 @@ public class customize : MonoBehaviour
                 {
                     hairoff();
                     hair4.SetActive(true);
-                    hair4_1.SetActive(true);
+                   // hair4_1.SetActive(true);
                     πŒ¡ıhair4.SetActive(true);
                     hair4_left.SetActive(true);
                     hair4_right.SetActive(true);
@@ -591,7 +591,7 @@ public class customize : MonoBehaviour
                 {
                     hairoff();
                     hair5.SetActive(true);
-                    hair5_1.SetActive(true);
+                    //hair5_1.SetActive(true);
                     πŒ¡ıhair5.SetActive(true);
                     hair5_left.SetActive(true);
                     hair5_right.SetActive(true);

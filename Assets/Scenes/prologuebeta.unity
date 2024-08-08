@@ -4524,13 +4524,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be1f1fa1568ab645a916e2d0f4f9bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\uB300\uC0AC": {fileID: 970002946}
-  "\uB9D0\uD48D\uC120": {fileID: 1631087464}
-  "\uB290\uB08C\uD45C": {fileID: 640050063}
+  content: {fileID: 970002946}
+  talksqu: {fileID: 1631087464}
+  spot: {fileID: 640050063}
   Button1: {fileID: 763966069}
-  "\uC554\uC804": {fileID: 1156540394}
+  realdark: {fileID: 1156540394}
   dark: {fileID: 189271710}
-  "\uC774\uB984": {fileID: 1164483552}
+  nameplayer: {fileID: 1164483552}
 --- !u!1 &2049537298
 GameObject:
   m_ObjectHideFlags: 0

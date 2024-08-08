@@ -1788,11 +1788,11 @@ MonoBehaviour:
   eye3: {fileID: 1182744117}
   eye4: {fileID: 216018314}
   eye5: {fileID: 1592574836}
-  "\uBBFC\uC99Deye1": {fileID: 2033011400}
-  "\uBBFC\uC99Deye2": {fileID: 2110552334}
-  "\uBBFC\uC99Deye3": {fileID: 391442056}
-  "\uBBFC\uC99Deye4": {fileID: 1241396706}
-  "\uBBFC\uC99Deye5": {fileID: 612915709}
+  mineye1: {fileID: 2033011400}
+  mineye2: {fileID: 2110552334}
+  mineye3: {fileID: 391442056}
+  mineye4: {fileID: 1241396706}
+  mineye5: {fileID: 612915709}
   eye1_left: {fileID: 1793362550}
   eye2_left: {fileID: 805244586}
   eye3_left: {fileID: 1390715836}
@@ -1808,11 +1808,11 @@ MonoBehaviour:
   hair3: {fileID: 288281098}
   hair4: {fileID: 1039071092}
   hair5: {fileID: 1694956312}
-  "\uBBFC\uC99Dhair1": {fileID: 1743225796}
-  "\uBBFC\uC99Dhair2": {fileID: 990527243}
-  "\uBBFC\uC99Dhair3": {fileID: 1124314851}
-  "\uBBFC\uC99Dhair4": {fileID: 1296305133}
-  "\uBBFC\uC99Dhair5": {fileID: 1312433387}
+  minhair1: {fileID: 1743225796}
+  minhair2: {fileID: 990527243}
+  minhair3: {fileID: 1124314851}
+  minhair4: {fileID: 1296305133}
+  minhair5: {fileID: 1312433387}
   hair1_left: {fileID: 221124875}
   hair2_left: {fileID: 1839711677}
   hair3_left: {fileID: 736678832}
@@ -1848,8 +1848,8 @@ MonoBehaviour:
   Speed: 300
   playernameinput: {fileID: 1214604409}
   playerbirthinput: {fileID: 1711125102}
-  "\uC0DD\uC77C\uC548\uB0B4\uBB38\uAD6C": {fileID: 822659386}
-  "\uBBFC\uC99D\uC0AC\uC9C4group": {fileID: 1577004937}
+  birthwrong: {fileID: 822659386}
+  mingroup: {fileID: 1577004937}
 --- !u!4 &447351833
 Transform:
   m_ObjectHideFlags: 0

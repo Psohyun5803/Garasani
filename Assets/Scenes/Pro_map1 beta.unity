@@ -4148,15 +4148,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e15b36897326a4f876ce6fcbd62fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\uB0B4\uC6A9": {fileID: 1184490971}
-  "\uC774\uB984": {fileID: 2033953571}
-  "\uB9D0\uD48D\uC120": {fileID: 1982233698}
-  "\uD0A4\uB9C1": {fileID: 236423636}
-  "\uC5D0\uC5B4\uD31F\uD55C\uCABD": {fileID: 633335621}
-  "\uCC22\uACA8\uC9C4\uBD80\uC801": {fileID: 661278740}
-  "\uD0A4\uB9C1\uC124\uBA85": {fileID: 918141417}
-  "\uC5D0\uC5B4\uD31F\uC124\uBA85": {fileID: 246737950}
-  "\uCC22\uACA8\uC9C4\uBD80\uC801\uC124\uBA85": {fileID: 1973026943}
+  context: {fileID: 1184490971}
+  who: {fileID: 2033953571}
+  talksqu: {fileID: 1982233698}
+  keyring: {fileID: 236423636}
+  oddairpot: {fileID: 633335621}
+  paper: {fileID: 661278740}
+  keyringcontent: {fileID: 918141417}
+  airpotcontent: {fileID: 246737950}
+  papercontent: {fileID: 1973026943}
   inventory: {fileID: 637478485}
 --- !u!1 &246737950
 GameObject:
@@ -9560,15 +9560,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e15b36897326a4f876ce6fcbd62fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\uB0B4\uC6A9": {fileID: 1184490971}
-  "\uC774\uB984": {fileID: 2033953571}
-  "\uB9D0\uD48D\uC120": {fileID: 1982233698}
-  "\uD0A4\uB9C1": {fileID: 236423636}
-  "\uC5D0\uC5B4\uD31F\uD55C\uCABD": {fileID: 633335621}
-  "\uCC22\uACA8\uC9C4\uBD80\uC801": {fileID: 661278740}
-  "\uD0A4\uB9C1\uC124\uBA85": {fileID: 918141417}
-  "\uC5D0\uC5B4\uD31F\uC124\uBA85": {fileID: 246737950}
-  "\uCC22\uACA8\uC9C4\uBD80\uC801\uC124\uBA85": {fileID: 1973026943}
+  context: {fileID: 1184490971}
+  who: {fileID: 2033953571}
+  talksqu: {fileID: 1982233698}
+  keyring: {fileID: 236423636}
+  oddairpot: {fileID: 633335621}
+  paper: {fileID: 661278740}
+  keyringcontent: {fileID: 918141417}
+  airpotcontent: {fileID: 246737950}
+  papercontent: {fileID: 1973026943}
   inventory: {fileID: 637478485}
 --- !u!1 &637478483
 GameObject:
@@ -10117,15 +10117,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e15b36897326a4f876ce6fcbd62fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\uB0B4\uC6A9": {fileID: 1184490971}
-  "\uC774\uB984": {fileID: 2033953571}
-  "\uB9D0\uD48D\uC120": {fileID: 1982233698}
-  "\uD0A4\uB9C1": {fileID: 236423636}
-  "\uC5D0\uC5B4\uD31F\uD55C\uCABD": {fileID: 633335621}
-  "\uCC22\uACA8\uC9C4\uBD80\uC801": {fileID: 661278740}
-  "\uD0A4\uB9C1\uC124\uBA85": {fileID: 918141417}
-  "\uC5D0\uC5B4\uD31F\uC124\uBA85": {fileID: 246737950}
-  "\uCC22\uACA8\uC9C4\uBD80\uC801\uC124\uBA85": {fileID: 1973026943}
+  context: {fileID: 1184490971}
+  who: {fileID: 2033953571}
+  talksqu: {fileID: 1982233698}
+  keyring: {fileID: 236423636}
+  oddairpot: {fileID: 633335621}
+  paper: {fileID: 661278740}
+  keyringcontent: {fileID: 918141417}
+  airpotcontent: {fileID: 246737950}
+  papercontent: {fileID: 1973026943}
   inventory: {fileID: 637478485}
 --- !u!1 &690399034
 GameObject:
@@ -16125,22 +16125,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a455a552b9ae18845bf1757487f6cfda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\uB9D0\uD48D\uC120": {fileID: 1982233698}
-  "\uBC84\uD2BC": {fileID: 1658791058}
+  talksqu: {fileID: 1982233698}
+  butt: {fileID: 1658791058}
   InteractionView: {fileID: 0}
-  "\uC124\uBA85": {fileID: 0}
-  "\uCC22\uACA8\uC9C4\uBD80\uC801": {fileID: 0}
-  "\uCC22\uACA8\uC9C4\uBD80\uC801\uC124\uBA85": {fileID: 0}
-  "\uC5D0\uC5B4\uD31F\uC124\uBA85": {fileID: 0}
-  "\uD0A4\uB9C1\uC124\uBA85": {fileID: 0}
+  explain: {fileID: 0}
+  paper: {fileID: 661278740}
+  papercontent: {fileID: 0}
+  airpotcontent: {fileID: 0}
+  keyringcontent: {fileID: 0}
   mousePosition: {x: 0, y: 0, z: 0}
   worldPosition: {x: 0, y: 0, z: 0}
-  "\uC774\uB3D9": {fileID: 1724115058}
-  "\uB300\uC26C": {fileID: 1250859778}
-  "\uC870\uC0AC": {fileID: 1171315306}
-  "\uC778\uBCA4": {fileID: 717588848}
-  "\uB0B4\uC6A9": {fileID: 1184490971}
-  "\uC774\uB984": {fileID: 2033953571}
+  moveicon: {fileID: 1724115058}
+  dashicon: {fileID: 1250859778}
+  investicon: {fileID: 1171315306}
+  invenicon: {fileID: 717588848}
+  context: {fileID: 1184490971}
+  who: {fileID: 2033953571}
 --- !u!4 &1219600199
 Transform:
   m_ObjectHideFlags: 0
@@ -21787,7 +21787,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1219600198}
         m_TargetAssemblyTypeName: tutorialscript, Assembly-CSharp
-        m_MethodName: button
+        m_MethodName: buttondown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26735,15 +26735,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e15b36897326a4f876ce6fcbd62fdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\uB0B4\uC6A9": {fileID: 1184490971}
-  "\uC774\uB984": {fileID: 2033953571}
-  "\uB9D0\uD48D\uC120": {fileID: 1982233698}
-  "\uD0A4\uB9C1": {fileID: 236423636}
-  "\uC5D0\uC5B4\uD31F\uD55C\uCABD": {fileID: 633335621}
-  "\uCC22\uACA8\uC9C4\uBD80\uC801": {fileID: 661278740}
-  "\uD0A4\uB9C1\uC124\uBA85": {fileID: 918141417}
-  "\uC5D0\uC5B4\uD31F\uC124\uBA85": {fileID: 246737950}
-  "\uCC22\uACA8\uC9C4\uBD80\uC801\uC124\uBA85": {fileID: 1973026943}
+  context: {fileID: 1184490971}
+  who: {fileID: 2033953571}
+  talksqu: {fileID: 1982233698}
+  keyring: {fileID: 236423636}
+  oddairpot: {fileID: 633335621}
+  paper: {fileID: 661278740}
+  keyringcontent: {fileID: 918141417}
+  airpotcontent: {fileID: 246737950}
+  papercontent: {fileID: 1973026943}
   inventory: {fileID: 637478485}
 --- !u!212 &2072680395
 SpriteRenderer:

@@ -13,12 +13,12 @@ using System;
 
 public class tutorial2 : MonoBehaviour
 {
-    public GameObject 말풍선;
-    private IEnumerator 깜빡거림;
-    public GameObject 버튼;
+    public GameObject talksqu;
+    private IEnumerator darkandlight;
+    public GameObject button;
     public GameObject dark;
-    public TMP_Text 내용;
-    public TMP_Text 이름;
+    public TMP_Text content;
+    public TMP_Text who;
     public static int textflag = 0;
     public GameObject door;
     public static int doorflag = 0;
@@ -29,11 +29,11 @@ public class tutorial2 : MonoBehaviour
     {
         Vector3 newposition = door.transform.position;
         Player.playertrans(newposition.x+3, newposition.y);
-        말풍선.SetActive(false);
-        이름.text = customize.playername;
-        내용.text = text[textflag];
+        talksqu.SetActive(false);
+        who.text = customize.playername;
+        content.text = text[textflag];
         Invoke("dontmove", 1f);
-        깜빡거림 = 깜빡();
+        darkandlight = 깜빡();
     }
     private IEnumerator 깜빡()
     {
@@ -48,7 +48,7 @@ public class tutorial2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(깜빡거림);
+        StartCoroutine(darkandlight);
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -59,9 +59,9 @@ public class tutorial2 : MonoBehaviour
                 GameObject clickobj = hit.transform.gameObject;
                 if (clickobj.name == "열차사이문")
                 {
-                    말풍선.SetActive(true);
-                    이름.text = "System";
-                    내용.text = "무언가에 걸린듯 문이 열리지 않는다.";
+                    talksqu.SetActive(true);
+                    who.text = "System";
+                    content.text = "무언가에 걸린듯 문이 열리지 않는다.";
                     textflag++;
 
                     //SceneManager.LoadScene("Dialogue");
@@ -76,15 +76,15 @@ public class tutorial2 : MonoBehaviour
         if (doorflag==0)
         {
             
-            말풍선.SetActive(true);
-            이름.text = "System";
-            내용.text = "무언가에 걸린듯 문이 열리지 않는다.";
+            talksqu.SetActive(true);
+            who.text = "System";
+            content.text = "무언가에 걸린듯 문이 열리지 않는다.";
             textflag++;
             doorflag++;
         }
     }
    
-    public void button()
+    public void buttondown()
     {
         if (textflag == 0)
         {
@@ -92,37 +92,37 @@ public class tutorial2 : MonoBehaviour
         }
         else if (textflag <= 1)
         {
-            이름.text = customize.playername;
-            내용.text = text[textflag];
+            who.text = customize.playername;
+            content.text = text[textflag];
             textflag++;
 
         }
         else if (textflag == 2)
         {
-            이름.text = customize.playername;
-            내용.text = text[textflag];
+            who.text = customize.playername;
+            content.text = text[textflag];
             //customize.moveflag = 1;
-            //말풍선.SetActive(false);
+            //talksqu.SetActive(false);
             textflag++;
         }
         else if (textflag == 3 && doorflag ==0)
         {
-            말풍선.SetActive(false);
+            talksqu.SetActive(false);
         }
         else if (textflag==4 && doorflag==1)
         {
 
             Debug.Log("문열림");
             
-            말풍선.SetActive(true);
-            이름.text = customize.playername;
-            내용.text = text[3];
+            talksqu.SetActive(true);
+            who.text = customize.playername;
+            content.text = text[3];
             textflag++;
         }
 
         else if (textflag > 4)
         {
-            말풍선.SetActive(false);
+            talksqu.SetActive(false);
             SceneManager.LoadScene("Prologue2");
 
         }
@@ -131,7 +131,7 @@ public class tutorial2 : MonoBehaviour
     void dontmove()
     {
         customize.moveflag = 0;
-        말풍선.SetActive(true);
+        talksqu.SetActive(true);
 
     }
 }

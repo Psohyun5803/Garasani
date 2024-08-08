@@ -18,10 +18,10 @@ public class Player : MonoBehaviour
     
    
     
-    public static int 충돌flag = 0;
+    public static int colflag = 0;
     
     SpriteRenderer spriteRenderer;
-    public static Action 적용함수;
+  
     private IEnumerator coroutine;
    
     private IEnumerator walkfront;
@@ -30,14 +30,14 @@ public class Player : MonoBehaviour
     private IEnumerator walkback;
    
     public static Action<float, float> playertrans;
-    public static Action<float, float,float,float> 이동범위;
-    public static Action 앉은자세;
-    public static Action 앉은자세해제;
+    
+    //public static Action 앉은자세;
+    //public static Action 앉은자세해제;
    
 
     public static int sitdown = 0;
-    public static int 두리번 = 0;
-    public static int 버둥 = 0;
+    public static int lookaround = 0;
+    public static int shock = 0;
 
 
     int coroutineflag = 0;
@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
         walkback = walkmotionback();
       
     }
-    public void player이동(float x, float y)
+    public void playerwhere(float x, float y)
     {
         Vector3 newPosition = new Vector3(x , y , 0);
         player.transform.position = newPosition;
@@ -65,8 +65,8 @@ public class Player : MonoBehaviour
     }
     void Awake()
     {
-        playertrans = (float x, float y) => { player이동(x, y); };
-        //이동범위 = (float x1, float x2,float y1, float y2) => { 플레이어이동범위(x1,x2,y1, y2); };
+        playertrans = (float x, float y) => { playerwhere(x, y); };
+      
 
     }
     
@@ -288,7 +288,7 @@ public class Player : MonoBehaviour
                     yield return new WaitForSeconds(0.5f);
                 }
             }
-            else if (두리번 == 1)
+            else if (lookaround == 1)
             {
 
 
@@ -296,7 +296,7 @@ public class Player : MonoBehaviour
 
 
                 yield return new WaitForSeconds(0.5f);
-                if (두리번 == 1)
+                if (lookaround == 1)
                 {
                     spriteRenderer.sprite = basebody[17];
 
@@ -304,7 +304,7 @@ public class Player : MonoBehaviour
                 }
             }
 
-            else if (버둥 == 1)
+            else if (shock == 1)
             {
 
 
@@ -312,7 +312,7 @@ public class Player : MonoBehaviour
 
 
                 yield return new WaitForSeconds(0.5f);
-                if (버둥 == 1)
+                if (shock == 1)
                 {
                     spriteRenderer.sprite = basebody[19];
 
@@ -520,7 +520,7 @@ public class Player : MonoBehaviour
      {
          
 
-         충돌flag = 1;
+         colflag = 1;
          if (customize.sceneflag > 1 && (collision.transform.CompareTag("ground")))
          {
             moveflag = 1;

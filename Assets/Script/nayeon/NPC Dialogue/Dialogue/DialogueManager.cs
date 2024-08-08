@@ -11,11 +11,17 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text name;
     public TMP_Text chosen1_text;
     public TMP_Text chosen2_text;
+
     public int currentIdx;
     public bool IsDialogueFinished;
-    //public int ChooseFlag = 0;
     public  Dialogue[] contextList;
-    public int chooseFlag = 0;
+    public int chooseFlag = 0; //ÏÑ†ÌÉùÏßÄ ÎåÄÌôî flag
+    public bool clickFlag = false; //ÏÑ†ÌÉùÏßÄ 1Í∞úÏù∏Í≤ΩÏö∞ click check
+    private bool isChosenOne = false; //ÏÑ†ÌÉùÏßÄ 1Í∞úÏù∏ Í≤ΩÏö∞ 
+
+    private float delay = 0.05f; //ÌÉÄÏù¥Ìïë ÏÜçÎèÑ 
+    private Coroutine typingCoroutine;
+    private bool isTyping = false;
 
     public void Awake()
     {
@@ -23,6 +29,7 @@ public class DialogueManager : MonoBehaviour
         {
             instance = this;
         }
+        
     }
 
     public void Initialize(Dialogue[] dialogues)
@@ -37,58 +44,128 @@ public class DialogueManager : MonoBehaviour
     {
         if (contextList != null && currentIdx < contextList.Length - 1)
         {
-            currentIdx++; // ¥Ÿ¿Ω πÆ¿Â¿∏∑Œ ¿Ãµø
+            currentIdx++; 
             DisplayDialogue();
         }
         else
         {
             IsDialogueFinished = true;
-            Debug.Log("contextlist √ ±‚»≠ æ»µ ");
+            Debug.Log("contextlist ÔøΩ ±ÔøΩ»≠ ÔøΩ»µÔøΩ");
         }
     }
 
     public void DisplayDialogue()
     {
+        isTyping = true;
         if (contextList == null || contextList.Length == 0 || currentIdx >= contextList.Length)
             return;
 
-        dialogue_text.text = contextList[currentIdx].contexts;
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine);
+            typingCoroutine = null;
+        }
+
+
+        dialogue_text.text = "";
+        chosen1_text.text = "";
+        chosen2_text.text = "";
         name.text = contextList[currentIdx].name;
 
-        if (!string.IsNullOrEmpty(contextList[currentIdx].chosen1))
+        if(name.text != customize.playername) //npc player Íµ¨Î∂Ñ 
+        {
+            dialogue_text.alignment = TextAlignmentOptions.Right;
+        }
+        else
+        {
+            dialogue_text.alignment = TextAlignmentOptions.Left;
+        }
+
+        typingCoroutine = StartCoroutine(textPrint(delay, contextList[currentIdx].contexts));
+        
+    }
+
+    IEnumerator textPrint(float d, string text)
+    {
+        int count = 0;
+
+        while (count != text.Length)
+        {
+            if (count < text.Length)
+            {
+                dialogue_text.text += text[count].ToString();
+                count++;
+            }
+
+            yield return new WaitForSeconds(delay);
+        }
+
+        isTyping = false;
+        ShowChoices();
+    }
+    private void ShowChoices()
+    {
+        if (!string.IsNullOrEmpty(contextList[currentIdx].chosen1) && !string.IsNullOrEmpty(contextList[currentIdx].chosen2))
         {
             chosen1_text.text = contextList[currentIdx].chosen1;
             chosen2_text.text = contextList[currentIdx].chosen2;
+            isChosenOne = false;
+        }
+        else if (!string.IsNullOrEmpty(contextList[currentIdx].chosen1) && string.IsNullOrEmpty(contextList[currentIdx].chosen2))
+        {
+            chosen1_text.text = "";
+            chosen2_text.text = contextList[currentIdx].chosen1;
+            isChosenOne = true;
         }
         else
         {
             chosen1_text.text = "";
             chosen2_text.text = "";
         }
- 
     }
 
     public void OnClickChoose()
     {
-        Debug.Log("º±≈√¡ˆ ≈¨∏Ø »Æ¿Œ");
-        //≈¬±◊∞° 1¿Ã∏È π¯»£ 1∏Æ≈œ, 2∏È 2∏Æ≈œ
-        if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen1") == 0)
-            chooseFlag = 1;
-        else if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen2") == 0)
-            chooseFlag = 2;
-        Debug.Log("Flag" + chooseFlag); ;
+        if (isChosenOne) //ÏÑ†ÌÉùÏßÄ 1Í∞úÏù∏ Í≤ΩÏö∞
+            clickFlag = true; 
+        else
+        {
+            if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen1") == 0)
+                chooseFlag = 1;
+            else if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen2") == 0)
+                chooseFlag = 2;
+        }
     }
 
-    public void processChoose(Dialogue[] dialogues) //º±≈√¡ˆ∞° ¿÷¥¬ ¥Î»≠¿Œ ∞ÊøÏ ªÁøÎ 
+  
+
+    public void processChoose(Dialogue[] dialogues) // choose 2
     {
-        DialogueManager.instance.Initialize(dialogues);
+        Initialize(dialogues);
     }
 
-    public IEnumerator processing(Dialogue[] dialogues) //º±≈√¡ˆ∞° æ¯¥¬ ¥Î»≠¿Œ ∞ÊøÏ ªÁøÎ 
+    public IEnumerator processing(Dialogue[] dialogues) //choose 1
     {
-        DialogueManager.instance.Initialize(dialogues);
-        yield return new WaitUntil(() => DialogueManager.instance.IsDialogueFinished);
+        Initialize(dialogues);
+        yield return new WaitUntil(() => IsDialogueFinished);
 
     }
 
+    void Update()
+    {
+        // typing effect
+        if (isTyping && EventSystem.current.currentSelectedGameObject != null && EventSystem.current.currentSelectedGameObject.name == "ÎßêÌíçÏÑ†")
+        {
+            if (typingCoroutine != null)
+            {
+                StopCoroutine(typingCoroutine);
+                typingCoroutine = null;
+            }
+
+            dialogue_text.text = contextList[currentIdx].contexts;
+            isTyping = false;
+
+            ShowChoices(); 
+        }
+    }
 }

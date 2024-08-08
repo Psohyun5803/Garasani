@@ -4,26 +4,56 @@ using UnityEngine;
 
 public class StoryManager : MonoBehaviour
 {
+    public static StoryManager instance;
+    public int sceneNum;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+
+    }
+    public bool sceneInitialized= false;
     public void StoryStart()
     {
         switch (DataManager.instance.csv_FileName)
         {
-            case "Dialogue": // ***씬 이름 및 csv파일명 변경 필요 (prologue2)***
-                StartCoroutine(Prologue2Dialogue.instance.prologue2());
+            case "Prologue2": // ***씬 이름 및 csv파일명 변경 필요 (prologue2)***
+                if (!sceneInitialized)
+                {
+                    sceneNum = 1;
+                    sceneInitialized = true;
+                }
+                StartCoroutine(ProceedToNextScene());
                 break;
-
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public IEnumerator ProceedToNextScene()
     {
-        StoryStart();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Debug.Log(sceneNum);
+        while (sceneNum < 4)
+        {
+            switch (sceneNum)
+            {
+                case 1:
+                    yield return StartCoroutine(Prologue2Dialogue.instance.prologue2_1());
+                    break;
+                case 2:
+                    yield return StartCoroutine(Prologue2Dialogue.instance.prologue2_2());
+                    break;
+                case 3:
+                    yield return StartCoroutine(Prologue2Dialogue.instance.prologue2_3());
+                    break;
+                default:
+                    yield break;
+            }
+            sceneNum++;
+        }
     }
 }
+
+   
+
+

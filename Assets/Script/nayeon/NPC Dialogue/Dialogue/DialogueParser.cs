@@ -57,6 +57,7 @@ public class DialogueParser : MonoBehaviour
                 dialogue.chosen2_ID = 0; // 파싱 실패 시 기본값 설정
             }
 
+
             dialogue.contexts = dialogue.contexts.Replace("`", ",");
             dialogue.chosen1 = dialogue.chosen1.Replace("`", ",");
             dialogue.chosen2 = dialogue.chosen2.Replace("`", ",");

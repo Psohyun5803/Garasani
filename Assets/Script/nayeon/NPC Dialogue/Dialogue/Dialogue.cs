@@ -25,6 +25,7 @@ public class Dialogue //상속받지 않게 삭제
 
     [Tooltip("선택지2 ID")]
     public int chosen2_ID;
+
 }
 
 [System.Serializable]

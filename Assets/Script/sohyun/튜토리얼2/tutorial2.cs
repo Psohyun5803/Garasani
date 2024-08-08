@@ -28,7 +28,7 @@ public class tutorial2 : MonoBehaviour
     public string boolParameterName = "Left";
     private Animator NPCAnimator;
 
-    string[] text = new string[4] {  "...?", "...�̰� ���� �Ҹ���...?", "���ʿ��� ���� �ٰ����� �־�...", "...!" };
+    string[] text = new string[4] { "...?", "...이게 무슨 소리지...?", "앞쪽에서 점점 다가오고 있어...", "...!" };
     // Start is called before the first frame update
     void Start()
     {
@@ -48,9 +48,9 @@ public class tutorial2 : MonoBehaviour
         who.text = customize.playername;
         content.text = text[textflag];
         Invoke("dontmove", 1f);
-        darkandlight = ����();
+        darkandlight =darkroutine();
     }
-    private IEnumerator ����()
+    private IEnumerator darkroutine()
     {
         while (true)
         {
@@ -72,11 +72,11 @@ public class tutorial2 : MonoBehaviour
             {
                 
                 GameObject clickobj = hit.transform.gameObject;
-                if (clickobj.name == "�������̹�")
+                if (clickobj.name == "열차사이문")
                 {
                     talksqu.SetActive(true);
                     who.text = "System";
-                    content.text = "���𰡿� �ɸ��� ���� ������ �ʴ´�.";
+                    content.text = "무언가에 걸린듯 문이 열리지 않는다.";
                     textflag++;
 
                     //SceneManager.LoadScene("Dialogue");
@@ -87,13 +87,13 @@ public class tutorial2 : MonoBehaviour
     
     public void doordown()
     {
-        Debug.Log("Ŭ����");
+        
         if (doorflag==0)
         {
             
             talksqu.SetActive(true);
             who.text = "System";
-            content.text = "���𰡿� �ɸ��� ���� ������ �ʴ´�.";
+            content.text = "무언가에 걸린듯 문이 열리지 않는다.";
             textflag++;
             doorflag++;
         }
@@ -127,7 +127,7 @@ public class tutorial2 : MonoBehaviour
         else if (textflag==4 && doorflag==1)
         {
 
-            Debug.Log("������");
+           
             
             talksqu.SetActive(true);
             who.text = customize.playername;

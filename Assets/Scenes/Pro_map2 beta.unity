@@ -3144,9 +3144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 388dc605e2713bb41a4bc2e6520609bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\uB9D0\uD48D\uC120": {fileID: 1982233698}
-  "\uB0B4\uC6A9": {fileID: 1184490971}
-  "\uC774\uB984": {fileID: 2033953571}
+  talksqu: {fileID: 1982233698}
+  content: {fileID: 1184490971}
+  who: {fileID: 2033953571}
 --- !u!1 &190285809
 GameObject:
   m_ObjectHideFlags: 0
@@ -16645,11 +16645,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f388f5317d05c1042a7e6e3b2007dedd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\uB9D0\uD48D\uC120": {fileID: 1982233698}
-  "\uBC84\uD2BC": {fileID: 1658791058}
+  talksqu: {fileID: 1982233698}
+  button: {fileID: 1658791058}
   dark: {fileID: 152763511}
-  "\uB0B4\uC6A9": {fileID: 1184490971}
-  "\uC774\uB984": {fileID: 2033953571}
+  content: {fileID: 1184490971}
+  who: {fileID: 2033953571}
   door: {fileID: 189965725}
   targetAnimatorObject: {fileID: 1130615177}
   moveSpeed: 10
@@ -22398,7 +22398,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1219600200}
         m_TargetAssemblyTypeName: tutorial2, Assembly-CSharp
-        m_MethodName: button
+        m_MethodName: buttondown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

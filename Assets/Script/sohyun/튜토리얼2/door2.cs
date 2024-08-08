@@ -12,9 +12,9 @@ using System.Runtime.InteropServices;
 using System;
 public class door2 : MonoBehaviour
 {
-    public GameObject 말풍선;
-    public TMP_Text 내용;
-    public TMP_Text 이름;
+    public GameObject talksqu;
+    public TMP_Text content;
+    public TMP_Text who;
 
     void OnMouseDown()
     {
@@ -22,9 +22,9 @@ public class door2 : MonoBehaviour
         if (tutorial2.doorflag == 0)
         {
 
-            말풍선.SetActive(true);
-            이름.text = "System";
-            내용.text = "무언가에 걸린듯 문이 열리지 않는다.";
+            talksqu.SetActive(true);
+            who.text = "System";
+            content.text = "무언가에 걸린듯 문이 열리지 않는다.";
             tutorial2.textflag++;
             tutorial2.doorflag++;
         }

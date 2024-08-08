@@ -15,38 +15,38 @@ public class Prologuescript : MonoBehaviour
 {
     string[] text = new string[5] { " 아, 환승하기 귀찮다. 집에 가는 동안 눈 좀 붙여야지.", " 막차 안내 방송", " 아, 지하철 또 뭐가 문제야...", "어! 이거 왜 이래??!!", "악!!!!!!!!!!!!!!" };
     int textflag = 0;
-    public TMP_Text 대사;
-    public GameObject 말풍선;
-    public GameObject 느낌표;
+    public TMP_Text content;
+    public GameObject talksqu;
+    public GameObject spot;//느낌표
     public GameObject Button1;
-    public GameObject 암전;
+    public GameObject realdark;
     public GameObject dark;
-    public TMP_Text 이름;
+    public TMP_Text nameplayer;
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log(customize.playername);
         Debug.Log(customize.playerbirth);
-        느낌표.SetActive(false);
-        말풍선.SetActive(false);
+        spot.SetActive(false);
+        talksqu.SetActive(false);
         dark.SetActive(false);
         Invoke("proscript1", 2f);
        
     }
     void proscript1()
     {
-        말풍선.SetActive(true);
-        대사.text = text[textflag++];
-        이름.text = customize.playername;
+        talksqu.SetActive(true);
+        content.text = text[textflag++];
+        nameplayer.text = customize.playername;
         Player.sitdown = 1;
 
     }
-    public void buttondown1() // 대사가 이어서 나올 때
+    public void buttondown1() // content가 이어서 나올 때
     {
         if (textflag > 4)
         {
-            말풍선.SetActive(false);
+            talksqu.SetActive(false);
             CameraShake.stopsk();
             CancelInvoke("lighton");
             CancelInvoke("lightoff");
@@ -58,19 +58,19 @@ public class Prologuescript : MonoBehaviour
         }
         else
         {
-            말풍선.SetActive(true);
+            talksqu.SetActive(true);
 
-            대사.text = text[textflag];
-            이름.text = customize.playername;
+            content.text = text[textflag];
+            nameplayer.text = customize.playername;
             textflag++;
-            if (textflag == 2) // 두리번 거리는 모션이 들어갈 부분 
+            if (textflag == 2) // lookaround 거리는 모션이 들어갈 부분 
             {
-                말풍선.SetActive(false);
+                talksqu.SetActive(false);
                 Debug.Log("플레이어 앉아서 두리면 거리는 모션");
                 Player.sitdown = 0;
-                Player.두리번 = 1;
-                //플레이어 앉아서 두리번 거리는 모션
-                말풍선.SetActive(true);
+                Player.lookaround = 1;
+                //플레이어 앉아서 lookaround 거리는 모션
+                talksqu.SetActive(true);
                
 
 
@@ -78,17 +78,17 @@ public class Prologuescript : MonoBehaviour
             }
             if (textflag == 3) // 흔들리는 모션이 들어갈 부분
             {
-                Player.두리번 = 0;
+                Player.lookaround = 0;
                 Player.sitdown = 1;
-                말풍선.SetActive(false);
+                talksqu.SetActive(false);
                 CameraShake.shake();
                 Debug.Log("흔들리는 모션 ");
                 //customize.eyeo();
                 Player.sitdown = 0;
-                Player.버둥 = 1;
-                느낌표.SetActive(true);
-                Invoke("느낌표비활성화", 1f);
-                Invoke("말풍선활성화", 2f);
+                Player.shock = 1;
+                spot.SetActive(true);
+                Invoke("spot비활성화", 1f);
+                Invoke("talksqu활성화", 2f);
             }
             if (textflag == 4 )
             {
@@ -108,12 +108,12 @@ public class Prologuescript : MonoBehaviour
     }
     void lighton()
     {
-        암전.SetActive(false);
+        realdark.SetActive(false);
         
     }
     void lightoff()
     {
-        암전.SetActive(true);
+        realdark.SetActive(true);
 
     }
     void lightcont()
@@ -123,20 +123,20 @@ public class Prologuescript : MonoBehaviour
     }
     void tutorialload()
     {
-        Player.버둥 = 0;
+        Player.shock = 0;
         Player.sitdown = 0;
-        Player.두리번 = 0;
+        Player.lookaround = 0;
         SceneManager.LoadScene("Pro_map1 beta");
         //SceneManager.LoadScene("sohyuntest");
     }
     
-    void 말풍선활성화()
+    void talksqu활성화()
     {
-        말풍선.SetActive(true);
+        talksqu.SetActive(true);
     }
-    void 느낌표비활성화()
+    void spot비활성화()
     {
-        느낌표.SetActive(false);
+        spot.SetActive(false);
     }
     // Update is called once per frame
     void Update()

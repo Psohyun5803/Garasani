@@ -13,12 +13,12 @@ using System;
 
 public class tutorial2 : MonoBehaviour
 {
-    public GameObject ¸»Ç³¼±;
-    private IEnumerator ±ôºý°Å¸²;
-    public GameObject ¹öÆ°;
+    public GameObject talksqu;
+    private IEnumerator darkandlight;
+    public GameObject button;
     public GameObject dark;
-    public TMP_Text ³»¿ë;
-    public TMP_Text ÀÌ¸§;
+    public TMP_Text content;
+    public TMP_Text who;
     public static int textflag = 0;
     public GameObject door;
     public static int doorflag = 0;
@@ -28,7 +28,7 @@ public class tutorial2 : MonoBehaviour
     public string boolParameterName = "Left";
     private Animator NPCAnimator;
 
-    string[] text = new string[4] {  "...?", "...ÀÌ°Ô ¹«½¼ ¼Ò¸®Áö...?", "¾ÕÂÊ¿¡¼­ Á¡Á¡ ´Ù°¡¿À°í ÀÖ¾î...", "...!" };
+    string[] text = new string[4] {  "...?", "...ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò¸ï¿½ï¿½ï¿½...?", "ï¿½ï¿½ï¿½Ê¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ù°ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½...", "...!" };
     // Start is called before the first frame update
     void Start()
     {
@@ -44,13 +44,13 @@ public class tutorial2 : MonoBehaviour
 
         Vector3 newposition = door.transform.position;
         Player.playertrans(newposition.x+3, newposition.y);
-        ¸»Ç³¼±.SetActive(false);
-        ÀÌ¸§.text = customize.playername;
-        ³»¿ë.text = text[textflag];
+        talksqu.SetActive(false);
+        who.text = customize.playername;
+        content.text = text[textflag];
         Invoke("dontmove", 1f);
-        ±ôºý°Å¸² = ±ôºý();
+        darkandlight = ï¿½ï¿½ï¿½ï¿½();
     }
-    private IEnumerator ±ôºý()
+    private IEnumerator ï¿½ï¿½ï¿½ï¿½()
     {
         while (true)
         {
@@ -63,7 +63,7 @@ public class tutorial2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(±ôºý°Å¸²);
+        StartCoroutine(darkandlight);
         if (Input.GetMouseButtonDown(0))
         {
             Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -72,11 +72,11 @@ public class tutorial2 : MonoBehaviour
             {
                 
                 GameObject clickobj = hit.transform.gameObject;
-                if (clickobj.name == "¿­Â÷»çÀÌ¹®")
+                if (clickobj.name == "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½")
                 {
-                    ¸»Ç³¼±.SetActive(true);
-                    ÀÌ¸§.text = "System";
-                    ³»¿ë.text = "¹«¾ð°¡¿¡ °É¸°µí ¹®ÀÌ ¿­¸®Áö ¾Ê´Â´Ù.";
+                    talksqu.SetActive(true);
+                    who.text = "System";
+                    content.text = "ï¿½ï¿½ï¿½ð°¡¿ï¿½ ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½.";
                     textflag++;
 
                     //SceneManager.LoadScene("Dialogue");
@@ -87,19 +87,19 @@ public class tutorial2 : MonoBehaviour
     
     public void doordown()
     {
-        Debug.Log("Å¬¸¯µÊ");
+        Debug.Log("Å¬ï¿½ï¿½ï¿½ï¿½");
         if (doorflag==0)
         {
             
-            ¸»Ç³¼±.SetActive(true);
-            ÀÌ¸§.text = "System";
-            ³»¿ë.text = "¹«¾ð°¡¿¡ °É¸°µí ¹®ÀÌ ¿­¸®Áö ¾Ê´Â´Ù.";
+            talksqu.SetActive(true);
+            who.text = "System";
+            content.text = "ï¿½ï¿½ï¿½ð°¡¿ï¿½ ï¿½É¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê´Â´ï¿½.";
             textflag++;
             doorflag++;
         }
     }
    
-    public void button()
+    public void buttondown()
     {
         if (textflag == 0)
         {
@@ -107,37 +107,37 @@ public class tutorial2 : MonoBehaviour
         }
         else if (textflag <= 1)
         {
-            ÀÌ¸§.text = customize.playername;
-            ³»¿ë.text = text[textflag];
+            who.text = customize.playername;
+            content.text = text[textflag];
             textflag++;
 
         }
         else if (textflag == 2)
         {
-            ÀÌ¸§.text = customize.playername;
-            ³»¿ë.text = text[textflag];
+            who.text = customize.playername;
+            content.text = text[textflag];
             //customize.moveflag = 1;
-            //¸»Ç³¼±.SetActive(false);
+            //talksqu.SetActive(false);
             textflag++;
         }
         else if (textflag == 3 && doorflag ==0)
         {
-            ¸»Ç³¼±.SetActive(false);
+            talksqu.SetActive(false);
         }
         else if (textflag==4 && doorflag==1)
         {
 
-            Debug.Log("¹®¿­¸²");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
             
-            ¸»Ç³¼±.SetActive(true);
-            ÀÌ¸§.text = customize.playername;
-            ³»¿ë.text = text[3];
+            talksqu.SetActive(true);
+            who.text = customize.playername;
+            content.text = text[3];
             textflag++;
         }
 
         else if (textflag > 4)
         {
-            ¸»Ç³¼±.SetActive(false);
+            talksqu.SetActive(false);
             StartCoroutine(NPCEventCoroutine());
             //SceneManager.LoadScene("Prologue2");
 
@@ -151,8 +151,8 @@ public class tutorial2 : MonoBehaviour
             NPCAnimator.SetBool(boolParameterName, true);
         }
 
-        float targetXPosition = -6.0f; // ¸ñÇ¥ X ÁÂÇ¥
-        float moveDuration = 2.0f; // ÀÌµ¿ÇÒ ½Ã°£
+        float targetXPosition = -6.0f; // ï¿½ï¿½Ç¥ X ï¿½ï¿½Ç¥
+        float moveDuration = 2.0f; // ï¿½Ìµï¿½ï¿½ï¿½ ï¿½Ã°ï¿½
 
         Vector3 startPosition = targetAnimatorObject.transform.position;
         Vector3 targetPosition = new Vector3(targetXPosition, startPosition.y, startPosition.z);
@@ -181,7 +181,7 @@ public class tutorial2 : MonoBehaviour
     void dontmove()
     {
         customize.moveflag = 0;
-        ¸»Ç³¼±.SetActive(true);
+        talksqu.SetActive(true);
 
     }
 }

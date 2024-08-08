@@ -100,7 +100,7 @@ public class customize : MonoBehaviour
     public GameObject eyeright;
     public GameObject hairright;
     public GameObject hairleft;
-    public GameObject Player_front1;
+    //public GameObject Player_front1;
     public GameObject Player_left;
     public GameObject Player_right;
     public GameObject Player_back;
@@ -125,11 +125,40 @@ public class customize : MonoBehaviour
    
     public TMP_Text playernameinput;
     public TMP_Text playerbirthinput;
+    public GameObject 생일안내문구;
+    public GameObject 민증사진group;
     public static string playername ;
     public static string playerbirth;
     //public static string finalplayername;
 
     //[SerializeField] private InputField usernameinput;
+    bool IsValidDate(string date, out DateTime validDate)
+    {
+            validDate = DateTime.MinValue;
+
+        
+        
+           
+            int month = int.Parse(date.Substring(0, 2));
+            int day = int.Parse(date.Substring(2, 2));
+            Debug.Log(month);
+            Debug.Log(day);
+            try
+            {
+                // 1997년을 고정하여 DateTime 생성
+                validDate = new DateTime(1997, month, day);
+                return true; // 유효한 날짜일 경우 true 반환
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                
+                return false;
+            }
+        
+
+        
+    }
+
     private void Awake()
     {
         eyec = () => { eyeclosefun(); };
@@ -140,9 +169,10 @@ public class customize : MonoBehaviour
     private IEnumerator coroutine;
     void Start() //커스텀씬에서의 플레이어 모형 기본값을 세팅해줍니다
     {
+        생일안내문구.SetActive(false);
         eyenum = 0; //적용될 눈모양을 결정하는 변수입니다
         hairnum = 0; //
-        Playermotion = new GameObject[5]{Player_front,Player_back,Player_left,Player_right ,Player_front1};
+        Playermotion = new GameObject[4]{Player_front,Player_back,Player_left,Player_right/*Player_front1*/};
         Player_front.SetActive(true); //플레이어의 앞모습 
         Player_back.SetActive(false);
         Player_left.SetActive(false);
@@ -225,39 +255,53 @@ public class customize : MonoBehaviour
    // public GameObject Player;
     public void prologue() //프롤로그씬으로 전환해주는 버튼에 적용한 함수입니다. 플레이어의 사이즈와 위치를 조정해주고 프롤로그씬을 불러옵니다
     {
-        img1.SetActive(false);
-        img2.SetActive(false);
+        if (IsValidDate(playerbirthinput.text,out DateTime validDate))
+        {
+           
+            img1.SetActive(false);
+            img2.SetActive(false);
+            민증사진group.SetActive(false);
+            //sizetransform(Player_front1);
+            sizetransform(Player_front);
+            sizetransform(Player_back);
+            sizetransform(Player_left);
+            sizetransform(Player_right);
+            //Player.transform.position = new Vector3(1000, 800, 0);
+            eyesize();
+            hoodsize();
+            hairsize();
 
-        sizetransform(Player_front1);
-        sizetransform(Player_front);
-        sizetransform(Player_back);
-        sizetransform(Player_left);
-        sizetransform(Player_right);
-        //Player.transform.position = new Vector3(1000, 800, 0);
-        eyesize();
-        hoodsize();
-        hairsize();
+            Vector3 newPosition = new Vector3(1000, 500, 0);
+            //Player_front1.transform.position = newPosition;
+            Player_front.transform.position = newPosition;
+            Player_back.transform.position = newPosition;
+            Player_left.transform.position = newPosition;
+            Player_right.transform.position = newPosition;
 
-        Vector3 newPosition = new Vector3(1000, 500, 0);
-        Player_front1.transform.position = newPosition;
-        Player_front.transform.position = newPosition;
-        Player_back.transform.position = newPosition;
-        Player_left.transform.position = newPosition;
-        Player_right.transform.position = newPosition;
+            sceneflag = 1;
+            playername = playernameinput.text;
+            playerbirth = playerbirthinput.text;
+            eyeclose.SetActive(false);
+            SceneManager.LoadScene("prologuebeta");
 
-        sceneflag = 1;
-        playername = playernameinput.text;
-        playerbirth = playerbirthinput.text;
-        eyeclose.SetActive(false);
+        }
+        else
+        {
+            //playerbirthinput = null;
+            Debug.Log("잘못된 생일");
+            생일안내문구.SetActive(true);
+        }
+       
+        
         //Player.transform.position = newPosition; //추가
-        SceneManager.LoadScene("prologuebeta");
+        //SceneManager.LoadScene("prologuebeta");
     }
     public void playertransform(float x, float y)
 
     {
         Vector3 newPosition = new Vector3(x+192, y+384, 0);
 
-        Player_front1.transform.position = newPosition;
+        //Player_front1.transform.position = newPosition;
         Player_front.transform.position = newPosition;
         Player_back.transform.position = newPosition;
         Player_left.transform.position = newPosition;
@@ -352,7 +396,7 @@ public class customize : MonoBehaviour
     }
         public void playeroff() // 플레이어가 상하좌우로 움직일때 모든 플레이어이미지를 비활성화하고, 해당 방향의 이미지를 불러오는 방식을 위한 함수입니다.
     {
-        Player_front1.SetActive(false);
+        //Player_front1.SetActive(false);
         Player_front.SetActive(false);
         Player_back.SetActive(false);
         Player_left.SetActive(false);
@@ -613,7 +657,7 @@ public class customize : MonoBehaviour
         {
             puton();
         }
-       
+        
         move(); 
 
         

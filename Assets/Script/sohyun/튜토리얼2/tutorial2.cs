@@ -22,11 +22,26 @@ public class tutorial2 : MonoBehaviour
     public static int textflag = 0;
     public GameObject door;
     public static int doorflag = 0;
-    
+
+    [SerializeField] private GameObject targetAnimatorObject;
+    public float moveSpeed = 5f;
+    public string boolParameterName = "Left";
+    private Animator NPCAnimator;
+
     string[] text = new string[4] {  "...?", "...이게 무슨 소리지...?", "앞쪽에서 점점 다가오고 있어...", "...!" };
     // Start is called before the first frame update
     void Start()
     {
+        if (targetAnimatorObject != null)
+        {
+            NPCAnimator = targetAnimatorObject.GetComponent<Animator>();
+            NPCAnimator.SetBool(boolParameterName, false);
+        }
+        else
+        {
+            Debug.LogError("Target animator object not assigned.");
+        }
+
         Vector3 newposition = door.transform.position;
         Player.playertrans(newposition.x+3, newposition.y);
         말풍선.SetActive(false);
@@ -123,11 +138,46 @@ public class tutorial2 : MonoBehaviour
         else if (textflag > 4)
         {
             말풍선.SetActive(false);
-            SceneManager.LoadScene("Prologue2");
+            StartCoroutine(NPCEventCoroutine());
+            //SceneManager.LoadScene("Prologue2");
 
         }
-
     }
+
+    IEnumerator NPCEventCoroutine()
+    {
+        if (NPCAnimator != null)
+        {
+            NPCAnimator.SetBool(boolParameterName, true);
+        }
+
+        float targetXPosition = -6.0f; // 목표 X 좌표
+        float moveDuration = 2.0f; // 이동할 시간
+
+        Vector3 startPosition = targetAnimatorObject.transform.position;
+        Vector3 targetPosition = new Vector3(targetXPosition, startPosition.y, startPosition.z);
+        float elapsedTime = 0f;
+
+        Debug.Log($"Starting NPC movement from {startPosition} to {targetPosition}");
+
+        while (elapsedTime < moveDuration)
+        {
+            targetAnimatorObject.transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / moveDuration);
+            elapsedTime += Time.deltaTime;
+            Debug.Log($"NPC position: {targetAnimatorObject.transform.position}");
+            yield return null;
+        }
+
+        targetAnimatorObject.transform.position = targetPosition; // Ensure it ends at the exact position
+
+        Debug.Log($"NPC movement ended at {targetAnimatorObject.transform.position}");
+
+        if (NPCAnimator != null)
+        {
+            NPCAnimator.SetBool(boolParameterName, false);
+        }
+    }
+
     void dontmove()
     {
         customize.moveflag = 0;

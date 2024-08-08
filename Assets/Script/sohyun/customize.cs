@@ -134,11 +134,13 @@ public class customize : MonoBehaviour
     //[SerializeField] private InputField usernameinput;
     bool IsValidDate(string date, out DateTime validDate)
     {
-            validDate = DateTime.MinValue;
-
-        
-        
+        validDate = DateTime.MinValue;
+        if (date != null)
+        {
            
+
+
+
             int month = int.Parse(date.Substring(0, 2));
             int day = int.Parse(date.Substring(2, 2));
             Debug.Log(month);
@@ -151,9 +153,13 @@ public class customize : MonoBehaviour
             }
             catch (ArgumentOutOfRangeException)
             {
-                
+
                 return false;
             }
+        }
+        
+        return false;
+           
         
 
         

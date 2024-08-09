@@ -1755,10 +1755,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\uB0B4\uC6A9": {fileID: 1380060330}
-  "\uB9D0\uD48D\uC120": {fileID: 394936229}
-  "\uC774\uB984": {fileID: 1582218405}
-  "\uD50C\uB808\uC774\uC5B4\uCDA9\uB3CC\uD50C\uB798\uADF8": 0
+  content: {fileID: 1380060330}
+  talksqu: {fileID: 394936229}
+  who: {fileID: 1582218405}
+  playercolflag: 0
 --- !u!1 &394936229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2366,7 +2366,7 @@ Transform:
   m_GameObject: {fileID: 750853626}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 679, y: -329, z: -9720}
+  m_LocalPosition: {x: 1163, y: 1087, z: -9720}
   m_LocalScale: {x: 108, y: 108, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2384,10 +2384,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\uB0B4\uC6A9": {fileID: 1380060330}
-  "\uB9D0\uD48D\uC120": {fileID: 394936229}
-  "\uC774\uB984": {fileID: 1582218405}
-  "\uD50C\uB808\uC774\uC5B4\uCDA9\uB3CC\uD50C\uB798\uADF8": 0
+  content: {fileID: 1380060330}
+  talksqu: {fileID: 394936229}
+  who: {fileID: 1582218405}
+  playercolflag: 0
 --- !u!50 &750853629
 Rigidbody2D:
   serializedVersion: 4
@@ -2853,10 +2853,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\uB0B4\uC6A9": {fileID: 1380060330}
-  "\uB9D0\uD48D\uC120": {fileID: 394936229}
-  "\uC774\uB984": {fileID: 1582218405}
-  "\uD50C\uB808\uC774\uC5B4\uCDA9\uB3CC\uD50C\uB798\uADF8": 0
+  content: {fileID: 1380060330}
+  talksqu: {fileID: 394936229}
+  who: {fileID: 1582218405}
+  playercolflag: 0
 --- !u!61 &1029848095
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3253,10 +3253,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\uB0B4\uC6A9": {fileID: 1380060330}
-  "\uB9D0\uD48D\uC120": {fileID: 394936229}
-  "\uC774\uB984": {fileID: 1582218405}
-  "\uD50C\uB808\uC774\uC5B4\uCDA9\uB3CC\uD50C\uB798\uADF8": 0
+  content: {fileID: 1380060330}
+  talksqu: {fileID: 394936229}
+  who: {fileID: 1582218405}
+  playercolflag: 0
 --- !u!61 &1382559402
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3653,10 +3653,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\uB0B4\uC6A9": {fileID: 1380060330}
-  "\uB9D0\uD48D\uC120": {fileID: 394936229}
-  "\uC774\uB984": {fileID: 1582218405}
-  "\uD50C\uB808\uC774\uC5B4\uCDA9\uB3CC\uD50C\uB798\uADF8": 0
+  content: {fileID: 1380060330}
+  talksqu: {fileID: 394936229}
+  who: {fileID: 1582218405}
+  playercolflag: 0
 --- !u!61 &1490624313
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4168,7 +4168,7 @@ Transform:
   m_GameObject: {fileID: 1600514131}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -713, y: 277, z: -9720}
+  m_LocalPosition: {x: -1180, y: 1086, z: -9720}
   m_LocalScale: {x: 108, y: 108, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4186,10 +4186,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "\uB0B4\uC6A9": {fileID: 1380060330}
-  "\uB9D0\uD48D\uC120": {fileID: 394936229}
-  "\uC774\uB984": {fileID: 1582218405}
-  "\uD50C\uB808\uC774\uC5B4\uCDA9\uB3CC\uD50C\uB798\uADF8": 0
+  content: {fileID: 1380060330}
+  talksqu: {fileID: 394936229}
+  who: {fileID: 1582218405}
+  playercolflag: 0
 --- !u!61 &1600514134
 BoxCollider2D:
   m_ObjectHideFlags: 0

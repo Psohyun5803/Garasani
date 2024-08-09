@@ -13,11 +13,11 @@ using System;
 
 public class Prologuescript : MonoBehaviour
 {
-    string[] text = new string[5] { " 아, 환승하기 귀찮다. 집에 가는 동안 눈 좀 붙여야지.", " 막차 안내 방송", " 아, 지하철 또 뭐가 문제야...", "어! 이거 왜 이래??!!", "악!!!!!!!!!!!!!!" };
+    string[] text = new string[5] { " ?, ???? ???. ?? ?? ?? ? ? ????.", " ?? ?? ??", " ?, ??? ? ?? ???...", "?! ?? ? ????!!", "?!!!!!!!!!!!!!!" };
     int textflag = 0;
     public TMP_Text content;
     public GameObject talksqu;
-    public GameObject spot;//느낌표
+    public GameObject spot; //???
     public GameObject Button1;
     public GameObject realdark;
     public GameObject dark;
@@ -42,7 +42,7 @@ public class Prologuescript : MonoBehaviour
         Player.sitdown = 1;
 
     }
-    public void buttondown1() // content가 이어서 나올 때
+    public void buttondown1() // content? ??? ??? 
     {
         if (textflag > 4)
         {
@@ -54,7 +54,7 @@ public class Prologuescript : MonoBehaviour
             customize.sceneflag = 2;
             Invoke("tutorialload", 1f);
 
-            //완전 블랙 이미지 활성화 
+            //?? ????? ???  
         }
         else
         {
@@ -63,33 +63,35 @@ public class Prologuescript : MonoBehaviour
             content.text = text[textflag];
             nameplayer.text = customize.playername;
             textflag++;
-            if (textflag == 2) // lookaround 거리는 모션이 들어갈 부분 
+            if (textflag == 2) //????? ??? ???? ?? 
             {
                 talksqu.SetActive(false);
-                Debug.Log("플레이어 앉아서 두리면 거리는 모션");
+                Debug.Log("???? ??? ??? ??? ??");
                 Player.sitdown = 0;
                 Player.lookaround = 1;
-                //플레이어 앉아서 lookaround 거리는 모션
+                ///???? ??? ????? ??
+
                 talksqu.SetActive(true);
                
 
 
 
             }
-            if (textflag == 3) // 흔들리는 모션이 들어갈 부분
+            if (textflag == 3) // ???? ?? 
             {
                 Player.lookaround = 0;
                 Player.sitdown = 1;
                 talksqu.SetActive(false);
                 CameraShake.shake();
-                Debug.Log("흔들리는 모션 ");
+                Debug.Log("???? ??");
                 //customize.eyeo();
                 Player.sitdown = 0;
                 Player.shock = 1;
                 spot.SetActive(true);
-                Invoke("spot비활성화", 1f);
-                Invoke("talksqu활성화", 2f);
+                Invoke("spot_nonActive", 1f);
+                Invoke("talksqu_Active", 2f);
             }
+
             if (textflag == 4 )
             {
                 CameraShake.shakeharder();
@@ -116,6 +118,7 @@ public class Prologuescript : MonoBehaviour
         realdark.SetActive(true);
 
     }
+    
     void lightcont()
     {
         Invoke("lighton", 0.2f);
@@ -130,11 +133,12 @@ public class Prologuescript : MonoBehaviour
         //SceneManager.LoadScene("sohyuntest");
     }
     
-    void talksqu활성화()
+    void talksqu_Active()
     {
         talksqu.SetActive(true);
     }
-    void spot비활성화()
+
+    void spot_nonActive()
     {
         spot.SetActive(false);
     }

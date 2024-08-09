@@ -31,8 +31,8 @@ public class Player : MonoBehaviour
    
     public static Action<float, float> playertrans;
     
-    //public static Action 앉은자세;
-    //public static Action 앉은자세해제;
+    //public static Action ????????;
+    //public static Action ????????????;
    
 
     public static int sitdown = 0;
@@ -75,10 +75,10 @@ public class Player : MonoBehaviour
 
         
         //move();
-        if ((Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.D))) //누를때
+        if ((Input.GetKey(KeyCode.A)) || (Input.GetKey(KeyCode.W)) || (Input.GetKey(KeyCode.S)) || (Input.GetKey(KeyCode.D))) //??????
         {
 
-            if (coroutineflag == 1) // 움직일때
+            if (coroutineflag == 1) // ????????
             {
 
                 StopAllCoroutines();
@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
             }
             move();
         }
-        else //안누를때
+        else //????????
         {
             if (coroutineflag2 == 1)
             {
@@ -130,25 +130,26 @@ public class Player : MonoBehaviour
     }
    
     
-    public void 적용()
+    public void apply()
     {
         spriteRenderer.sprite = basebody[spriteindex];
-        Debug.Log("적용됨");
+        Debug.Log("??'");
     }
     private float Speed = 0.82f;//0.42f
     //[SerializeField] LayerMask layermask;
     public float distance;
+
     void FindGround()
     {
         RaycastHit hitinfo;
         //hitinfo = Physics2D.Raycast(transform.position, transform.right, distance);
         Debug.DrawRay(transform.position, Vector2.down, new Color(1,0,0));
 
-        //Debug.Log("진입");
+        //Debug.Log("????");
         if(Physics.Raycast(transform.position,Vector3.back,out hitinfo,10f,LayerMask.GetMask("ground")))
         {
-            transform.position = new Vector3(transform.position.x, hitinfo.point.y, transform.position.z);//수정
-            Debug.Log("됨");
+            transform.position = new Vector3(transform.position.x, hitinfo.point.y, transform.position.z);//????
+            Debug.Log("??");
 
         }
     }
@@ -169,7 +170,7 @@ public class Player : MonoBehaviour
             //transform.position = Camera.main.ViewportToWorldPoint(pos);
             //FindGround();
            
-            //player.transform.position = Camera.main.ViewportToWorldPoint(pos); //수정
+            //player.transform.position = Camera.main.ViewportToWorldPoint(pos); //????
             
 
 

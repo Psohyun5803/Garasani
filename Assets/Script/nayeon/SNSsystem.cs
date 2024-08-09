@@ -5,12 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class SNSsystem : MonoBehaviour
 {
-
+    public static SNSsystem instance;
     public GameObject ch3_market;
     public GameObject ch3_home;
     public GameObject ch3_weather;
     public GameObject ch3_movie;
     public GameObject ch3_horror;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+
+    }
 
     public void SNSmanager() //챕터 시작할 때마다 각 스크립트에 함수 삽입
     {

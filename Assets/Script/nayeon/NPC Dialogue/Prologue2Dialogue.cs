@@ -9,9 +9,13 @@ public class Prologue2Dialogue : MonoBehaviour
 {
     public static Prologue2Dialogue instance;
     public int dialogueID;
-    public bool checkWiki = true; //위키 체크 변수 (임의로 true 설정. 수정필요) **
+    public bool checkWiki = true; //wiki read check
     public Dialogue[] contextList;
 
+    public void Update()
+    {
+        SNSsystem.instance.SNSmanager();
+    }
 
     public void Awake()
     {
@@ -120,7 +124,7 @@ public class Prologue2Dialogue : MonoBehaviour
 
                 case (11):
                     contextList = DataManager.instance.GetDialogue(29,29);
-                    // *** 아이템 획득한 것에 따른 구현 필요 (processChoose 사용) ***//
+                    // *** ?????? ?????? ???? ???? ???? ???? (processChoose ????) ***//
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));                  
                     dialogueID = 12;
                     break;
@@ -149,7 +153,7 @@ public class Prologue2Dialogue : MonoBehaviour
             }
           
         }
-        DialogueOnOff.instance.ui_Dialogue.SetActive(false); //대화창 꺼짐 
+        DialogueOnOff.instance.ui_Dialogue.SetActive(false); //?????? ???? 
        
     }
 
@@ -212,7 +216,7 @@ public class Prologue2Dialogue : MonoBehaviour
             }
         }
 
-        DialogueOnOff.instance.ui_Dialogue.SetActive(false); //대화창 꺼짐 
+        DialogueOnOff.instance.ui_Dialogue.SetActive(false); //?????? ???? 
     }
 
 
@@ -297,6 +301,6 @@ public class Prologue2Dialogue : MonoBehaviour
                     break;
             }
         }
-        DialogueOnOff.instance.ui_Dialogue.SetActive(false); //대화창 꺼짐 
+        DialogueOnOff.instance.ui_Dialogue.SetActive(false); //?????? ???? 
     }
 }

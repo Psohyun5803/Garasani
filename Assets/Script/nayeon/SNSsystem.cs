@@ -26,12 +26,19 @@ public class SNSsystem : MonoBehaviour
         Scene scene = SceneManager.GetActiveScene();
         switch (scene.name)
         {
+            case "Pro_map_2": //prologue2
+                GameObject[] prol2_sns = GameObject.FindGameObjectsWithTag("sns_prol");
+                foreach(GameObject obj in prol2_sns)
+                {
+                    obj.SetActive(true);
+                }
+                break;
             case "PhoneUI":
-                ch1_home.SetActive(true);
-                ch1_market.SetActive(true);
-                ch1_weather.SetActive(true);
-                ch1_movie.SetActive(true);
-                ch1_horror.SetActive(true);
+                GameObject[] ch1_sns = GameObject.FindGameObjectsWithTag("sns_ch1");
+                foreach (GameObject obj in ch1_sns)
+                {
+                    obj.SetActive(true);
+                }
                 break;
             case "Jongro3":
                 break;

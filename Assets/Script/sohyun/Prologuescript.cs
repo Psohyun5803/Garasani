@@ -13,7 +13,7 @@ using System;
 
 public class Prologuescript : MonoBehaviour
 {
-    string[] text = new string[5] { "아, 환승하기 귀찮다. 집에 가는 동안 눈 좀 붙여야지.", "막차 안내 방송", "아, 지하철 또 뭐가 문제야....", "어! 이거 왜 이래??!!", "악!!!!!!!!!!!!!!" };
+    string[] text = new string[4] { "아, 환승하기 귀찮다. 집에 가는 동안 눈 좀 붙여야지.", "아, 지하철 또 뭐가 문제야....", "어! 이거 왜 이래??!!", "!!!!!!!!!!!!!!" };
     int textflag = 0;
     public TMP_Text content;
     public GameObject talksqu;

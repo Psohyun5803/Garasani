@@ -133,9 +133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 541502243}
   - component: {fileID: 541502244}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "[\uBC14\uB2E5]\uC9C0\uD5581\uCE35"
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

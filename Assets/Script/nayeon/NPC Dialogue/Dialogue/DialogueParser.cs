@@ -4,57 +4,57 @@ using UnityEngine;
 
 public class DialogueParser : MonoBehaviour
 {
-   public Dialogue[] Parse(string _CSVFileName)
+    public Dialogue[] Parse(string _CSVFileName)
     {
-        List<Dialogue> dialogueList = new List<Dialogue>(); //´ë»ç ¸®½ºÆ® »ı¼º 
-        //ÆÄ½ÌµÈ µ¥ÀÌÅÍ¸¦ ÀÓ½Ã·Î ÀúÀå
+        List<Dialogue> dialogueList = new List<Dialogue>(); //ëŒ€ì‚¬ ë¦¬ìŠ¤íŠ¸ ìƒì„± 
+        //íŒŒì‹±ëœ ë°ì´í„°ë¥¼ ì„ì‹œë¡œ ì €ì¥
 
-        TextAsset csvData = Resources.Load<TextAsset>(_CSVFileName); //csvÆÄÀÏ °¡Á®¿È
+        TextAsset csvData = Resources.Load<TextAsset>(_CSVFileName); //csvíŒŒì¼ ê°€ì ¸ì˜´
         if (csvData == null)
         {
             Debug.LogError("CSV file not found: " + _CSVFileName);
             return dialogueList.ToArray();
         }
 
-        
-        string[] data = csvData.text.Split(new char[]{'\n'}); //¿£ÅÍ ´ÜÀ§·Î ³ª´²ÁÙ °Í (ÁÙº°·Î °¡Á®¿Ã°Å¶ó¼­)
-        
-        for(int i = 1;i<data.Length;i++) //½ÇÁ¦ ³»¿ëÀº 1ºÎÅÍ ½ÃÀÛ 
+
+        string[] data = csvData.text.Split(new char[] { '\n' }); //ì—”í„° ë‹¨ìœ„ë¡œ ë‚˜ëˆ ì¤„ ê²ƒ (ì¤„ë³„ë¡œ ê°€ì ¸ì˜¬ê±°ë¼ì„œ)
+
+        for (int i = 1; i < data.Length; i++) //ì‹¤ì œ ë‚´ìš©ì€ 1ë¶€í„° ì‹œì‘ 
         {
-            string[] row = data[i].Split(new char[] { ',' }); //°¢ csvµ¥ÀÌÅÍÀÇ ÁÙÀ» row array¿¡ ÇÒ´ç 
+            string[] row = data[i].Split(new char[] { ',' }); //ê° csvë°ì´í„°ì˜ ì¤„ì„ row arrayì— í• ë‹¹ 
 
             if (row.Length < 7)
             {
                 Debug.LogWarning("Row does not have enough columns: " + data[i]);
-                continue; // ´ÙÀ½ ÁÙ·Î ³Ñ¾î°¨
+                continue; // ë‹¤ìŒ ì¤„ë¡œ ë„˜ì–´ê°
             }
 
-            Dialogue dialogue = new Dialogue(); // ´ëÈ­ Á¤º¸ µé¾îÀÖ´Â Dialogue °´Ã¼ »ı¼º 
+            Dialogue dialogue = new Dialogue(); // ëŒ€í™” ì •ë³´ ë“¤ì–´ìˆëŠ” Dialogue ê°ì²´ ìƒì„± 
 
             if (!int.TryParse(row[0], out dialogue.id))
             {
-                dialogue.id = 0; // ÆÄ½Ì ½ÇÆĞ ½Ã ±âº»°ª ¼³Á¤
+                dialogue.id = 0; // íŒŒì‹± ì‹¤íŒ¨ ì‹œ ê¸°ë³¸ê°’ ì„¤ì •
             }
 
-            if (row[1].CompareTo("ÁÖÀÎ°ø") == 0)
+            if (row[1].CompareTo("ì£¼ì¸ê³µ") == 0)
                 dialogue.name = customize.playername;
             else
-                dialogue.name = row[1]; // ÀÌ¸§
+                dialogue.name = row[1]; // ì´ë¦„
 
-            dialogue.contexts = row[2]; // ´ë»ç ³»¿ë
+            dialogue.contexts = row[2]; // ëŒ€ì‚¬ ë‚´ìš©
 
-            dialogue.chosen1 = row[3]; // ¼±ÅÃÁö1
+            dialogue.chosen1 = row[3]; // ì„ íƒì§€1
 
             if (!int.TryParse(row[4], out dialogue.chosen1_ID))
             {
-                dialogue.chosen1_ID = 0; // ÆÄ½Ì ½ÇÆĞ ½Ã ±âº»°ª ¼³Á¤
+                dialogue.chosen1_ID = 0; // íŒŒì‹± ì‹¤íŒ¨ ì‹œ ê¸°ë³¸ê°’ ì„¤ì •
             }
 
-            dialogue.chosen2 = row[5]; // ¼±ÅÃÁö2
+            dialogue.chosen2 = row[5]; // ì„ íƒì§€2
 
             if (!int.TryParse(row[6], out dialogue.chosen2_ID))
             {
-                dialogue.chosen2_ID = 0; // ÆÄ½Ì ½ÇÆĞ ½Ã ±âº»°ª ¼³Á¤
+                dialogue.chosen2_ID = 0; // íŒŒì‹± ì‹¤íŒ¨ ì‹œ ê¸°ë³¸ê°’ ì„¤ì •
             }
 
 
@@ -65,13 +65,12 @@ public class DialogueParser : MonoBehaviour
             dialogue.chosen1 = dialogue.chosen1.Replace("player", customize.playername);
             dialogue.chosen2 = dialogue.chosen2.Replace("player", customize.playername);
 
-            dialogueList.Add(dialogue); //¸®½ºÆ®ÀÇ °¢ ¿ä¼Ò¿¡ dialgoue °´Ã¼ ÀúÀå 
+            dialogueList.Add(dialogue); //ë¦¬ìŠ¤íŠ¸ì˜ ê° ìš”ì†Œì— dialgoue ê°ì²´ ì €ì¥ 
         }
 
 
         return dialogueList.ToArray();
     }
 
-        
-}
 
+}

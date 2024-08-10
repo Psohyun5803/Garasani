@@ -13,7 +13,7 @@ using System;
 
 public class Prologuescript : MonoBehaviour
 {
-    string[] text = new string[4] { "아, 환승하기 귀찮다. 집에 가는 동안 눈 좀 붙여야지.", "아, 지하철 또 뭐가 문제야....", "어! 이거 왜 이래??!!", "!!!!!!!!!!!!!!" };
+    string[] text = new string[4] { "아, 환승하기 귀찮다. 집에 가는 동안 눈 좀 붙여야지.", "아, 지하철 또 뭐가 문제야....", "어! 이거 왜 이래??!!", "악!!!!!!!!!!!!!!" };
     int textflag = 0;
     public TMP_Text content;
     public GameObject talksqu;
@@ -44,7 +44,7 @@ public class Prologuescript : MonoBehaviour
     }
     public void buttondown1() // content? ??? ??? 
     {
-        if (textflag > 4)
+        if (textflag > 3)
         {
             talksqu.SetActive(false);
             CameraShake.stopsk();
@@ -63,7 +63,7 @@ public class Prologuescript : MonoBehaviour
             content.text = text[textflag];
             nameplayer.text = customize.playername;
             textflag++;
-            if (textflag == 2) //????? ??? ???? ?? 
+            if (textflag == 1) //????? ??? ???? ?? 
             {
                 talksqu.SetActive(false);
                 Debug.Log("???? ??? ??? ??? ??");
@@ -77,7 +77,7 @@ public class Prologuescript : MonoBehaviour
 
 
             }
-            if (textflag == 3) // ???? ?? 
+            if (textflag == 2) // ???? ?? 
             {
                 Player.lookaround = 0;
                 Player.sitdown = 1;
@@ -92,7 +92,7 @@ public class Prologuescript : MonoBehaviour
                 Invoke("talksqu_Active", 2f);
             }
 
-            if (textflag == 4 )
+            if (textflag == 3 )
             {
                 CameraShake.shakeharder();
                 InvokeRepeating("lighton", 0f, 0.001f);

@@ -5,40 +5,57 @@ using UnityEngine.SceneManagement;
 
 public class DataManager : MonoBehaviour
 {
-    public static DataManager instance; //ÂüÁ¶°¡ ½±µµ·Ï
-    //Scene scene = SceneManager.GetActiveScene(); //ÇÔ¼ö ¾È¿¡ ¼±¾ğÇÏ¿© »ç¿ëÇÑ´Ù.
+    public static DataManager instance; //ì°¸ì¡°ê°€ ì‰½ë„ë¡
+    //Scene scene = SceneManager.GetActiveScene(); //í•¨ìˆ˜ ì•ˆì— ì„ ì–¸í•˜ì—¬ ì‚¬ìš©í•œë‹¤.
     public string csv_FileName;
-    
 
-    //ÀÎµ¦½º¿¡ ¸Â´Â dialogue°¡ ²¨³»¿ÍÁö´Â µñ¼Å³Ê¸® 
+
+    //ì¸ë±ìŠ¤ì— ë§ëŠ” dialogueê°€ êº¼ë‚´ì™€ì§€ëŠ” ë”•ì…”ë„ˆë¦¬ 
     Dictionary<int, Dialogue> dialogueDic = new Dictionary<int, Dialogue>();
 
-    public static bool isFinish = false; //µ¥ÀÌÅÍ°¡ ÀüºÎ ÀúÀåµÇ¾ú´ÂÁö
+    public static bool isFinish = false; //ë°ì´í„°ê°€ ì „ë¶€ ì €ì¥ë˜ì—ˆëŠ”ì§€
 
     private void Awake()
     {
-        if(instance == null)//¸ğµç µ¥ÀÌÅÍ¸¦ µñ¼Å³Ê¸®¿¡ ³Ö±â 
+        if (instance == null)//ëª¨ë“  ë°ì´í„°ë¥¼ ë”•ì…”ë„ˆë¦¬ì— ë„£ê¸° 
         {
-            instance = this; //ÀÚ±â ÀÚ½Å ³Ö±â -> µî·ÏµÈ µ¥ÀÌÅÍ°¡ ÀüºÎ instance·Î µé¾î°¨ 
-            DialogueParser theParser = GetComponent<DialogueParser>();
-            csv_FileName = SceneManager.GetActiveScene().name;
-            Dialogue[] dialogues = theParser.Parse(csv_FileName); //¹è¿­ Å¸ÀÔÀ¸·Î ¸®ÅÏµÈ°Ô ÀúÀå -> ¸ğµç µ¥ÀÌÅÍ°¡ ´ã±è 
+            instance = this; //ìê¸° ìì‹  ë„£ê¸° -> ë“±ë¡ëœ ë°ì´í„°ê°€ ì „ë¶€ instanceë¡œ ë“¤ì–´ê° 
+            //DialogueParser theParser = GetComponent<DialogueParser>();
+            //csv_FileName = SceneManager.GetActiveScene().name;
+            //Debug.Log(csv_FileName);
+            //Dialogue[] dialogues = theParser.Parse(csv_FileName); //ë°°ì—´ íƒ€ì…ìœ¼ë¡œ ë¦¬í„´ëœê²Œ ì €ì¥ -> ëª¨ë“  ë°ì´í„°ê°€ ë‹´ê¹€ 
 
-            for(int i = 0; i < dialogues.Length; i++)
-            {
-                dialogueDic.Add(i + 1, dialogues[i]);
-            }
-            isFinish = true;
+            //for (int i = 0; i < dialogues.Length; i++)
+            //{
+            //    dialogueDic.Add(i + 1, dialogues[i]);
+            //}
+            //isFinish = true;
         }
     }
 
-    
+    public void DialogueLoad()
+    {
+        dialogueDic.Clear(); // ê¸°ì¡´ ë°ì´í„° ì‚­ì œ
+        DialogueParser theParser = GetComponent<DialogueParser>();
+        //csv_FileName = SceneManager.GetActiveScene().name;
+        Debug.Log(csv_FileName);
+        Dialogue[] dialogues = theParser.Parse(csv_FileName); //ë°°ì—´ íƒ€ì…ìœ¼ë¡œ ë¦¬í„´ëœê²Œ ì €ì¥ -> ëª¨ë“  ë°ì´í„°ê°€ ë‹´ê¹€ 
+
+        for (int i = 0; i < dialogues.Length; i++)
+        {
+            dialogueDic.Add(i + 1, dialogues[i]);
+        }
+        isFinish = true;
+        Debug.Log(dialogueDic);
+
+    }
+
     public Dialogue[] GetDialogue(int _StartNum, int _EndNum)
     {
         List<Dialogue> dialogueList = new List<Dialogue>();
-        for(int i=0 ; i<= _EndNum-_StartNum; i++)
+        for (int i = 0; i <= _EndNum - _StartNum; i++)
         {
-            dialogueList.Add(dialogueDic[_StartNum + i]); //µñ¼Å³Ê¸®¿¡¼­ ²¨³»¿À±â 
+            dialogueList.Add(dialogueDic[_StartNum + i]); //ë”•ì…”ë„ˆë¦¬ì—ì„œ êº¼ë‚´ì˜¤ê¸° 
         }
 
         return dialogueList.ToArray();

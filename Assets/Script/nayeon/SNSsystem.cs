@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 public class SNSsystem : MonoBehaviour
 {
     public static SNSsystem instance;
-    public GameObject ch3_market;
-    public GameObject ch3_home;
-    public GameObject ch3_weather;
-    public GameObject ch3_movie;
-    public GameObject ch3_horror;
+    public GameObject ch1_market;
+    public GameObject ch1_home;
+    public GameObject ch1_weather;
+    public GameObject ch1_movie;
+    public GameObject ch1_horror;
 
     private void Awake()
     {
@@ -27,11 +27,11 @@ public class SNSsystem : MonoBehaviour
         switch (scene.name)
         {
             case "PhoneUI":
-                ch3_home.SetActive(true);
-                ch3_market.SetActive(true);
-                ch3_weather.SetActive(true);
-                ch3_movie.SetActive(true);
-                ch3_horror.SetActive(true);
+                ch1_home.SetActive(true);
+                ch1_market.SetActive(true);
+                ch1_weather.SetActive(true);
+                ch1_movie.SetActive(true);
+                ch1_horror.SetActive(true);
                 break;
             case "Jongro3":
                 break;
@@ -40,11 +40,11 @@ public class SNSsystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ch3_home.SetActive(false);
-        ch3_market.SetActive(false);
-        ch3_weather.SetActive(false);
-        ch3_movie.SetActive(false);
-        ch3_horror.SetActive(false);
+        ch1_home.SetActive(false);
+        ch1_market.SetActive(false);
+        ch1_weather.SetActive(false);
+        ch1_movie.SetActive(false);
+        ch1_horror.SetActive(false);
         //SNSmanager();
 
     }

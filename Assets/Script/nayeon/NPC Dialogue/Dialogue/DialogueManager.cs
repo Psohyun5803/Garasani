@@ -50,7 +50,7 @@ public class DialogueManager : MonoBehaviour
         else
         {
             IsDialogueFinished = true;
-            Debug.Log("contextlist �ʱ�ȭ �ȵ�");
+            Debug.Log("contextlist 없음");
         }
     }
 
@@ -103,6 +103,7 @@ public class DialogueManager : MonoBehaviour
         isTyping = false;
         ShowChoices();
     }
+
     private void ShowChoices()
     {
         if (!string.IsNullOrEmpty(contextList[currentIdx].chosen1) && !string.IsNullOrEmpty(contextList[currentIdx].chosen2))

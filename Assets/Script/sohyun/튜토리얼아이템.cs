@@ -71,7 +71,8 @@ public class 튜토리얼아이템 : MonoBehaviour
             {
                 context.text = "다음 칸으로 이동한다";
 
-                SceneManager.LoadScene("Pro_map2 beta");
+                //SceneManager.LoadScene("Pro_map2 beta");
+                SceneManager.LoadScene("Pro_map2_ny"); //프롤로그 테스트 
             }
 
             clickflag = 2;

@@ -153,7 +153,7 @@ public class Prologue2Dialogue : MonoBehaviour
             }
           
         }
-        DialogueOnOff.instance.ui_Dialogue.SetActive(false); //?????? ???? 
+        JMevent.instance.ui_Dialogue.SetActive(false); //?????? ???? 
        
     }
 
@@ -216,7 +216,7 @@ public class Prologue2Dialogue : MonoBehaviour
             }
         }
 
-        DialogueOnOff.instance.ui_Dialogue.SetActive(false); //?????? ???? 
+        JMevent.instance.ui_Dialogue.SetActive(false); //?????? ???? 
     }
 
 
@@ -301,6 +301,6 @@ public class Prologue2Dialogue : MonoBehaviour
                     break;
             }
         }
-        DialogueOnOff.instance.ui_Dialogue.SetActive(false); //?????? ???? 
+        JMevent.instance.ui_Dialogue.SetActive(false); //?????? ???? 
     }
 }

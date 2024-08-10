@@ -9,9 +9,9 @@ public class B2_Move : MonoBehaviour
     {
         Debug.Log("Mouse Click");
         Debug.Log(gameObject.name);
-        Debug.Log(intertest.충돌아이템명);
+        Debug.Log(intertest.colitemname);
 
-        if (intertest.충돌아이템명 == "Door")
+        if (intertest.colitemname == "Door")
         {
             SceneManager.LoadScene("Chungmuro_B1");
         }

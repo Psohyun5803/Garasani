@@ -6,8 +6,7 @@ public class DialogueOnOff : MonoBehaviour
 {
     public static DialogueOnOff instance;
     public GameObject ui_Dialogue;
-    public float rayDistance = 100f;  // Raycast 거리
-    // public LayerMask hitLayers;  // 특정 레이어에 대해 Raycast 적용
+    public float rayDistance = 100f;  
     
 
     void Awake()
@@ -24,7 +23,7 @@ public class DialogueOnOff : MonoBehaviour
         
     }
 
-
+     
     public void On_uiDialogue()
     {
         if (Input.GetMouseButtonDown(0))
@@ -36,7 +35,7 @@ public class DialogueOnOff : MonoBehaviour
             if (hit.collider != null)
             {
                 Debug.Log("Hit: " + hit.transform.gameObject.name);
-                if (hit.transform.gameObject.CompareTag("NPC")) // 클릭한 물체 오브젝트가 npc면 대화창 띄움
+                if (hit.transform.gameObject.CompareTag("NPC"))
                 {
                     ui_Dialogue.SetActive(true);
                     StoryManager.instance.StoryStart();
@@ -48,5 +47,11 @@ public class DialogueOnOff : MonoBehaviour
     void Update()
     {
         On_uiDialogue();
+        if (Input.GetMouseButtonDown(0))
+        {
+            ui_Dialogue.SetActive(true);
+            StoryManager.instance.StoryStart();
+            Debug.Log("npc click");
+        }
     }
 }

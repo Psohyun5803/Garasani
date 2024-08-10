@@ -19,13 +19,14 @@ public class StoryManager : MonoBehaviour
     {
         switch (DataManager.instance.csv_FileName)
         {
-            case "Prologue2": // ? ???? ?? case ?? ?? ***
+            case "Prologue2": 
                 if (!sceneInitialized)
                 {
                     sceneNum = 1;
                     sceneInitialized = true;
                 }
                 StartCoroutine(ProceedToNextScene());
+                
                 break;
         }
     }

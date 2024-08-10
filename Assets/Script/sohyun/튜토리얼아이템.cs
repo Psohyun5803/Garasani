@@ -106,7 +106,7 @@ public class 튜토리얼아이템 : MonoBehaviour
             who.text = "System";
             context.text = "[누군가 흘린 키링]을 가방에 챙겼다.";
             keyring.SetActive(false);
-           keyringcontent.SetActive(false);
+            keyringcontent.SetActive(false);
             inventory.AddItem("키링", "누군가 흘린 keyring.");
             tutorialscript.gotoflag++;
             keyringflag = 1;

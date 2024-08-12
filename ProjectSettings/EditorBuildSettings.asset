@@ -23,7 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/prologue/Pro_map2 beta.unity
     guid: 4c67f881d2aa66b4a82252667bd0caad
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/betamap.unity
     guid: f6f2e791898d23444bebdc04ddb9079e
   - enabled: 1
@@ -47,4 +47,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pro_map2_ny.unity
     guid: 5addf0472bc5f49c1b9582d7be334684
+  - enabled: 1
+    path: Assets/Scenes/prologue/newcustomize.unity
+    guid: 31a6def51b89549438614abc5a5732c3
+  - enabled: 1
+    path: Assets/Scenes/prologue/Pro_map2_2.unity
+    guid: 741eb21c7d0b4467fb24cca24ac8f9e7
   m_configObjects: {}

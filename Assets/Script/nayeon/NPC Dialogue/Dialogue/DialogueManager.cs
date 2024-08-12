@@ -72,7 +72,7 @@ public class DialogueManager : MonoBehaviour
         chosen2_text.text = "";
         name.text = contextList[currentIdx].name;
 
-        if(name.text != customize.playername) //npc player 구분 
+        if (name.text != customize.playername) //npc player 구분 
         {
             dialogue_text.alignment = TextAlignmentOptions.Right;
         }
@@ -82,7 +82,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         typingCoroutine = StartCoroutine(textPrint(delay, contextList[currentIdx].contexts));
-        
+
     }
 
     IEnumerator textPrint(float d, string text)
@@ -103,6 +103,49 @@ public class DialogueManager : MonoBehaviour
         isTyping = false;
         ShowChoices();
     }
+
+    //public void DisplayDialogue()
+    //{
+    //    if (contextList == null || contextList.Length == 0 || currentIdx >= contextList.Length)
+    //        return;
+
+    //    if (typingCoroutine != null)
+    //    {
+    //        StopCoroutine(typingCoroutine);
+    //        typingCoroutine = null;
+    //    }
+
+    //    dialogue_text.text = "";  // 텍스트 초기화
+    //    chosen1_text.text = "";
+    //    chosen2_text.text = "";
+    //    name.text = contextList[currentIdx].name;
+
+    //    if (name.text != customize.playername) // npc와 player 구분
+    //    {
+    //        dialogue_text.alignment = TextAlignmentOptions.Right;
+    //    }
+    //    else
+    //    {
+    //        dialogue_text.alignment = TextAlignmentOptions.Left;
+    //    }
+
+    //    // 텍스트 타이핑 효과 적용
+    //    typingCoroutine = StartCoroutine(TypeText(delay,contextList[currentIdx].contexts));
+
+    //}
+
+
+    //private IEnumerator TypeText(float d, string text)
+    //{
+    //    dialogue_text.text = "";
+    //    foreach (char letter in text)
+    //    {
+    //        dialogue_text.text += letter;
+    //        yield return new WaitForSeconds(delay);
+    //    }
+    //    isTyping = false;
+    //    ShowChoices();
+    //}
 
     private void ShowChoices()
     {

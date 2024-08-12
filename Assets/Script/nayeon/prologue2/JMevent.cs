@@ -6,7 +6,7 @@ public class JMevent : MonoBehaviour
 {
     public static JMevent instance;
     public GameObject ui_Dialogue;
-    public int dialogueID;
+    public bool isStart;
 
 
     void Awake()
@@ -20,31 +20,36 @@ public class JMevent : MonoBehaviour
 
     //public void On_uiDialogue()
     //{
-    //    if (Input.GetMouseButtonDown(0))
+    //    if (Input.GetMouseButtonDown(0) && isStart == false)
     //    {
+    //        isStart = true; //최초 1번 클릭시 실행 
+    //        Debug.Log("npc click");
     //        //prologue2 정민 이벤트 시작
     //        DataManager.instance.csv_FileName = "Prologue2";
+    //        DataManager.instance.DialogueLoad(); //csvfile load
     //        ui_Dialogue.SetActive(true);
     //        StartCoroutine(inSubway_1.instance.subwayStory());
     //    }
     //}
 
+
     void Start()
     {
-        ui_Dialogue.SetActive(false);
-        dialogueID = 1;
+        //ui_Dialogue.SetActive(false);
+        isStart = false;
 
     }
 
     void Update()
     {
         //On_uiDialogue();
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && isStart == false)
         {
+            isStart = true; //최초 1번 클릭시 실행 
             Debug.Log("npc click");
             //prologue2 정민 이벤트 시작
             DataManager.instance.csv_FileName = "Prologue2";
-            DataManager.instance.DialogueLoad(); //대화 로드 
+            DataManager.instance.DialogueLoad(); //csvfile load
             ui_Dialogue.SetActive(true);
             StartCoroutine(inSubway_1.instance.subwayStory());
         }

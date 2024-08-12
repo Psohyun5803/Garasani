@@ -15413,11 +15413,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1130615177}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9df05521164d19d42a9d267ef20115fe, type: 3}
+  m_Script: {fileID: 11500000, guid: 47aa09c111ebe4f02a43150031c636c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui_Dialogue: {fileID: 0}
-  rayDistance: 100
+  ui_Dialogue: {fileID: 1982233698}
+  isStart: 0
 --- !u!1 &1130742016
 GameObject:
   m_ObjectHideFlags: 0
@@ -15987,9 +15987,9 @@ GameObject:
   - component: {fileID: 1173956576}
   - component: {fileID: 1173956575}
   - component: {fileID: 1173956574}
-  - component: {fileID: 1173956579}
-  - component: {fileID: 1173956581}
   - component: {fileID: 1173956580}
+  - component: {fileID: 1173956582}
+  - component: {fileID: 1173956581}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -16096,20 +16096,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1173956579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173956573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9df05521164d19d42a9d267ef20115fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ui_Dialogue: {fileID: 1982233698}
-  rayDistance: 100
 --- !u!114 &1173956580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16140,12 +16126,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 1173956573}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6ea3830d768b4c4990700976ce93fee, type: 3}
+  m_Script: {fileID: 11500000, guid: 986b9c46716a14911b04bd19e871068b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueID: 0
-  checkWiki: 1
   contextList: []
+--- !u!114 &1173956582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173956573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761d1992db29a48e7beacb5e2e680ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui_dialogue: {fileID: 1982233698}
+  button: {fileID: 1658791058}
+  dark: {fileID: 152763511}
+  context: {fileID: 1184490971}
+  name: {fileID: 1256643753}
+  door: {fileID: 189965725}
+  targetAnimatorObject: {fileID: 1130615177}
+  moveSpeed: 5
+  boolParameterName: Left
+  contextList: []
+  dialogueID: 0
 --- !u!1 &1184490968
 GameObject:
   m_ObjectHideFlags: 0
@@ -16211,7 +16218,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 43d0f75ad1a815f4e9aa316a41264bb5, type: 2}
   m_sharedMaterial: {fileID: 847961739581625119, guid: 43d0f75ad1a815f4e9aa316a41264bb5, type: 2}
@@ -16898,6 +16905,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1219600199}
   - component: {fileID: 1219600200}
+  - component: {fileID: 1219600201}
   m_Layer: 0
   m_Name: Scriptmanager
   m_TagString: Untagged
@@ -16928,7 +16936,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219600197}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f388f5317d05c1042a7e6e3b2007dedd, type: 3}
   m_Name: 
@@ -16942,6 +16950,19 @@ MonoBehaviour:
   targetAnimatorObject: {fileID: 1130615177}
   moveSpeed: 10
   boolParameterName: Left
+--- !u!114 &1219600201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219600197}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 986b9c46716a14911b04bd19e871068b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contextList: []
 --- !u!1 &1220435615
 GameObject:
   m_ObjectHideFlags: 0
@@ -22824,6 +22845,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1173956580}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: onClickNextButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1658791061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23097,7 +23130,8 @@ GameObject:
   - component: {fileID: 1701065681}
   - component: {fileID: 1701065680}
   - component: {fileID: 1701065679}
-  - component: {fileID: 1701065678}
+  - component: {fileID: 1701065683}
+  - component: {fileID: 1701065682}
   m_Layer: 0
   m_Name: Story_dialogueManager
   m_TagString: Untagged
@@ -23105,20 +23139,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1701065678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701065677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b40db24fe82bf9047b023124d4d004aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneNum: 0
-  sceneInitialized: 0
 --- !u!114 &1701065679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23159,6 +23179,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1701065682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701065677}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f388f5317d05c1042a7e6e3b2007dedd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  talksqu: {fileID: 1982233698}
+  button: {fileID: 1658791058}
+  dark: {fileID: 152763511}
+  content: {fileID: 1184490971}
+  who: {fileID: 1256643753}
+  door: {fileID: 189965725}
+  targetAnimatorObject: {fileID: 1130615177}
+  moveSpeed: 5
+  boolParameterName: Left
+--- !u!114 &1701065683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701065677}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 986b9c46716a14911b04bd19e871068b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contextList: []
 --- !u!1 &1704330525
 GameObject:
   m_ObjectHideFlags: 0
@@ -23590,9 +23644,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4770ce103e0dd4db61c7a554daf44a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  content: {fileID: 0}
-  name: {fileID: 0}
-  talkBubble: {fileID: 0}
+  content: {fileID: 1184490971}
+  name: {fileID: 1256643753}
+  talkBubble: {fileID: 1982233698}
   hammer: {fileID: 2043937173}
   hammerInfo: {fileID: 1811035300}
   hammerflag: 0
@@ -24815,7 +24869,7 @@ Transform:
   m_GameObject: {fileID: 1811035300}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -966.4352, y: -541.4907, z: 0}
+  m_LocalPosition: {x: -949.1189, y: -540.5785, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27553,7 +27607,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -967.54626, y: -540.9722}
+  m_AnchoredPosition: {x: -950.23, y: -540.06}
   m_SizeDelta: {x: 1.5, y: 1.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2043937184

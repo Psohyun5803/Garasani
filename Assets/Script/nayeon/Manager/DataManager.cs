@@ -46,7 +46,10 @@ public class DataManager : MonoBehaviour
             dialogueDic.Add(i + 1, dialogues[i]);
         }
         isFinish = true;
-        Debug.Log(dialogueDic);
+        foreach (var kvp in dialogueDic)
+        {
+            Debug.Log($"Key: {kvp.Key}, Value: {kvp.Value.contexts}");
+        }
 
     }
 

@@ -15284,8 +15284,8 @@ GameObject:
   - component: {fileID: 1130615180}
   - component: {fileID: 1130615179}
   - component: {fileID: 1130615181}
-  - component: {fileID: 1130615182}
   - component: {fileID: 1130615183}
+  - component: {fileID: 1130615184}
   m_Layer: 0
   m_Name: "\uAD6C\uC815\uBBFC"
   m_TagString: NPC
@@ -15381,29 +15381,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!136 &1130615182
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1130615177}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.64
-  m_Height: 2.56
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1130615183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15418,6 +15395,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ui_Dialogue: {fileID: 1982233698}
   isStart: 0
+  contextList: []
+--- !u!70 &1130615184
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130615177}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.28, y: 2.56}
+  m_Direction: 0
 --- !u!1 &1130742016
 GameObject:
   m_ObjectHideFlags: 0
@@ -16151,6 +16164,7 @@ MonoBehaviour:
   targetAnimatorObject: {fileID: 1130615177}
   moveSpeed: 5
   boolParameterName: Left
+  jmeventFlag: 0
   contextList: []
   dialogueID: 0
 --- !u!1 &1184490968
@@ -16906,6 +16920,7 @@ GameObject:
   - component: {fileID: 1219600199}
   - component: {fileID: 1219600200}
   - component: {fileID: 1219600201}
+  - component: {fileID: 1219600202}
   m_Layer: 0
   m_Name: Scriptmanager
   m_TagString: Untagged
@@ -16957,12 +16972,36 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219600197}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 986b9c46716a14911b04bd19e871068b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   contextList: []
+--- !u!114 &1219600202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219600197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761d1992db29a48e7beacb5e2e680ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui_dialogue: {fileID: 1982233698}
+  button: {fileID: 1658791058}
+  dark: {fileID: 152763511}
+  context: {fileID: 1184490971}
+  name: {fileID: 1256643753}
+  door: {fileID: 189965725}
+  targetAnimatorObject: {fileID: 1130615177}
+  moveSpeed: 5
+  boolParameterName: Left
+  jmeventFlag: 0
+  contextList: []
+  dialogueID: 0
 --- !u!1 &1220435615
 GameObject:
   m_ObjectHideFlags: 0
@@ -22833,18 +22872,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1219600200}
-        m_TargetAssemblyTypeName: tutorial2, Assembly-CSharp
-        m_MethodName: buttondown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1173956580}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: onClickNextButton

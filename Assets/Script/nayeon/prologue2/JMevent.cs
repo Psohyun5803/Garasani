@@ -7,7 +7,7 @@ public class JMevent : MonoBehaviour
     public static JMevent instance;
     public GameObject ui_Dialogue;
     public bool isStart;
-
+    public Dialogue[] contextList;
 
     void Awake()
     {
@@ -17,42 +17,49 @@ public class JMevent : MonoBehaviour
         }
     }
 
-
-    //public void On_uiDialogue()
-    //{
-    //    if (Input.GetMouseButtonDown(0) && isStart == false)
-    //    {
-    //        isStart = true; //최초 1번 클릭시 실행 
-    //        Debug.Log("npc click");
-    //        //prologue2 정민 이벤트 시작
-    //        DataManager.instance.csv_FileName = "Prologue2";
-    //        DataManager.instance.DialogueLoad(); //csvfile load
-    //        ui_Dialogue.SetActive(true);
-    //        StartCoroutine(inSubway_1.instance.subwayStory());
-    //    }
-    //}
-
-
     void Start()
     {
-        //ui_Dialogue.SetActive(false);
         isStart = false;
-
     }
 
-    void Update()
+    void OnMouseDown()
     {
-        //On_uiDialogue();
-        if (Input.GetMouseButtonDown(0) && isStart == false)
+        Debug.Log($"inSubway_0.instance: {inSubway_0.instance}");
+        Debug.Log($"DataManager.instance: {DataManager.instance}");
+        Debug.Log($"ui_Dialogue: {ui_Dialogue}");
+        Debug.Log($"inSubway_1.instance: {inSubway_1.instance}");
+        
+        if (inSubway_0.instance.jmeventFlag == true)
         {
-            isStart = true; //최초 1번 클릭시 실행 
-            Debug.Log("npc click");
-            //prologue2 정민 이벤트 시작
-            DataManager.instance.csv_FileName = "Prologue2";
-            DataManager.instance.DialogueLoad(); //csvfile load
-            ui_Dialogue.SetActive(true);
-            StartCoroutine(inSubway_1.instance.subwayStory());
+            if(isStart == false)
+            {
+                isStart = true; 
+                Debug.Log("npc click");
+                ui_Dialogue.SetActive(true);
+                StartCoroutine(inSubway_1.instance.subwayStory());
+            }
+            else
+            {
+                StartCoroutine(HandleDialogue());
+            }
+            
         }
+    }
 
+    private IEnumerator HandleDialogue()
+    {
+        if (Prolog2_Item.instance.hammerflag == 1) // 망치 찾은 경우
+        {
+            contextList = DataManager.instance.GetDialogue(36, 36);
+            yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+            contextList = DataManager.instance.GetDialogue(38, 38);
+            yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+            inSubway_0.instance.dialogueID = 17;
+        }
+        else // 망치를 못 찾은 경우
+        {
+            contextList = DataManager.instance.GetDialogue(37, 37);
+            yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+        }
     }
 }

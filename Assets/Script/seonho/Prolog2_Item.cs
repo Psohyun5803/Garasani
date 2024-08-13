@@ -46,9 +46,14 @@ public class Prolog2_Item : MonoBehaviour
         {
             talkBubble.SetActive(true);
             name.text = "System";
-            content.text = "창문을 깨고 밖으로 나갔다.";
-            Debug.Log("Loading scene Chungmuro_B3");
-            SceneManager.LoadScene("Chungmuro_B3");
+            content.text = "창문을 깨고 밖으로 나가자.";
+            
+            if(hammerflag == 1)
+            {
+                Debug.Log("Loading scene Chungmuro_B3");
+                SceneManager.LoadScene("Chungmuro_B3");
+            }
+            
         }
 
         else if (intertest.colitemname == "비상망치")

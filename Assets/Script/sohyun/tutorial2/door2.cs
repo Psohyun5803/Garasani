@@ -18,15 +18,15 @@ public class door2 : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("???? ? ??");
+        Debug.Log("열차 사이 문 클릭");
         if (tutorial2.doorflag == 0)
         {
 
             talksqu.SetActive(true);
             who.text = "System";
-            content.text = "???? ??? ???? ???.";
-            tutorial2.textflag++;
-            tutorial2.doorflag++;
+            content.text = "무엇인가 걸린 듯 열리지 않는다.";
+            //tutorial2.textflag++;
+            //tutorial2.doorflag++;
         }
     }
     

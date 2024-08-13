@@ -20,16 +20,23 @@ public class inSubway_0 : MonoBehaviour
     public float moveSpeed = 5f;
     public string boolParameterName = "Left";
     private Animator NPCAnimator;
-    private bool jmeventFlag = false; //정민 이벤트 시작 플래그
-    private bool isStart = false; //정민 이벤트 대화 한번만 시작하도록 하는 플래그 
+    public bool jmeventFlag = false; //정민 이벤트 시작 플래그
 
     public Dialogue[] contextList;
     public int dialogueID;
-    
+
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        dialogueID = 1;
         if (targetAnimatorObject != null)
         {
             NPCAnimator = targetAnimatorObject.GetComponent<Animator>();
@@ -47,8 +54,20 @@ public class inSubway_0 : MonoBehaviour
         Invoke("dontmove", 1f);
         darkandlight = darkroutine();
         Invoke("dontmove", 1f);
-        StartCoroutine(subwayStart()); 
+        DataManager.instance.csv_FileName = "Prologue2";
+        DataManager.instance.DialogueLoad(); // CSV 파일 로드
+        StartCoroutine(MainRoutine()); // MainRoutine 코루틴을 실행
+        
     }
+
+    private IEnumerator MainRoutine()
+    {
+        yield return StartCoroutine(subwayStart()); // subwayStart() 코루틴이 끝날 때까지 기다림
+        //yield return StartCoroutine(NPCEventCoroutine()); // NPCEventCoroutine() 코루틴 실행
+    }
+
+
+
 
     private IEnumerator darkroutine() //전등 깜빡거림 효과 
     {
@@ -88,17 +107,23 @@ public class inSubway_0 : MonoBehaviour
                 case 3:
                     contextList = DataManager.instance.GetDialogue(4, 4);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    jmeventFlag = true;
                     dialogueID = 4;
+                    Debug.Log(dialogueID);
+                    Debug.Log(jmeventFlag);
                     break;
                 default:
                     dialogueID = 4;
-
+                        
                     break;
             }
-            ui_dialogue.SetActive(false);
+            
+           
         }
-
+        ui_dialogue.SetActive(false);
         StartCoroutine(NPCEventCoroutine());
+
+
     }
 
     //public IEnumerator doorClick()
@@ -140,24 +165,24 @@ public class inSubway_0 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine(darkandlight);
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
-            if (hit.collider != null)
-            {
-                GameObject clickobj = hit.transform.gameObject;
-                if (clickobj.name == "열차사이문")
-                {
-                    ui_dialogue.SetActive(true);
-                    name.text = "System";
-                    context.text = "무언가에 걸린듯 문이 열리지 않는다.";
-                }
+        //StartCoroutine(darkandlight);
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //    RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
+        //    if (hit.collider != null)
+        //    {
+        //        GameObject clickobj = hit.transform.gameObject;
+        //        if (clickobj.name == "열차사이문")
+        //        {
+        //            ui_dialogue.SetActive(true);
+        //            name.text = "System";
+        //            context.text = "무언가에 걸린듯 문이 열리지 않는다.";
+        //        }
 
                
-            }
-        }
+        //    }
+        //}
 
         
     }
@@ -182,7 +207,7 @@ public class inSubway_0 : MonoBehaviour
         {
             targetAnimatorObject.transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / moveDuration);
             elapsedTime += Time.deltaTime;
-            Debug.Log($"NPC position: {targetAnimatorObject.transform.position}");
+            //Debug.Log($"NPC position: {targetAnimatorObject.transform.position}");
             yield return null;
         }
 

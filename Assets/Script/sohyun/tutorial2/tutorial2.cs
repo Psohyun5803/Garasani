@@ -145,7 +145,7 @@ public class tutorial2 : MonoBehaviour
         {
             talksqu.SetActive(false);
         }
-        else if (textflag==4 && doorflag==1)
+        else if (textflag==4 && doorflag==1) //열차 사이 문 클릭 이후 
         { 
             talksqu.SetActive(true);
             who.text = customize.playername;
@@ -153,7 +153,7 @@ public class tutorial2 : MonoBehaviour
             textflag++;
         }
 
-        else if (textflag > 4)
+        else if (textflag > 4) //초반 대사 진행 끝->정민 등장 
         {
             talksqu.SetActive(false);
             jmeventFlag = true;

@@ -154,13 +154,6 @@ public class inSubway_1 : MonoBehaviour
 
     void Update()
     {
-        if (Prolog2_Item.instance.hammerflag == 1 && inSubway_0.instance.dialogueID > 14)
-        {
-            StartCoroutine(subway_exit());
-        }
-        else if (Prolog2_Item.instance.hammerflag == 0 && inSubway_0.instance.dialogueID > 14)
-        {
-            StartCoroutine(subway_remain());
-        }
+        
     }
 }

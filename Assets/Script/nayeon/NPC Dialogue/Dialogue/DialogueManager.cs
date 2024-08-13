@@ -46,6 +46,7 @@ public class DialogueManager : MonoBehaviour
         {
             currentIdx++; 
             DisplayDialogue();
+            Debug.Log("next button click");
         }
         else
         {
@@ -72,7 +73,7 @@ public class DialogueManager : MonoBehaviour
         chosen2_text.text = "";
         name.text = contextList[currentIdx].name;
 
-        if (name.text != customize.playername) //npc player 구분 
+        if (name.text != customize.playername) //npc player 정렬 구분 
         {
             dialogue_text.alignment = TextAlignmentOptions.Right;
         }
@@ -85,7 +86,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    IEnumerator textPrint(float d, string text)
+    IEnumerator textPrint(float d, string text) //타이핑 효과 코루틴 
     {
         int count = 0;
 
@@ -104,48 +105,6 @@ public class DialogueManager : MonoBehaviour
         ShowChoices();
     }
 
-    //public void DisplayDialogue()
-    //{
-    //    if (contextList == null || contextList.Length == 0 || currentIdx >= contextList.Length)
-    //        return;
-
-    //    if (typingCoroutine != null)
-    //    {
-    //        StopCoroutine(typingCoroutine);
-    //        typingCoroutine = null;
-    //    }
-
-    //    dialogue_text.text = "";  // 텍스트 초기화
-    //    chosen1_text.text = "";
-    //    chosen2_text.text = "";
-    //    name.text = contextList[currentIdx].name;
-
-    //    if (name.text != customize.playername) // npc와 player 구분
-    //    {
-    //        dialogue_text.alignment = TextAlignmentOptions.Right;
-    //    }
-    //    else
-    //    {
-    //        dialogue_text.alignment = TextAlignmentOptions.Left;
-    //    }
-
-    //    // 텍스트 타이핑 효과 적용
-    //    typingCoroutine = StartCoroutine(TypeText(delay,contextList[currentIdx].contexts));
-
-    //}
-
-
-    //private IEnumerator TypeText(float d, string text)
-    //{
-    //    dialogue_text.text = "";
-    //    foreach (char letter in text)
-    //    {
-    //        dialogue_text.text += letter;
-    //        yield return new WaitForSeconds(delay);
-    //    }
-    //    isTyping = false;
-    //    ShowChoices();
-    //}
 
     private void ShowChoices()
     {
@@ -178,17 +137,20 @@ public class DialogueManager : MonoBehaviour
                 chooseFlag = 1;
             else if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen2") == 0)
                 chooseFlag = 2;
+            Debug.Log("선택지 클릭");
+            Debug.Log(chooseFlag);
+
         }
     }
 
   
 
-    public void processChoose(Dialogue[] dialogues) // choose 2
+    public void processChoose(Dialogue[] dialogues) // 선택지 있는 경우 
     {
         Initialize(dialogues);
     }
 
-    public IEnumerator processing(Dialogue[] dialogues) //choose 1
+    public IEnumerator processing(Dialogue[] dialogues) //선택지 없는 경우 
     {
         Initialize(dialogues);
         yield return new WaitUntil(() => IsDialogueFinished);

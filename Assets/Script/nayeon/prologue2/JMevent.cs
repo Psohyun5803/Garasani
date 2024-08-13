@@ -8,6 +8,7 @@ public class JMevent : MonoBehaviour
     public GameObject ui_Dialogue;
     public bool isStart;
     public Dialogue[] contextList;
+    public bool hammerEvent = false;
 
     void Awake()
     {
@@ -24,29 +25,26 @@ public class JMevent : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log($"inSubway_0.instance: {inSubway_0.instance}");
-        Debug.Log($"DataManager.instance: {DataManager.instance}");
-        Debug.Log($"ui_Dialogue: {ui_Dialogue}");
-        Debug.Log($"inSubway_1.instance: {inSubway_1.instance}");
+        //Debug.Log($"inSubway_0.instance: {inSubway_0.instance}");
+        //Debug.Log($"DataManager.instance: {DataManager.instance}");
+        //Debug.Log($"ui_Dialogue: {ui_Dialogue}");
+        //Debug.Log($"inSubway_1.instance: {inSubway_1.instance}");
         
-        if (inSubway_0.instance.jmeventFlag == true)
+        if (inSubway_0.instance.jmeventFlag == true && isStart == false)
         {
-            if(isStart == false)
-            {
-                isStart = true; 
-                Debug.Log("npc click");
-                ui_Dialogue.SetActive(true);
-                StartCoroutine(inSubway_1.instance.subwayStory());
-            }
-            else
-            {
-                StartCoroutine(HandleDialogue());
-            }
-            
+            isStart = true;
+            Debug.Log("npc click");
+            ui_Dialogue.SetActive(true);
+            StartCoroutine(inSubway_1.instance.subwayStory());
+        }
+
+        if(hammerEvent == true)
+        {
+            StartCoroutine(HammerDialogue());
         }
     }
 
-    private IEnumerator HandleDialogue()
+    private IEnumerator HammerDialogue()
     {
         if (Prolog2_Item.instance.hammerflag == 1) // 망치 찾은 경우
         {

@@ -16114,7 +16114,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contextList: []
-  dialogueID: 0
 --- !u!1 &1184490968
 GameObject:
   m_ObjectHideFlags: 0

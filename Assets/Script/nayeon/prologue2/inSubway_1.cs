@@ -38,14 +38,18 @@ public class inSubway_1 : MonoBehaviour
                     else if (DialogueManager.instance.chooseFlag == 2)
                         inSubway_0.instance.dialogueID = 6;
                     DialogueManager.instance.chooseFlag = 0;
-
+                    Debug.Log(inSubway_0.instance.dialogueID);
+                    Debug.Log(DialogueManager.instance.chooseFlag);
                     break;
 
 
                 case (5):
                     contextList = DataManager.instance.GetDialogue(14,14);
+                    Debug.Log("대사 출력 확인");
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 7;
+                    Debug.Log(inSubway_0.instance.dialogueID);
+                    Debug.Log(DialogueManager.instance.chooseFlag);
                     break;
 
 
@@ -53,6 +57,8 @@ public class inSubway_1 : MonoBehaviour
                     contextList = DataManager.instance.GetDialogue(15,15);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 7;
+                    Debug.Log(inSubway_0.instance.dialogueID);
+                    Debug.Log(DialogueManager.instance.chooseFlag);
                     break;
 
 
@@ -66,6 +72,8 @@ public class inSubway_1 : MonoBehaviour
                     else if (DialogueManager.instance.chooseFlag == 2)
                         inSubway_0.instance.dialogueID = 9;
                     DialogueManager.instance.chooseFlag = 0;
+                    Debug.Log(inSubway_0.instance.dialogueID);
+                    Debug.Log(DialogueManager.instance.chooseFlag);
                     break;
 
 
@@ -73,6 +81,8 @@ public class inSubway_1 : MonoBehaviour
                     contextList = DataManager.instance.GetDialogue(17,20);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 10;
+                    Debug.Log(inSubway_0.instance.dialogueID);
+                    Debug.Log(DialogueManager.instance.chooseFlag);
                     break;
 
 
@@ -80,6 +90,8 @@ public class inSubway_1 : MonoBehaviour
                     contextList = DataManager.instance.GetDialogue(21,26);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 10;
+                    Debug.Log(inSubway_0.instance.dialogueID);
+                    Debug.Log(DialogueManager.instance.chooseFlag);
                     break;
 
 
@@ -93,12 +105,16 @@ public class inSubway_1 : MonoBehaviour
                     else if (DialogueManager.instance.chooseFlag == 2)
                         inSubway_0.instance.dialogueID = 12;
                     DialogueManager.instance.chooseFlag = 0;
+                    Debug.Log(inSubway_0.instance.dialogueID);
+                    Debug.Log(DialogueManager.instance.chooseFlag);
                     break;
 
                 case (11):
                     contextList = DataManager.instance.GetDialogue(31, 31);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 13;
+                    Debug.Log(inSubway_0.instance.dialogueID);
+                    Debug.Log(DialogueManager.instance.chooseFlag);
                     break;
 
 
@@ -106,6 +122,8 @@ public class inSubway_1 : MonoBehaviour
                     contextList = DataManager.instance.GetDialogue(32, 32);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 13;
+                    Debug.Log(inSubway_0.instance.dialogueID);
+                    Debug.Log(DialogueManager.instance.chooseFlag);
                     break;
 
 
@@ -113,12 +131,16 @@ public class inSubway_1 : MonoBehaviour
                     contextList = DataManager.instance.GetDialogue(33,34);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 14;
+                    Debug.Log(inSubway_0.instance.dialogueID);
+                    Debug.Log(DialogueManager.instance.chooseFlag);
                     break;
 
                 case (14):
                     contextList = DataManager.instance.GetDialogue(35, 35);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 15;
+                    Debug.Log(inSubway_0.instance.dialogueID);
+                    Debug.Log(DialogueManager.instance.chooseFlag);
                     break;
 
 
@@ -128,28 +150,30 @@ public class inSubway_1 : MonoBehaviour
             }
         }
 
+        inSubway_0.instance.ui_dialogue.SetActive(false);
+        JMevent.instance.hammerEvent = true;
     }
 
 
-    public IEnumerator subway_exit()
-    {
-        //망치 찾은 이후
+    //public IEnumerator subway_exit()
+    //{
+    //    //망치 찾은 이후
         
-        contextList = DataManager.instance.GetDialogue(36,36);
-        yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-        contextList = DataManager.instance.GetDialogue(38, 38);
-        yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-        inSubway_0.instance.dialogueID = 17;
-        SceneManager.LoadScene("Chungmuro_B3");
+    //    contextList = DataManager.instance.GetDialogue(36,36);
+    //    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+    //    contextList = DataManager.instance.GetDialogue(38, 38);
+    //    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+    //    inSubway_0.instance.dialogueID = 17;
+        
 
-    }
+    //}
 
-    public IEnumerator subway_remain()
-    {
-        //망치 못찾은 경우
-        contextList = DataManager.instance.GetDialogue(37,37);
-        yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-    }
+    //public IEnumerator subway_remain()
+    //{
+    //    //망치 못찾은 경우
+    //    contextList = DataManager.instance.GetDialogue(37,37);
+    //    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+    //}
 
 
     void Update()

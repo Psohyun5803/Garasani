@@ -56,15 +56,15 @@ public class inSubway_0 : MonoBehaviour
         Invoke("dontmove", 1f);
         DataManager.instance.csv_FileName = "Prologue2";
         DataManager.instance.DialogueLoad(); // CSV 파일 로드
-        StartCoroutine(MainRoutine()); // MainRoutine 코루틴을 실행
+        StartCoroutine(subwayStart()); 
         
     }
 
-    private IEnumerator MainRoutine()
-    {
-        yield return StartCoroutine(subwayStart()); // subwayStart() 코루틴이 끝날 때까지 기다림
-        //yield return StartCoroutine(NPCEventCoroutine()); // NPCEventCoroutine() 코루틴 실행
-    }
+    //private IEnumerator MainRoutine()
+    //{
+    //    yield return StartCoroutine(subwayStart()); // subwayStart() 코루틴이 끝날 때까지 기다림
+    //    //yield return StartCoroutine(NPCEventCoroutine()); // NPCEventCoroutine() 코루틴 실행
+    //}
 
 
 

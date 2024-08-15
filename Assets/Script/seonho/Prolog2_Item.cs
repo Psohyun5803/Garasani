@@ -7,13 +7,14 @@ using UnityEngine.SceneManagement;
 public class Prolog2_Item : MonoBehaviour
 {
     public static Prolog2_Item instance;
-    public TMP_Text content; //?? 
+    public TMP_Text content;
     public TMP_Text name; //?? 
-    public GameObject talkBubble; //??? 
+    public GameObject talkBubble;
     public GameObject hammer;
     public GameObject hammerInfo;
 
-    public int hammerflag = 0;
+    public bool hammerflag = false;
+    public bool hammerDialogue = false;
 
     public Inventory inventory; // Inventory ???? ??
 
@@ -44,21 +45,20 @@ public class Prolog2_Item : MonoBehaviour
 
         if (intertest.colitemname == "비상문")
         {
-            if(hammerflag == 1)
+            talkBubble.SetActive(true);
+            DialogueManager.instance.name.text = "System";
+            //Debug.Log("system dialogue : " + DialogueManager.instance.isSystemDialogue);
+
+            if (hammerflag == true)
             {
-                talkBubble.SetActive(true);
-                DialogueManager.instance.name.text = "System";
                 DialogueManager.instance.dialogue_text.text = "창문을 깨고 밖으로 나가자.";
                 Debug.Log("Loading scene Chungmuro_B3");
-                SceneManager.LoadScene("Chungmuro_B3");
+                //DialogueManager.instance.LoadNextScene = "Chungmuro_B3";  // 로드할 씬 이름을 저장
             }
             else
             {
-                talkBubble.SetActive(true);
-                name.text = "System";
-                content.text = "여길 통해서 나갈 수 있을 것 같다. 방법을 찾아보자.";
+                DialogueManager.instance.dialogue_text.text = "여길 통해서 나갈 수 있을 것 같다. 방법을 찾아보자.";
             }
-            
         }
 
         else if (intertest.colitemname == "비상망치")
@@ -69,8 +69,11 @@ public class Prolog2_Item : MonoBehaviour
             hammer.SetActive(false);
             hammerInfo.SetActive(false);
             inventory.AddItem("비상망치", "이걸로 창문을 깨고 나갈 수 있을 것 같다.");
-            hammerflag = 1;
-            Debug.Log("Hammer collected, hammerflag set to 1");
+            //hammerflag = true;
+            hammerDialogue = true;
+            DialogueManager.instance.IsDialogueFinished = true;
+            Debug.Log("Hammer collected, hammerflag set true");
         }
     }
+
 }

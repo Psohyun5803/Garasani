@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
 
     public int currentIdx;
     public bool IsDialogueFinished;
-    public  Dialogue[] contextList;
+    public Dialogue[] contextList;
     public int chooseFlag = 0; //선택지 대화 flag
     public bool clickFlag = false; //선택지 1개인경우 click check
     private bool isChosenOne = false; //선택지 1개인 경우 
@@ -26,11 +26,11 @@ public class DialogueManager : MonoBehaviour
 
     public void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
-        
+
     }
 
     public void Initialize(Dialogue[] dialogues)
@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (contextList != null && currentIdx < contextList.Length - 1)
         {
-            currentIdx++; 
+            currentIdx++;
             DisplayDialogue();
             Debug.Log("next button click");
         }
@@ -146,7 +146,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-  
+
 
     public void processChoose(Dialogue[] dialogues) // 선택지 있는 경우 
     {
@@ -174,7 +174,7 @@ public class DialogueManager : MonoBehaviour
             dialogue_text.text = contextList[currentIdx].contexts;
             isTyping = false;
 
-            ShowChoices(); 
+            ShowChoices();
         }
     }
 }

@@ -109,16 +109,13 @@ public class inSubway_0 : MonoBehaviour
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     jmeventFlag = true;
                     dialogueID = 4;
-                    Debug.Log(dialogueID);
-                    Debug.Log(jmeventFlag);
                     break;
                 default:
                     dialogueID = 4;
                         
                     break;
             }
-            
-           
+
         }
         ui_dialogue.SetActive(false);
         StartCoroutine(NPCEventCoroutine());

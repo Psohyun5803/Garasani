@@ -57,7 +57,7 @@ public class DataManager : MonoBehaviour
     {
         List<Dialogue> dialogueList = new List<Dialogue>();
         for (int i = 0; i <= _EndNum - _StartNum; i++)
-        {
+        { 
             dialogueList.Add(dialogueDic[_StartNum + i]); //딕셔너리에서 꺼내오기 
         }
 

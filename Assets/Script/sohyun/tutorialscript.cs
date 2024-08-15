@@ -36,7 +36,11 @@ public class tutorialscript : MonoBehaviour
     public TMP_Text context;
     public TMP_Text who;
     int scriptcounter = 0;
-    
+
+    private float delay = 0.05f; //타이핑 속도 
+    private Coroutine typingCoroutine;
+    private bool isTyping = false;
+
     string[] text = new string[10] { "으...", "머리를 좀 세게 부딪힌 거 같은데...", "...", "근데 왜 이리 조용하지? 설마 아무도 없나?", "...", "열차를 좀 돌아다녀볼까.", "...?", "...이게 무슨 소리지...?", "앞쪽에서 점점 다가오고 있어...", "...!" };
     string[] obj = new string[4] { "바닥에 떨어져있는 종이 쪼가리", "의자에 떨어져있는 에어팟 한쪽", "의자에 떨어져있는 키링", "열차사이 문" };
     string[] interact = new string[4] { "[찢겨진 부적] : 영문을 알 수 없는 글씨가 쓰여진 종이. 섬뜩하게 찢겨져있다.", "[누군가 두고 내린 에어팟 한쪽]을 가방에 챙겼다.", "[누군가 흘린 키링]을 가방에 챙겼다.", "무언가에 걸린 듯 문이 열리지 않는다" };
@@ -60,18 +64,46 @@ public class tutorialscript : MonoBehaviour
     {
         if (scriptcounter <= 5)
         {
+            isTyping = true;
+            if (typingCoroutine != null)
+            {
+                StopCoroutine(typingCoroutine);
+                typingCoroutine = null;
+            }
+
+            context.text = "";
             who.text = customize.playername;
-            context.text = text[scriptcounter];
+            //context.text = text[scriptcounter];
+            typingCoroutine = StartCoroutine(textPrint(delay, text[scriptcounter]));
             scriptcounter++;
         }
         else if (scriptcounter == 6)
         {
             //스크립트매니저.SetActive(false);
-           talksqu.SetActive(false);
+            talksqu.SetActive(false);
             dashicon.SetActive(true);
             moveicon.SetActive(true);
         }
     }
+
+    IEnumerator textPrint(float d, string text) //타이핑 효과 코루틴 
+    {
+        int count = 0;
+
+        while (count != text.Length)
+        {
+            if (count < text.Length)
+            {
+                context.text += text[count].ToString();
+                count++;
+            }
+
+            yield return new WaitForSeconds(delay);
+        }
+
+        isTyping = false;
+    }
+
     /*   private void OnMouseOver() //아이템 위에 커서 있는 것 감지 
        {
            if (!isMouseOver) //커서가 obj 위에 올라갔을 때 최초 1번만 실행
@@ -109,8 +141,8 @@ public class tutorialscript : MonoBehaviour
     */
 
     // Update is called once per frame
-   
-    
+
+
     void Update()
     {
         if (intertest.colitemname != null)

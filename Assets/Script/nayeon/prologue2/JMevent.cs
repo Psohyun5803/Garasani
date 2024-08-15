@@ -40,23 +40,25 @@ public class JMevent : MonoBehaviour
 
         if(hammerEvent == true)
         {
+            ui_Dialogue.SetActive(true);
             StartCoroutine(HammerDialogue());
         }
     }
 
     private IEnumerator HammerDialogue()
     {
-        if (Prolog2_Item.instance.hammerflag == 1) // 망치 찾은 경우
+        if (Prolog2_Item.instance.hammerDialogue== true) // 망치 찾은 경우
         {
+            contextList = DataManager.instance.GetDialogue(34, 34);
+            yield return StartCoroutine(DialogueManager.instance.processing(contextList));
             contextList = DataManager.instance.GetDialogue(36, 36);
             yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-            contextList = DataManager.instance.GetDialogue(38, 38);
-            yield return StartCoroutine(DialogueManager.instance.processing(contextList));
             inSubway_0.instance.dialogueID = 17;
+            Prolog2_Item.instance.hammerflag = true;
         }
         else // 망치를 못 찾은 경우
         {
-            contextList = DataManager.instance.GetDialogue(37, 37);
+            contextList = DataManager.instance.GetDialogue(35, 35);
             yield return StartCoroutine(DialogueManager.instance.processing(contextList));
         }
     }

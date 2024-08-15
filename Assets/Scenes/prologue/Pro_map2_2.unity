@@ -16132,8 +16132,6 @@ MonoBehaviour:
   contextList: []
   chooseFlag: 0
   clickFlag: 0
-  isSystemDialogue: 0
-  LoadNextScene: 
 --- !u!114 &1173956581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16922,6 +16920,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1219600199}
+  - component: {fileID: 1219600200}
   m_Layer: 0
   m_Name: Scriptmanager
   m_TagString: Untagged
@@ -16945,6 +16944,19 @@ Transform:
   - {fileID: 497105283}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1219600200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219600197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54679e4f5595a4a428f6ba01366226b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui_dialogue: {fileID: 1982233698}
 --- !u!1 &1220435615
 GameObject:
   m_ObjectHideFlags: 0
@@ -22818,6 +22830,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1173956580}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: onClickNextButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1219600200}
+        m_TargetAssemblyTypeName: TalkManager, Assembly-CSharp
+        m_MethodName: onClickNext
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -74,13 +74,13 @@ public class DialogueManager : MonoBehaviour
         chosen2_text.text = "";
         name.text = contextList[currentIdx].name;
 
-        if (name.text != customize.playername) //npc player 정렬 구분 
+        if (name.text == customize.playername || name.text == "System") //npc player 정렬 구분 
         {
-            dialogue_text.alignment = TextAlignmentOptions.Right;
+            dialogue_text.alignment = TextAlignmentOptions.Left;
         }
         else
         {
-            dialogue_text.alignment = TextAlignmentOptions.Left;
+            dialogue_text.alignment = TextAlignmentOptions.Right;
         }
 
         typingCoroutine = StartCoroutine(textPrint(delay, contextList[currentIdx].contexts));

@@ -29,7 +29,7 @@ public class inSubway_1 : MonoBehaviour
             switch(inSubway_0.instance.dialogueID)
             {
                 case (4):
-                    contextList = DataManager.instance.GetDialogue(7, 13);
+                    contextList = DataManager.instance.GetDialogue(5, 11);
                     DialogueManager.instance.processChoose(contextList);
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
                     Debug.Log("ChooseFlag after case 1: " + DialogueManager.instance.chooseFlag);
@@ -44,7 +44,7 @@ public class inSubway_1 : MonoBehaviour
 
 
                 case (5):
-                    contextList = DataManager.instance.GetDialogue(14,14);
+                    contextList = DataManager.instance.GetDialogue(12,12);
                     Debug.Log("대사 출력 확인");
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 7;
@@ -54,7 +54,7 @@ public class inSubway_1 : MonoBehaviour
 
 
                 case (6):
-                    contextList = DataManager.instance.GetDialogue(15,15);
+                    contextList = DataManager.instance.GetDialogue(13,13);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 7;
                     Debug.Log(inSubway_0.instance.dialogueID);
@@ -63,7 +63,7 @@ public class inSubway_1 : MonoBehaviour
 
 
                 case (7):
-                    contextList = DataManager.instance.GetDialogue(16,16);
+                    contextList = DataManager.instance.GetDialogue(14,14);
                     DialogueManager.instance.processChoose(contextList);
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
 
@@ -78,7 +78,7 @@ public class inSubway_1 : MonoBehaviour
 
 
                 case (8):
-                    contextList = DataManager.instance.GetDialogue(17,20);
+                    contextList = DataManager.instance.GetDialogue(15,18);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 10;
                     Debug.Log(inSubway_0.instance.dialogueID);
@@ -87,7 +87,7 @@ public class inSubway_1 : MonoBehaviour
 
 
                 case (9):
-                    contextList = DataManager.instance.GetDialogue(21,26);
+                    contextList = DataManager.instance.GetDialogue(19,24);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 10;
                     Debug.Log(inSubway_0.instance.dialogueID);
@@ -96,7 +96,7 @@ public class inSubway_1 : MonoBehaviour
 
 
                 case (10):
-                    contextList = DataManager.instance.GetDialogue(27,30);
+                    contextList = DataManager.instance.GetDialogue(25,28);
                     DialogueManager.instance.processChoose(contextList);
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
 
@@ -110,7 +110,7 @@ public class inSubway_1 : MonoBehaviour
                     break;
 
                 case (11):
-                    contextList = DataManager.instance.GetDialogue(31, 31);
+                    contextList = DataManager.instance.GetDialogue(29,29);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 13;
                     Debug.Log(inSubway_0.instance.dialogueID);
@@ -119,7 +119,7 @@ public class inSubway_1 : MonoBehaviour
 
 
                 case (12) :
-                    contextList = DataManager.instance.GetDialogue(32, 32);
+                    contextList = DataManager.instance.GetDialogue(30,30);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 13;
                     Debug.Log(inSubway_0.instance.dialogueID);
@@ -128,7 +128,7 @@ public class inSubway_1 : MonoBehaviour
 
 
                 case (13):
-                    contextList = DataManager.instance.GetDialogue(33,34);
+                    contextList = DataManager.instance.GetDialogue(31,32);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 14;
                     Debug.Log(inSubway_0.instance.dialogueID);
@@ -136,7 +136,7 @@ public class inSubway_1 : MonoBehaviour
                     break;
 
                 case (14):
-                    contextList = DataManager.instance.GetDialogue(35, 35);
+                    contextList = DataManager.instance.GetDialogue(33,33);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 15;
                     Debug.Log(inSubway_0.instance.dialogueID);

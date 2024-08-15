@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
+    public GameObject ui_dialogue;
     public TMP_Text dialogue_text;
     public TMP_Text name;
     public TMP_Text chosen1_text;
@@ -129,8 +130,10 @@ public class DialogueManager : MonoBehaviour
 
     public void OnClickChoose()
     {
-        if (isChosenOne) //선택지 1개인 경우
-            clickFlag = true; 
+        if (name.text == "System")
+            ui_dialogue.SetActive(false);
+        else if (isChosenOne) //선택지 1개인 경우
+            clickFlag = true;
         else
         {
             if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen1") == 0)
@@ -138,7 +141,7 @@ public class DialogueManager : MonoBehaviour
             else if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen2") == 0)
                 chooseFlag = 2;
             Debug.Log("선택지 클릭");
-            Debug.Log(chooseFlag);
+            Debug.Log("choose : " + chooseFlag);
 
         }
     }

@@ -165,7 +165,7 @@ public class inSubway_0 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //StartCoroutine(darkandlight);
+        StartCoroutine(darkandlight);
         //if (Input.GetMouseButtonDown(0))
         //{
         //    Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

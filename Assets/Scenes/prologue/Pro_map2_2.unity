@@ -15396,6 +15396,7 @@ MonoBehaviour:
   ui_Dialogue: {fileID: 1982233698}
   isStart: 0
   contextList: []
+  hammerEvent: 0
 --- !u!70 &1130615184
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -16950,7 +16951,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219600197}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 986b9c46716a14911b04bd19e871068b, type: 3}
   m_Name: 
@@ -16963,7 +16964,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219600197}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 761d1992db29a48e7beacb5e2e680ecd, type: 3}
   m_Name: 

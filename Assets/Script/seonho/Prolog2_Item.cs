@@ -44,14 +44,19 @@ public class Prolog2_Item : MonoBehaviour
 
         if (intertest.colitemname == "비상문")
         {
-            talkBubble.SetActive(true);
-            name.text = "System";
-            content.text = "창문을 깨고 밖으로 나가자.";
-            
             if(hammerflag == 1)
             {
+                talkBubble.SetActive(true);
+                DialogueManager.instance.name.text = "System";
+                DialogueManager.instance.dialogue_text.text = "창문을 깨고 밖으로 나가자.";
                 Debug.Log("Loading scene Chungmuro_B3");
                 SceneManager.LoadScene("Chungmuro_B3");
+            }
+            else
+            {
+                talkBubble.SetActive(true);
+                name.text = "System";
+                content.text = "여길 통해서 나갈 수 있을 것 같다. 방법을 찾아보자.";
             }
             
         }
@@ -59,8 +64,8 @@ public class Prolog2_Item : MonoBehaviour
         else if (intertest.colitemname == "비상망치")
         {
             talkBubble.SetActive(true);
-            name.text = "System";
-            content.text = "[비상망치] : 이걸로 창문을 깨고 나갈 수 있을 것 같다.";
+            DialogueManager.instance.name.text = "System";
+            DialogueManager.instance.dialogue_text.text = "[비상망치] : 이걸로 창문을 깨고 나갈 수 있을 것 같다.";
             hammer.SetActive(false);
             hammerInfo.SetActive(false);
             inventory.AddItem("비상망치", "이걸로 창문을 깨고 나갈 수 있을 것 같다.");

@@ -31,10 +31,10 @@ public class DialogueParser : MonoBehaviour
 
             Dialogue dialogue = new Dialogue(); // 대화 정보 들어있는 Dialogue 객체 생성 
 
+
             if (!int.TryParse(row[0], out dialogue.id))
-            {
-                dialogue.id = 0; // 파싱 실패 시 기본값 설정
-            }
+                dialogue.id = 0;
+           
 
             if (row[1].CompareTo("주인공") == 0)
                 dialogue.name = customize.playername;

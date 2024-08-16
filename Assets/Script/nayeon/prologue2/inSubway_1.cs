@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class inSubway_1 : MonoBehaviour
 {
@@ -15,146 +16,151 @@ public class inSubway_1 : MonoBehaviour
         }
     }
 
+
     public IEnumerator subwayStory()
     {
-        //처음 ~ 쓸만한 도구까지
 
-        while(JMevent.instance.dialogueID < 12)
+        //처음 ~ 쓸만한 도구까지
+        Debug.Log("start prol2");
+        Debug.Log(inSubway_0.instance.dialogueID);
+
+        while (inSubway_0.instance.dialogueID < 15)
         {
-            switch(JMevent.instance.dialogueID)
+            switch (inSubway_0.instance.dialogueID)
             {
-                case (1):
-                    contextList = DataManager.instance.GetDialogue(1, 7);
+                case (4):
+                    contextList = DataManager.instance.GetDialogue(5, 11);
                     DialogueManager.instance.processChoose(contextList);
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
                     Debug.Log("ChooseFlag after case 1: " + DialogueManager.instance.chooseFlag);
                     if (DialogueManager.instance.chooseFlag == 1)
-                        JMevent.instance.dialogueID = 2;
+                        inSubway_0.instance.dialogueID = 5;
                     else if (DialogueManager.instance.chooseFlag == 2)
-                        JMevent.instance.dialogueID = 3;
-                    DialogueManager.instance.chooseFlag = 0;
-
-                    break;
-
-
-                case (2):
-                    contextList = DataManager.instance.GetDialogue(8, 8);
-                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    JMevent.instance.dialogueID = 4;
-                    break;
-
-
-                case (3):
-                    contextList = DataManager.instance.GetDialogue(9, 9);
-                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    JMevent.instance.dialogueID = 4;
-                    break;
-
-
-                case (4):
-                    contextList = DataManager.instance.GetDialogue(10, 10);
-                    DialogueManager.instance.processChoose(contextList);
-                    yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
-
-                    if (DialogueManager.instance.chooseFlag == 1)
-                        JMevent.instance.dialogueID = 5;
-                    else if (DialogueManager.instance.chooseFlag == 2)
-                        JMevent.instance.dialogueID = 6;
+                        inSubway_0.instance.dialogueID = 6;
                     DialogueManager.instance.chooseFlag = 0;
                     break;
 
 
                 case (5):
-                    contextList = DataManager.instance.GetDialogue(11, 14);
+                    contextList = DataManager.instance.GetDialogue(12, 12);
+                    Debug.Log("대사 출력 확인");
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    JMevent.instance.dialogueID = 7;
+                    inSubway_0.instance.dialogueID = 7;
                     break;
 
 
                 case (6):
-                    contextList = DataManager.instance.GetDialogue(15, 20);
+                    contextList = DataManager.instance.GetDialogue(13, 13);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    JMevent.instance.dialogueID = 7;
+                    inSubway_0.instance.dialogueID = 7;
                     break;
 
 
                 case (7):
-                    contextList = DataManager.instance.GetDialogue(21, 24);
+                    contextList = DataManager.instance.GetDialogue(14, 14);
                     DialogueManager.instance.processChoose(contextList);
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
 
                     if (DialogueManager.instance.chooseFlag == 1)
-                        JMevent.instance.dialogueID = 8;
+                        inSubway_0.instance.dialogueID = 8;
                     else if (DialogueManager.instance.chooseFlag == 2)
-                        JMevent.instance.dialogueID = 9;
+                        inSubway_0.instance.dialogueID = 9;
                     DialogueManager.instance.chooseFlag = 0;
                     break;
 
+
                 case (8):
-                    contextList = DataManager.instance.GetDialogue(25, 25);
+                    contextList = DataManager.instance.GetDialogue(15, 18);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    JMevent.instance.dialogueID = 10;
+                    inSubway_0.instance.dialogueID = 10;
                     break;
 
 
                 case (9):
-                    contextList = DataManager.instance.GetDialogue(26, 26);
+                    contextList = DataManager.instance.GetDialogue(19, 24);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    JMevent.instance.dialogueID = 10;
+                    inSubway_0.instance.dialogueID = 10;
                     break;
 
 
                 case (10):
-                    contextList = DataManager.instance.GetDialogue(27, 28);
-                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    JMevent.instance.dialogueID = 11;
+                    contextList = DataManager.instance.GetDialogue(25, 28);
+                    DialogueManager.instance.processChoose(contextList);
+                    yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
+
+                    if (DialogueManager.instance.chooseFlag == 1)
+                        inSubway_0.instance.dialogueID = 11;
+                    else if (DialogueManager.instance.chooseFlag == 2)
+                        inSubway_0.instance.dialogueID = 12;
+                    DialogueManager.instance.chooseFlag = 0;
                     break;
 
                 case (11):
                     contextList = DataManager.instance.GetDialogue(29, 29);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    JMevent.instance.dialogueID = 12;
+                    inSubway_0.instance.dialogueID = 13;
+                    platerState.instance.isTired = false; //피로이상 상태 해제
+                    Debug.Log("피로이상 상태 해제 : " + platerState.instance.isTired);
+                    break;
+
+
+                case (12):
+                    contextList = DataManager.instance.GetDialogue(30, 30);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    inSubway_0.instance.dialogueID = 13;
+                    break;
+
+
+                case (13):
+                    contextList = DataManager.instance.GetDialogue(31, 32);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    inSubway_0.instance.dialogueID = 14;
+                    break;
+
+                case (14):
+                    contextList = DataManager.instance.GetDialogue(33, 33);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    inSubway_0.instance.dialogueID = 15;
                     break;
 
 
                 default:
-                    JMevent.instance.dialogueID = 12;
+                    inSubway_0.instance.dialogueID = 15;
                     break;
             }
         }
 
+        inSubway_0.instance.ui_dialogue.SetActive(false);
+        JMevent.instance.hammerEvent = true; //망치 수집 이벤트 시작 
     }
 
 
     public IEnumerator subway_exit()
     {
         //망치 찾은 이후
-        
-        contextList = DataManager.instance.GetDialogue(30, 30);
+
+        contextList = DataManager.instance.GetDialogue(34, 34);
         yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-        contextList = DataManager.instance.GetDialogue(32, 32);
+        contextList = DataManager.instance.GetDialogue(36, 36);
         yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-        JMevent.instance.dialogueID = 15;
+        inSubway_0.instance.dialogueID = 17;
+        Prolog2_Item.instance.hammerflag = true; //망치 수집 이벤트 끝 -> 씬 이동 가능
+        inSubway_0.instance.ui_dialogue.SetActive(false);
+
 
     }
 
     public IEnumerator subway_remain()
     {
         //망치 못찾은 경우
-        contextList = DataManager.instance.GetDialogue(31, 31);
+        contextList = DataManager.instance.GetDialogue(35, 35);
         yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+        inSubway_0.instance.ui_dialogue.SetActive(false);
     }
 
 
     void Update()
     {
-        if (Prolog2_Item.instance.hammerflag == 1 && JMevent.instance.dialogueID < 15)
-        {
-            StartCoroutine(subway_exit());
-        }
-        else if (Prolog2_Item.instance.hammerflag == 0 && JMevent.instance.dialogueID < 15)
-        {
-            StartCoroutine(subway_remain());
-        }
+
     }
 }

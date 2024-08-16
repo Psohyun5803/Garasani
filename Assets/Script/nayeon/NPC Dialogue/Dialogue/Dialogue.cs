@@ -2,36 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable] //???? ??? ??? ? ??? ? 
-public class Dialogue //???? ?? ??
+[System.Serializable] 
+public class Dialogue 
 {
     [Tooltip("ID")]
     public int id;
 
-    [Tooltip("??? ??")]
-    public string name; //?? ??? ??? 
+    [Tooltip("이름")]
+    public string name; 
 
-    [Tooltip("????")]
+    [Tooltip("대사 내용")]
     public string contexts;
 
-    [Tooltip("???1")]
+    [Tooltip("선택지1")]
     public string chosen1;
 
-    [Tooltip("???1 ID")]
+    [Tooltip("선택지1 ID")]
     public int chosen1_ID;
 
-    [Tooltip("???2")]
+    [Tooltip("선택지2")]
     public string chosen2;
 
-    [Tooltip("???2 ID")]
+    [Tooltip("선택지2 ID")]
     public int chosen2_ID;
 
 }
 
 [System.Serializable]
-public class DialogueEvent //???? ?? -> ???? ??? ??
+public class DialogueEvent 
 {
-    public string name; //?? ????? ?? 
-    public Vector2 line; //??? ??? ??? ??? ?? ?? 
+    public string name;
+    public Vector2 line; 
     public Dialogue[] dialouges;
 }

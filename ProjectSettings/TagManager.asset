@@ -12,6 +12,7 @@ TagManager:
   - ground
   - sns_prol
   - sns_ch1
+  - jeongmin
   layers:
   - Default
   - TransparentFX

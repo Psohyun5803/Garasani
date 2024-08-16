@@ -27,6 +27,9 @@ public class tutorial2 : MonoBehaviour
     public float moveSpeed = 5f;
     public string boolParameterName = "Left";
     private Animator NPCAnimator;
+    private bool jmeventFlag = false; //정민 이벤트 시작 플래그
+    private bool isStart = false; //정민 이벤트 대화 한번만 시작하도록 하는 플래그 
+                                   
 
     string[] text = new string[4] { "...?", "...이게 무슨 소리지...?", "앞쪽에서 점점 다가오고 있어...", "...!" };
     // Start is called before the first frame update
@@ -50,6 +53,7 @@ public class tutorial2 : MonoBehaviour
         Invoke("dontmove", 1f);
         darkandlight =darkroutine();
     }
+
     private IEnumerator darkroutine()
     {
         while (true)
@@ -60,6 +64,7 @@ public class tutorial2 : MonoBehaviour
             yield return new WaitForSeconds(5f);
         }
     }
+
     // Update is called once per frame
     void Update()
     {
@@ -79,13 +84,28 @@ public class tutorial2 : MonoBehaviour
                     content.text = "무언가에 걸린듯 문이 열리지 않는다.";
                     textflag++;
 
-                    //SceneManager.LoadScene("Dialogue");
+                    //SceneManager.LoadScene("Dialogue"); 정민 이벤트 시작 
                 }
+            }
+        }
+
+        if (jmeventFlag == true)
+        {
+            //JMevent.instance.On_uiDialogue();
+            if (Input.GetMouseButtonDown(0) && isStart == false)
+            {
+                isStart = true; //최초 1번 클릭시 실행 
+                Debug.Log("npc click");
+                //prologue2 정민 이벤트 시작
+                DataManager.instance.csv_FileName = "Prologue2";
+                DataManager.instance.DialogueLoad(); //csvfile load
+                talksqu.SetActive(true);
+                StartCoroutine(inSubway_1.instance.subwayStory());
             }
         }
     }
     
-    public void doordown()
+    public void doordown() //문 클릭시 
     {
         
         if (doorflag==0)
@@ -99,8 +119,9 @@ public class tutorial2 : MonoBehaviour
         }
     }
    
-    public void buttondown()
+    public void buttondown() //text 진행 
     {
+        Debug.Log("button click");
         if (textflag == 0)
         {
             textflag++;
@@ -124,27 +145,26 @@ public class tutorial2 : MonoBehaviour
         {
             talksqu.SetActive(false);
         }
-        else if (textflag==4 && doorflag==1)
-        {
-
-           
-            
+        else if (textflag==4 && doorflag==1) //열차 사이 문 클릭 이후 
+        { 
             talksqu.SetActive(true);
             who.text = customize.playername;
             content.text = text[3];
             textflag++;
         }
 
-        else if (textflag > 4)
+        else if (textflag > 4) //초반 대사 진행 끝->정민 등장 
         {
             talksqu.SetActive(false);
+            jmeventFlag = true;
+            Debug.Log(jmeventFlag);
             StartCoroutine(NPCEventCoroutine());
             //SceneManager.LoadScene("Prologue2");
-
+            
         }
     }
 
-    IEnumerator NPCEventCoroutine()
+    IEnumerator NPCEventCoroutine() //정민 이동 
     {
         if (NPCAnimator != null)
         {
@@ -182,6 +202,6 @@ public class tutorial2 : MonoBehaviour
     {
         customize.moveflag = 0;
         talksqu.SetActive(true);
-
+       
     }
 }

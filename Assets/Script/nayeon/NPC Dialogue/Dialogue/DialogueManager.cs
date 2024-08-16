@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager instance;
+    public GameObject ui_dialogue;
     public TMP_Text dialogue_text;
     public TMP_Text name;
     public TMP_Text chosen1_text;
@@ -14,7 +15,7 @@ public class DialogueManager : MonoBehaviour
 
     public int currentIdx;
     public bool IsDialogueFinished;
-    public  Dialogue[] contextList;
+    public Dialogue[] contextList;
     public int chooseFlag = 0; //선택지 대화 flag
     public bool clickFlag = false; //선택지 1개인경우 click check
     private bool isChosenOne = false; //선택지 1개인 경우 
@@ -25,11 +26,11 @@ public class DialogueManager : MonoBehaviour
 
     public void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
-        
+
     }
 
     public void Initialize(Dialogue[] dialogues)
@@ -44,8 +45,9 @@ public class DialogueManager : MonoBehaviour
     {
         if (contextList != null && currentIdx < contextList.Length - 1)
         {
-            currentIdx++; 
+            currentIdx++;
             DisplayDialogue();
+            Debug.Log("next button click");
         }
         else
         {
@@ -72,20 +74,20 @@ public class DialogueManager : MonoBehaviour
         chosen2_text.text = "";
         name.text = contextList[currentIdx].name;
 
-        if(name.text != customize.playername) //npc player 구분 
-        {
-            dialogue_text.alignment = TextAlignmentOptions.Right;
-        }
-        else
+        if (name.text == customize.playername || name.text == "System") //npc player 정렬 구분 
         {
             dialogue_text.alignment = TextAlignmentOptions.Left;
         }
+        else
+        {
+            dialogue_text.alignment = TextAlignmentOptions.Right;
+        }
 
         typingCoroutine = StartCoroutine(textPrint(delay, contextList[currentIdx].contexts));
-        
+
     }
 
-    IEnumerator textPrint(float d, string text)
+    IEnumerator textPrint(float d, string text) //타이핑 효과 코루틴 
     {
         int count = 0;
 
@@ -103,6 +105,7 @@ public class DialogueManager : MonoBehaviour
         isTyping = false;
         ShowChoices();
     }
+
 
     private void ShowChoices()
     {
@@ -127,25 +130,30 @@ public class DialogueManager : MonoBehaviour
 
     public void OnClickChoose()
     {
-        if (isChosenOne) //선택지 1개인 경우
-            clickFlag = true; 
+        if (name.text == "System")
+            ui_dialogue.SetActive(false);
+        else if (isChosenOne) //선택지 1개인 경우
+            clickFlag = true;
         else
         {
             if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen1") == 0)
                 chooseFlag = 1;
             else if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen2") == 0)
                 chooseFlag = 2;
+            Debug.Log("선택지 클릭");
+            Debug.Log("choose : " + chooseFlag);
+
         }
     }
 
-  
 
-    public void processChoose(Dialogue[] dialogues) // choose 2
+
+    public void processChoose(Dialogue[] dialogues) // 선택지 있는 경우 
     {
         Initialize(dialogues);
     }
 
-    public IEnumerator processing(Dialogue[] dialogues) //choose 1
+    public IEnumerator processing(Dialogue[] dialogues) //선택지 없는 경우 
     {
         Initialize(dialogues);
         yield return new WaitUntil(() => IsDialogueFinished);
@@ -166,7 +174,7 @@ public class DialogueManager : MonoBehaviour
             dialogue_text.text = contextList[currentIdx].contexts;
             isTyping = false;
 
-            ShowChoices(); 
+            ShowChoices();
         }
     }
 }

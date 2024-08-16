@@ -6,48 +6,72 @@ public class JMevent : MonoBehaviour
 {
     public static JMevent instance;
     public GameObject ui_Dialogue;
-    public int dialogueID;
-
+    public bool isStart;
+    public Dialogue[] contextList;
+    public bool hammerEvent = false;
+    public bool isFirstClick = true;
+    public bool hammerDialogue;
 
     void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject); // 인스턴스를 유지
+            Debug.Log("Prolog2_Item 인스턴스 생성됨: " + GetInstanceID());
         }
+        else
+        {
+            Debug.Log("기존 인스턴스 사용: " + instance.GetInstanceID());
+            Destroy(gameObject); // 새로운 인스턴스가 생기지 않도록 파괴
+        }
+
     }
-
-
-    //public void On_uiDialogue()
-    //{
-    //    if (Input.GetMouseButtonDown(0))
-    //    {
-    //        //prologue2 정민 이벤트 시작
-    //        DataManager.instance.csv_FileName = "Prologue2";
-    //        ui_Dialogue.SetActive(true);
-    //        StartCoroutine(inSubway_1.instance.subwayStory());
-    //    }
-    //}
 
     void Start()
     {
-        ui_Dialogue.SetActive(false);
-        dialogueID = 1;
-
+        isStart = false;
     }
 
-    void Update()
+    void OnMouseDown()
     {
-        //On_uiDialogue();
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("npc click");
-            //prologue2 정민 이벤트 시작
-            DataManager.instance.csv_FileName = "Prologue2";
-            DataManager.instance.DialogueLoad(); //대화 로드 
-            ui_Dialogue.SetActive(true);
-            StartCoroutine(inSubway_1.instance.subwayStory());
-        }
+        Debug.Log("OnMouseDown 호출됨");
 
+        if (isFirstClick)
+        {
+            // 첫 번째 클릭에서는 이벤트를 설정하고 대화 준비
+            if (inSubway_0.instance.jmeventFlag == true && isStart == false)
+            {
+                isStart = true;
+                Debug.Log("npc click");
+                ui_Dialogue.SetActive(true);
+                StartCoroutine(inSubway_1.instance.subwayStory());
+                isFirstClick = false;
+                hammerEvent = true;
+            }
+        }
+        else
+        {
+            // 두 번째 클릭에서 실제 이벤트 실행
+            if (hammerEvent == true)
+            {
+                Debug.Log("hammer event "+hammerEvent);
+                Debug.Log("hammerevent 직후 hammerDialogue " + hammerDialogue);
+                ui_Dialogue.SetActive(true);
+                if (hammerDialogue == true)
+                {
+                    StartCoroutine(inSubway_1.instance.subway_exit());
+                }
+                else
+                {
+                    StartCoroutine(inSubway_1.instance.subway_remain());
+                }
+                Debug.Log(" 끝나고 나서 hammerDialogue "+ hammerDialogue);
+            }
+
+            isFirstClick = true; // 다시 첫 번째 클릭 상태로 되돌림
+        }
     }
+
+
 }

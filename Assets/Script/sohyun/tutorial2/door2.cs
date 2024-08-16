@@ -18,15 +18,15 @@ public class door2 : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("Å¬¸¯µÊ");
+        Debug.Log("ì—´ì°¨ ì‚¬ì´ ë¬¸ í´ë¦­");
         if (tutorial2.doorflag == 0)
         {
 
             talksqu.SetActive(true);
             who.text = "System";
-            content.text = "¹«¾ğ°¡¿¡ °É¸°µí ¹®ÀÌ ¿­¸®Áö ¾Ê´Â´Ù.";
-            tutorial2.textflag++;
-            tutorial2.doorflag++;
+            content.text = "ë¬´ì—‡ì¸ê°€ ê±¸ë¦° ë“¯ ì—´ë¦¬ì§€ ì•ŠëŠ”ë‹¤.";
+            //tutorial2.textflag++;
+            //tutorial2.doorflag++;
         }
     }
     

@@ -15285,7 +15285,6 @@ GameObject:
   - component: {fileID: 1130615179}
   - component: {fileID: 1130615181}
   - component: {fileID: 1130615182}
-  - component: {fileID: 1130615183}
   m_Layer: 0
   m_Name: "\uAD6C\uC815\uBBFC"
   m_TagString: NPC
@@ -15404,20 +15403,6 @@ CapsuleCollider:
   m_Height: 2.56
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1130615183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1130615177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9df05521164d19d42a9d267ef20115fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ui_Dialogue: {fileID: 0}
-  rayDistance: 100
 --- !u!1 &1130742016
 GameObject:
   m_ObjectHideFlags: 0
@@ -15987,9 +15972,8 @@ GameObject:
   - component: {fileID: 1173956576}
   - component: {fileID: 1173956575}
   - component: {fileID: 1173956574}
-  - component: {fileID: 1173956579}
-  - component: {fileID: 1173956581}
   - component: {fileID: 1173956580}
+  - component: {fileID: 1173956582}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -16096,20 +16080,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1173956579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173956573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9df05521164d19d42a9d267ef20115fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ui_Dialogue: {fileID: 1982233698}
-  rayDistance: 100
 --- !u!114 &1173956580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16131,20 +16101,18 @@ MonoBehaviour:
   contextList: []
   chooseFlag: 0
   clickFlag: 0
---- !u!114 &1173956581
+--- !u!114 &1173956582
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173956573}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6ea3830d768b4c4990700976ce93fee, type: 3}
+  m_Script: {fileID: 11500000, guid: 986b9c46716a14911b04bd19e871068b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueID: 0
-  checkWiki: 1
   contextList: []
 --- !u!1 &1184490968
 GameObject:
@@ -23097,7 +23065,6 @@ GameObject:
   - component: {fileID: 1701065681}
   - component: {fileID: 1701065680}
   - component: {fileID: 1701065679}
-  - component: {fileID: 1701065678}
   m_Layer: 0
   m_Name: Story_dialogueManager
   m_TagString: Untagged
@@ -23105,20 +23072,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1701065678
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701065677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b40db24fe82bf9047b023124d4d004aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneNum: 0
-  sceneInitialized: 0
 --- !u!114 &1701065679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23590,9 +23543,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4770ce103e0dd4db61c7a554daf44a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  content: {fileID: 0}
-  name: {fileID: 0}
-  talkBubble: {fileID: 0}
+  content: {fileID: 1184490971}
+  name: {fileID: 1256643753}
+  talkBubble: {fileID: 1982233698}
   hammer: {fileID: 2043937173}
   hammerInfo: {fileID: 1811035300}
   hammerflag: 0
@@ -27568,9 +27521,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4770ce103e0dd4db61c7a554daf44a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  content: {fileID: 0}
-  name: {fileID: 0}
-  talkBubble: {fileID: 0}
+  content: {fileID: 1184490971}
+  name: {fileID: 1256643753}
+  talkBubble: {fileID: 1982233698}
   hammer: {fileID: 2043937173}
   hammerInfo: {fileID: 1811035300}
   hammerflag: 0

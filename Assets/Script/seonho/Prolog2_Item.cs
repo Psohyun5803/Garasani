@@ -13,29 +13,26 @@ public class Prolog2_Item : MonoBehaviour
     public GameObject hammer;
     public GameObject hammerInfo;
 
-    public bool hammerflag = false;
-    public bool hammerDialogue = false;
+    public bool hammerflag;
 
-    public Inventory inventory; // Inventory ???? ??
+    public Inventory inventory; // Inventory 
 
-    public void Awake()
+    void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject); // 인스턴스를 유지
         }
+
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        hammerflag = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
     void OnMouseDown()
     {
         Debug.Log("Mouse Click");
@@ -47,13 +44,12 @@ public class Prolog2_Item : MonoBehaviour
         {
             talkBubble.SetActive(true);
             DialogueManager.instance.name.text = "System";
-            //Debug.Log("system dialogue : " + DialogueManager.instance.isSystemDialogue);
 
             if (hammerflag == true)
             {
                 DialogueManager.instance.dialogue_text.text = "창문을 깨고 밖으로 나가자.";
                 Debug.Log("Loading scene Chungmuro_B3");
-                //DialogueManager.instance.LoadNextScene = "Chungmuro_B3";  // 로드할 씬 이름을 저장
+                SceneManager.LoadScene("Chungmuro_B3");
             }
             else
             {
@@ -63,16 +59,19 @@ public class Prolog2_Item : MonoBehaviour
 
         else if (intertest.colitemname == "비상망치")
         {
-            talkBubble.SetActive(true);
-            DialogueManager.instance.name.text = "System";
-            DialogueManager.instance.dialogue_text.text = "[비상망치] : 이걸로 창문을 깨고 나갈 수 있을 것 같다.";
-            hammer.SetActive(false);
-            hammerInfo.SetActive(false);
-            inventory.AddItem("비상망치", "이걸로 창문을 깨고 나갈 수 있을 것 같다.");
-            //hammerflag = true;
-            hammerDialogue = true;
-            DialogueManager.instance.IsDialogueFinished = true;
-            Debug.Log("Hammer collected, hammerflag set true");
+            if(JMevent.instance.hammerEvent == true)
+            {
+                talkBubble.SetActive(true);
+                DialogueManager.instance.name.text = "System";
+                DialogueManager.instance.dialogue_text.text = "[비상망치] : 이걸로 창문을 깨고 나갈 수 있을 것 같다.";
+                hammer.SetActive(false);
+                hammerInfo.SetActive(false);
+                inventory.AddItem("비상망치", "이걸로 창문을 깨고 나갈 수 있을 것 같다.");
+                //hammerflag = true;
+                JMevent.instance.hammerDialogue = true;
+                Debug.Log("Hammer collected, hammerflag set true");
+                Debug.Log("hammer dialogue : " + JMevent.instance.hammerDialogue);
+            }
         }
     }
 

@@ -14,7 +14,6 @@ public class inSubway_0 : MonoBehaviour
     public TMP_Text name;
     public GameObject door;
     public static int doorflag = 0;
-    private bool doorclickflag = false;
 
     [SerializeField] private GameObject targetAnimatorObject;
     public float moveSpeed = 5f;
@@ -59,14 +58,6 @@ public class inSubway_0 : MonoBehaviour
         StartCoroutine(subwayStart()); 
         
     }
-
-    //private IEnumerator MainRoutine()
-    //{
-    //    yield return StartCoroutine(subwayStart()); // subwayStart() 코루틴이 끝날 때까지 기다림
-    //    //yield return StartCoroutine(NPCEventCoroutine()); // NPCEventCoroutine() 코루틴 실행
-    //}
-
-
 
 
     private IEnumerator darkroutine() //전등 깜빡거림 효과 
@@ -123,65 +114,12 @@ public class inSubway_0 : MonoBehaviour
 
     }
 
-    //public IEnumerator doorClick()
-    //{
-    //    // 문 클릭을 기다림
-    //    bool doorClicked = false;
-    //    while (!doorClicked)
-    //    {
-    //        if (Input.GetMouseButtonDown(0))
-    //        {
-    //            Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    //            RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
-    //            if (hit.collider != null)
-    //            {
-    //                GameObject clickobj = hit.transform.gameObject;
-    //                if (clickobj.name == "열차사이문")
-    //                {
-    //                    ui_dialogue.SetActive(true);
-    //                    name.text = "System";
-    //                    context.text = "무언가에 걸린듯 문이 열리지 않는다.";
-    //                    doorClicked = true; // 클릭 확인
-    //                }
-    //            }
-    //        }
-    //        yield return null; // 다음 프레임까지 대기
-    //    }
-
-    //    // 클릭 후 대사 출력
-    //    if (doorclickflag == true)
-    //    {
-    //        contextList = DataManager.instance.GetDialogue(4, 4);
-    //        yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-    //        dialogueID = 4;
-    //    }
-    //}
-
 
 
     // Update is called once per frame
     void Update()
     {
         StartCoroutine(darkandlight);
-        //if (Input.GetMouseButtonDown(0))
-        //{
-        //    Vector2 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        //    RaycastHit2D hit = Physics2D.Raycast(pos, Vector2.zero);
-        //    if (hit.collider != null)
-        //    {
-        //        GameObject clickobj = hit.transform.gameObject;
-        //        if (clickobj.name == "열차사이문")
-        //        {
-        //            ui_dialogue.SetActive(true);
-        //            name.text = "System";
-        //            context.text = "무언가에 걸린듯 문이 열리지 않는다.";
-        //        }
-
-               
-        //    }
-        //}
-
-        
     }
 
     IEnumerator NPCEventCoroutine() //정민 이동 

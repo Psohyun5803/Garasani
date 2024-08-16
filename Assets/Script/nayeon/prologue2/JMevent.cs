@@ -9,13 +9,23 @@ public class JMevent : MonoBehaviour
     public bool isStart;
     public Dialogue[] contextList;
     public bool hammerEvent = false;
+    public bool isFirstClick = true;
+    public bool hammerDialogue;
 
     void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject); // 인스턴스를 유지
+            Debug.Log("Prolog2_Item 인스턴스 생성됨: " + GetInstanceID());
         }
+        else
+        {
+            Debug.Log("기존 인스턴스 사용: " + instance.GetInstanceID());
+            Destroy(gameObject); // 새로운 인스턴스가 생기지 않도록 파괴
+        }
+
     }
 
     void Start()
@@ -25,41 +35,43 @@ public class JMevent : MonoBehaviour
 
     void OnMouseDown()
     {
-        //Debug.Log($"inSubway_0.instance: {inSubway_0.instance}");
-        //Debug.Log($"DataManager.instance: {DataManager.instance}");
-        //Debug.Log($"ui_Dialogue: {ui_Dialogue}");
-        //Debug.Log($"inSubway_1.instance: {inSubway_1.instance}");
-        
-        if (inSubway_0.instance.jmeventFlag == true && isStart == false)
-        {
-            isStart = true;
-            Debug.Log("npc click");
-            ui_Dialogue.SetActive(true);
-            StartCoroutine(inSubway_1.instance.subwayStory());
-        }
+        Debug.Log("OnMouseDown 호출됨");
 
-        if(hammerEvent == true)
+        if (isFirstClick)
         {
-            ui_Dialogue.SetActive(true);
-            StartCoroutine(HammerDialogue());
+            // 첫 번째 클릭에서는 이벤트를 설정하고 대화 준비
+            if (inSubway_0.instance.jmeventFlag == true && isStart == false)
+            {
+                isStart = true;
+                Debug.Log("npc click");
+                ui_Dialogue.SetActive(true);
+                StartCoroutine(inSubway_1.instance.subwayStory());
+                isFirstClick = false;
+                hammerEvent = true;
+            }
+        }
+        else
+        {
+            // 두 번째 클릭에서 실제 이벤트 실행
+            if (hammerEvent == true)
+            {
+                Debug.Log("hammer event "+hammerEvent);
+                Debug.Log("hammerevent 직후 hammerDialogue " + hammerDialogue);
+                ui_Dialogue.SetActive(true);
+                if (hammerDialogue == true)
+                {
+                    StartCoroutine(inSubway_1.instance.subway_exit());
+                }
+                else
+                {
+                    StartCoroutine(inSubway_1.instance.subway_remain());
+                }
+                Debug.Log(" 끝나고 나서 hammerDialogue "+ hammerDialogue);
+            }
+
+            isFirstClick = true; // 다시 첫 번째 클릭 상태로 되돌림
         }
     }
 
-    private IEnumerator HammerDialogue()
-    {
-        if (Prolog2_Item.instance.hammerDialogue== true) // 망치 찾은 경우
-        {
-            contextList = DataManager.instance.GetDialogue(34, 34);
-            yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-            contextList = DataManager.instance.GetDialogue(36, 36);
-            yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-            inSubway_0.instance.dialogueID = 17;
-            Prolog2_Item.instance.hammerflag = true;
-        }
-        else // 망치를 못 찾은 경우
-        {
-            contextList = DataManager.instance.GetDialogue(35, 35);
-            yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-        }
-    }
+
 }

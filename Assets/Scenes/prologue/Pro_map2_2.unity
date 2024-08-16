@@ -15288,7 +15288,7 @@ GameObject:
   - component: {fileID: 1130615184}
   m_Layer: 0
   m_Name: "\uAD6C\uC815\uBBFC"
-  m_TagString: NPC
+  m_TagString: jeongmin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15397,6 +15397,8 @@ MonoBehaviour:
   isStart: 0
   contextList: []
   hammerEvent: 0
+  isFirstClick: 1
+  hammerDialogue: 0
 --- !u!70 &1130615184
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -23608,7 +23610,6 @@ MonoBehaviour:
   hammer: {fileID: 2043937173}
   hammerInfo: {fileID: 1811035300}
   hammerflag: 0
-  hammerDialogue: 0
   inventory: {fileID: 637478485}
 --- !u!1 &1724484374
 GameObject:
@@ -27587,7 +27588,6 @@ MonoBehaviour:
   hammer: {fileID: 2043937173}
   hammerInfo: {fileID: 1811035300}
   hammerflag: 0
-  hammerDialogue: 0
   inventory: {fileID: 637478485}
 --- !u!1 &2046324109
 GameObject:

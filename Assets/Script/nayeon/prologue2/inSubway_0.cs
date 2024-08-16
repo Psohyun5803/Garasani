@@ -109,6 +109,7 @@ public class inSubway_0 : MonoBehaviour
 
         }
         ui_dialogue.SetActive(false);
+        //StartCoroutine(cameramove.instance.JMmove());
         StartCoroutine(NPCEventCoroutine());
 
 

@@ -6,19 +6,26 @@ public class cameramove : MonoBehaviour
 {
 
 
-    public GameObject Target;               // 카메라가 따라다닐 타겟
-
-    
+    public GameObject Target;      
     Transform AT;
-   
-    
+    public static cameramove instance;
+    public float cameraSpeed = 1.0f;  // ??? ?? ??
+    public Vector3 targetPosition;    // ??? ??
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     void Start()
     {
         Target = GameObject.Find("Player");
         AT = Target.transform;
     }
+
     void Update()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -26,7 +33,7 @@ public class cameramove : MonoBehaviour
         {
             /*Vector3 velo = Vector3.zero;
 
-            //플레이어의 위치와 연동
+            //?????????? ?????? ????
             Vector3 movepos = new Vector3(player.transform.position.x, player.transform.position.y, -10);
             transform.position = Vector3.SmoothDamp(transform.position, movepos,ref velo, 0.1f);*/
             transform.position = new Vector3(player.transform.position.x,
@@ -39,6 +46,61 @@ public class cameramove : MonoBehaviour
             Debug.Log("null");
         }
     }
+
+
+    //public IEnumerator JMmove()
+    //{
+    //    // 1. ???? "???" ????? ??
+    //    Target = GameObject.FindGameObjectWithTag("jeongmin");
+    //    if (Target != null)
+    //    {
+    //        // target ?? ??
+    //        targetPosition = new Vector3(this.transform.position.x, Target.transform.position.y, Target.transform.position.z);
+
+    //        // ?? ?? ?? ??? ??
+    //        while (Vector3.Distance(this.transform.position, targetPosition) > 0.01f)
+    //        {
+    //            this.transform.position = Vector3.Lerp(this.transform.position, targetPosition, cameraSpeed * Time.deltaTime);
+    //            yield return null; // ?? ????? ??
+    //        }
+    //    }
+    //    else
+    //    {
+    //        Debug.LogError("Target 'jeongmin' not found.");
+    //    }
+
+    //    yield return new WaitForSeconds(2.0f);
+
+    //    // 2. ???? ?? ????? ??
+    //    Target = GameObject.FindGameObjectWithTag("Player");
+    //    if (Target != null)
+    //    {
+    //        // target ?? ??
+    //        targetPosition = new Vector3(this.transform.position.x, Target.transform.position.y, Target.transform.position.z);
+
+    //        // ?? ?? ?? ??? ??
+    //        while (Vector3.Distance(this.transform.position, targetPosition) > 0.01f)
+    //        {
+    //            this.transform.position = Vector3.Lerp(this.transform.position, targetPosition, cameraSpeed * Time.deltaTime);
+    //            yield return null; // ?? ????? ??
+    //        }
+    //    }
+    //    else
+    //    {
+    //        Debug.LogError("Target 'Player' not found.");
+    //    }
+    //}
+
+
+    //private void MoveCameraToTarget(Transform targetTransform)
+    //{
+    //    if (targetTransform != null)
+    //    {
+    //        transform.position = new Vector3(targetTransform.position.x,
+    //                                         targetTransform.position.y, -10);
+    //    }
+    //}
+
     // Update is called once per frame
     /*void LateUpdate()
     {
@@ -47,7 +109,7 @@ public class cameramove : MonoBehaviour
     /*void FixedUpdate()
     {
 
-        // 타겟의 x, y, z 좌표에 카메라의 좌표를 더하여 카메라의 위치를 결정
+        // ?????? x, y, z ?????? ???????? ?????? ?????? ???????? ?????? ????
 
         Vector3 TargetPos = Camera.main.WorldToViewportPoint(Target.transform.position);
         /*TargetPos = new Vector2(
@@ -56,11 +118,11 @@ public class cameramove : MonoBehaviour
            
             );
 
-        // 카메라의 움직임을 부드럽게 하는 함수(Lerp)
+        // ???????? ???????? ???????? ???? ????(Lerp)
         transform.position = Vector3.Lerp(transform.position, TargetPos, Time.deltaTime * CameraSpeed);
     }*/
- 
-    
+
+
 }
 
 

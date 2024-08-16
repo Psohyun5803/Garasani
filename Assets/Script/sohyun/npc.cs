@@ -553,7 +553,7 @@ public class npc : MonoBehaviour
             {
                 
                 talksqu.SetActive(true);
-                options.SetActive(true);
+                options.SetActive(false);
                 who.text = clocontent[0].Substring(0, 2);
                 content.text = clocontent[0].Substring(2);
             }
@@ -564,7 +564,7 @@ public class npc : MonoBehaviour
                 talksqu.SetActive(true);
                 options.SetActive(true);
                 option3_bt.SetActive(true);
-                button.SetActive(false);
+                button.SetActive(true);
                 who.text = "system";
                 content.text = "무엇을 구매할까?";
                 option1.text = "> 짱구 잠옷";

@@ -47,24 +47,28 @@ public class npcmove : MonoBehaviour
     {
         while (true)
         {
-            if (frontflag!=1&&moveflag==1)
-            {
-                yield return new WaitForSeconds(0.5f);
+           
+            
+                if (frontflag != 1)
+                {
+                    yield return new WaitForSeconds(0.5f);
 
-                spriteRenderer.sprite = bodymove[2];
+                    spriteRenderer.sprite = bodymove[2];
 
-                yield return new WaitForSeconds(0.5f);
-                spriteRenderer.sprite = bodymove[3];
-            }
-            else if(frontflag==1&&moveflag==1)
-            {
-                yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(0.5f);
+                    spriteRenderer.sprite = bodymove[3];
+                }
+                else
+                {
+                    yield return new WaitForSeconds(0.5f);
 
-                spriteRenderer.sprite = bodymove[1];
+                    spriteRenderer.sprite = bodymove[1];
 
-                yield return new WaitForSeconds(0.5f);
-                spriteRenderer.sprite = bodymove[0];
-            }
+                    yield return new WaitForSeconds(0.5f);
+                    spriteRenderer.sprite = bodymove[0];
+                }
+            
+          
            
 
         }

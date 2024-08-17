@@ -1,21 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class SNS_ChungmuroB2 : MonoBehaviour
 {
     public static SNS_ChungmuroB2 instance;
 
-    //충무로B2 트윗
-    public GameObject ch_climing;
-    public GameObject ch_rising;
-    public GameObject ch_movie;
-    public GameObject ch_line4_1;
-    public GameObject ch_line4_2;
-    public GameObject ch_line4_3;
-    public GameObject ch_line4_4;
-
+    // 콘텐츠 GameObject 리스트
+    public List<GameObject> contentList;
+    public float spacing = 100f; // 콘텐츠 사이의 간격
+    private int currentIndex = 0;
 
     private void Awake()
     {
@@ -23,31 +17,62 @@ public class SNS_ChungmuroB2 : MonoBehaviour
         {
             instance = this;
         }
-
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        ch_climing.SetActive(true);
-        ch_movie.SetActive(true);
-        ch_rising.SetActive(true);
-
-        ch_line4_1.SetActive(false);
-        ch_line4_2.SetActive(false);
-        ch_line4_3.SetActive(false);
-        ch_line4_4.SetActive(false);
+        // 콘텐츠를 초기화
+        InitializeContent();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (inSubway_0.instance.dialogueID == 20)
+        if (inSubway_0.instance.dialogueID >= 20)
         {
-            ch_line4_1.SetActive(true);
-            ch_line4_2.SetActive(true);
-            ch_line4_3.SetActive(true);
-            ch_line4_4.SetActive(true);
+            ShowAdditionalContent();
+        }
+    }
+
+    // 콘텐츠를 초기화하고 인덱스 0~2의 콘텐츠만 보이도록 설정
+    void InitializeContent()
+    {
+        // 모든 콘텐츠를 비활성화
+        foreach (GameObject content in contentList)
+        {
+            content.SetActive(false);
+        }
+
+        // 인덱스 0~2의 콘텐츠만 활성화
+        for (int i = 0; i < Mathf.Min(3, contentList.Count); i++)
+        {
+            contentList[i].SetActive(true);
+        }
+
+        // 콘텐츠의 Y좌표 조정
+        AdjustContentPosition();
+    }
+
+    // 추가 콘텐츠를 활성화
+    void ShowAdditionalContent()
+    {
+        // 인덱스 4~7의 콘텐츠 활성화
+        for (int i = 4; i < Mathf.Min(8, contentList.Count); i++)
+        {
+            contentList[i].SetActive(true);
+        }
+
+        // 콘텐츠의 Y좌표 조정
+        AdjustContentPosition();
+    }
+
+    // 콘텐츠의 Y좌표를 조정
+    void AdjustContentPosition()
+    {
+        for (int i = 0; i < contentList.Count; i++)
+        {
+            Vector3 position = contentList[i].transform.localPosition;
+            position.y = -i * spacing; // 각 콘텐츠의 Y좌표를 조정
+            contentList[i].transform.localPosition = position;
         }
     }
 }

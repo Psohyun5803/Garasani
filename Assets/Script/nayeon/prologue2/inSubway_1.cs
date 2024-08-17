@@ -100,8 +100,8 @@ public class inSubway_1 : MonoBehaviour
                     contextList = DataManager.instance.GetDialogue(29, 29);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 13;
-                    platerState.instance.isTired = false; //피로이상 상태 해제
-                    Debug.Log("피로이상 상태 해제 : " + platerState.instance.isTired);
+                    playerState.instance.isTired = false; //피로이상 상태 해제
+                    Debug.Log("피로이상 상태 해제 : " + playerState.instance.isTired);
                     break;
 
 
@@ -160,6 +160,7 @@ public class inSubway_1 : MonoBehaviour
         inSubway_0.instance.dialogueID = 18;
         inSubway_0.instance.ui_dialogue.SetActive(false);
         blackPanel.SetActive(false);
+        SceneManager.LoadScene("Chungmuro_B2"); //지하 2층 계단 이동 
     }
 
 

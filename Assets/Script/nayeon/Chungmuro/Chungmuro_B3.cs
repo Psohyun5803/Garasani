@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Chungmuro_B3 : MonoBehaviour
 {
+    public static Chungmuro_B3 instance;
     public Dialogue[] contextList;
     public bool checkWiki = false; //3호선 운행정보 위키 학인
 

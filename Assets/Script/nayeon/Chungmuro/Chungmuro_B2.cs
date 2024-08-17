@@ -12,6 +12,7 @@ public class Chungmuro_B2 : MonoBehaviour
     public GameObject sign; //표지판
     //public GameObject Jeongmin;
 
+
     public IEnumerator ChungmuroB2_1()
     {
         DialogueManager.instance.ui_dialogue.SetActive(true);
@@ -105,13 +106,19 @@ public class Chungmuro_B2 : MonoBehaviour
         SceneManager.LoadScene("3_Chungmuro_B3");
     }
 
-
     // Start is called before the first frame update
     void Start()
     {
+        customize.sceneflag = 4;
+        customize.moveflag = 1;
+        InitializeScene();
+
         Vector3 signPosition = sign.transform.position;
         GameObject playerObject = GameObject.FindWithTag("Player");
-
+        if(playerObject != null)
+        {
+            playerObject.transform.position = new Vector3(signPosition.x -1, signPosition.y, signPosition.z);
+        }
         //if (playerObject != null)
         //{
         //    playerObject.transform.position = new Vector3(signPosition.x - 3, signPosition.y - 3, signPosition.z);
@@ -133,11 +140,12 @@ public class Chungmuro_B2 : MonoBehaviour
         //}
 
         // Jeongmin 오브젝트의 위치 변경
-        GameObject jeongmin = GameObject.FindWithTag("jeongmin");
-        if (jeongmin != null)
-        {
-            jeongmin.transform.position = new Vector3(signPosition.x + 3, signPosition.y - 3, signPosition.z);
-        }
+        //GameObject jeongmin = GameObject.FindWithTag("jeongmin");
+        //if (jeongmin != null)
+        //{
+        //    jeongmin.transform.position = new Vector3(signPosition.x + 3, signPosition.y - 3, signPosition.z);
+        //}
+        StartCoroutine(ChungmuroB2_1());
 
     }
 

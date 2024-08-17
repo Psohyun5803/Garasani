@@ -39,10 +39,10 @@ public class Prolog2_Item : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded; // 씬 로드 이벤트 구독 해제
     }
 
-    IEnumerator b2Moving()
-    {
-        yield return StartCoroutine(inSubway_1.instance.pre_B2());
-    }
+    //IEnumerator b2Moving()
+    //{
+    //    yield return StartCoroutine(inSubway_1.instance.pre_B2());
+    //}
 
     void OnMouseDown()
     {
@@ -62,8 +62,8 @@ public class Prolog2_Item : MonoBehaviour
                 Debug.Log("Loading scene Chungmuro_B2");
                 newPlayerPosition = new Vector3(7, 2, 0);
                 newPlayerScale = new Vector3(0.5f, 0.5f, 0.5f);
-                StartCoroutine(b2Moving());
-                SceneManager.LoadScene("Chungmuro_B2"); //지하 2층 계단 이동 
+                StartCoroutine(inSubway_1.instance.pre_B2());
+                //SceneManager.LoadScene("Chungmuro_B2"); //지하 2층 계단 이동 
             }
             else
             {
@@ -81,7 +81,6 @@ public class Prolog2_Item : MonoBehaviour
                 hammer.SetActive(false);
                 hammerInfo.SetActive(false);
                 inventory.AddItem("비상망치", "이걸로 창문을 깨고 나갈 수 있을 것 같다.");
-                hammerflag = true;
                 JMevent.instance.hammerDialogue = true;
                 Debug.Log("Hammer collected, hammerflag set true");
                 Debug.Log("hammer dialogue : " + JMevent.instance.hammerDialogue);

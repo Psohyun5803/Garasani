@@ -16225,7 +16225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contextList: []
-  blackPanel: {fileID: 0}
+  blackPanel: {fileID: 150070045}
 --- !u!114 &1173956582
 MonoBehaviour:
   m_ObjectHideFlags: 0

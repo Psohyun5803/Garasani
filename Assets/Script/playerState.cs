@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerState : MonoBehaviour
 {
-    public playerState instance;
+    public static playerState instance;
     public bool isTired; //피로이상 상태 
 
     public void Awake()

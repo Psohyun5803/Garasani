@@ -77,13 +77,21 @@ public class npcmove : MonoBehaviour
     {
         while(true)
         {
+            if(moveflag==1)
+            {
+                yield return new WaitForSeconds(1f);
 
-            yield return new WaitForSeconds(1f);
 
-           
-            frontflag = 0;
-            yield return new WaitForSeconds(1f);
-            frontflag = 1;
+                frontflag = 0;
+                yield return new WaitForSeconds(1f);
+                frontflag = 1;
+
+            }
+            else
+            {
+                yield return new WaitForSeconds(1f);
+            }
+            
            
         }
     }

@@ -48,8 +48,8 @@ public class Prolog2_Item : MonoBehaviour
             if (hammerflag == true)
             {
                 DialogueManager.instance.dialogue_text.text = "창문을 깨고 밖으로 나가자.";
-                Debug.Log("Loading scene Chungmuro_B3");
-                SceneManager.LoadScene("Chungmuro_B3");
+                Debug.Log("Loading scene Chungmuro_B2");
+                SceneManager.LoadScene("Chungmuro_B2");
             }
             else
             {

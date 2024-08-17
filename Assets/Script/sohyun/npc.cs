@@ -31,6 +31,8 @@ public class npc : MonoBehaviour
     public static int manjufirst = 0;
     public static int jihoonflag = 0;
     public static int optnum = 0;
+    public static int glass = 1;//인벤토리에 안경이 있으면
+    public static int glassinter = 0; //한 번 노인에게 안경을 가져다 줬으면 
     public static string interobj;
     public static int buttonnum = 0;
 
@@ -111,6 +113,15 @@ public class npc : MonoBehaviour
 
 
         }
+        if(interobj=="도움이 필요해보이는 노인")
+        {
+            who.text = "player";
+            content.text = "안 주셔도 돼요";
+            button.SetActive(true);
+            buttonnum = 0;
+            glassinter = 1;
+
+        }
         /*if(interobj == "지훈"&&jihoonflag==0)
         {
             who.text = "지훈";
@@ -170,6 +181,14 @@ public class npc : MonoBehaviour
             buttonnum = 0;
 
 
+        }
+        if (interobj == "도움이 필요해보이는 노인")
+        {
+            who.text = "player";
+            content.text = "감사합니다";
+            button.SetActive(true);
+            buttonnum = 0;
+            glassinter = 1;
         }
         options.SetActive(false);
     }
@@ -406,20 +425,51 @@ public class npc : MonoBehaviour
         }
         else if(interobj == "도움이 필요해보이는 노인")
         {
-            buttonnum++;
-            if (buttonnum > 2)
+            if(buttonnum==0&&glassinter==1) // 한 번 상호작용을 끝냈으면
             {
-                //여기에 안경플래그 추가 예정
                 talksqu.SetActive(false);
                 buttonnum = 0;
                 interobj = null;
             }
             else
             {
-                who.text = "도움이 필요해보이는 노인";
-                content.text = helpcontent[buttonnum];
+                buttonnum++;
+                if (buttonnum > 5)
+                {
+                    talksqu.SetActive(false);
+                    buttonnum = 0;
+                    interobj = null;
+                }
+                if (buttonnum > 2)
+                {
+                    if (glass == 0)
+                    {
+                        talksqu.SetActive(false);
+                        buttonnum = 0;
+                        interobj = null;
+                    }
+                    else if (glass == 1)
+                    {
+                        if (helpcontent[buttonnum] == "우리 손주 같아서 주는 거야...")
+                        {
+                            options.SetActive(true);
+                            option3_bt.SetActive(false);
+                            option1.text = "> 안 주셔도 돼요";
+                            option2.text = "> 감사합니다";
+                        }
+                        who.text = "도움이 필요해보이는 노인";
+                        content.text = helpcontent[buttonnum];
+                    }
 
+                }
+                else
+                {
+                    who.text = "도움이 필요해보이는 노인";
+                    content.text = helpcontent[buttonnum];
+
+                }
             }
+            
         }
 
         else if (interobj == "물건을 훔치는 노인")
@@ -431,6 +481,7 @@ public class npc : MonoBehaviour
                 talksqu.SetActive(false);
                 buttonnum = 0;
                 interobj = null;
+                npcmove.moveflag = 1;
             }
             else
             {
@@ -560,9 +611,19 @@ public class npc : MonoBehaviour
 
             if (buttonnum == 0)
             {
-                talksqu.SetActive(true);
-                who.text = "도움이 필요해보이는 노인";
-                content.text = helpcontent[0];
+                if(glassinter==0)
+                {
+                    talksqu.SetActive(true);
+                    who.text = "도움이 필요해보이는 노인";
+                    content.text = helpcontent[0];
+                }
+                else
+                {
+                    talksqu.SetActive(true);
+                    who.text = "도움이 필요해보이는 노인";
+                    content.text = "안경을 착용하더니 무언갈 중얼중얼 읽고 있다.";
+                }
+                
             }
 
          
@@ -575,6 +636,7 @@ public class npc : MonoBehaviour
 
             if (buttonnum == 0)
             {
+                npcmove.moveflag = 0;
                 talksqu.SetActive(true);
                 who.text = "물건을 훔치는 노인";
                 content.text = objcontent[0];
@@ -712,6 +774,7 @@ public class npc : MonoBehaviour
 
 
         }
+        
 
 
     }

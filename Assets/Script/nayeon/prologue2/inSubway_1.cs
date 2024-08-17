@@ -143,11 +143,13 @@ public class inSubway_1 : MonoBehaviour
         yield return StartCoroutine(DialogueManager.instance.processing(contextList));
         contextList = DataManager.instance.GetDialogue(36, 36);
         yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-        inSubway_0.instance.dialogueID = 17;
+       
         Prolog2_Item.instance.hammerflag = true; //망치 수집 이벤트 끝 -> 씬 이동 가능
         inSubway_0.instance.ui_dialogue.SetActive(false);
-
-
+        //Dark panel setactive 추가 
+        contextList = DataManager.instance.GetDialogue(37, 37);
+        yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+        inSubway_0.instance.dialogueID = 18;
     }
 
     public IEnumerator subway_remain()

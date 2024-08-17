@@ -14,7 +14,8 @@ public class Prolog2_Item : MonoBehaviour
     public GameObject hammerInfo;
 
     public bool hammerflag;
-
+    public Vector3 newPlayerPosition;
+    public Vector3 newPlayerScale;
     public Inventory inventory; // Inventory 
 
     void Awake()
@@ -30,6 +31,12 @@ public class Prolog2_Item : MonoBehaviour
     private void Start()
     {
         hammerflag = false;
+        SceneManager.sceneLoaded += OnSceneLoaded; // 씬 로드 이벤트 구독
+    }
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded; // 씬 로드 이벤트 구독 해제
     }
 
 
@@ -48,8 +55,10 @@ public class Prolog2_Item : MonoBehaviour
             if (hammerflag == true)
             {
                 DialogueManager.instance.dialogue_text.text = "창문을 깨고 밖으로 나가자.";
-                Debug.Log("Loading scene Chungmuro_B2");
-                SceneManager.LoadScene("Chungmuro_B2");
+                Debug.Log("Loading scene Chungmuro_B3");
+                newPlayerPosition = new Vector3(7, 2, 0);
+                newPlayerScale = new Vector3(0.5f, 0.5f, 0.5f);
+                SceneManager.LoadScene("Chungmuro_B3");
             }
             else
             {
@@ -67,11 +76,26 @@ public class Prolog2_Item : MonoBehaviour
                 hammer.SetActive(false);
                 hammerInfo.SetActive(false);
                 inventory.AddItem("비상망치", "이걸로 창문을 깨고 나갈 수 있을 것 같다.");
-                //hammerflag = true;
+                hammerflag = true;
                 JMevent.instance.hammerDialogue = true;
                 Debug.Log("Hammer collected, hammerflag set true");
                 Debug.Log("hammer dialogue : " + JMevent.instance.hammerDialogue);
             }
+        }
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // 새 씬이 로드된 후 플레이어의 위치를 설정합니다.
+        GameObject player = GameObject.Find("Player");
+        if (player != null)
+        {
+            player.transform.position = newPlayerPosition;
+            Debug.Log("Player position set to " + newPlayerPosition);
+        }
+        else
+        {
+            Debug.LogWarning("Player object not found!");
         }
     }
 

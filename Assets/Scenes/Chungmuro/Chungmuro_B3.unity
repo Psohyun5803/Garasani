@@ -1899,7 +1899,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 366542917
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6cff4771358a7f449a28979d74dd0385, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2290,9 +2290,9 @@ GameObject:
   m_Component:
   - component: {fileID: 196626460}
   - component: {fileID: 196626461}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "[\uC2A4\uD06C\uB9B0\uB3C4\uC5B4 \uC67C\uCABD\uBB38]\uC9C0\uD558 3\uCE35_\uC2B9\uAC15\uC7A5"
-  m_TagString: Untagged
+  m_TagString: etc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4917,10 +4917,10 @@ RectTransform:
   - {fileID: 843880175}
   m_Father: {fileID: 644162238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -1190.4535, y: -32}
-  m_SizeDelta: {x: 64, y: 64}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &423269393
 MonoBehaviour:
@@ -5930,9 +5930,9 @@ GameObject:
   m_Component:
   - component: {fileID: 522890042}
   - component: {fileID: 522890043}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "[\uC2A4\uD06C\uB9B0\uB3C4\uC5B4 \uC720\uB9AC\uCC3D]\uC9C0\uD558 3\uCE35_\uC2B9\uAC15\uC7A5"
-  m_TagString: Untagged
+  m_TagString: etc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6042,10 +6042,10 @@ RectTransform:
   - {fileID: 1868507295}
   m_Father: {fileID: 644162238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -1062.4535, y: -32}
-  m_SizeDelta: {x: 64, y: 64}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &538772886
 MonoBehaviour:
@@ -6892,10 +6892,10 @@ GameObject:
   m_Component:
   - component: {fileID: 632174375}
   - component: {fileID: 632174376}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "[\uC2A4\uD06C\uB9B0\uB3C4\uC5B4 \uC67C\uCABD\uBB38]\uC9C0\uD558 3\uCE35_\uC2B9\uAC15\uC7A5
     (2)"
-  m_TagString: Untagged
+  m_TagString: etc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7111,10 +7111,10 @@ GameObject:
   m_Component:
   - component: {fileID: 634284554}
   - component: {fileID: 634284555}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "[\uC2A4\uD06C\uB9B0\uB3C4\uC5B4 \uC624\uB978\uCABD\uBB38]\uC9C0\uD558
     3\uCE35_\uC2B9\uAC15\uC7A5 (2)"
-  m_TagString: Untagged
+  m_TagString: etc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8481,10 +8481,10 @@ RectTransform:
   - {fileID: 1556351014}
   m_Father: {fileID: 644162238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -934.4535, y: -32}
-  m_SizeDelta: {x: 64, y: 64}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &780892361
 MonoBehaviour:
@@ -9058,10 +9058,10 @@ GameObject:
   m_Component:
   - component: {fileID: 822574579}
   - component: {fileID: 822574580}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "[\uC2A4\uD06C\uB9B0\uB3C4\uC5B4 \uC624\uB978\uCABD\uBB38]\uC9C0\uD558
     3\uCE35_\uC2B9\uAC15\uC7A5 (3)"
-  m_TagString: Untagged
+  m_TagString: etc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11889,10 +11889,10 @@ RectTransform:
   - {fileID: 1554062187}
   m_Father: {fileID: 644162238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -1318.4535, y: -32}
-  m_SizeDelta: {x: 64, y: 64}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1090777295
 MonoBehaviour:
@@ -12066,7 +12066,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 366542917
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b270461fafe2415488be6d8bda78de12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -17060,10 +17060,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1460854884}
   - component: {fileID: 1460854885}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "[\uC2A4\uD06C\uB9B0\uB3C4\uC5B4 \uC67C\uCABD\uBB38]\uC9C0\uD558 3\uCE35_\uC2B9\uAC15\uC7A5
     (1)"
-  m_TagString: Untagged
+  m_TagString: etc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18144,10 +18144,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1567686559}
   - component: {fileID: 1567686560}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "[\uC2A4\uD06C\uB9B0\uB3C4\uC5B4 \uC624\uB978\uCABD\uBB38]\uC9C0\uD558
     3\uCE35_\uC2B9\uAC15\uC7A5 (1)"
-  m_TagString: Untagged
+  m_TagString: etc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18435,10 +18435,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1601919310}
   - component: {fileID: 1601919311}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "[\uC2A4\uD06C\uB9B0\uB3C4\uC5B4 \uC624\uB978\uCABD\uBB38]\uC9C0\uD558
     3\uCE35_\uC2B9\uAC15\uC7A5"
-  m_TagString: Untagged
+  m_TagString: etc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23559,10 +23559,10 @@ RectTransform:
   - {fileID: 1292138579}
   m_Father: {fileID: 644162238}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -806.4535, y: -32}
-  m_SizeDelta: {x: 64, y: 64}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2044415779
 MonoBehaviour:
@@ -24109,10 +24109,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2111956478}
   - component: {fileID: 2111956479}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "[\uC2A4\uD06C\uB9B0\uB3C4\uC5B4 \uC67C\uCABD\uBB38]\uC9C0\uD558 3\uCE35_\uC2B9\uAC15\uC7A5
     (3)"
-  m_TagString: Untagged
+  m_TagString: etc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

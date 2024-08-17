@@ -11851,9 +11851,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1086668671}
   - component: {fileID: 1086668672}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "[\uBCBD]\uC9C0\uD558 2\uCE35"
-  m_TagString: Untagged
+  m_TagString: etc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13425,7 +13425,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 366542917
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7ac6f80fdc9af644fa2f820af7f28285, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -14282,7 +14282,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 366542917
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6206e62aa981abc43a3ef8d866788219, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -15005,7 +15005,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 366542917
-  m_SortingLayer: 1
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5bdfdffe200ca384aa7e2909bd4723d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -20654,6 +20654,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contextList: []
+  line4: 0
+  line3: 0
 --- !u!114 &1769814668
 MonoBehaviour:
   m_ObjectHideFlags: 0

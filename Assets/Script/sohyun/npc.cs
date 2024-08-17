@@ -31,7 +31,7 @@ public class npc : MonoBehaviour
     public static int manjufirst = 0;
     public static int jihoonflag = 0;
     public static int optnum = 0;
-    public static int glass = 1;//인벤토리에 안경이 있으면
+    public static int glass = 0;//인벤토리에 안경이 있으면 1로 변경하면 된다. 
     public static int glassinter = 0; //한 번 노인에게 안경을 가져다 줬으면 
     public static string interobj;
     public static int buttonnum = 0;
@@ -45,6 +45,7 @@ public class npc : MonoBehaviour
     string[] clocontent = new string[3] { "정민오, 패션에 관심 있으신가봐요? 저돈데!","정민이것도 사실 지하상가에서 산 거거든요~","정민여기 질 괜찮다니까?" };
     string[] jihoonfirst = new string[6] { "정민어, 안녕?", "지훈으아아아아앙!!", "정민엄마랑 아빠는 어디가셨어?", "지훈몰라...엄마아아....", "지훈엄마가 안 보여... 끅....", "정민미아같은데...어떡할까요?" };
     string[] stationcontent = new string[4] { "정민앗, 퇴근하셨네...", "....", "정민마지막으로 엄마랑 어디서 헤어졌는지 기억나?","지훈(도리도리)" };
+    string[] godcontent = new string[8] { "여러분. 저희 예수님께서는 나 하나를 위해\n 십자가에 못이 박혀 돌아가시고....","정민씨", "예에,당연히! 진짜 아니겠습니까. 하나님께서 보우하사....", "PL그거 진짜에요? 아닌 거 같은데....", "정민(안색이 파래졌다)", "PL그럼 저 지옥...", "정민하하,죄송합니다.", "....." };
     //string[] jihoonfirst = new string[] = {"정민어, 안녕?","지훈으아아아아아앙!!","정민엄마랑 아빠는 어디가셨어?","지훈몰라...엄마아아...","지훈엄마가 안 보여... 끅....","정민미아같은데...어떡할까요?","선1이름을 물어본다","선2먹을 것을 건넨다")
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -60,10 +61,11 @@ public class npc : MonoBehaviour
     public void option1down()
     {
         optnum = 1;
-
+        
         
         option1.text = "";
         option2.text = "";
+       
         if (option3_bt!=null&&option3_bt.activeSelf)
         {
             if (option3 != null)
@@ -71,6 +73,7 @@ public class npc : MonoBehaviour
                 option3.text = "";
             }
         }
+      
         if (interobj=="델리만쥬 가게")
         {
             if(manjufirst!=1)
@@ -122,13 +125,22 @@ public class npc : MonoBehaviour
             glassinter = 1;
 
         }
+        if(interobj=="사이비")
+        {
+            who.text = "player";
+            content.text = "진짜요?";
+            button.SetActive(true);
+            buttonnum = 1;
+           
+            
+        }
         /*if(interobj == "지훈"&&jihoonflag==0)
         {
             who.text = "지훈";
             content.text = "물을 구매했다.";
             button.SetActive(true);
-        }
-        options.SetActive(false);*/
+        }*/
+        options.SetActive(false);
        
        
     }
@@ -190,6 +202,22 @@ public class npc : MonoBehaviour
             buttonnum = 0;
             glassinter = 1;
         }
+
+        if (interobj == "사이비")
+        {
+
+          
+            who.text = "사이비";
+            content.text = "(유유히 옆 칸으로 사라진다)";
+            /*if(gameObject.name== "사이비")
+            {
+                Debug.Log("사이비 비활성화 코드");
+                
+            }*/
+            button.SetActive(true);
+            buttonnum = 12;
+           
+        }
         options.SetActive(false);
     }
     public void option3down()
@@ -222,6 +250,18 @@ public class npc : MonoBehaviour
             content.text = "과자를 구매했다.";
             button.SetActive(true);
             buttonnum = 0;
+
+
+        }
+        options.SetActive(false);
+
+
+        if (interobj == "사이비")
+        {
+            who.text = "player";
+            content.text = "그거 진짜에요? 아닌 거 같은데....";
+            button.SetActive(true);
+            buttonnum = 3;
 
 
         }
@@ -489,6 +529,66 @@ public class npc : MonoBehaviour
                 content.text = objcontent[buttonnum];
 
             }
+        }
+
+        else if (interobj == "사이비")
+        {
+            buttonnum++;
+            if (buttonnum>10)
+            {
+                talksqu.SetActive(false);
+                buttonnum = 0;
+                interobj = null;
+            }
+           
+            if(optnum==1)
+            {
+                if(buttonnum>2)
+                {
+                    talksqu.SetActive(false);
+                    buttonnum = 0;
+                    interobj = null;
+                }
+                if (godcontent[buttonnum].Substring(0,2)=="정민")
+                {
+                    who.text = "정민";
+                    content.text = /*playername+*/godcontent[buttonnum].Substring(2);
+                }
+                else
+                {
+                    who.text = "사이비";
+                    content.text = /*playername+*/godcontent[buttonnum];
+                }
+                
+            }
+           
+           
+            else if(optnum==3)
+            {
+                if(buttonnum>7)
+                {
+                    talksqu.SetActive(false);
+                    buttonnum = 0;
+                    interobj = null;
+                }
+                if (godcontent[buttonnum].Substring(0, 2) == "PL")
+                {
+                    who.text = "player";
+                    content.text = /*playername+*/godcontent[buttonnum].Substring(2);
+                }
+                else if(godcontent[buttonnum].Substring(0, 2) == "정민")
+                {
+                    who.text = "정민";
+                    content.text = /*playername+*/godcontent[buttonnum].Substring(2);
+                }
+                else
+                {
+                    who.text = "사이비";
+                    content.text = /*playername+*/godcontent[buttonnum];
+                }
+            }
+            
+            
         }
 
 
@@ -774,7 +874,28 @@ public class npc : MonoBehaviour
 
 
         }
-        
+
+        if (playercolflag == 1 && gameObject.name == "사이비")
+        {
+            interobj = "사이비";
+
+            if (buttonnum == 0)
+            {
+                talksqu.SetActive(true);
+                who.text = "사이비";
+                content.text = godcontent[buttonnum];
+                options.SetActive(true);
+                option3_bt.SetActive(true);
+                option1.text = "> 진짜요?";
+                option2.text = "> (가만히 있는다)";
+                option3.text = "> (시비를 건다)";
+                button.SetActive(false);
+            }
+
+
+
+        }
+
 
 
     }
@@ -791,6 +912,6 @@ void Start()
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(interobj);
+        Debug.Log(buttonnum);
     }
 }

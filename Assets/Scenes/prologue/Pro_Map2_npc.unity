@@ -328,6 +328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b40db24fe82bf9047b023124d4d004aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneNum: 0
+  sceneInitialized: 0
 --- !u!1 &662888027
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueID: 0
+  checkWiki: 1
   contextList: []
 --- !u!114 &662888033
 MonoBehaviour:
@@ -439,6 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92ce2ad026bd845459ed1a5c65793908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ui_dialogue: {fileID: 0}
   dialogue_text: {fileID: 1327099492}
   name: {fileID: 752062273}
   chosen1_text: {fileID: 2075476262}
@@ -447,6 +451,7 @@ MonoBehaviour:
   IsDialogueFinished: 0
   contextList: []
   chooseFlag: 0
+  clickFlag: 0
 --- !u!1 &752062271
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class inSubway_1 : MonoBehaviour
 {
     public static inSubway_1 instance;
     public Dialogue[] contextList;
+    public GameObject blackPanel;
 
     public void Awake()
     {
@@ -146,11 +147,21 @@ public class inSubway_1 : MonoBehaviour
        
         Prolog2_Item.instance.hammerflag = true; //망치 수집 이벤트 끝 -> 씬 이동 가능
         inSubway_0.instance.ui_dialogue.SetActive(false);
-        //Dark panel setactive 추가 
+
+
+    }
+
+    public IEnumerator pre_B2()
+    {
+        inSubway_0.instance.ui_dialogue.SetActive(true);
+        blackPanel.SetActive(true);
         contextList = DataManager.instance.GetDialogue(37, 37);
         yield return StartCoroutine(DialogueManager.instance.processing(contextList));
         inSubway_0.instance.dialogueID = 18;
+        inSubway_0.instance.ui_dialogue.SetActive(false);
+        blackPanel.SetActive(false);
     }
+
 
     public IEnumerator subway_remain()
     {
@@ -158,6 +169,11 @@ public class inSubway_1 : MonoBehaviour
         contextList = DataManager.instance.GetDialogue(35, 35);
         yield return StartCoroutine(DialogueManager.instance.processing(contextList));
         inSubway_0.instance.ui_dialogue.SetActive(false);
+    }
+
+    void Start()
+    {
+        blackPanel.SetActive(false);    
     }
 
 

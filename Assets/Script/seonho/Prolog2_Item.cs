@@ -39,6 +39,10 @@ public class Prolog2_Item : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded; // 씬 로드 이벤트 구독 해제
     }
 
+    IEnumerator b2Moving()
+    {
+        yield return StartCoroutine(inSubway_1.instance.pre_B2());
+    }
 
     void OnMouseDown()
     {
@@ -55,10 +59,11 @@ public class Prolog2_Item : MonoBehaviour
             if (hammerflag == true)
             {
                 DialogueManager.instance.dialogue_text.text = "창문을 깨고 밖으로 나가자.";
-                Debug.Log("Loading scene Chungmuro_B3");
+                Debug.Log("Loading scene Chungmuro_B2");
                 newPlayerPosition = new Vector3(7, 2, 0);
                 newPlayerScale = new Vector3(0.5f, 0.5f, 0.5f);
-                SceneManager.LoadScene("Chungmuro_B3");
+                StartCoroutine(b2Moving());
+                SceneManager.LoadScene("Chungmuro_B2"); //지하 2층 계단 이동 
             }
             else
             {

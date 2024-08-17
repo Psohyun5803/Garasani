@@ -9,6 +9,9 @@ public class Chungmuro_B2 : MonoBehaviour
     public bool line4 = false;
     public bool line3 = false;
 
+    public GameObject sign; //표지판
+    //public GameObject Jeongmin;
+
     public IEnumerator ChungmuroB2_1()
     {
         DialogueManager.instance.ui_dialogue.SetActive(true);
@@ -81,19 +84,61 @@ public class Chungmuro_B2 : MonoBehaviour
         }
 
         DialogueManager.instance.ui_dialogue.SetActive(false);
+
+        if (line4 == true)
+            ChooseLine4();
+        else if (line3 == true)
+            ChooseLine3();
     }
 
     public void ChooseLine4()
     {
         //4호선 승강장으로 다시 이동
         Debug.Log("4호선 승강장 이동");
-        SceneManager.LoadScene("Chungmuro_B3");
+        SceneManager.LoadScene("4_Chungmuro_B3");
     }
+
+    public void ChooseLine3()
+    {
+        //3호선 승강장 이동 
+        Debug.Log("3호선 승강장 이동");
+        SceneManager.LoadScene("3_Chungmuro_B3");
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Vector3 signPosition = sign.transform.position;
+        GameObject playerObject = GameObject.FindWithTag("Player");
+
+        //if (playerObject != null)
+        //{
+        //    playerObject.transform.position = new Vector3(signPosition.x - 3, signPosition.y - 3, signPosition.z);
+
+        //    // 플레이어의 방향을 정면으로 설정
+        //    Player playerScript = playerObject.GetComponent<Player>();
+
+        //    if (playerScript != null)
+        //    {
+        //        playerScript.frontflag = 1;
+        //        playerScript.leftflag = 0;
+        //        playerScript.rightflag = 0;
+        //        playerScript.backflag = 0;
+
+        //        // 정면 이미지 설정
+        //        playerScript.StopAllCoroutines();  // 이전 코루틴 정지
+        //        playerScript.StartCoroutine(playerScript.breathfront());  // 정면을 향한 코루틴 시작
+        //    }
+        //}
+
+        // Jeongmin 오브젝트의 위치 변경
+        GameObject jeongmin = GameObject.FindWithTag("jeongmin");
+        if (jeongmin != null)
+        {
+            jeongmin.transform.position = new Vector3(signPosition.x + 3, signPosition.y - 3, signPosition.z);
+        }
+
     }
 
     // Update is called once per frame

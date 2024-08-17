@@ -1,26 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class platerState : MonoBehaviour
+public class WikiSystem : MonoBehaviour
 {
+    public static WikiSystem instance; 
+    public TMP_Text title; //위키 제목
+    public TMP_Text text; //위키 내용 
 
-    public static platerState instance;
-
-    public bool isTired; //피로이상 상태 
-
-
-    public void Awake()
+    private void Awake()
     {
         if(instance == null)
         {
             instance = this;
         }
     }
+
     // Start is called before the first frame update
     void Start()
     {
-        isTired = true;
+        
     }
 
     // Update is called once per frame

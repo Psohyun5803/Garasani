@@ -90,7 +90,22 @@ public class npc : MonoBehaviour
                 option1.text = "> 태그를 찍는다.";
                 option2.text = "> 태그를 찍지 않는다.";
             }
-            
+            if (gameObject.name == "계단_좌측상단"|| gameObject.name == "계단_좌측하단" || gameObject.name == "계단_우측중앙")
+            {
+                Vector2 pos = transform.position;
+                
+                interobj = gameObject.name;
+                Player.moveflag = 0;
+                talksqu.SetActive(true);
+                options.SetActive(true);
+                option3_bt.SetActive(false);
+                button.SetActive(false);
+                who.text = "player";
+                content.text = "이동할까?";
+                option1.text = "> 내려간다";
+                option2.text = "> 내려가지 않는다.";
+            }
+
         }
         
     }
@@ -141,6 +156,23 @@ public class npc : MonoBehaviour
             who.text = "player";
             content.text = "이동하자.";
             gointer = 1;
+        }
+
+
+        if (interobj == "계단_좌측상단"||interobj=="계단_좌측하단")
+        {
+            button.SetActive(true);
+            who.text = "player";
+            content.text = "이동하자.";
+            SceneManager.LoadScene("1호선승강장_종로");
+        }
+
+        if (interobj == "계단_우측중앙")
+        {
+            button.SetActive(true);
+            who.text = "player";
+            content.text = "이동하자.";
+            SceneManager.LoadScene("jongro_B2");
         }
         if (interobj=="델리만쥬 가게")
         {
@@ -336,6 +368,13 @@ public class npc : MonoBehaviour
             buttonnum = 0;
 
 
+        }
+        if (interobj == "계단_좌측상단" || interobj == "계단_좌측하단"||interobj=="계단_우측중앙")
+        {
+            button.SetActive(true);
+            who.text = "player";
+            content.text = "조금만 더 둘러볼까.";
+            
         }
         if (interobj == "편의점")
         {
@@ -1890,7 +1929,7 @@ void Start()
     void Update()
     {
 
-        Debug.Log(buttonnum);
+       
         if(who.text!="player")
         {
             content.alignment = TextAlignmentOptions.Right;

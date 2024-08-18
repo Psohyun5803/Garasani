@@ -765,7 +765,7 @@ public class npc : MonoBehaviour
         if (collision.gameObject.name == "basebody" || collision.gameObject.name == "Player")
         {
             playercolflag = 1;
-            //presentcol = gameObject.name;
+            presentcol = gameObject.name;
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -1556,6 +1556,7 @@ public class npc : MonoBehaviour
     {
         Debug.Log("마우스클릭감지");
         Debug.Log(gameObject.name);
+        Debug.Log(presentcol);
         Debug.Log(intertest.colitemname);
 
         if (playercolflag==1&&gameObject.name == "헛소리 하는 노인" && presentcol == "헛소리 하는 노인")

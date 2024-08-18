@@ -59,4 +59,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/prologue/Pro_map2_ny.unity
     guid: 4790acf118e014396ac65014dfc9e785
+  - enabled: 1
+    path: Assets/Scenes/jongro/jongro_B1.unity
+    guid: fcfe48715bbccb24ba88f53a3a3f49c7
+  - enabled: 1
+    path: "Assets/Scenes/jongro/1\uD638\uC120\uC2B9\uAC15\uC7A5_\uC885\uB85C.unity"
+    guid: ccea2d3d2f99cb140b76a9da3ae362bd
+  - enabled: 1
+    path: Assets/Scenes/jongro/jongro_B2_beta.unity
+    guid: 745f3739e1a17a74e85a8ed302378f63
+  - enabled: 1
+    path: Assets/Scenes/jongro/Jongro_B2.unity
+    guid: d201e66719e210d49a11cbd289827223
   m_configObjects: {}

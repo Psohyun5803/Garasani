@@ -41,6 +41,7 @@ public class npc : MonoBehaviour
     public static int glassinter = 0; //한 번 노인에게 안경을 가져다 줬으면 
     public static int sibiinter = 0;
     public static int jobinter = 0;
+   
     public static string interobj;
     public static string presentcol;
     public static int buttonnum = 0;
@@ -53,7 +54,7 @@ public class npc : MonoBehaviour
     string[] angercontent = new string[3] { "어이,거기!", "눈을 어따 두고 다니는 거야?", "쯧." };
     string[] manjucontent = new string[4] {"헤헤,정말 괜찮은데...","정민네.","......","정민....대학생이 무슨 돈이 있겠어요~"};
     string[] clocontent = new string[3] { "정민오, 패션에 관심 있으신가봐요? 저돈데!","정민이것도 사실 지하상가에서 산 거거든요~","정민여기 질 괜찮다니까?" };
-    string[] jihoonfirst = new string[6] { "정민어, 안녕?", "지훈으아아아아앙!!", "정민엄마랑 아빠는 어디가셨어?", "지훈몰라...엄마아아....", "지훈엄마가 안 보여... 끅....", "정민미아같은데...어떡할까요?" };
+    string[] jihoonfirst = new string[9] { "정민어, 안녕?", "지훈으아아아아앙!!", "정민엄마랑 아빠는 어디가셨어?", "지훈몰라...엄마아아....", "지훈엄마가 안 보여... 끅....", "정민미아같은데...어떡할까요?","PP(경계할 줄 알았는데... 다행이다.)","정민너는 이름이 뭐야?","지훈...지훈이."};
     string[] stationcontent = new string[4] { "정민앗, 퇴근하셨네...", "....", "정민마지막으로 엄마랑 어디서 헤어졌는지 기억나?","지훈(도리도리)" };
     string[] jobcontent = new string[2] { "자 강아지, 강아지 장난감 있습니다. 360도로 돌아가는 겁니다. \n요 친환경 LED ", "지훈...히끅." };
     string[] godcontent = new string[8] { "여러분. 저희 예수님께서는 나 하나를 위해\n 십자가에 못이 박혀 돌아가시고....","정민씨", "예에,당연히! 진짜 아니겠습니까. 하나님께서 보우하사....", "PL그거 진짜에요? 아닌 거 같은데....", "정민(안색이 파래졌다)", "PL그럼 저 지옥...", "정민하하,죄송합니다.", "....." };
@@ -126,7 +127,8 @@ public class npc : MonoBehaviour
             {
                 who.text = "system";
                 content.text = "델리만쥬를 구매했다.";
-               
+                buttonnum = 15;
+
             }
             
             
@@ -217,12 +219,21 @@ public class npc : MonoBehaviour
 
 
         }
-        /*if(interobj == "지훈"&&jihoonflag==0)
+        if(interobj == "지훈"&&jihoonflag==1)
         {
             who.text = "지훈";
-            content.text = "물을 구매했다.";
+            content.text = "지훈이....";
             button.SetActive(true);
-        }*/
+            buttonnum = 10;
+        }
+
+        if (interobj == "지훈" && jihoonflag == 2)
+        {
+            who.text = "player";
+            content.text = "같이가자! 엄마 찾아줄게.";
+            button.SetActive(true);
+            buttonnum = 15;
+        }
         options.SetActive(false);
        
        
@@ -276,6 +287,7 @@ public class npc : MonoBehaviour
             {
                 who.text = "system";
                 content.text = "핫도그를 구매했다.";
+                buttonnum = 15;
             }
            
 
@@ -366,6 +378,20 @@ public class npc : MonoBehaviour
 
 
 
+        }
+        if (interobj == "지훈" && jihoonflag == 1)
+        {
+            who.text = "지훈";
+            content.text = "(우물우물)";
+            button.SetActive(true);
+        }
+
+        if (interobj == "지훈" && jihoonflag == 2)
+        {
+            who.text = "정민";
+            content.text = "....형이랑 같이가자. 엄마 찾아줄게!";
+            buttonnum = 15;
+            button.SetActive(true);
         }
         options.SetActive(false);
     }
@@ -657,22 +683,23 @@ public class npc : MonoBehaviour
     
     public void buttondown()
     {
-        
-        if(interobj=="델리만쥬 가게")
+         Debug.Log("작동함" + buttonnum);
+        if (interobj=="델리만쥬 가게")
         {  
             Debug.Log(optnum+"");
             if (optnum==1&&manjufirst==0)
             {
               
                 if (buttonnum>0)
-                {   
-                    talksqu.SetActive(false);
+                {
                     buttonnum = 0;
+                    talksqu.SetActive(false);
+                    //buttonnum = 0;
                     interobj = null;
                     manjufirst = 1;
 
                 }
-                else
+                else if(manjufirst==0&&buttonnum==0)
                 {
                     who.text = "정민";
                     content.text = manjucontent[buttonnum];
@@ -688,6 +715,7 @@ public class npc : MonoBehaviour
                    
                     talksqu.SetActive(false);
                     buttonnum = 0;
+                    Debug.Log("작동함"+buttonnum);
                     interobj = null;
                     manjufirst = 1;
                 }
@@ -728,6 +756,7 @@ public class npc : MonoBehaviour
                 }
                 else
                 {
+                    Debug.Log("들어옴");
                     if(buttonnum>1)
                     {
                         talksqu.SetActive(false);
@@ -755,9 +784,9 @@ public class npc : MonoBehaviour
                         content.text = "아니! 지하철에서 만쥬를 뿌리치고 가다니...!";
                         buttonnum++;
                     }
-                    who.text = "정민";
-                    content.text = "아니! 지하철에서 만쥬를 뿌리치고 가다니...!";
-                    buttonnum++;
+                    //who.text = "정민";
+                    //content.text = "아니! 지하철에서 만쥬를 뿌리치고 가다니...!";
+                    //buttonnum++;
                 }
                
               
@@ -817,11 +846,19 @@ public class npc : MonoBehaviour
 
 
             
+           
             talksqu.SetActive(false);
             buttonnum = 0;
             interobj = null;
-
-
+            option1.text = "";
+            option2.text = "";
+            if (option3_bt != null && option3_bt.activeSelf)
+            {
+                if (option3 != null)
+                {
+                    option3.text = "";
+                }
+            }
 
 
 
@@ -1137,15 +1174,58 @@ public class npc : MonoBehaviour
 
         else if (interobj == "지훈")
         {
-            buttonnum++;
-            if (buttonnum > 5)
+            //buttonnum++;
+            if (buttonnum > 14)
             {
 
                 talksqu.SetActive(false);
                 buttonnum = 0;
                 interobj = null;
             }
-            else
+            else if(jihoonflag==1&&optnum==1&&buttonnum>9)
+            {
+                who.text = "player";
+                content.text = "지훈이를 데려갈까?";
+                options.SetActive(true);
+                option3_bt.SetActive(false);
+                option4_bt.SetActive(false);
+                option5_bt.SetActive(false);
+                option6_bt.SetActive(false);
+                button.SetActive(false);
+                option1.text = "> 데려간다";
+                option2.text = "> 데려가지 않는다";
+                jihoonflag = 2;
+            }
+
+            else if (jihoonflag == 1 && optnum == 2)
+            {
+                if (buttonnum > 8)
+                {
+                    who.text = "player";
+                    content.text = "지훈이를 데려갈까?";
+                    options.SetActive(true);
+                    option3_bt.SetActive(false);
+                    option4_bt.SetActive(false);
+                    option5_bt.SetActive(false);
+                    option6_bt.SetActive(false);
+                    option1.text ="> 데려간다";
+                    option2.text = "> 데려가지 않는다.";
+                    jihoonflag = 2;
+                }
+                if (jihoonfirst[buttonnum].Substring(0, 2) == "PP")
+                {
+                    who.text = "player";
+                }
+                else
+                {
+                    who.text = jihoonfirst[buttonnum].Substring(0, 2);
+                }
+               
+                content.text = jihoonfirst[buttonnum].Substring(2);
+                buttonnum++;
+            }
+
+            else if(jihoonflag==0)
             {   
                 if (jihoonfirst[buttonnum].Substring(0, 2) == "정민" || jihoonfirst[buttonnum].Substring(0, 2) == "지훈")
                 {
@@ -1160,12 +1240,13 @@ public class npc : MonoBehaviour
                         content.fontSize = 3;
                     }
                     
-                    if(jihoonfirst[buttonnum].Substring(2) == "미아같은데...어떡할까요 ?")
+                    if(jihoonfirst[buttonnum].Substring(2) == "미아같은데...어떡할까요?")
                     {
-                        //options.SetActive(true);
-                        //option3_bt.SetActive(false);
-                        //option1.text = "> 이름을 물어본다";
-                        //option2.text = "> 먹을 것을 건넨다";//인벤토리 열고 음식 분류의 아이템을 줘야한다 
+                        options.SetActive(true);
+                        option3_bt.SetActive(false);
+                        option1.text = "> 이름을 물어본다";
+                        option2.text = "> 먹을 것을 건넨다";//인벤토리 열고 음식 분류의 아이템을 줘야한다 
+                        jihoonflag = 1;
                         
                     }
                          content.text = jihoonfirst[buttonnum].Substring(2);
@@ -1173,8 +1254,9 @@ public class npc : MonoBehaviour
                 else
                 {
                     who.text = "player";
-                    content.text = jihoonfirst[buttonnum];
+                    content.text = jihoonfirst[buttonnum].Substring(2);
                 }
+                buttonnum++;
 
 
             }
@@ -1372,7 +1454,7 @@ public class npc : MonoBehaviour
         {
             interobj = "지훈";
 
-            if (buttonnum == 0)
+            if (buttonnum == 0&&jihoonflag==0)
             {
                 talksqu.SetActive(true);
                 who.text = jihoonfirst[0].Substring(0, 2);
@@ -1534,8 +1616,7 @@ void Start()
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(buttonnum);
-        Debug.Log(presentcol);
+        
         
     }
 }

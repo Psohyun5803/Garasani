@@ -1464,6 +1464,14 @@ public class npc : MonoBehaviour
             }
 
 
+            if (buttonnum == 0 && jihoonflag == 0)
+            {
+                talksqu.SetActive(true);
+                who.text = jihoonfirst[0].Substring(0, 2);
+                content.text = jihoonfirst[0].Substring(2);
+            }
+
+
 
         }
 
@@ -1610,6 +1618,7 @@ void Start()
     {
         talksqu.SetActive(false);
         customize.sceneflag = 2;
+        customize.moveflag= 1;
         options.SetActive(false);
         button.SetActive(true);
        

@@ -95,7 +95,7 @@ public class npc : MonoBehaviour
                 Vector2 pos = transform.position;
                 
                 interobj = gameObject.name;
-                Player.moveflag = 0;
+               
                 talksqu.SetActive(true);
                 options.SetActive(true);
                 option3_bt.SetActive(false);
@@ -165,6 +165,7 @@ public class npc : MonoBehaviour
             who.text = "player";
             content.text = "이동하자.";
             SceneManager.LoadScene("1호선승강장_종로");
+            //Player.playertrans(0f, 1351f);
         }
 
         if (interobj == "계단_우측중앙")
@@ -173,6 +174,7 @@ public class npc : MonoBehaviour
             who.text = "player";
             content.text = "이동하자.";
             SceneManager.LoadScene("jongro_B2");
+          
         }
         if (interobj=="델리만쥬 가게")
         {
@@ -975,6 +977,23 @@ public class npc : MonoBehaviour
             }
 
 
+
+        }
+        if (interobj == "계단_좌측상단" || interobj == "계단_좌측하단" || interobj == "계단_우측중앙")
+        {
+            talksqu.SetActive(false);
+            buttonnum = 0;
+            interobj = null;
+            option1.text = "";
+            option2.text = "";
+            content.text = "";
+            if (option3_bt != null && option3_bt.activeSelf)
+            {
+                if (option3 != null)
+                {
+                    option3.text = "";
+                }
+            }
 
         }
 

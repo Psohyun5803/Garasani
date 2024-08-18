@@ -2,17 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class platerState : MonoBehaviour
+public class playerState : MonoBehaviour
 {
-
-    public static platerState instance;
-
+    public static playerState instance;
     public bool isTired; //피로이상 상태 
-
 
     public void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }

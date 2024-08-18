@@ -13,6 +13,8 @@ TagManager:
   - sns_prol
   - sns_ch1
   - jeongmin
+  - line3
+  - line4
   layers:
   - Default
   - TransparentFX

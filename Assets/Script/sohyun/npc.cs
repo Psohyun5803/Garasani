@@ -43,7 +43,8 @@ public class npc : MonoBehaviour
     public static int glassinter = 0; //한 번 노인에게 안경을 가져다 줬으면 
     public static int sibiinter = 0;
     public static int jobinter = 0;
-   
+    public static int gointer = 0;
+
     public static string interobj;
     public static string presentcol;
     public static int buttonnum = 0;
@@ -64,6 +65,7 @@ public class npc : MonoBehaviour
     string[] godcontent = new string[8] { "여러분. 저희 예수님께서는 나 하나를 위해\n 십자가에 못이 박혀 돌아가시고....","정민씨", "예에,당연히! 진짜 아니겠습니까. 하나님께서 보우하사....", "PL그거 진짜에요? 아닌 거 같은데....", "정민(안색이 파래졌다)", "PL그럼 저 지옥...", "정민하하,죄송합니다.", "....." };
     string[] jihooninter = new string[8] { "PL육회 좋아해?", "지훈....???", "PL아직 어려서 모르나...", "지훈이거....", "PL지훈이 어머니께서 남기신 편지같다.","정민자, 이거 먹고 기운내.","지훈(우물우물)","정민헤헤, 맛있지? 저기 저 착한 사람이 사준거야." };
     string[] jungmininter = new string[3] { "정민그래요?? 세상 좋아졌네...", "정민육회 먹고 싶다. 츄릅", "정민앗, 정말 안 주셔도 되는데, 냠냠"};
+    private Vector2 pos;
     //string[] jihoonfirst = new string[] = {"정민어, 안녕?","지훈으아아아아아앙!!","정민엄마랑 아빠는 어디가셨어?","지훈몰라...엄마아아...","지훈엄마가 안 보여... 끅....","정민미아같은데...어떡할까요?","선1이름을 물어본다","선2먹을 것을 건넨다")
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -74,8 +76,20 @@ public class npc : MonoBehaviour
         {
             playercolflag = 1;
             presentcol = gameObject.name;
-            if(gameObject.name=="개찰구")
-            { Player.moveflag = 0; }
+            if (gameObject.name == "개찰구" && gointer == 0)
+            {
+                Vector2 pos = transform.position;
+                interobj = "개찰구";
+                Player.moveflag = 0;
+                talksqu.SetActive(true);
+                options.SetActive(true);
+                option3_bt.SetActive(false);
+                button.SetActive(false);
+                who.text = "player";
+                content.text = "이동할까?";
+                option1.text = "> 태그를 찍는다.";
+                option2.text = "> 태그를 찍지 않는다.";
+            }
             
         }
         
@@ -120,7 +134,14 @@ public class npc : MonoBehaviour
         }
 
 
-
+        if (interobj=="개찰구")
+        {
+            Player.moveflag = 1;
+            button.SetActive(true);
+            who.text = "player";
+            content.text = "이동하자.";
+            gointer = 1;
+        }
         if (interobj=="델리만쥬 가게")
         {
             if(manjufirst!=1)
@@ -390,6 +411,18 @@ public class npc : MonoBehaviour
             content.text = "카세트 32를 구입했다.";
             button.SetActive(true);
             buttonnum = 10;
+
+
+
+        }
+        if (interobj == "개찰구")
+        {
+            Player.playertrans(pos.x+1,pos.y);
+            who.text = "player";
+            content.text = "조금 더 있다 출발할까...";
+            Player.moveflag = 1;
+            button.SetActive(true);
+        
 
 
 
@@ -892,7 +925,31 @@ public class npc : MonoBehaviour
 
 
         }
-        if(interobj=="잡상인")
+
+        if (interobj == "개찰구")
+        {
+
+
+
+
+            talksqu.SetActive(false);
+            buttonnum = 0;
+            interobj = null;
+            option1.text = "";
+            option2.text = "";
+            content.text = "";
+            if (option3_bt != null && option3_bt.activeSelf)
+            {
+                if (option3 != null)
+                {
+                    option3.text = "";
+                }
+            }
+
+
+
+        }
+        if (interobj=="잡상인")
         {
             if(buttonnum>9)
             {

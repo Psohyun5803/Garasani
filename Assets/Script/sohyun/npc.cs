@@ -233,6 +233,7 @@ public class npc : MonoBehaviour
             content.text = "같이가자! 엄마 찾아줄게.";
             button.SetActive(true);
             buttonnum = 15;
+            jihoon.jihoonmove = 1;
         }
         options.SetActive(false);
        
@@ -392,6 +393,7 @@ public class npc : MonoBehaviour
             content.text = "....형이랑 같이가자. 엄마 찾아줄게!";
             buttonnum = 15;
             button.SetActive(true);
+            jihoon.jihoonmove = 1;
         }
         options.SetActive(false);
     }

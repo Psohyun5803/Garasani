@@ -157,9 +157,17 @@ public class inSubway_1 : MonoBehaviour
         blackPanel.SetActive(true);
         contextList = DataManager.instance.GetDialogue(37, 37);
         yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-        inSubway_0.instance.dialogueID = 18;
+        inSubway_0.instance.dialogueID = 19;
         inSubway_0.instance.ui_dialogue.SetActive(false);
         blackPanel.SetActive(false);
+
+        //씬 전환 전 객체 삭제 
+        if (JMevent.instance != null)
+        {
+            Destroy(JMevent.instance.gameObject);
+            JMevent.instance = null;
+            Debug.Log("객체 삭제");
+        }
         SceneManager.LoadScene("Chungmuro_B2"); //지하 2층 계단 이동 
     }
 

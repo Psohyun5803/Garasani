@@ -47,7 +47,7 @@ public class tutorialscript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       talksqu.SetActive(true);
+        talksqu.SetActive(true);
         investicon.SetActive(false);
         moveicon.SetActive(false);
         dashicon.SetActive(false);

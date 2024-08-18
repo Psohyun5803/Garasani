@@ -5,7 +5,8 @@ using UnityEngine;
 public class Wiki_Chungmuro : MonoBehaviour
 {
     public GameObject ui_Wiki;
-    
+    public bool checkWiki = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,8 @@ public class Wiki_Chungmuro : MonoBehaviour
     {
         if (ui_Wiki.activeSelf)
         {
-            Chungmuro_B3.instance.checkWiki = true;
+            checkWiki = true;
+            Debug.Log("check wiki " + checkWiki);
         }
     }
 }

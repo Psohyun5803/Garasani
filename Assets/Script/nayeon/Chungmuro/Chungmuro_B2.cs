@@ -5,19 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class Chungmuro_B2 : MonoBehaviour
 {
+    public static Chungmuro_B2 instance;
     public Dialogue[] contextList;
-    public bool line4 = false;
-    public bool line3 = false;
+    
 
     public GameObject sign; //표지판
-    //public GameObject Jeongmin;
+    public bool canMove = false; //대화 끝나야 다른 층 이동 가능
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     public IEnumerator ChungmuroB2_1()
     {
+        Debug.Log(inSubway_0.instance.dialogueID);
         DialogueManager.instance.ui_dialogue.SetActive(true);
 
-        while (inSubway_0.instance.dialogueID < 24)
+        while (inSubway_0.instance.dialogueID < 25)
         {
             switch (inSubway_0.instance.dialogueID)
             {
@@ -30,12 +38,12 @@ public class Chungmuro_B2 : MonoBehaviour
                     if (DialogueManager.instance.chooseFlag == 1)
                     {
                         inSubway_0.instance.dialogueID = 20;
-                        line4 = true; //4호선 선택
+                        
                     }
                     else if (DialogueManager.instance.chooseFlag == 2)
                     {
                         inSubway_0.instance.dialogueID = 21;
-                        line3 = true; //3호선 선택 
+          
                     } 
                     DialogueManager.instance.chooseFlag = 0;
                     break;
@@ -44,13 +52,13 @@ public class Chungmuro_B2 : MonoBehaviour
                 case (20):
                     contextList = DataManager.instance.GetDialogue(40,40);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    inSubway_0.instance.dialogueID = 21;
+                    inSubway_0.instance.dialogueID = 22;
                     break;
 
                 case (21):
                     contextList = DataManager.instance.GetDialogue(41, 41);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    inSubway_0.instance.dialogueID = 21;
+                    inSubway_0.instance.dialogueID = 22;
                     break;
 
                 case (22):
@@ -68,7 +76,7 @@ public class Chungmuro_B2 : MonoBehaviour
                 case (23):
                     contextList = DataManager.instance.GetDialogue(44, 44);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    inSubway_0.instance.dialogueID = 24;
+                    inSubway_0.instance.dialogueID = 25;
                     break;
 
                 case (24):
@@ -85,67 +93,29 @@ public class Chungmuro_B2 : MonoBehaviour
         }
 
         DialogueManager.instance.ui_dialogue.SetActive(false);
-
-        if (line4 == true)
-            ChooseLine4();
-        else if (line3 == true)
-            ChooseLine3();
+        canMove = true;
+        
     }
 
-    public void ChooseLine4()
-    {
-        //4호선 승강장으로 다시 이동
-        Debug.Log("4호선 승강장 이동");
-        SceneManager.LoadScene("4_Chungmuro_B3");
-    }
-
-    public void ChooseLine3()
-    {
-        //3호선 승강장 이동 
-        Debug.Log("3호선 승강장 이동");
-        SceneManager.LoadScene("3_Chungmuro_B3");
-    }
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        //플레이어 이동 설정 
         customize.sceneflag = 4;
         customize.moveflag = 1;
-        InitializeScene();
 
+        //플레이어 위치 설정 
         Vector3 signPosition = sign.transform.position;
         GameObject playerObject = GameObject.FindWithTag("Player");
         if(playerObject != null)
         {
-            playerObject.transform.position = new Vector3(signPosition.x -1, signPosition.y, signPosition.z);
+            playerObject.transform.position = new Vector3(signPosition.x, signPosition.y-3, signPosition.z);
         }
-        //if (playerObject != null)
-        //{
-        //    playerObject.transform.position = new Vector3(signPosition.x - 3, signPosition.y - 3, signPosition.z);
 
-        //    // 플레이어의 방향을 정면으로 설정
-        //    Player playerScript = playerObject.GetComponent<Player>();
-
-        //    if (playerScript != null)
-        //    {
-        //        playerScript.frontflag = 1;
-        //        playerScript.leftflag = 0;
-        //        playerScript.rightflag = 0;
-        //        playerScript.backflag = 0;
-
-        //        // 정면 이미지 설정
-        //        playerScript.StopAllCoroutines();  // 이전 코루틴 정지
-        //        playerScript.StartCoroutine(playerScript.breathfront());  // 정면을 향한 코루틴 시작
-        //    }
-        //}
-
-        // Jeongmin 오브젝트의 위치 변경
-        //GameObject jeongmin = GameObject.FindWithTag("jeongmin");
-        //if (jeongmin != null)
-        //{
-        //    jeongmin.transform.position = new Vector3(signPosition.x + 3, signPosition.y - 3, signPosition.z);
-        //}
-        StartCoroutine(ChungmuroB2_1());
+        DataManager.instance.csv_FileName = "Prologue2";
+        DataManager.instance.DialogueLoad(); // CSV 파일 로드
 
     }
 

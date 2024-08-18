@@ -126,11 +126,7 @@ public class Chungmuro_B3 : MonoBehaviour
   
     void Start()
     {
-        //위치 재조정 
-        Vector3 newposition = screenDoor.transform.position;
-        Player.playertrans(newposition.x, newposition.y - 5);
-        Vector3 jmPosition = new Vector3(targetAnimatorObject.transform.position.x + 5, targetAnimatorObject.transform.position.y -5, targetAnimatorObject.transform.position.z);
-        targetAnimatorObject.transform.position = jmPosition;
+        
 
     }
 

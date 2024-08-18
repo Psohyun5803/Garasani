@@ -13,17 +13,27 @@ public class JMevent : MonoBehaviour
     public bool hammerDialogue;
 
     void Awake()
-    {
-        if (instance == null)
+    { 
+        if (instance != null)
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject); // 인스턴스를 유지
-            Debug.Log("Prolog2_Item 인스턴스 생성됨: " + GetInstanceID());
+            Destroy(gameObject);
+            Debug.Log("기존 인스턴스 파괴1 " + instance.GetInstanceID());
+            gameObject.SetActive(false);
+
+            // 기존 인스턴스가 있다면, 새로운 인스턴스는 파괴
+            if (instance != this)
+            {
+                Destroy(gameObject);
+                Debug.Log("기존 인스턴스 파괴2 " + instance.GetInstanceID());
+                gameObject.SetActive(false);
+            }
         }
         else
         {
-            Debug.Log("기존 인스턴스 사용: " + instance.GetInstanceID());
-            Destroy(gameObject); // 새로운 인스턴스가 생기지 않도록 파괴
+            // 새 인스턴스가 없다면, 현재 인스턴스를 저장하고 씬 전환 시에도 유지
+            instance = this;
+            Debug.Log("새 인스턴스 생성 " + GetInstanceID());
+            DontDestroyOnLoad(gameObject);
         }
 
     }

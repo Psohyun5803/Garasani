@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class jihoon : MonoBehaviour
+public class jihoon_B2 : MonoBehaviour
 {
     public static int jihoonmove = 0;
+
+   
+    int interjihoon1 = 0;
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +18,7 @@ public class jihoon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null&&jihoonmove==1)
         {
@@ -23,5 +28,9 @@ public class jihoon : MonoBehaviour
 
 
         }
+    }
+    void OnMouseDown()
+    {
+        
     }
 }

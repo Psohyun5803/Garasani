@@ -756,6 +756,7 @@ public class npc : MonoBehaviour
                     interobj = null;
                     content.text = "";
                     manjufirst = 1;
+                    buttonnum = 0;
 
                 }
                 else if(manjufirst==0&&buttonnum==0)
@@ -833,15 +834,27 @@ public class npc : MonoBehaviour
                                 option3.text = "";
                             }
                         }
+                        buttonnum = 0;
                     }
-                    if(buttonnum==1)
+                    else if(buttonnum==1)
                     {
+                        buttonnum++;
                         who.text = "정민";
                         content.text = "말랑하고 쫀득하고 고소한 커스타드의 향기를...";
-                        buttonnum++;
+                        //buttonnum++;
                     }
-                    if(buttonnum==0)
+                    else if(buttonnum==0)
                     {
+                        option1.text = "";
+                        option2.text = "";
+                        content.text = "";
+                        if (option3_bt != null && option3_bt.activeSelf)
+                        {
+                            if (option3 != null)
+                            {
+                                option3.text = "";
+                            }
+                        }
                         who.text = "정민";
                         content.text = "아니! 지하철에서 만쥬를 뿌리치고 가다니...!";
                         buttonnum++;
@@ -1876,7 +1889,8 @@ void Start()
     // Update is called once per frame
     void Update()
     {
-        
+
+        Debug.Log(buttonnum);
         if(who.text!="player")
         {
             content.alignment = TextAlignmentOptions.Right;

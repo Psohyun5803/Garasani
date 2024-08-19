@@ -464,7 +464,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2059211397}
         m_TargetAssemblyTypeName: npc, Assembly-CSharp
-        m_MethodName: buttondown
+        m_MethodName: option6down
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -686,7 +686,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2059211397}
         m_TargetAssemblyTypeName: npc, Assembly-CSharp
-        m_MethodName: buttondown
+        m_MethodName: option3down
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1017,6 +1017,9 @@ GameObject:
   m_Component:
   - component: {fileID: 244394319}
   - component: {fileID: 244394320}
+  - component: {fileID: 244394323}
+  - component: {fileID: 244394322}
+  - component: {fileID: 244394321}
   m_Layer: 0
   m_Name: "[\uACC4\uB2E8]_\uC0C1\uB2E8"
   m_TagString: Untagged
@@ -1091,6 +1094,106 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &244394321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244394318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: {fileID: 2059440495}
+  talksqu: {fileID: 1656478984}
+  button: {fileID: 1231207033}
+  who: {fileID: 472635185}
+  option1: {fileID: 330644260}
+  option2: {fileID: 466079651}
+  option3: {fileID: 181275927}
+  option4: {fileID: 793805909}
+  option5: {fileID: 1365576931}
+  option6: {fileID: 181241868}
+  options: {fileID: 806902609}
+  option3_bt: {fileID: 181275923}
+  option4_bt: {fileID: 793805905}
+  option5_bt: {fileID: 1365576927}
+  option6_bt: {fileID: 181241864}
+  playercolflag: 0
+--- !u!50 &244394322
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244394318}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
+--- !u!61 &244394323
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244394318}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.84, y: 4.02}
+    newSize: {x: 3.84, y: 4.02}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.84, y: 4.02}
+  m_EdgeRadius: 0
 --- !u!1 &252630015
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,7 +1445,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2059211397}
         m_TargetAssemblyTypeName: npc, Assembly-CSharp
-        m_MethodName: buttondown
+        m_MethodName: option1down
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1545,7 +1648,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2059211397}
         m_TargetAssemblyTypeName: npc, Assembly-CSharp
-        m_MethodName: buttondown
+        m_MethodName: option2down
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1868,6 +1971,9 @@ GameObject:
   m_Component:
   - component: {fileID: 574583754}
   - component: {fileID: 574583755}
+  - component: {fileID: 574583758}
+  - component: {fileID: 574583757}
+  - component: {fileID: 574583756}
   m_Layer: 0
   m_Name: "[\uACC4\uB2E8]_\uD558\uB2E8"
   m_TagString: Untagged
@@ -1942,6 +2048,106 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &574583756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574583753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  content: {fileID: 2059440495}
+  talksqu: {fileID: 1656478984}
+  button: {fileID: 1231207033}
+  who: {fileID: 472635185}
+  option1: {fileID: 330644260}
+  option2: {fileID: 466079651}
+  option3: {fileID: 181275927}
+  option4: {fileID: 793805909}
+  option5: {fileID: 1365576931}
+  option6: {fileID: 181241868}
+  options: {fileID: 806902609}
+  option3_bt: {fileID: 181275923}
+  option4_bt: {fileID: 793805905}
+  option5_bt: {fileID: 1365576927}
+  option6_bt: {fileID: 181241864}
+  playercolflag: 0
+--- !u!61 &574583757
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574583753}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.84, y: 4.02}
+    newSize: {x: 3.84, y: 4.02}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.84, y: 4.02}
+  m_EdgeRadius: 0
+--- !u!50 &574583758
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574583753}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &649396087
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,7 +2619,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2059211397}
         m_TargetAssemblyTypeName: npc, Assembly-CSharp
-        m_MethodName: buttondown
+        m_MethodName: option4down
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3235,7 +3441,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2059211397}
         m_TargetAssemblyTypeName: npc, Assembly-CSharp
-        m_MethodName: buttondown
+        m_MethodName: option5down
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

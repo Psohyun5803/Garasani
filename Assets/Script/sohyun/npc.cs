@@ -44,7 +44,10 @@ public class npc : MonoBehaviour
     public static int sibiinter = 0;
     public static int jobinter = 0;
     public static int gointer = 0;
-
+    public static int B2toB1 = 0;
+    public static int B2to3 = 0;
+    public static int B1toB2 = 0;
+    public static int S3toB2 = 0;
     public static string interobj;
     public static string presentcol;
     public static int buttonnum = 0;
@@ -90,7 +93,7 @@ public class npc : MonoBehaviour
                 option1.text = "> 태그를 찍는다.";
                 option2.text = "> 태그를 찍지 않는다.";
             }
-            if (gameObject.name == "계단_좌측상단"|| gameObject.name == "계단_좌측하단" || gameObject.name == "계단_우측중앙")
+            if (gameObject.name == "계단_좌측상단"|| gameObject.name == "계단_좌측하단" || gameObject.name == "계단_우측중앙"|| gameObject.name == "[계단]_상단" || gameObject.name == "[계단]_하단"|| gameObject.name == "3호선승강장계단")
             {
                 Vector2 pos = transform.position;
                 
@@ -102,8 +105,8 @@ public class npc : MonoBehaviour
                 button.SetActive(false);
                 who.text = "player";
                 content.text = "이동할까?";
-                option1.text = "> 내려간다";
-                option2.text = "> 내려가지 않는다.";
+                option1.text = "> 이동한다";
+                option2.text = "> 이동하지 않는다.";
             }
 
         }
@@ -153,8 +156,7 @@ public class npc : MonoBehaviour
         {
             Player.moveflag = 1;
             button.SetActive(true);
-            who.text = "player";
-            content.text = "이동하자.";
+           
             gointer = 1;
         }
 
@@ -162,17 +164,38 @@ public class npc : MonoBehaviour
         if (interobj == "계단_좌측상단"||interobj=="계단_좌측하단")
         {
             button.SetActive(true);
-            who.text = "player";
-            content.text = "이동하자.";
+          
             SceneManager.LoadScene("1호선승강장_종로");
             //Player.playertrans(0f, 1351f);
         }
+        if (interobj == "[계단]_상단")
+        {
+            Debug.Log("작동햇음");
+            button.SetActive(true);
+            B2toB1 = 1;
+            SceneManager.LoadScene("jongro_B1");
+            //Player.playertrans(0f, 1351f);
+        }
 
+        if (interobj == "[계단]_하단")
+        {
+            button.SetActive(true);
+            B2to3 = 1;
+            SceneManager.LoadScene("3호선승강장_종로");
+            //Player.playertrans(0f, 1351f);
+        }
+        if (interobj == "3호선승강장계단")
+        {
+            button.SetActive(true);
+            S3toB2 = 1;
+            SceneManager.LoadScene("jongro_B2");
+            //Player.playertrans(0f, 1351f);
+        }
         if (interobj == "계단_우측중앙")
         {
             button.SetActive(true);
-            who.text = "player";
-            content.text = "이동하자.";
+
+            B1toB2 = 1;
             SceneManager.LoadScene("jongro_B2");
           
         }
@@ -371,7 +394,7 @@ public class npc : MonoBehaviour
 
 
         }
-        if (interobj == "계단_좌측상단" || interobj == "계단_좌측하단"||interobj=="계단_우측중앙")
+        if (interobj == "계단_좌측상단" || interobj == "계단_좌측하단"||interobj=="계단_우측중앙" || interobj=="[계단]_상단" || interobj=="[계단]_하단" || gameObject.name == "3호선승강장계단")
         {
             button.SetActive(true);
             who.text = "player";
@@ -979,7 +1002,7 @@ public class npc : MonoBehaviour
 
 
         }
-        if (interobj == "계단_좌측상단" || interobj == "계단_좌측하단" || interobj == "계단_우측중앙")
+        if (interobj == "계단_좌측상단" || interobj == "계단_좌측하단" || interobj == "계단_우측중앙" || interobj == "[계단]_상단" || interobj == "[계단]_하단" || gameObject.name == "3호선승강장계단")
         {
             talksqu.SetActive(false);
             buttonnum = 0;

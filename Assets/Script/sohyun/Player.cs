@@ -122,9 +122,29 @@ public class Player : MonoBehaviour
         }
 
 
+        // 플레이어가 상태 이상이 아닐 때만 대쉬 사용
+        if (!playerState.instance.isTired)
+        {
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            {
+                // 시프트 키를 누르고 있을 때 속도 증가
+                currentSpeed = Speed * 1.5f;
+            }
+            else
+            {
+                // 시프트 키를 떼면 원래 속도로 복원
+                currentSpeed = Speed;
+            }
+        }
+        else
+        {
+            // 플레이어가 피로 상태일 때는 기본 속도로 설정
+            currentSpeed = Speed;
+        }
 
 
-  
+
+
 
 
     }
@@ -136,6 +156,8 @@ public class Player : MonoBehaviour
         Debug.Log("??'");
     }
     private float Speed = 0.82f;//0.42f
+    private float currentSpeed; //현재 스피드 
+    
     //[SerializeField] LayerMask layermask;
     public float distance;
 

@@ -48,11 +48,13 @@ public class npc : MonoBehaviour
     public static int B2to3 = 0;
     public static int B1toB2 = 0;
     public static int S3toB2 = 0;
+    public static int B1toS1 = 0;
     public static string interobj;
     public static string presentcol;
     public static int buttonnum = 0;
+    public static int station1 = 0;
 
-   
+
 
 
     public int playercolflag = 0;
@@ -108,6 +110,18 @@ public class npc : MonoBehaviour
                 option1.text = "> 이동한다";
                 option2.text = "> 이동하지 않는다.";
             }
+            if (gameObject.name == "1호선계단")
+            {
+                interobj = gameObject.name;
+                talksqu.SetActive(true);
+                options.SetActive(false);
+                option3_bt.SetActive(false);
+                button.SetActive(true);
+                who.text = "player";
+                content.text = "열차를 타야할 것 같다.";
+            }
+               
+            
 
         }
         
@@ -164,7 +178,7 @@ public class npc : MonoBehaviour
         if (interobj == "계단_좌측상단"||interobj=="계단_좌측하단")
         {
             button.SetActive(true);
-          
+            B1toS1 = 1;
             SceneManager.LoadScene("1호선승강장_종로");
             //Player.playertrans(0f, 1351f);
         }
@@ -804,7 +818,17 @@ public class npc : MonoBehaviour
     
     public void buttondown()
     {
-         Debug.Log("작동함" + buttonnum);
+
+        if(interobj=="1호선계단")
+        {
+            
+            talksqu.SetActive(false);
+            //buttonnum = 0;
+            interobj = null;
+            content.text = "";
+        
+            buttonnum = 0;
+        }
         if (interobj=="델리만쥬 가게")
         {
           
@@ -1960,11 +1984,18 @@ public class npc : MonoBehaviour
 // Start is called before the first frame update
 void Start()
     {
-        talksqu.SetActive(false);
+        if(station1!=1)
+        {
+            talksqu.SetActive(false);
+            options.SetActive(false);
+            button.SetActive(true);
+
+        }
+       
         customize.sceneflag = 2;
         customize.moveflag= 1;
-        options.SetActive(false);
-        button.SetActive(true);
+       
+        
        
     }
 
@@ -1972,7 +2003,7 @@ void Start()
     void Update()
     {
 
-       
+        
         if(who.text!="player")
         {
             content.alignment = TextAlignmentOptions.Right;

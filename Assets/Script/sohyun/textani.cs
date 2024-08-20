@@ -4,7 +4,8 @@ using System.Collections;
 
 public class textani : MonoBehaviour
 {
-    
+  
+
         public TMP_Text tmpText;
         public float delay = 0.1f;
         private string fullText;
@@ -13,9 +14,12 @@ public class textani : MonoBehaviour
         void Start()
         {
             fullText = tmpText.text;
+            Debug.Log(fullText);
             tmpText.text = "";
             StartCoroutine(ShowText());
         }
+
+       
         public void textanimation()
         {
             fullText = tmpText.text;
@@ -31,5 +35,7 @@ public class textani : MonoBehaviour
                 yield return new WaitForSeconds(delay);
             }
         }
+
     
+
 }

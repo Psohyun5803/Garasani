@@ -14,7 +14,7 @@ public class Chungmuro_B1 : MonoBehaviour
     public Transform stopPoint2;  // 두 번째 멈추는 지점 (왼쪽으로 이동, 최종 목적지)
     public float speed = 3f;
 
-    public GameObject callWarning; 
+    
 
     private void Awake()
     {

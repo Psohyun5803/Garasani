@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 
+
 [System.Serializable]
 public struct Item
 {
@@ -21,19 +22,34 @@ public struct Slot
 
 public class Inventory : MonoBehaviour
 {
-    public Item[] items = new Item[6];
-    public Slot[] slots = new Slot[5];
+    public Item[] items = new Item[14];
+    public Slot[] slots = new Slot[20];
+
+
+    public DoubleClickToggleButton toggleButton;
 
     void Start()
     {
-        items[0] = new Item { name = "예1", info = "예시1" };
-        items[1] = new Item { name = "예2", info = "예시2" };
-        items[2] = new Item { name = "예3", info = "예시3" };
-        items[3] = new Item { name = "예4", info = "예시4" };
-        items[4] = new Item { name = "예5", info = "예시5" };
-        items[5] = new Item { name = "예6", info = "예시6" };
+       
 
-        // 초기화 시 슬롯의 아이템 이름을 빈 문자열로 설정
+        //??? ?? ??? 
+        items[0] = new Item { name = "????", info = "???" };
+        items[1] = new Item { name = "???", info = "????? ???? ?? ?" };
+        items[2] = new Item { name = "??? ??", info = "????? ???? ?? ?" };
+        items[3] = new Item { name = "???", info = "??? ???. ?? ??? ??? ??." };
+        items[4] = new Item { name = "??", info = "??? ??. ?? ??? ??? ??.)" };
+        items[5] = new Item { name = "?", info = "??? ??? ??? ??" };
+        items[6] = new Item { name = "????", info = "??? ????. ???? ?? ??? ??? ??." };
+        items[7] = new Item { name = "???", info = "????? ??? ???. ??? ??? ??? ?? ." };
+        items[8] = new Item { name = "???", info = "??? ????? ?? ???." };
+        items[9] = new Item { name = "???? ???", info = "?????? ? ??? ???." };
+        items[10] = new Item { name = "??", info = "?????? ? ??." };
+        items[11] = new Item { name = "? ???", info = "?????? ? ??." };
+        items[12] = new Item { name = "???", info = "?????? ? ???. ????? ????." };
+        items[13] = new Item { name = "???? ???", info = "?????? ? ??? ???." };
+
+
+        // ?? ?? ??? 
         for (int i = 0; i < slots.Length; i++)
         {
             slots[i].itemName = "";
@@ -49,20 +65,21 @@ public class Inventory : MonoBehaviour
     {
         bool itemAdded = false;
 
-        // 이미 있는 아이템인지 확인
+        // ??? ?? ??? ??? ?? 
         for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i].itemName == newItemName)
             {
                 slots[i].quantity++;
                 slots[i].quantityText.text = slots[i].quantity.ToString();
-                Debug.Log($"슬롯 {i + 1}: {newItemName} (수량: {slots[i].quantity})");
+                Debug.Log($"?? ??? ?? ?? ??" + slots[i].quantity);
+                toggleButton.UpdateQuantity(slots[i].quantity);
                 itemAdded = true;
                 break;
             }
         }
 
-        // 새로운 아이템이면 빈 슬롯에 추가
+        // ? ??? ??? ??? ??
         if (!itemAdded)
         {
             for (int i = 0; i < slots.Length; i++)
@@ -75,7 +92,8 @@ public class Inventory : MonoBehaviour
                     slots[i].itemText.text = newItemName;
                     slots[i].quantityText.text = "1";
                     slots[i].itemInfoText.text = newItemInfo;
-                    Debug.Log($"슬롯 {i + 1}: {newItemName} (수량: 1)");
+                    toggleButton.UpdateQuantity(slots[i].quantity);
+                    Debug.Log("?? ? ??? ??" + slots[i].itemName);
                     break;
                 }
             }

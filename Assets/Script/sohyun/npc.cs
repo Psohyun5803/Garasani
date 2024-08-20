@@ -49,6 +49,9 @@ public class npc : MonoBehaviour
     public static int B1toB2 = 0;
     public static int S3toB2 = 0;
     public static int B1toS1 = 0;
+    public static int T1toT2 = 0;
+    public static int T2toT1 = 0;
+  
 
     public static int saiflag = 0;
     public static int saigo = 0;
@@ -106,6 +109,7 @@ public class npc : MonoBehaviour
                 interobj = gameObject.name;
                 if(train1_1.possibletogo==1)
                 {
+                    T1toT2 = 1;
                     SceneManager.LoadScene("1호선내부2");
 
                 }
@@ -122,6 +126,19 @@ public class npc : MonoBehaviour
                 
                 
                
+            }
+            if (gameObject.name == "1호선문2")
+            {
+                interobj = gameObject.name;
+               
+                 T2toT1 = 1;
+                 SceneManager.LoadScene("1호선내부1");
+
+                
+               
+
+
+
             }
             if (gameObject.name == "계단_좌측상단"|| gameObject.name == "계단_좌측하단" || gameObject.name == "계단_우측중앙"|| gameObject.name == "[계단]_상단" || gameObject.name == "[계단]_하단"|| gameObject.name == "3호선승강장계단")
             {

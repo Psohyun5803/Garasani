@@ -49,6 +49,11 @@ public class npc : MonoBehaviour
     public static int B1toB2 = 0;
     public static int S3toB2 = 0;
     public static int B1toS1 = 0;
+
+    public static int saiflag = 0;
+    public static int saigo = 0;
+    public static int angflag= 0;
+    public static int jobflag = 0;
     public static string interobj;
     public static string presentcol;
     public static int buttonnum = 0;
@@ -94,6 +99,29 @@ public class npc : MonoBehaviour
                 content.text = "이동할까?";
                 option1.text = "> 태그를 찍는다.";
                 option2.text = "> 태그를 찍지 않는다.";
+            }
+
+            if (gameObject.name == "1호선문1")
+            {
+                interobj = gameObject.name;
+                if(train1_1.possibletogo==1)
+                {
+                    SceneManager.LoadScene("1호선내부2");
+
+                }
+                else
+                {
+                    talksqu.SetActive(true);
+                    options.SetActive(false);
+                  
+                    button.SetActive(true);
+                    who.text = "player";
+                    content.text = "문이 열리지 않는다";
+                  
+                }
+                
+                
+               
             }
             if (gameObject.name == "계단_좌측상단"|| gameObject.name == "계단_좌측하단" || gameObject.name == "계단_우측중앙"|| gameObject.name == "[계단]_상단" || gameObject.name == "[계단]_하단"|| gameObject.name == "3호선승강장계단")
             {
@@ -439,6 +467,7 @@ public class npc : MonoBehaviour
           
             who.text = "사이비";
             content.text = "(유유히 옆 칸으로 사라진다)";
+            saigo = 1;
             /*if(gameObject.name== "사이비")
             {
                 Debug.Log("사이비 비활성화 코드");
@@ -819,7 +848,8 @@ public class npc : MonoBehaviour
     public void buttondown()
     {
 
-        if(interobj=="1호선계단")
+        
+        if(interobj=="1호선계단"||interobj=="1호선문1")
         {
             
             talksqu.SetActive(false);
@@ -1076,6 +1106,7 @@ public class npc : MonoBehaviour
                 buttonnum = 0;
                 content.text = "";
                 interobj = null;
+                jobflag = 1;
             }
             else
             {
@@ -1086,6 +1117,7 @@ public class npc : MonoBehaviour
                     buttonnum = 0;
                     interobj = null;
                     content.text = "";
+                    jobflag = 1;
                 }
                 if (jobcontent[buttonnum].Substring(0, 2) == "지훈")
                 {
@@ -1295,6 +1327,7 @@ public class npc : MonoBehaviour
                 buttonnum = 0;
                 interobj = null;
                 content.text = "";
+                saiflag = 1;
             }
            
             if(optnum==1)
@@ -1305,6 +1338,7 @@ public class npc : MonoBehaviour
                     buttonnum = 0;
                     interobj = null;
                     content.text = "";
+                    saiflag = 1;
                 }
                 if (godcontent[buttonnum].Substring(0,2)=="정민")
                 {
@@ -1324,10 +1358,13 @@ public class npc : MonoBehaviour
             {
                 if(buttonnum>7)
                 {
+                    buttonnum = 0;
                     talksqu.SetActive(false);
                     buttonnum = 0;
                     content.text = "";
                     interobj = null;
+                    saigo = 1;
+                    buttonnum = 0;
                 }
                 if (godcontent[buttonnum].Substring(0, 2) == "PL")
                 {
@@ -1474,6 +1511,7 @@ public class npc : MonoBehaviour
                 buttonnum = 0;
                 content.text = "";
                 interobj = null;
+                angflag = 1;
             }
             else if (buttonnum > 9)
             {
@@ -1488,6 +1526,7 @@ public class npc : MonoBehaviour
                 buttonnum = 0;
                 interobj = null;
                 content.text = "";
+                angflag = 1;
 
 
 

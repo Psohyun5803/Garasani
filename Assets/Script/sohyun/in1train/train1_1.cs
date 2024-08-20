@@ -11,6 +11,35 @@ public class train1_1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(npc.T2toT1==1)
+        {
+            GameObject upstair = GameObject.Find("1È£¼±¹®1");
+            Debug.Log(upstair.transform.position.x);
+            Player.playertrans(upstair.transform.position.x-7, upstair.transform.position.y );
+            npc.T2toT1 = 0;
+        }
+        if (npc.saigo == 1)
+        {
+            sai.SetActive(false);
+        }
+        if (npc.jobflag == 1 && npc.saigo == 0)
+        {
+            sai.SetActive(true);
+
+        }
+        if (npc.saiflag == 1)
+        {
+            ang.SetActive(true);
+
+        }
+        if (npc.angflag == 1)
+        {
+            possibletogo = 1;
+        }
+
+    }
+    void Awake()
+    {
         sai.SetActive(false);
         ang.SetActive(false);
         job.SetActive(true);

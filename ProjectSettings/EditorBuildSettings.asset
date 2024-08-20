@@ -74,4 +74,10 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/jongro/3\uD638\uC120\uC2B9\uAC15\uC7A5_\uC885\uB85C.unity"
     guid: 6cc3ab15788637e43bf0879f1450f497
+  - enabled: 1
+    path: "Assets/Scenes/jongro/1\uD638\uC120\uB0B4\uBD801.unity"
+    guid: a630ac3a4797e264bbc8499f38a043c1
+  - enabled: 1
+    path: "Assets/Scenes/jongro/1\uD638\uC120\uB0B4\uBD802.unity"
+    guid: 3fcae327181cfa94fa72388bbfe11616
   m_configObjects: {}

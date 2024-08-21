@@ -163,6 +163,7 @@ public class train1_dark : MonoBehaviour
             }
         }
         optnum = 1;
+        image01.SetActive(true);
         who.text = "Á¤¹Î";
         content.text = "....";
         button.SetActive(true); 

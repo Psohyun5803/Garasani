@@ -1120,23 +1120,26 @@ public class npc : MonoBehaviour
         {
             if(buttonnum>9)
             {
-
+                buttonnum = 0;
                 talksqu.SetActive(false);
                 buttonnum = 0;
                 content.text = "";
                 interobj = null;
                 jobflag = 1;
+                buttonnum = 0;
             }
             else
             {
                 options.SetActive(false);
                 if(buttonnum>1)
                 {
+                    buttonnum = 0;
                     talksqu.SetActive(false);
                     buttonnum = 0;
                     interobj = null;
                     content.text = "";
                     jobflag = 1;
+                    buttonnum = 0;
                 }
                 if (jobcontent[buttonnum].Substring(0, 2) == "지훈")
                 {
@@ -2061,7 +2064,7 @@ void Start()
     void Update()
     {
 
-        
+      
         if(who.text!="player")
         {
             content.alignment = TextAlignmentOptions.Right;

@@ -5,24 +5,43 @@ using UnityEngine;
 public class InventoryOpener : MonoBehaviour
 {
     public GameObject inventoryWindow;
+    //public GameObject slot;
+    //public GameObject selected;
+    //public GameObject status;
+
+    public bool isEPressed = false;
 
     void Start()
     {
         inventoryWindow.SetActive(false);
+        //slot.SetActive(false);
+        //selected.SetActive(false);
+        //status.SetActive(false);
     }
 
     void Update()
     {
+        // E ?? ??? ?
         if (Input.GetKeyDown(KeyCode.E))
         {
-            // 'e' 키를 누르면 인벤토리 창을 엽니다.
-            inventoryWindow.SetActive(true);
-        }
+            // ???? ?? ????? ??, ????? ??.
+            if (isEPressed)
+            {
+                inventoryWindow.SetActive(false);
+                //slot.SetActive(false);
+                //selected.SetActive(false);
+                //status.SetActive(false);
+            }
+            else
+            {
+                inventoryWindow.SetActive(true);
+                //slot.SetActive(true);
+                //selected.SetActive(true);
+                //status.SetActive(true);
+            }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            // 'escape' 키를 누르면 인벤토리 창을 닫습니다.
-            inventoryWindow.SetActive(false);
+            // ??? ?? ?????.
+            isEPressed = !isEPressed;
         }
     }
 }

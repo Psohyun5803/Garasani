@@ -18,9 +18,10 @@ public class DoubleClickToggleButton : MonoBehaviour
     public TextMeshProUGUI itemInfoText; // 장착된 아이템 설명 
     public TextMeshProUGUI itemName; // 현재 선택된 아이템 이름 
     public TextMeshProUGUI itemInfo; // 현재 선택된 아이템 설명 
-    public GameObject[] item_quantity; // 아이템 수량 관리 
+    public GameObject[] item_quantity = new GameObject[12]; //수량 ui 
 
     public static DoubleClickToggleButton instance;
+
 
     private void Awake()
     {
@@ -33,12 +34,28 @@ public class DoubleClickToggleButton : MonoBehaviour
 
     void Start()
     {
+
         button.onClick.AddListener(OnButtonClick);
-        //originalSprite = buttonImage.sprite; // ?? ?? ???? ??
-        for(int i = 0; i < 12; i++)
+
+        GameObject[] items = GameObject.FindGameObjectsWithTag("quantity");
+
+        //최대 12개 할당 
+        int maxItems = Mathf.Min(items.Length, item_quantity.Length);
+
+        for (int i = 0; i < maxItems; i++)
         {
-            item_quantity[i].SetActive(false); 
+            item_quantity[i] = items[i];
+            item_quantity[i].SetActive(false);
         }
+
+        // 만약 할당되지 않은 배열 요소가 남아있다면, null로 초기화
+        for (int i = maxItems; i < item_quantity.Length; i++)
+        {
+            item_quantity[i] = null;
+        }
+
+        //originalSprite = buttonImage.sprite;
+
     }
 
 

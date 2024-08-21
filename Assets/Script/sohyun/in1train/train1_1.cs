@@ -8,9 +8,12 @@ public class train1_1 : MonoBehaviour
     public GameObject job;
     public GameObject ang;
     public static int possibletogo = 0;
+    public static int trainflag = 0;
     // Start is called before the first frame update
     void Start()
     {
+        jihoon_B2.jihoonmove = 1;
+        trainflag = 1;
         if(npc.T2toT1==1)
         {
             GameObject upstair = GameObject.Find("1È£¼±¹®1");

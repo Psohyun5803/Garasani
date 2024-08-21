@@ -153,8 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab48251c5f6d9145b2112cd7ce962f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tmpText: {fileID: 209584095}
-  delay: 0.1
+  textDisplay: {fileID: 209584095}
+  typingSpeed: 0.05
 --- !u!4 &27655755
 Transform:
   m_ObjectHideFlags: 0
@@ -1207,8 +1207,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab48251c5f6d9145b2112cd7ce962f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tmpText: {fileID: 209584095}
-  delay: 0.1
+  textDisplay: {fileID: 0}
+  typingSpeed: 0.05
 --- !u!222 &209584097
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4861,7 +4861,7 @@ GameObject:
   - component: {fileID: 1116723577}
   - component: {fileID: 1116723576}
   - component: {fileID: 1116723575}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "\uC815\uBBFC"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5924,7 +5924,7 @@ GameObject:
   - component: {fileID: 1416439796}
   - component: {fileID: 1416439795}
   - component: {fileID: 1416439794}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: "\uC9C0\uD6C8"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

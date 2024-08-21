@@ -123,7 +123,7 @@ public class Player : MonoBehaviour
 
 
         // 플레이어가 상태 이상이 아닐 때만 대쉬 사용
-        if (!playerState.instance.isTired)
+        /*if (!playerState.instance.isTired)
         {
             if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
             {
@@ -140,7 +140,7 @@ public class Player : MonoBehaviour
         {
             // 플레이어가 피로 상태일 때는 기본 속도로 설정
             currentSpeed = Speed;
-        }
+        }*/
 
 
 

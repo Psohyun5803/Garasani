@@ -6248,7 +6248,6 @@ GameObject:
   - component: {fileID: 1327776940}
   - component: {fileID: 1327776939}
   - component: {fileID: 1327776938}
-  - component: {fileID: 1327776937}
   - component: {fileID: 1327776942}
   m_Layer: 0
   m_Name: "\uC9C0\uD6C8"
@@ -6272,21 +6271,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1991944759}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1327776937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1327776935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b22bf0d4cdaf75144898deade34ed8f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodymove:
-  - {fileID: -415487262, guid: 921e9602eb71d4d4f9c2d6302e139d57, type: 3}
-  - {fileID: 312508429, guid: 921e9602eb71d4d4f9c2d6302e139d57, type: 3}
 --- !u!114 &1327776938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6451,6 +6435,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c397b566b8747445814e0a5bbef6246, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  basebody:
+  - {fileID: -244596274, guid: 038092b96d6b2fb4992097214a31c348, type: 3}
+  - {fileID: 1963771387, guid: 038092b96d6b2fb4992097214a31c348, type: 3}
+  - {fileID: -1244303378, guid: 038092b96d6b2fb4992097214a31c348, type: 3}
+  - {fileID: -646935169, guid: 038092b96d6b2fb4992097214a31c348, type: 3}
+  - {fileID: 1914416078, guid: 038092b96d6b2fb4992097214a31c348, type: 3}
+  - {fileID: 1099081007, guid: 038092b96d6b2fb4992097214a31c348, type: 3}
+  - {fileID: -448190774, guid: 038092b96d6b2fb4992097214a31c348, type: 3}
+  - {fileID: -1107772058, guid: 038092b96d6b2fb4992097214a31c348, type: 3}
+  - {fileID: 732404201, guid: 038092b96d6b2fb4992097214a31c348, type: 3}
+  - {fileID: -686239334, guid: 038092b96d6b2fb4992097214a31c348, type: 3}
+  - {fileID: -1788116989, guid: 038092b96d6b2fb4992097214a31c348, type: 3}
+  - {fileID: 170662043, guid: 038092b96d6b2fb4992097214a31c348, type: 3}
+  - {fileID: 331582509, guid: 038092b96d6b2fb4992097214a31c348, type: 3}
+  - {fileID: -1368262828, guid: 038092b96d6b2fb4992097214a31c348, type: 3}
+  - {fileID: -1367406778, guid: 038092b96d6b2fb4992097214a31c348, type: 3}
+  - {fileID: 1891647892, guid: 038092b96d6b2fb4992097214a31c348, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  player: {fileID: 0}
+  distance: 0
 --- !u!1 &1436385746
 GameObject:
   m_ObjectHideFlags: 0

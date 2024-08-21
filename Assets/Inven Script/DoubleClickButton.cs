@@ -1,46 +1,28 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // TextMeshPro?? ???????? ???? ????
+using TMPro; // TextMeshPro¸¦ »ç¿ëÇÏ±â À§ÇØ Ãß°¡
 using System.Collections;
 
 public class DoubleClickToggleButton : MonoBehaviour
 {
-    public Button button; // UI ë²„íŠ¼
-    //public Image buttonImage; // ë²„íŠ¼ ì´ë¯¸ì§€ ì»´í¬ë„ŒíŠ¸
-    //public Sprite newSprite; // ë²„íŠ¼ì„ ë”ë¸” í´ë¦­í–ˆì„ ë•Œ ë³€ê²½ë  ì´ë¯¸ì§€
-    //private Sprite originalSprite; // ë²„íŠ¼ì˜ ì›ë˜ ì´ë¯¸ì§€
-    private int clickCount = 0; // í´ë¦­ íšŸìˆ˜ë¥¼ ì¶”ì 
-    private float clickTime = 0; // ì²« ë²ˆì§¸ í´ë¦­ì´ ë°œìƒí•œ ì‹œê°„
-    private float clickDelay = 0.5f; // ë”ë¸” í´ë¦­ ê°„ê²© (0.5ì´ˆ)
-    //private bool isOriginal = true; // í˜„ì¬ ë²„íŠ¼ ì´ë¯¸ì§€ê°€ ì›ë˜ ì´ë¯¸ì§€ì¸ì§€ ì—¬ë¶€
+    public Button button; // ¹öÆ° ÄÄÆ÷³ÍÆ®
+    public Image buttonImage; // ¹öÆ°ÀÇ ÀÌ¹ÌÁö ÄÄÆ÷³ÍÆ®
+    public Sprite newSprite; // ±³Ã¼ÇÒ »õ·Î¿î ÀÌ¹ÌÁö ½ºÇÁ¶óÀÌÆ®
+    private Sprite originalSprite; // ¿ø·¡ ÀÌ¹ÌÁö ½ºÇÁ¶óÀÌÆ®
+    private int clickCount = 0; // Å¬¸¯ È½¼ö
+    private float clickTime = 0; // Å¬¸¯ ½Ã°£
+    private float clickDelay = 0.5f; // ´õºí Å¬¸¯ °¨Áö ½Ã°£ °£°İ
+    private bool isOriginal = true; // ÇöÀç ÀÌ¹ÌÁö°¡ ¿ø·¡ ÀÌ¹ÌÁöÀÎÁö ¿©ºÎ
 
-    public TextMeshProUGUI itemNameText; // ì¥ì°©ëœ ì•„ì´í…œ ì´ë¦„ 
-    public TextMeshProUGUI itemInfoText; // ì¥ì°©ëœ ì•„ì´í…œ ì„¤ëª… 
-    public TextMeshProUGUI itemName; // í˜„ì¬ ì„ íƒëœ ì•„ì´í…œ ì´ë¦„ 
-    public TextMeshProUGUI itemInfo; // í˜„ì¬ ì„ íƒëœ ì•„ì´í…œ ì„¤ëª… 
-    public GameObject[] item_quantity; // ì•„ì´í…œ ìˆ˜ëŸ‰ ê´€ë¦¬ 
-
-    public static DoubleClickToggleButton instance;
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-    }
-
-
+    public TextMeshProUGUI itemNameText; // ¾ÆÀÌÅÛ ÀÌ¸§À» Ç¥½ÃÇÒ TextMeshProUGUI
+    public TextMeshProUGUI itemInfoText; // ¾ÆÀÌÅÛ ¼³¸íÀ» Ç¥½ÃÇÒ TextMeshProUGUI
+    public TextMeshProUGUI itemName; // ¾ÆÀÌÅÛ ÀÌ¸§
+    public TextMeshProUGUI itemInfo; // ¾ÆÀÌÅÛ ¼³¸í
     void Start()
     {
         button.onClick.AddListener(OnButtonClick);
-        //originalSprite = buttonImage.sprite; // ?? ?? ???? ??
-        for(int i = 0; i < 12; i++)
-        {
-            item_quantity[i].SetActive(false); 
-        }
+        originalSprite = buttonImage.sprite; // ¿ø·¡ ÀÌ¹ÌÁö ÀúÀå
     }
-
 
     void OnButtonClick()
     {
@@ -51,22 +33,21 @@ public class DoubleClickToggleButton : MonoBehaviour
         }
         else if (clickCount == 2 && Time.time - clickTime < clickDelay)
         {
-            //if (isOriginal)
-            //{
-            //    buttonImage.sprite = newSprite; // ?? ???? ??
-            //    Debug.Log("???? ???????.");
-            //}
-            //else
-            //{
-            //    buttonImage.sprite = originalSprite; // ?? ???? ???
-            //    Debug.Log("???? ?? ???? ???????.");
-            //}
-            //isOriginal = !isOriginal; // ??? ??? ??
+            if (isOriginal)
+            {
+                buttonImage.sprite = newSprite; // »õ·Î¿î ÀÌ¹ÌÁö·Î º¯°æ
+                Debug.Log("¹öÆ°ÀÌ ¼±ÅÃµÇ¾ú½À´Ï´Ù.");
+            }
+            else
+            {
+                buttonImage.sprite = originalSprite; // ¿ø·¡ ÀÌ¹ÌÁö·Î º¯°æ
+                Debug.Log("¹öÆ°ÀÌ ¿ø·¡ ÀÌ¹ÌÁö·Î µ¹¾Æ°¬½À´Ï´Ù.");
+            }
+            isOriginal = !isOriginal; // ÀÌ¹ÌÁö »óÅÂ Åä±Û
             clickCount = 0;
 
-            // ??? ?? ????
+            // ¾ÆÀÌÅÛ ÀÌ¸§°ú ¼³¸í ¾÷µ¥ÀÌÆ®
             UpdateItemInfo();
-
         }
         else
         {
@@ -74,33 +55,18 @@ public class DoubleClickToggleButton : MonoBehaviour
         }
     }
 
-
     void Update()
     {
         if (clickCount == 1 && Time.time - clickTime >= clickDelay)
         {
-            clickCount = 0; // ?? ?? ??? ???? ?? ??? ???
+            clickCount = 0; // ´õºí Å¬¸¯ °£°İÀÌ Áö³ª¸é Å¬¸¯ È½¼ö ÃÊ±âÈ­
         }
     }
-
 
     void UpdateItemInfo()
     {
         itemNameText.text = itemName.text;
         itemInfoText.text = itemInfo.text;
-        Debug.Log($"??? ??: {itemName}, ??? ??: {itemInfo}");
+        Debug.Log($"¾ÆÀÌÅÛ ÀÌ¸§: {itemName}, ¾ÆÀÌÅÛ ¼³¸í: {itemInfo}");
     }
-
-
-    public void UpdateQuantity(int quantity) //?? ???? 
-    {
-
-        item_quantity[quantity - 1].SetActive(true); //?? ???? ui ?? 
-        if (quantity != 1) //?? 1? ?? ?? ??? ?? 
-        {
-            item_quantity[quantity - 2].SetActive(false); //?? ?? ui? ?? 
-        }
-        Debug.Log($"??? ??? ?????????: {quantity}");
-    }
-
 }

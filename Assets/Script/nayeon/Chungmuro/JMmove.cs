@@ -39,14 +39,6 @@ public class JMmove : MonoBehaviour
     {
         if(Chungmuro_B2.instance.canMove == true)
         {
-            //씬 전환 전 객체 삭제 
-            if (JMmove.instance != null)
-            {
-                Destroy(JMmove.instance.gameObject);
-                JMmove.instance = null;
-                Debug.Log("객체 삭제");
-            }
-
             //4호선 승강장 이동 
             if (collision.collider.CompareTag("line4"))
             {

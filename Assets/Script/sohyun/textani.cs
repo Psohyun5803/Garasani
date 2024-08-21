@@ -4,29 +4,27 @@ using System.Collections;
 
 public class textani : MonoBehaviour
 {
+    public TMP_Text textComponent;  // TextMeshPro 텍스트 컴포넌트
+    public float typingSpeed = 0.05f;  // 타이핑 속도 조절
 
-    public TMP_Text textDisplay;  // TextMeshPro를 사용할 경우
-    // public Text textDisplay;  // 기본 UI 텍스트를 사용할 경우
-    public float typingSpeed = 0.05f; // 타이핑 속도 조절
+    private string fullText;  // 전체 텍스트
 
-    private Coroutine typingCoroutine;
-
-    public void DisplayDialogue(string dialogue)
+    void Start()
     {
-        if (typingCoroutine != null)
+        if (textComponent != null)
         {
-            StopCoroutine(typingCoroutine); // 기존 코루틴 중지
+            fullText = textComponent.text;  // 텍스트 컴포넌트에서 전체 텍스트 가져오기
+            textComponent.text = "";  // 텍스트를 초기화하여 빈 상태로 설정
+            StartCoroutine(TypeText());  // 코루틴 시작
         }
-        typingCoroutine = StartCoroutine(TypeText(dialogue));
     }
 
-    private IEnumerator TypeText(string text)
+    IEnumerator TypeText()
     {
-        textDisplay.text = ""; // 텍스트 초기화
-        foreach (char letter in text.ToCharArray())
+        foreach (char letter in fullText)
         {
-            textDisplay.text += letter;
-            yield return new WaitForSeconds(typingSpeed); // 타이핑 속도 조절
+            textComponent.text += letter;  // 한 글자씩 텍스트에 추가
+            yield return new WaitForSeconds(typingSpeed);  // 타이핑 속도에 맞춰 대기
         }
     }
 

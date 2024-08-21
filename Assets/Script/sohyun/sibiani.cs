@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class npcani : MonoBehaviour //npc 제자리 애니메이션 재생하는 코드 
+public class sibiani : MonoBehaviour
 {
     public Sprite[] bodymove;
     SpriteRenderer spriteRenderer;
@@ -25,13 +25,25 @@ public class npcani : MonoBehaviour //npc 제자리 애니메이션 재생하는 코드
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.5f);
+            if(npc.sibiflag==1)
+            {
+                yield return new WaitForSeconds(0.5f);
 
-            spriteRenderer.sprite = bodymove[1];
+                spriteRenderer.sprite = bodymove[2];
 
-            yield return new WaitForSeconds(0.5f);
-            spriteRenderer.sprite = bodymove[0];
+                yield return new WaitForSeconds(0.5f);
+                spriteRenderer.sprite = bodymove[3];
+            }
+            else
+            {
+                yield return new WaitForSeconds(0.5f);
 
+                spriteRenderer.sprite = bodymove[1];
+
+                yield return new WaitForSeconds(0.5f);
+                spriteRenderer.sprite = bodymove[0];
+            }
+         
         }
     }
 }

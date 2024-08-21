@@ -8652,8 +8652,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bodymove:
-  - {fileID: 1269822743, guid: c991d526c254ee74f8a8cd212ab470ed, type: 3}
-  - {fileID: 1231795116, guid: c991d526c254ee74f8a8cd212ab470ed, type: 3}
+  - {fileID: 1507159844, guid: 1baf25d065c792942bbcae151013a7f6, type: 3}
+  - {fileID: 417886054, guid: 1baf25d065c792942bbcae151013a7f6, type: 3}
 --- !u!114 &1720580093
 MonoBehaviour:
   m_ObjectHideFlags: 0

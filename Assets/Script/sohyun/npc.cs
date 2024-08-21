@@ -57,6 +57,7 @@ public class npc : MonoBehaviour
     public static int saigo = 0;
     public static int angflag= 0;
     public static int jobflag = 0;
+    public static int sibiflag = 0;
     public static string interobj;
     public static string presentcol;
     public static int buttonnum = 0;
@@ -502,6 +503,7 @@ public class npc : MonoBehaviour
             button.SetActive(true);
             buttonnum = 1;
             sibiinter = 1;
+            sibiflag = 1;
 
 
         }

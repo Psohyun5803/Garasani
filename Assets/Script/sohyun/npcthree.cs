@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class npcani : MonoBehaviour //npc 제자리 애니메이션 재생하는 코드 
+public class npcthree : MonoBehaviour
 {
     public Sprite[] bodymove;
     SpriteRenderer spriteRenderer;
@@ -28,6 +28,9 @@ public class npcani : MonoBehaviour //npc 제자리 애니메이션 재생하는 코드
             yield return new WaitForSeconds(0.5f);
 
             spriteRenderer.sprite = bodymove[1];
+
+            yield return new WaitForSeconds(0.5f);
+            spriteRenderer.sprite = bodymove[2];
 
             yield return new WaitForSeconds(0.5f);
             spriteRenderer.sprite = bodymove[0];

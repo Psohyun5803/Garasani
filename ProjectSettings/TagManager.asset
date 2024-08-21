@@ -15,6 +15,7 @@ TagManager:
   - jeongmin
   - line3
   - line4
+  - quantity
   layers:
   - Default
   - TransparentFX

@@ -15,15 +15,15 @@ public struct Slot
     public string itemName;
     public string itemInfo;
     public int quantity;
-    public TextMeshProUGUI itemText;
-    public TextMeshProUGUI quantityText;
-    public TextMeshProUGUI itemInfoText;
+    //public TextMeshProUGUI itemText;
+    //public TextMeshProUGUI quantityText;
+    //public TextMeshProUGUI itemInfoText;
     public bool isItem;
 }
 
 public class Inventory : MonoBehaviour
 {
-    public Item[] items = new Item[14];
+    public Item[] items = new Item[30];
     public Slot[] slots = new Slot[20];
 
     public static Inventory instance;
@@ -78,9 +78,9 @@ public class Inventory : MonoBehaviour
             slots[i].itemName = "";
             slots[i].itemInfo = "";
             slots[i].quantity = 0;
-            slots[i].itemText.text = "";
-            slots[i].quantityText.text = "";
-            slots[i].itemInfoText.text = "";
+            //slots[i].itemText.text = "";
+            //slots[i].quantityText.text = "";
+            //slots[i].itemInfoText.text = "";
         }
     }
 
@@ -94,7 +94,7 @@ public class Inventory : MonoBehaviour
             if (slots[i].itemName == newItemName)
             {
                 slots[i].quantity++;
-                slots[i].quantityText.text = slots[i].quantity.ToString();
+                //slots[i].quantityText.text = slots[i].quantity.ToString();
                 DoubleClickToggleButton.instance.UpdateQuantity(slots[i].quantity); //수량 업데이트
                 
                 itemAdded = true;
@@ -114,9 +114,9 @@ public class Inventory : MonoBehaviour
                     slots[i].itemName = newItemName;
                     slots[i].itemInfo = newItemInfo;
                     slots[i].quantity = 1;
-                    slots[i].itemText.text = newItemName;
-                    slots[i].quantityText.text = "1";
-                    slots[i].itemInfoText.text = newItemInfo;
+                    //slots[i].itemText.text = newItemName;
+                    //slots[i].quantityText.text = "1";
+                    //slots[i].itemInfoText.text = newItemInfo;
                     DoubleClickToggleButton.instance.UpdateQuantity(slots[i].quantity); //수량 업데이트
 
                     item_setActive.instance.updateItem(slots[i].itemName);

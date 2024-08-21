@@ -83,7 +83,7 @@ public class 튜토리얼아이템 : MonoBehaviour
         {
             talksqu.SetActive(true);
             who.text = "System";
-            context.text = "[찢겨진 부적] : 영문을 알 수 없는 글씨가 쓰여진 종이.\n"+"섬뜩하게 찢겨져있다. ";
+            context.text = "[찢겨진 부적] : 영문을 알 수 없는 글씨가 쓰여진 종이. 섬뜩하게 찢겨져있다. ";
             paper.SetActive(false);
             papercontent.SetActive(false);
             inventory.AddItem("찢겨진 부적", "영문을 알 수 없는 글씨가 쓰여진 종이. 섬뜩하게 찢겨져있다.");
@@ -108,7 +108,7 @@ public class 튜토리얼아이템 : MonoBehaviour
             context.text = "[누군가 흘린 키링]을 가방에 챙겼다.";
             keyring.SetActive(false);
             keyringcontent.SetActive(false);
-            inventory.AddItem("키링", "누군가 흘린 keyring.");
+            inventory.AddItem("키링", "누군가 흘린 키링");
             tutorialscript.gotoflag++;
             keyringflag = 1;
            

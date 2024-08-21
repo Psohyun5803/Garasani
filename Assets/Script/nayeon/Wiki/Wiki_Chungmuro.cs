@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class Wiki_Chungmuro : MonoBehaviour
 {
+    public static Wiki_Chungmuro instance;
     public GameObject ui_Wiki;
     public bool checkWiki = false;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()

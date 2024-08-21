@@ -53,6 +53,7 @@ public class inSubway_0 : MonoBehaviour
         Invoke("dontmove", 1f);
         darkandlight = darkroutine();
         Invoke("dontmove", 1f);
+
         DataManager.instance.csv_FileName = "Prologue2";
         DataManager.instance.DialogueLoad(); // CSV 파일 로드
         StartCoroutine(subwayStart()); 

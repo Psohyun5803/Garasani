@@ -60,8 +60,10 @@ public class tutorialscript : MonoBehaviour
         //interactionViewRectTransform = InteractionView.GetComponent<RectTransform>();
         //InteractionView.SetActive(false);
     }
+
     public void buttondown()
     {
+        Debug.Log("버튼 클릭");
         if (scriptcounter <= 5)
         {
             isTyping = true;

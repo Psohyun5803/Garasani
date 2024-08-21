@@ -18,6 +18,7 @@ public class train1_dark : MonoBehaviour
     public TMP_Text content;
     public GameObject talksqu;
     public GameObject dark;
+    public GameObject image01;
     public GameObject button;
     public TMP_Text who;
     public TMP_Text option1;
@@ -40,6 +41,7 @@ public class train1_dark : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        image01.SetActive(false);
         dark.SetActive(true);
         talksqu.SetActive(true);
         who.text = "ÁöÈÆ";
@@ -93,6 +95,10 @@ public class train1_dark : MonoBehaviour
                     content.text = "";
                     dark.SetActive(false);
                     StartCoroutine(endofdark());
+                    if(image01.activeSelf)
+                    {
+                        image01.SetActive(false);
+                    }
                 }
 
 
@@ -196,6 +202,7 @@ public class train1_dark : MonoBehaviour
             }
         }
         optnum = 2;
+        image01.SetActive(true);
         who.text = "ÁöÈÆ";
         content.text = "....";
         button.SetActive(true);

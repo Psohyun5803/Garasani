@@ -123,65 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &27655753
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 27655755}
-  - component: {fileID: 27655754}
-  - component: {fileID: 27655756}
-  m_Layer: 0
-  m_Name: textani
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &27655754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 27655753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fab48251c5f6d9145b2112cd7ce962f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textDisplay: {fileID: 209584095}
-  typingSpeed: 0.05
---- !u!4 &27655755
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 27655753}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.3341694, y: 1.420862, z: -0.10792209}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &27655756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 27655753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a0dc13498538974aa2dcf7cccefd6a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &104159666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1098,7 +1039,6 @@ GameObject:
   - component: {fileID: 209584098}
   - component: {fileID: 209584097}
   - component: {fileID: 209584095}
-  - component: {fileID: 209584096}
   m_Layer: 2
   m_Name: "\uB0B4\uC6A9"
   m_TagString: Untagged
@@ -1195,20 +1135,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &209584096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 209584094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fab48251c5f6d9145b2112cd7ce962f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textDisplay: {fileID: 0}
-  typingSpeed: 0.05
 --- !u!222 &209584097
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2211,7 +2137,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27655754}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: textani, Assembly-CSharp
         m_MethodName: textanimation
         m_Mode: 1
@@ -3031,7 +2957,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27655754}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: textani, Assembly-CSharp
         m_MethodName: textanimation
         m_Mode: 1
@@ -3621,7 +3547,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27655754}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: textani, Assembly-CSharp
         m_MethodName: textanimation
         m_Mode: 1
@@ -4720,7 +4646,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27655754}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: textani, Assembly-CSharp
         m_MethodName: textanimation
         m_Mode: 1
@@ -5494,7 +5420,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27655754}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: textani, Assembly-CSharp
         m_MethodName: textanimation
         m_Mode: 1
@@ -6925,7 +6851,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27655754}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: textani, Assembly-CSharp
         m_MethodName: textanimation
         m_Mode: 1
@@ -7348,7 +7274,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 27655754}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: textani, Assembly-CSharp
         m_MethodName: textanimation
         m_Mode: 1
@@ -7971,6 +7897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1802597096}
   - component: {fileID: 1802597095}
+  - component: {fileID: 1802597097}
   m_Layer: 0
   m_Name: manager (1)
   m_TagString: Untagged
@@ -8021,6 +7948,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1802597097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802597094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0dc13498538974aa2dcf7cccefd6a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1813541418
 GameObject:
   m_ObjectHideFlags: 0
@@ -8469,8 +8408,8 @@ RectTransform:
   - {fileID: 493396860}
   - {fileID: 984502214}
   - {fileID: 1655732174}
-  - {fileID: 575075889}
   - {fileID: 1895634712}
+  - {fileID: 575075889}
   - {fileID: 2114772391}
   - {fileID: 287102913}
   - {fileID: 978863559}
@@ -8867,4 +8806,3 @@ SceneRoots:
   - {fileID: 689631933}
   - {fileID: 134695354}
   - {fileID: 1802597096}
-  - {fileID: 27655755}

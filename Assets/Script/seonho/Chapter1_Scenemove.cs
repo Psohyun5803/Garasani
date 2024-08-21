@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Chapter1_Scenemove : MonoBehaviour
 {
-    public string playername = "eye";
+    public string playername = "hair (2)";
     public string nextSceneName = "3호선승강장_종로"; // 이동할 씬 이름
     public Image fadeImage; // 화면을 어둡게 할 이미지
     public float fadeDuration = 2f; // 화면이 어두워지는 데 걸리는 시간

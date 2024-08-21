@@ -6,8 +6,8 @@ public class CanvasController : MonoBehaviour
 {
     void Start()
     {
-        Invoke("HideCanvas", 3f);
         Player.moveflag = 0;
+        Invoke("HideCanvas", 3f);
     }
 
     void HideCanvas()

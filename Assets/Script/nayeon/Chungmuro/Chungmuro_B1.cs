@@ -30,6 +30,10 @@ public class Chungmuro_B1 : MonoBehaviour
         }
     }
 
+    void nothing(){
+        //아무것도 안함 
+    }
+
     public IEnumerator ChungmuroB1() //같이 가는 선택지 진행 
     {
         DialogueManager.instance.ui_dialogue.SetActive(true);
@@ -69,36 +73,48 @@ public class Chungmuro_B1 : MonoBehaviour
         }
         dialogueID = 0; //충무로 이벤트 끝 
         DialogueManager.instance.ui_dialogue.SetActive(false);
-        //StartCoroutine(JMmoving());
+        Invoke("nothing", 1.5f);
         isChungmuroB1_2Running = false;
-
+        StartCoroutine(JMmoving());
     }
 
-    IEnumerator JMmoving() //개찰구로 이동 
+    IEnumerator JMmoving() // 개찰구로 이동 
     {
         if (NPCAnimator != null)
         {
-            NPCAnimator.SetBool(boolParameterName, true);
+            NPCAnimator.SetBool("Front", true);
+            NPCAnimator.SetBool("Front", false);
         }
 
+        float elapsedTime = 0f;
+        float moveDuration = 0.5f; // 첫 번째 구간의 이동 시간
+        float speed = 2f; // 속도를 설정 (예: 2 유닛/초)
+
         // 1. 첫 번째 지점으로 이동 (위로 이동)
-        while (Vector3.Distance(npc.position, stopPoint1.position) > 0.1f)
+        Vector3 startPosition = targetAnimatorObject.transform.position;
+        Vector3 targetPosition = stopPoint1.position;
+        while (Vector3.Distance(targetAnimatorObject.transform.position, targetPosition) > 0.1f)
         {
-            npc.position = Vector3.MoveTowards(npc.position, stopPoint1.position, speed * Time.deltaTime);
+            targetAnimatorObject.transform.position = Vector3.MoveTowards(targetAnimatorObject.transform.position, targetPosition, speed * Time.deltaTime);
             yield return null;
         }
 
         // 첫 번째 지점에서 멈추고 방향 변경
         if (NPCAnimator != null)
         {
-            NPCAnimator.SetBool("Right",true);
-            NPCAnimator.SetBool("Front",false );
+            NPCAnimator.SetBool("Right", true);
+            NPCAnimator.SetBool("Front", false);
         }
 
         Debug.Log("NPC has stopped at stopPoint1 and changed direction.");
 
         // 잠시 멈춤
-        //yield return new WaitForSeconds(0.5f); // 필요에 따라 대기 시간 조정
+        yield return new WaitForSeconds(0.5f); // 필요에 따라 대기 시간 조정
+
+        elapsedTime = 0f;
+        moveDuration = 2f; // 두 번째 구간의 이동 시간
+        startPosition = targetAnimatorObject.transform.position;
+        targetPosition = stopPoint2.position;
 
         // 2. 두 번째 지점으로 이동 (오른쪽으로 이동)
         if (NPCAnimator != null)
@@ -107,11 +123,16 @@ public class Chungmuro_B1 : MonoBehaviour
             NPCAnimator.SetBool("Right", true);
         }
 
-        while (Vector3.Distance(npc.position, stopPoint2.position) > 0.1f)
+        while (elapsedTime < moveDuration)
         {
-            npc.position = Vector3.MoveTowards(npc.position, stopPoint2.position, speed * Time.deltaTime);
+            // 시간에 따른 보간
+            targetAnimatorObject.transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / moveDuration);
+            elapsedTime += Time.deltaTime;
             yield return null;
         }
+
+        // 마지막 위치 조정 (오차 보정)
+        targetAnimatorObject.transform.position = targetPosition;
 
         // NPC가 최종 목적지에 도착했습니다.
         Debug.Log("NPC has arrived at the final destination.");
@@ -121,8 +142,9 @@ public class Chungmuro_B1 : MonoBehaviour
             NPCAnimator.SetBool("Right", false);
             NPCAnimator.SetBool("Front", false);
         }
-
     }
+
+
 
 
     // Start is called before the first frame update

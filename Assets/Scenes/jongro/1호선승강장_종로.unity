@@ -442,7 +442,7 @@ Transform:
   m_GameObject: {fileID: 71799877}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.296988, y: 0.6822635, z: 0.66781116}
+  m_LocalPosition: {x: 0, y: 0.6822635, z: 0.66781116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1648,7 +1648,7 @@ Transform:
   m_GameObject: {fileID: 252306255}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.296988, y: 0.6822635, z: 0.66781116}
+  m_LocalPosition: {x: 0, y: 0.6822635, z: 0.66781116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2281,7 +2281,7 @@ Transform:
   m_GameObject: {fileID: 296768676}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.296988, y: 0.6822635, z: 0.66781116}
+  m_LocalPosition: {x: 0, y: 0.6822635, z: 0.66781116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2742,7 +2742,7 @@ Transform:
   m_GameObject: {fileID: 358262316}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.296988, y: 0.6822635, z: 0.66781116}
+  m_LocalPosition: {x: 0, y: 0.6822635, z: 0.66781116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3659,8 +3659,8 @@ Transform:
   m_GameObject: {fileID: 615648893}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2085, y: 16, z: 0}
-  m_LocalScale: {x: 426.6, y: 122.850006, z: 108}
+  m_LocalPosition: {x: -2085, y: 60, z: 0}
+  m_LocalScale: {x: 159.975, y: 122.850006, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1875582574}
@@ -3774,13 +3774,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5bba13ba2f156e47a8870ef9dd603c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomInPosition: {fileID: 615648894}
-  zoomInTime: 2
-  doorAnimator: {fileID: 1529331920}
   sceneNames:
   - "1\uD638\uC120\uB0B4\uBD801_False"
   - "1\uD638\uC120\uB0B4\uBD801"
   playerObjectName: Player
+  movingSubway: {fileID: 772285765}
 --- !u!1 &630012241
 GameObject:
   m_ObjectHideFlags: 0
@@ -4572,7 +4570,7 @@ Transform:
   m_GameObject: {fileID: 695015536}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.296988, y: 0.6822635, z: 0.66781116}
+  m_LocalPosition: {x: 0, y: 0.6822635, z: 0.66781116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5039,9 +5037,9 @@ MonoBehaviour:
   stopPoint: {fileID: 585851509}
   exitPoint: {fileID: 1910787798}
   moveSpeed: 10
-  spawnInterval: 10
-  stopDuration: 3
-  initialDelay: 30
+  spawnInterval: 0
+  stopDuration: 15
+  initialDelay: 10
 --- !u!4 &772285766
 Transform:
   m_ObjectHideFlags: 0
@@ -5344,7 +5342,7 @@ Transform:
   m_GameObject: {fileID: 795717929}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.296988, y: 0.6822635, z: 0.66781116}
+  m_LocalPosition: {x: 0, y: 0.6822635, z: 0.66781116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5721,7 +5719,7 @@ Transform:
   m_GameObject: {fileID: 892413776}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.296988, y: 0.6822635, z: 0.66781116}
+  m_LocalPosition: {x: 0, y: 0.6822635, z: 0.66781116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6620,7 +6618,7 @@ Transform:
   m_GameObject: {fileID: 1049750225}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.296988, y: 0.6822635, z: 0.66781116}
+  m_LocalPosition: {x: 0, y: 0.6822635, z: 0.66781116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7674,7 +7672,7 @@ Transform:
   m_GameObject: {fileID: 1315361862}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.296988, y: 0.6822635, z: 0.66781116}
+  m_LocalPosition: {x: 0, y: 0.6822635, z: 0.66781116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7883,7 +7881,7 @@ Transform:
   m_GameObject: {fileID: 1327646529}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.296988, y: 0.6822635, z: 0.66781116}
+  m_LocalPosition: {x: 0, y: 0.6822635, z: 0.66781116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8265,7 +8263,7 @@ Transform:
   m_GameObject: {fileID: 1328677186}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.296988, y: 0.6822635, z: 0.66781116}
+  m_LocalPosition: {x: 0, y: 0.6822635, z: 0.66781116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8482,8 +8480,8 @@ Transform:
   m_GameObject: {fileID: 1460016359}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -415, y: 6, z: 0}
-  m_LocalScale: {x: 426.6, y: 122.850006, z: 108}
+  m_LocalPosition: {x: -419, y: 60, z: 0}
+  m_LocalScale: {x: 170.64, y: 122.850006, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1875582574}
@@ -8597,13 +8595,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5bba13ba2f156e47a8870ef9dd603c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomInPosition: {fileID: 1460016360}
-  zoomInTime: 2
-  doorAnimator: {fileID: 1529331920}
   sceneNames:
   - "1\uD638\uC120\uB0B4\uBD801_False"
   - "1\uD638\uC120\uB0B4\uBD801"
   playerObjectName: Player
+  movingSubway: {fileID: 772285765}
 --- !u!1 &1489788357
 GameObject:
   m_ObjectHideFlags: 0
@@ -9628,7 +9624,7 @@ Transform:
   m_GameObject: {fileID: 1537260958}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.296988, y: 0.6822635, z: 0.66781116}
+  m_LocalPosition: {x: 0, y: 0.6822635, z: 0.66781116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9747,8 +9743,8 @@ Transform:
   m_GameObject: {fileID: 1585805639}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1233, y: -15, z: 0}
-  m_LocalScale: {x: 426.6, y: 122.850006, z: 108}
+  m_LocalPosition: {x: 1233, y: 60, z: 0}
+  m_LocalScale: {x: 143.97751, y: 122.850006, z: 108}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1875582574}
@@ -9862,13 +9858,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5bba13ba2f156e47a8870ef9dd603c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomInPosition: {fileID: 1585805640}
-  zoomInTime: 2
-  doorAnimator: {fileID: 1529331920}
   sceneNames:
   - "1\uD638\uC120\uB0B4\uBD801_False"
   - "1\uD638\uC120\uB0B4\uBD801"
   playerObjectName: Player
+  movingSubway: {fileID: 772285765}
 --- !u!1 &1610833313
 GameObject:
   m_ObjectHideFlags: 0
@@ -11228,7 +11222,7 @@ Transform:
   m_GameObject: {fileID: 2006393970}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.296988, y: 0.6822635, z: 0.66781116}
+  m_LocalPosition: {x: 0, y: 0.6822635, z: 0.66781116}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

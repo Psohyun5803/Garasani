@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PhoneUI.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/prologue/Pro_map1 beta.unity
     guid: fc2174c80d494aa449e5a1d3e391785d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/prologue/Pro_map2 beta.unity
     guid: 4c67f881d2aa66b4a82252667bd0caad
   - enabled: 0
@@ -84,6 +84,6 @@ EditorBuildSettings:
     path: "Assets/Scenes/jongro/1\uD638\uC120\uC808\uC5F0.unity"
     guid: c74fc4e591312ea43a3dcf25b50f061a
   - enabled: 1
-    path: "Assets/Scenes/jongro/1\uD638\uC120\uB0B4\uBD801_False.unity"
-    guid: 95e40c4be749a104d9969ef5dd2c3f9d
+    path: Assets/Scenes/Chungmuro/3_Chungmuro_B3.unity
+    guid: ffde7ae0cc9939d4cb88b3fc3dce3c35
   m_configObjects: {}

@@ -34,79 +34,80 @@ public class chunmuroall : MonoBehaviour
         talksqu.SetActive(false);
         string sceneName = SceneManager.GetActiveScene().name;
 
-        if (sceneName == "Chungmuro_B2")
-        {
-            if (StationtoB2 == 1)
-            {
-                GameObject upstair = GameObject.Find("[∞Ë¥‹]¡ˆ«œ 2√˛ (1)");
+        //GameObject jm = GameObject.Find("Íµ¨Ï†ïÎØº");
+        //Player.playertrans(jm.transform.position.x -5 , jm.transform.position.y);
 
-                // null ??
-                if (upstair != null)
-                {
-                    Debug.Log(upstair.transform.position.x);
-                    Player.playertrans(upstair.transform.position.x - 1, upstair.transform.position.y + 1);
-                    StationtoB2 = 0;
-                }
-                else
-                {
-                    Debug.LogError("[∞Ë¥‹]¡ˆ«œ 2√˛ (1) ????? ?? ? ????.");
-                }
-            }
-        }
-        else if (sceneName == "4_Chungmuro_B3" || sceneName == "3_Chungmuro_B3")
-        {
-            GameObject upstair = GameObject.Find("[∞Ë¥‹]¡ˆ«œ 3√˛_Ω¬∞≠¿Â");
+        //if (sceneName == "Chungmuro_B2")
+        //{
+        //    if (StationtoB2 == 1)
+        //    {
+        //        GameObject upstair = GameObject.Find("b2_upstairs_line4");
+        //        //GameObject jm = GameObject.Find("Íµ¨Ï†ïÎØº");
 
-            if (B2toStation == 1)
-            {
-                if (upstair != null)
-                {
-                    Debug.Log(upstair.transform.position.x);
-                    Player.playertrans(upstair.transform.position.x + 4, upstair.transform.position.y);
-                    B2toStation = 0;
-                }
-                else
-                {
-                    Debug.LogError("[??]?? 3?_??? ????? ?? ? ????.");
-                }
-            }
-            // null ??
+        //        // null ??
+        //        if (jm != null)
+        //        {
+        //            Debug.Log(jm.transform.position.x);
+        //            Player.playertrans(jm.transform.position.x -2 , jm.transform.position.y);
+        //            StationtoB2 = 0;
+        //        }
+        //        else
+        //        {
+        //            Debug.LogError("ÏßÄÌïò2Ï∏µ ÏóêÎü¨ÏΩîÎìú");
+        //        }
+        //    }
+        //}
+        //else if (sceneName == "4_Chungmuro_B3")
+        //{ 
+        //    // GameObject start = GameObject.Find("ÌîåÎ†àÏù¥Ïñ¥ ÏúÑÏπò");
 
-        }
+        //    // if (B2toStation == 1)
+        //    // {
+        //    //     if (start != null)
+        //    //     {
+        //    //         Debug.Log(start.transform.position.x);
+        //    //         Player.playertrans(start.transform.position., start.transform.position.y);
+        //    //         B2toStation = 0;
+        //    //     }
+        //    //     else
+        //    //     {
+        //    //         Debug.LogError("ÏßÄÌïò3Ï∏µ ÏóêÎü¨ÏΩîÎìú");
+        //    //     }
+        //    // }
+        //    // // null ??
+
+        //}
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (firstCollisionIgnored)
         {
-            // ? ??? ???? ???? false? ??
+     
             firstCollisionIgnored = false;
             return;
         }
 
-        Debug.Log("√Êµπ ∞®¡ˆ: " + collision.gameObject.name);
+        Debug.Log("?? ??: " + collision.gameObject.name);
 
         if (collision.gameObject.name == "basebody" || collision.gameObject.name == "Player")
         {
 
             presentcol = gameObject.name;
-            Debug.Log("presentcol º≥¡§: " + presentcol);
+            // Debug.Log("presentcol ??: " + presentcol);
 
-            if (gameObject.name == "[∞Ë¥‹]¡ˆ«œ 3√˛_Ω¬∞≠¿Â" || gameObject.name == "[∞Ë¥‹]¡ˆ«œ 2√˛ (1)" || gameObject.name == "[∞Ë¥‹]¡ˆ«œ 2√˛")
+            if(gameObject.tag == "upstairs")
             {
-
+           
                 talksqu.SetActive(true);
                 Debug.Log(presentcol);
                 option1_bt.SetActive(true);
                 option2_bt.SetActive(true);
-                who.text = "player";
-                content.text = "æÓµ∑Œ ∞°Ω√∞⁄Ω¿¥œ±Ó?";
-                option1.text = "> ¿Ãµø«œ±‚";
-                option2.text = "> √Îº“";
+                who.text = "System";
+                content.text = "Ïù¥ÎèôÌïòÏãúÍ≤†ÏäµÎãàÍπå?";
+                option1.text = "> Ïù¥ÎèôÌïòÍ∏∞";
+                option2.text = "> Ï∑®ÏÜå";
+
             }
-
-
-
-
 
         }
 
@@ -123,25 +124,45 @@ public class chunmuroall : MonoBehaviour
             presentcol = null;
         }
     }
+
+
     public void opt1down()
     {
         option1.text = "";
         option2.text = "";
         content.text = "";
         talksqu.SetActive(false);
-        if (presentcol == "[∞Ë¥‹]¡ˆ«œ 3√˛_Ω¬∞≠¿Â")
+        if (presentcol == "b3_subway_platform")
         {
             StationtoB2 = 1;
             SceneManager.LoadScene("Chungmuro_B2");
 
         }
-        if (presentcol == "[∞Ë¥‹]¡ˆ«œ 2√˛ (1)" || presentcol == "[∞Ë¥‹]¡ˆ«œ 2√˛")
+        else if (presentcol == "b2_upstairs_line3")
         {
             B2toStation = 1;
+            if (JMmove.instance != null)
+            {
+                Destroy(JMmove.instance.gameObject);
+                JMmove.instance = null;
+                Debug.Log("Í∞ùÏ≤¥ ÏÇ≠Ï†ú");
+            }
+            SceneManager.LoadScene("3_Chungmuro_B3");
+           
+        }
+        else if(presentcol == "b2_upstairs_line4")
+        {
+            B2toStation = 1;
+            if (JMmove.instance != null)
+            {
+                Destroy(JMmove.instance.gameObject);
+                JMmove.instance = null;
+                Debug.Log("Í∞ùÏ≤¥ ÏÇ≠Ï†ú");
+            }
             SceneManager.LoadScene("4_Chungmuro_B3");
-            //??? ?? 3_Chungmuro_B3?
         }
     }
+
     public void opt2down()
     {
         option1.text = "";

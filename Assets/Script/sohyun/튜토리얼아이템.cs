@@ -29,7 +29,7 @@ public class 튜토리얼아이템 : MonoBehaviour
     public GameObject airpotcontent;
     public GameObject papercontent;
 
-    public Inventory inventory; // Inventory 스크립트 참조
+    //public Inventory inventory; // Inventory 스크립트 참조
 
     // Start is called before the first frame update
     void Start()
@@ -85,7 +85,7 @@ public class 튜토리얼아이템 : MonoBehaviour
             paper.SetActive(false);
             papercontent.SetActive(false);
             tutorialscript.gotoflag++;
-            inventory.AddItem("찢겨진부적");
+            //inventory.AddItem("찢겨진부적");
             
             paperflag= 1;
         }
@@ -97,7 +97,7 @@ public class 튜토리얼아이템 : MonoBehaviour
             oddairpot.SetActive(false);
             airpotcontent.SetActive(false);
             tutorialscript.gotoflag++;
-            inventory.AddItem(intertest.colitemname);
+            //inventory.AddItem(intertest.colitemname);
             airpotflag = 1;
         }
         else if (keyringflag==0&&intertest.colitemname == "키링")
@@ -108,7 +108,7 @@ public class 튜토리얼아이템 : MonoBehaviour
             keyring.SetActive(false);
             keyringcontent.SetActive(false);
             tutorialscript.gotoflag++;
-            inventory.AddItem("키링");
+            //inventory.AddItem("키링");
             keyringflag = 1;
            
         }

@@ -38,7 +38,7 @@ public class chunmuroall : MonoBehaviour
         {
             if (StationtoB2 == 1)
             {
-                GameObject upstair = GameObject.Find("[계단]지하 2층 (1)");
+                GameObject upstair = GameObject.FindWithTag("upstairs");
 
                 // null ??
                 if (upstair != null)
@@ -49,13 +49,13 @@ public class chunmuroall : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("[계단]지하 2층 (1) ????? ?? ? ????.");
+                    Debug.LogError("[??]?? 2?");
                 }
             }
         }
         else if (sceneName == "4_Chungmuro_B3" || sceneName == "3_Chungmuro_B3")
         {
-            GameObject upstair = GameObject.Find("[계단]지하 3층_승강장");
+            GameObject upstair = GameObject.FindWithTag("upstairs");
 
             if (B2toStation == 1)
             {
@@ -83,30 +83,27 @@ public class chunmuroall : MonoBehaviour
             return;
         }
 
-        Debug.Log("충돌 감지: " + collision.gameObject.name);
+        Debug.Log("?? ??: " + collision.gameObject.name);
 
         if (collision.gameObject.name == "basebody" || collision.gameObject.name == "Player")
         {
 
             presentcol = gameObject.name;
-            Debug.Log("presentcol 설정: " + presentcol);
+            Debug.Log("presentcol ??: " + presentcol);
 
-            if (gameObject.name == "[계단]지하 3층_승강장" || gameObject.name == "[계단]지하 2층 (1)" || gameObject.name == "[계단]지하 2층")
+            //if (gameObject.name == "[??]?? 3?_???" || gameObject.name == "[??]?? 2? (1)" || gameObject.name == "[??]?? 2?")
+            if(gameObject.tag == "upstairs")
             {
-
+                Debug.Log("??? ?? ??");
                 talksqu.SetActive(true);
                 Debug.Log(presentcol);
                 option1_bt.SetActive(true);
                 option2_bt.SetActive(true);
-                who.text = "player";
-                content.text = "어디로 가시겠습니까?";
-                option1.text = "> 이동하기";
-                option2.text = "> 취소";
+                who.text = "System";
+                content.text = "?????????";
+                option1.text = "> ????";
+                option2.text = "> ??";
             }
-
-
-
-
 
         }
 
@@ -123,25 +120,33 @@ public class chunmuroall : MonoBehaviour
             presentcol = null;
         }
     }
+
+
     public void opt1down()
     {
         option1.text = "";
         option2.text = "";
         content.text = "";
         talksqu.SetActive(false);
-        if (presentcol == "[계단]지하 3층_승강장")
+        if (presentcol == "b3_subway_platform")
         {
             StationtoB2 = 1;
             SceneManager.LoadScene("Chungmuro_B2");
 
         }
-        if (presentcol == "[계단]지하 2층 (1)" || presentcol == "[계단]지하 2층")
+        else if (presentcol == "b2_upstairs_line3")
+        {
+            B2toStation = 1;
+            SceneManager.LoadScene("3_Chungmuro_B3");
+           
+        }
+        else if(presentcol == "b2_upstairs_line4")
         {
             B2toStation = 1;
             SceneManager.LoadScene("4_Chungmuro_B3");
-            //??? ?? 3_Chungmuro_B3?
         }
     }
+
     public void opt2down()
     {
         option1.text = "";

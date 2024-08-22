@@ -14540,8 +14540,8 @@ GameObject:
   - component: {fileID: 1165769552}
   - component: {fileID: 1165769554}
   m_Layer: 0
-  m_Name: "[\uACC4\uB2E8]\uC9C0\uD558 3\uCE35_\uC2B9\uAC15\uC7A5"
-  m_TagString: Untagged
+  m_Name: b3_subway_platform
+  m_TagString: upstairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17420,37 +17420,22 @@ MonoBehaviour:
   - itemName: 
     itemInfo: 
     quantity: 0
-    itemText: {fileID: 1484439223}
-    quantityText: {fileID: 723096349}
-    itemInfoText: {fileID: 1554062188}
     isItem: 0
   - itemName: 
     itemInfo: 
     quantity: 0
-    itemText: {fileID: 133043259}
-    quantityText: {fileID: 936264194}
-    itemInfoText: {fileID: 843880176}
     isItem: 0
   - itemName: 
     itemInfo: 
     quantity: 0
-    itemText: {fileID: 1135134196}
-    quantityText: {fileID: 128101439}
-    itemInfoText: {fileID: 1868507296}
     isItem: 0
   - itemName: 
     itemInfo: 
     quantity: 0
-    itemText: {fileID: 1911766230}
-    quantityText: {fileID: 2107080778}
-    itemInfoText: {fileID: 1556351015}
     isItem: 0
   - itemName: 
     itemInfo: 
     quantity: 0
-    itemText: {fileID: 1400787334}
-    quantityText: {fileID: 1173097183}
-    itemInfoText: {fileID: 1292138580}
     isItem: 0
 --- !u!1 &1359123812
 GameObject:

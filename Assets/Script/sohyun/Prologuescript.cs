@@ -44,6 +44,7 @@ public class Prologuescript : MonoBehaviour
     }
     public void buttondown1() // content? ??? ??? 
     {
+        Debug.Log("버튼 클릭");
         if (textflag > 3)
         {
             talksqu.SetActive(false);

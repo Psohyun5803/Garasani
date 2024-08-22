@@ -5936,8 +5936,8 @@ GameObject:
   - component: {fileID: 500577190}
   - component: {fileID: 500577191}
   m_Layer: 2
-  m_Name: "[\uACC4\uB2E8]\uC9C0\uD558 2\uCE35"
-  m_TagString: line3
+  m_Name: b2_upstairs_line3
+  m_TagString: upstairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23410,8 +23410,8 @@ GameObject:
   - component: {fileID: 1824300214}
   - component: {fileID: 1824300216}
   m_Layer: 2
-  m_Name: "[\uACC4\uB2E8]\uC9C0\uD558 2\uCE35 (1)"
-  m_TagString: line4
+  m_Name: b2_upstairs_line4
+  m_TagString: upstairs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

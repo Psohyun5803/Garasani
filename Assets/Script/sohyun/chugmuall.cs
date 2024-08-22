@@ -82,7 +82,7 @@ public class chunmuroall : MonoBehaviour
     {
         if (firstCollisionIgnored)
         {
-            // ? ??? ???? ???? false? ??
+     
             firstCollisionIgnored = false;
             return;
         }
@@ -93,7 +93,7 @@ public class chunmuroall : MonoBehaviour
         {
 
             presentcol = gameObject.name;
-            Debug.Log("presentcol ??: " + presentcol);
+            // Debug.Log("presentcol ??: " + presentcol);
 
             if(gameObject.tag == "upstairs")
             {
@@ -141,11 +141,11 @@ public class chunmuroall : MonoBehaviour
         else if (presentcol == "b2_upstairs_line3")
         {
             B2toStation = 1;
-            GameObject jm = GameObject.Find("구정민");
-            if (jm != null)
+            if (JMmove.instance != null)
             {
-                // 구정민 객체가 존재할 때만 삭제
-                Destroy(jm);
+                Destroy(JMmove.instance.gameObject);
+                JMmove.instance = null;
+                Debug.Log("객체 삭제");
             }
             SceneManager.LoadScene("3_Chungmuro_B3");
            
@@ -153,11 +153,11 @@ public class chunmuroall : MonoBehaviour
         else if(presentcol == "b2_upstairs_line4")
         {
             B2toStation = 1;
-            GameObject jm = GameObject.Find("구정민");
-            if (jm != null)
+            if (JMmove.instance != null)
             {
-                // 구정민 객체가 존재할 때만 삭제
-                Destroy(jm);
+                Destroy(JMmove.instance.gameObject);
+                JMmove.instance = null;
+                Debug.Log("객체 삭제");
             }
             SceneManager.LoadScene("4_Chungmuro_B3");
         }

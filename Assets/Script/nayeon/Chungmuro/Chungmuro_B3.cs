@@ -5,36 +5,37 @@ using UnityEngine.SceneManagement;
 
 public class Chungmuro_B3 : MonoBehaviour
 {
-    public static Chungmuro_B3 instance;
     bool moveB1 = false; //지하 1층 이동 플래그 
     public Dialogue[] contextList;
-    public GameObject playerFirst; //위치 설정 
+    public Transform playerFirst; //위치 설정 
 
     public Transform dest; // 목적지 Transform
     public float speed = 5.0f; // 정민 이동 속도
-    private Animator animator;
     [SerializeField] private GameObject targetAnimatorObject;
     public string boolParameterName = "Right";
     private Animator NPCAnimator;
+    int  dialogueID = 25;
     
     public IEnumerator ChungmuroB3_1() //3호선 선택 시 
     {
+        Debug.Log(dialogueID);
+        Debug.Log("코루틴 시작");
         DialogueManager.instance.ui_dialogue.SetActive(true);
 
-        while (inSubway_0.instance.dialogueID < 31)
+        while (dialogueID < 31)
         {
-            switch (inSubway_0.instance.dialogueID)
+            switch (dialogueID)
             {
                 case (25):
                     contextList = DataManager.instance.GetDialogue(49, 51);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     if(Wiki_Chungmuro.instance.checkWiki == true)
                     {
-                        inSubway_0.instance.dialogueID = 26;
+                        dialogueID = 26;
                     }
                     else
                     {
-                        inSubway_0.instance.dialogueID = 27;
+                        dialogueID = 27;
                     }
                     break;
 
@@ -44,10 +45,10 @@ public class Chungmuro_B3 : MonoBehaviour
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
                     Debug.Log("ChooseFlag after case 1: " + DialogueManager.instance.chooseFlag);
                     if (DialogueManager.instance.chooseFlag == 1)
-                        inSubway_0.instance.dialogueID = 28;
+                        dialogueID = 28;
                     else if (DialogueManager.instance.chooseFlag == 2)
                     {
-                        inSubway_0.instance.dialogueID = 31;
+                        dialogueID = 31;
                         moveB1 = true;
                     } 
                     DialogueManager.instance.chooseFlag = 0;
@@ -58,7 +59,7 @@ public class Chungmuro_B3 : MonoBehaviour
                     DialogueManager.instance.processChoose(contextList);
                     yield return new WaitUntil(() => DialogueManager.instance.clickFlag);
                     DialogueManager.instance.clickFlag = false;
-                    inSubway_0.instance.dialogueID = 31;
+                    dialogueID = 31;
                     moveB1 = true;
                     break;
 
@@ -68,77 +69,45 @@ public class Chungmuro_B3 : MonoBehaviour
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
                     Debug.Log("ChooseFlag after case 1: " + DialogueManager.instance.chooseFlag);
                     if (DialogueManager.instance.chooseFlag == 1)
-                        inSubway_0.instance.dialogueID = 29;
+                        dialogueID = 29;
                     else if (DialogueManager.instance.chooseFlag == 2)
-                        inSubway_0.instance.dialogueID = 30;
+                        dialogueID = 30;
                     DialogueManager.instance.chooseFlag = 0;
                     break;
 
                 case (29):
                     contextList = DataManager.instance.GetDialogue(59, 61);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    inSubway_0.instance.dialogueID = 30;
+                    dialogueID = 30;
                     break;
 
                 case (30):
                     contextList = DataManager.instance.GetDialogue(62, 66);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    inSubway_0.instance.dialogueID = 31;  
+                    dialogueID = 31;  
                     break;
 
                 default:
-                    inSubway_0.instance.dialogueID = 31;
+                    dialogueID = 31;
                     break;
 
             }
         }
-        inSubway_0.instance.dialogueID = 0; //충무로 이벤트 끝 
+        dialogueID = 0; //충무로 이벤트 끝 
         DialogueManager.instance.ui_dialogue.SetActive(false);
 
         if(moveB1 == true)
         {
-           
+           if (JM_b3_3.instance != null)
+            {
+                Destroy(JM_b3_3.instance.gameObject);
+                JM_b3_3.instance = null;
+                Debug.Log("객체 삭제");
+            }
             SceneManager.LoadScene("Chungmuro_B1"); //지하 1층 씬 이동 
-            // GameObject jm = GameObject.Find("구정민");
-            // if (jm != null)
-            // {
-            //     // 구정민 객체가 존재할 때만 삭제
-            //     Destroy(jm);
-            // }
         }
     }
 
-    
-
-
-  
-    // IEmMoveToDestination()
-    // {
-    //     // // 목적지까지의 남은 거리를 계산
-    //     // float distance = Vector2.Distance(transform.position, dest.position);
-
-    //     // // 거리가 일정 이하로 줄어들면 정지
-    //     // if (distance > 0.1f)
-    //     // {
-    //     //     // 이동 애니메이션 활성화
-    //     //     animator.SetBool("isWalking", true);
-
-    //     //     // 현재 위치에서 목적지까지 한 프레임 동안 이동할 위치를 계산
-    //     //     transform.position = Vector2.MoveTowards(transform.position, dest.position, speed * Time.deltaTime);
-
-    //     //     // 이동 방향에 따라 캐릭터의 방향을 전환 (좌/우)
-    //     //     Vector3 dir = (dest.position - transform.position).normalized;
-    //     //     if (dir.x != 0)
-    //     //     {
-    //     //         transform.localScale = new Vector3(Mathf.Sign(dir.x), 1, 1); // 좌우 반전
-    //     //     }
-    //     // }
-    //     // else
-    //     // {
-    //     //     // 목적지에 도달하면 애니메이션을 정지
-    //     //     animator.SetBool("isWalking", false);
-    //     // }
-    // }
 
    IEnumerator NPCEventCoroutine() // 정민 이동
     {
@@ -169,14 +138,15 @@ public class Chungmuro_B3 : MonoBehaviour
 
         if (NPCAnimator != null)
         {
+            Debug.Log("npc animate false");
             NPCAnimator.SetBool(boolParameterName, false);
         }
 
-        
+        StartCoroutine(ChungmuroB3_1());
     }
 
     void nothing(){
-
+        //아무것도 안하는 메소드 
     }
 
     void Start()
@@ -195,25 +165,27 @@ public class Chungmuro_B3 : MonoBehaviour
         //플레이어 이동 설정 
         customize.sceneflag = 4;
         customize.moveflag = 1;
-        //플레이어 위치 설정 
-        Vector3 platerPosition = playerFirst.transform.position;
-        GameObject playerObject = GameObject.FindWithTag("Player");
-        if (playerObject != null)
-        {
-            playerObject.transform.position = new Vector3(platerPosition.x, platerPosition.y, platerPosition.z);
-        }
 
+        // playerFirst가 null이 아닌지 확인
+        if (playerFirst != null)
+        {
+            // 플레이어 위치 설정
+            Debug.Log($"playerFirst 위치: {playerFirst.transform.position}");
+            Player.playertrans(playerFirst.transform.position.x, playerFirst.transform.position.y);
+
+        }
+        else
+        {
+            Debug.LogError("playerFirst 오브젝트가 할당되지 않았습니다.");
+        }
+        
         DataManager.instance.csv_FileName = "Prologue2";
         DataManager.instance.DialogueLoad(); // CSV 파일 로드
 
-        animator = GetComponent<Animator>();
+        NPCAnimator= GetComponent<Animator>();
 
         Invoke("nothing", 1.5f);
         StartCoroutine(NPCEventCoroutine());
     }
 
-    void Update()
-    {
-        
-    }
 }

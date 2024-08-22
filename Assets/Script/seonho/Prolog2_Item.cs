@@ -16,7 +16,7 @@ public class Prolog2_Item : MonoBehaviour
     public bool hammerflag;
     public Vector3 newPlayerPosition;
     public Vector3 newPlayerScale;
-    public Inventory inventory; // Inventory 
+//    public Inventory inventory; // Inventory 
 
     void Awake()
     {

@@ -34,12 +34,15 @@ public class chunmuroall : MonoBehaviour
         talksqu.SetActive(false);
         string sceneName = SceneManager.GetActiveScene().name;
 
+        GameObject jm = GameObject.Find("구정민");
+        Player.playertrans(jm.transform.position.x -5 , jm.transform.position.y);
+
         if (sceneName == "Chungmuro_B2")
         {
             if (StationtoB2 == 1)
             {
                 GameObject upstair = GameObject.Find("b2_upstairs_line4");
-                GameObject jm = GameObject.Find("구정민");
+                //GameObject jm = GameObject.Find("구정민");
 
                 // null ??
                 if (jm != null)
@@ -92,7 +95,6 @@ public class chunmuroall : MonoBehaviour
             presentcol = gameObject.name;
             Debug.Log("presentcol ??: " + presentcol);
 
-            //if (gameObject.name == "[??]?? 3?_???" || gameObject.name == "[??]?? 2? (1)" || gameObject.name == "[??]?? 2?")
             if(gameObject.tag == "upstairs")
             {
                 Debug.Log("??? ?? ??");
@@ -104,11 +106,7 @@ public class chunmuroall : MonoBehaviour
                 content.text = "이동하시겠습니까?";
                 option1.text = "> 이동하기";
                 option2.text = "> 취소";
-                
-                //who.text = "System";
-                //content.text = "?????????";
-                //option1.text = "> ????";
-                //option2.text = "> ??";
+
             }
 
         }

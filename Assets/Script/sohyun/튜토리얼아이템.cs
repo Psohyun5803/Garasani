@@ -29,7 +29,7 @@ public class 튜토리얼아이템 : MonoBehaviour
     public GameObject airpotcontent;
     public GameObject papercontent;
 
-    public Inventory inventory; // Inventory 스크립트 참조
+    //public Inventory inventory; // Inventory 스크립트 참조
 
     // Start is called before the first frame update
     void Start()

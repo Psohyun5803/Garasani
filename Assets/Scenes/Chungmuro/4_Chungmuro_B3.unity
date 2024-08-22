@@ -17052,8 +17052,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.351605, y: -1.6641533, z: -0.0428485}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.304246, y: 1.304246, z: 1.304246}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 889512482}
   - {fileID: 167365277}
@@ -17404,39 +17404,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
-  - name: 
-    info: 
-  - name: 
-    info: 
-  - name: 
-    info: 
-  - name: 
-    info: 
-  - name: 
-    info: 
-  - name: 
-    info: 
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  slotParent: {fileID: 0}
   slots:
-  - itemName: 
-    itemInfo: 
-    quantity: 0
-    isItem: 0
-  - itemName: 
-    itemInfo: 
-    quantity: 0
-    isItem: 0
-  - itemName: 
-    itemInfo: 
-    quantity: 0
-    isItem: 0
-  - itemName: 
-    itemInfo: 
-    quantity: 0
-    isItem: 0
-  - itemName: 
-    itemInfo: 
-    quantity: 0
-    isItem: 0
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &1359123812
 GameObject:
   m_ObjectHideFlags: 0

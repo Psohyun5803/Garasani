@@ -34,49 +34,49 @@ public class chunmuroall : MonoBehaviour
         talksqu.SetActive(false);
         string sceneName = SceneManager.GetActiveScene().name;
 
-        GameObject jm = GameObject.Find("구정민");
-        Player.playertrans(jm.transform.position.x -5 , jm.transform.position.y);
+        //GameObject jm = GameObject.Find("구정민");
+        //Player.playertrans(jm.transform.position.x -5 , jm.transform.position.y);
 
-        if (sceneName == "Chungmuro_B2")
-        {
-            if (StationtoB2 == 1)
-            {
-                GameObject upstair = GameObject.Find("b2_upstairs_line4");
-                //GameObject jm = GameObject.Find("구정민");
+        //if (sceneName == "Chungmuro_B2")
+        //{
+        //    if (StationtoB2 == 1)
+        //    {
+        //        GameObject upstair = GameObject.Find("b2_upstairs_line4");
+        //        //GameObject jm = GameObject.Find("구정민");
 
-                // null ??
-                if (jm != null)
-                {
-                    Debug.Log(jm.transform.position.x);
-                    Player.playertrans(jm.transform.position.x -2 , jm.transform.position.y);
-                    StationtoB2 = 0;
-                }
-                else
-                {
-                    Debug.LogError("지하2층 에러코드");
-                }
-            }
-        }
-        else if (sceneName == "4_Chungmuro_B3")
-        { 
-            GameObject upstair = GameObject.Find("b3_subway_platform");
+        //        // null ??
+        //        if (jm != null)
+        //        {
+        //            Debug.Log(jm.transform.position.x);
+        //            Player.playertrans(jm.transform.position.x -2 , jm.transform.position.y);
+        //            StationtoB2 = 0;
+        //        }
+        //        else
+        //        {
+        //            Debug.LogError("지하2층 에러코드");
+        //        }
+        //    }
+        //}
+        //else if (sceneName == "4_Chungmuro_B3")
+        //{ 
+        //    // GameObject start = GameObject.Find("플레이어 위치");
 
-            if (B2toStation == 1)
-            {
-                if (upstair != null)
-                {
-                    Debug.Log(upstair.transform.position.x);
-                    Player.playertrans(upstair.transform.position.x + 4, upstair.transform.position.y);
-                    B2toStation = 0;
-                }
-                else
-                {
-                    Debug.LogError("지하3층 에러코드");
-                }
-            }
-            // null ??
+        //    // if (B2toStation == 1)
+        //    // {
+        //    //     if (start != null)
+        //    //     {
+        //    //         Debug.Log(start.transform.position.x);
+        //    //         Player.playertrans(start.transform.position., start.transform.position.y);
+        //    //         B2toStation = 0;
+        //    //     }
+        //    //     else
+        //    //     {
+        //    //         Debug.LogError("지하3층 에러코드");
+        //    //     }
+        //    // }
+        //    // // null ??
 
-        }
+        //}
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

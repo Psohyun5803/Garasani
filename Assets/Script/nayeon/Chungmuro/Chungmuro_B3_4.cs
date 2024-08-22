@@ -5,6 +5,7 @@ using UnityEngine;
 public class Chungmuro_B3_4 : MonoBehaviour
 {
     public GameObject callWarning;
+    public Transform playerFirst; //위치 설정 
     private bool callFlag = false;
     public GameObject upstair;
 
@@ -16,10 +17,12 @@ public class Chungmuro_B3_4 : MonoBehaviour
         customize.moveflag = 1;
         //플레이어 위치 설정 
         Vector3 upstairPosition = upstair.transform.position;
-        GameObject playerObject = GameObject.FindWithTag("Player");
-        if (playerObject != null)
+        if (playerFirst != null)
         {
-            playerObject.transform.position = new Vector3(upstairPosition.x, upstairPosition.y, upstairPosition.z);
+            // 플레이어 위치 설정
+            Debug.Log($"playerFirst 위치: {playerFirst.transform.position}");
+            Player.playertrans(playerFirst.transform.position.x, playerFirst.transform.position.y);
+
         }
     }
 

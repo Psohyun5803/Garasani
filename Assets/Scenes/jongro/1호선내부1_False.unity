@@ -2359,7 +2359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fab48251c5f6d9145b2112cd7ce962f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tmpText: {fileID: 0}
+  tmpText: {fileID: 1985822183}
   delay: 0.1
 --- !u!4 &315145242
 Transform:
@@ -2766,7 +2766,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 315145241}
         m_TargetAssemblyTypeName: textani, Assembly-CSharp
-        m_MethodName: textanimation
+        m_MethodName: Onclick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5740,7 +5740,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 315145241}
         m_TargetAssemblyTypeName: textani, Assembly-CSharp
-        m_MethodName: textanimation
+        m_MethodName: Onclick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5943,7 +5943,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 315145241}
         m_TargetAssemblyTypeName: textani, Assembly-CSharp
-        m_MethodName: textanimation
+        m_MethodName: Onclick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7812,7 +7812,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 315145241}
         m_TargetAssemblyTypeName: textani, Assembly-CSharp
-        m_MethodName: textanimation
+        m_MethodName: Onclick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9219,7 +9219,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 315145241}
         m_TargetAssemblyTypeName: textani, Assembly-CSharp
-        m_MethodName: textanimation
+        m_MethodName: Onclick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9631,7 +9631,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 315145241}
         m_TargetAssemblyTypeName: textani, Assembly-CSharp
-        m_MethodName: textanimation
+        m_MethodName: Onclick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

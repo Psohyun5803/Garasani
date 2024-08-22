@@ -38,7 +38,7 @@ public class chunmuroall : MonoBehaviour
         {
             if (StationtoB2 == 1)
             {
-                GameObject upstair = GameObject.FindWithTag("upstairs");
+                GameObject upstair = GameObject.Find("b2_upstairs_line4");
 
                 // null ??
                 if (upstair != null)
@@ -49,13 +49,13 @@ public class chunmuroall : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("[??]?? 2?");
+                    Debug.LogError("지하2층 에러코드");
                 }
             }
         }
-        else if (sceneName == "4_Chungmuro_B3" || sceneName == "3_Chungmuro_B3")
-        {
-            GameObject upstair = GameObject.FindWithTag("upstairs");
+        else if (sceneName == "4_Chungmuro_B3")
+        { 
+            GameObject upstair = GameObject.Find("b3_subway_platform");
 
             if (B2toStation == 1)
             {
@@ -67,7 +67,7 @@ public class chunmuroall : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("[??]?? 3?_??? ????? ?? ? ????.");
+                    Debug.LogError("지하3층 에러코드");
                 }
             }
             // null ??
@@ -100,9 +100,14 @@ public class chunmuroall : MonoBehaviour
                 option1_bt.SetActive(true);
                 option2_bt.SetActive(true);
                 who.text = "System";
-                content.text = "?????????";
-                option1.text = "> ????";
-                option2.text = "> ??";
+                content.text = "이동하시겠습니까?";
+                option1.text = "> 이동하기";
+                option2.text = "> 취소";
+                
+                //who.text = "System";
+                //content.text = "?????????";
+                //option1.text = "> ????";
+                //option2.text = "> ??";
             }
 
         }

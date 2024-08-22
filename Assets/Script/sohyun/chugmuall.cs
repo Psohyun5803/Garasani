@@ -38,9 +38,9 @@ public class chunmuroall : MonoBehaviour
         {
             if (StationtoB2 == 1)
             {
-                GameObject upstair = GameObject.Find("[계단]지하 2층 (1)");
+                GameObject upstair = GameObject.Find("[??]?? 2? (1)");
 
-                // null 체크
+                // null ??
                 if (upstair != null)
                 {
                     Debug.Log(upstair.transform.position.x);
@@ -49,13 +49,13 @@ public class chunmuroall : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("[계단]지하 2층 (1) 오브젝트를 찾을 수 없습니다.");
+                    Debug.LogError("[??]?? 2? (1) ????? ?? ? ????.");
                 }
             }
         }
         else if (sceneName == "4_Chungmuro_B3" || sceneName == "3_Chungmuro_B3")
         {
-            GameObject upstair = GameObject.Find("[계단]지하 3층_승강장");
+            GameObject upstair = GameObject.Find("[??]?? 3?_???");
 
             if (B2toStation == 1)
             {
@@ -67,10 +67,10 @@ public class chunmuroall : MonoBehaviour
                 }
                 else
                 {
-                    Debug.LogError("[계단]지하 3층_승강장 오브젝트를 찾을 수 없습니다.");
+                    Debug.LogError("[??]?? 3?_??? ????? ?? ? ????.");
                 }
             }
-            // null 체크
+            // null ??
 
         }
     }
@@ -78,7 +78,7 @@ public class chunmuroall : MonoBehaviour
     {
         if (firstCollisionIgnored)
         {
-            // 첫 충돌을 무시하고 플래그를 false로 설정
+            // ? ??? ???? ???? false? ??
             firstCollisionIgnored = false;
             return;
         }
@@ -87,7 +87,7 @@ public class chunmuroall : MonoBehaviour
         {
 
             presentcol = gameObject.name;
-            if (gameObject.name == "[계단]지하 3층_승강장" || gameObject.name == "[계단]지하 2층 (1)" || gameObject.name == "[계단]지하 2층")
+            if (gameObject.name == "[??]?? 3?_???" || gameObject.name == "[??]?? 2? (1)" || gameObject.name == "[??]?? 2?")
             {
 
                 talksqu.SetActive(true);
@@ -95,9 +95,9 @@ public class chunmuroall : MonoBehaviour
                 option1_bt.SetActive(true);
                 option2_bt.SetActive(true);
                 who.text = "player";
-                content.text = "이동할까?";
-                option1.text = "> 이동한다";
-                option2.text = "> 이동하지 않는다.";
+                content.text = "?????";
+                option1.text = "> ????";
+                option2.text = "> ???? ???.";
             }
 
 
@@ -125,17 +125,17 @@ public class chunmuroall : MonoBehaviour
         option2.text = "";
         content.text = "";
         talksqu.SetActive(false);
-        if (presentcol == "[계단]지하 3층_승강장")
+        if (presentcol == "[??]?? 3?_???")
         {
             StationtoB2 = 1;
             SceneManager.LoadScene("Chungmuro_B2");
 
         }
-        if (presentcol == "[계단]지하 2층 (1)" || presentcol == "[계단]지하 2층")
+        if (presentcol == "[??]?? 2? (1)" || presentcol == "[??]?? 2?")
         {
             B2toStation = 1;
             SceneManager.LoadScene("4_Chungmuro_B3");
-            //조건에 따라 3_Chungmuro_B3?
+            //??? ?? 3_Chungmuro_B3?
         }
     }
     public void opt2down()

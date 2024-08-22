@@ -70,9 +70,7 @@ public class 튜토리얼아이템 : MonoBehaviour
             else
             {
                 context.text = "다음 칸으로 이동한다";
-
-                //SceneManager.LoadScene("Pro_map2 beta");
-                SceneManager.LoadScene("Pro_map2_2"); //프롤로그 테스트 
+                SceneManager.LoadScene("Pro_map2_2"); 
             }
 
             clickflag = 2;
@@ -86,8 +84,9 @@ public class 튜토리얼아이템 : MonoBehaviour
             context.text = "[찢겨진 부적] : 영문을 알 수 없는 글씨가 쓰여진 종이. 섬뜩하게 찢겨져있다. ";
             paper.SetActive(false);
             papercontent.SetActive(false);
-            inventory.AddItem("찢겨진 부적", "영문을 알 수 없는 글씨가 쓰여진 종이. 섬뜩하게 찢겨져있다.");
             tutorialscript.gotoflag++;
+            inventory.AddItem("찢겨진부적");
+            
             paperflag= 1;
         }
         else if (airpotflag==0&&intertest.colitemname == "에어팟한쪽")
@@ -97,8 +96,8 @@ public class 튜토리얼아이템 : MonoBehaviour
             context.text = "[누군가 두고 내린 에어팟 한쪽]을 가방에 챙겼다";
             oddairpot.SetActive(false);
             airpotcontent.SetActive(false);
-            inventory.AddItem("에어팟 한쪽", "누군가 두고 내린 에어팟 한쪽.");
             tutorialscript.gotoflag++;
+            inventory.AddItem(intertest.colitemname);
             airpotflag = 1;
         }
         else if (keyringflag==0&&intertest.colitemname == "키링")
@@ -108,8 +107,8 @@ public class 튜토리얼아이템 : MonoBehaviour
             context.text = "[누군가 흘린 키링]을 가방에 챙겼다.";
             keyring.SetActive(false);
             keyringcontent.SetActive(false);
-            inventory.AddItem("키링", "누군가 흘린 키링");
             tutorialscript.gotoflag++;
+            inventory.AddItem("키링");
             keyringflag = 1;
            
         }

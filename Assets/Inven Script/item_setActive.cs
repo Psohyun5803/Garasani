@@ -27,11 +27,24 @@ public class item_setActive : MonoBehaviour
     {
         for(int i = 0; i < Inventory.instance.slots.Length; i++)
         {
-            if (!Inventory.instance.slots[i].isItem) //슬롯 비어있는 경우 
+            // 만약 슬롯이 비어있다면 (itemName이 빈 문자열인지 체크)
+            if (string.IsNullOrEmpty(Inventory.instance.slots[i].itemName))
             {
-               
-            }
+                Image slotImage = itemSlots[i].GetComponent<Image>(); // 슬롯 안의 이미지 컴포넌트를 가져옴
+                Sprite itemSprite = GetItemSprite(itemName);
 
+                if (itemSprite != null)
+                {
+                    slotImage.sprite = itemSprite; // 아이템 이름에 맞는 스프라이트 설정
+                    slotImage.enabled = true; // 슬롯에 이미지를 표시하도록 설정
+                }
+                else
+                {
+                    Debug.LogWarning($"Item sprite for {itemName} not found!");
+                }
+
+                break;
+            }
         }
     }
 

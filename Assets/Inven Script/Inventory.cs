@@ -1,6 +1,6 @@
 using UnityEngine;
 using TMPro;
-
+using System;  
 
 [System.Serializable]
 public struct Item
@@ -23,7 +23,7 @@ public struct Slot
 
 public class Inventory : MonoBehaviour
 {
-    public Item[] items = new Item[30];
+    public Item[] items = new Item[31];
     public Slot[] slots = new Slot[20];
 
     public static Inventory instance;
@@ -33,6 +33,11 @@ public class Inventory : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -70,6 +75,7 @@ public class Inventory : MonoBehaviour
         items[27] = new Item { name = "탄산음료2", info = "마시면 정신력 회복에 도움이 된다." };
         items[28] = new Item { name = "탄산음료3", info = "마시면 정신력 회복에 도움이 된다." };
         items[29] = new Item { name = "풀페이스두건", info = "패션용 두건." };
+        items[30] = new Item { name = "키링", info = "누군가 흘린 키링." };
 
 
         // ?? ?? ??? 
@@ -84,19 +90,40 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void AddItem(string newItemName, string newItemInfo)
+    public void AddItem(string newItemName)
     {
         bool itemAdded = false;
 
-        //add item 
+        newItemName = newItemName.Trim();
+        // Find the index of the item in the items array
+        int itemIndex = -1;
+        for (int j = 0; j < items.Length; j++)
+        {
+            Debug.Log("Trying to add item: " + newItemName);
+            if (items[j].name.Equals(newItemName))
+            {
+                Debug.Log("item found");
+                itemIndex = j;
+                break;
+            }
+        }
+
+        if (itemIndex == -1)
+        {
+            Debug.LogError("Item not found in items array");
+            return;
+        }
+
+        // Add item 
         for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i].itemName == newItemName)
             {
                 slots[i].quantity++;
-                //slots[i].quantityText.text = slots[i].quantity.ToString();
+                // Uncomment the lines below if needed
+                // slots[i].quantityText.text = slots[i].quantity.ToString();
                 DoubleClickToggleButton.instance.UpdateQuantity(slots[i].quantity); //수량 업데이트
-                
+
                 itemAdded = true;
                 slots[i].isItem = true;
                 item_setActive.instance.updateItem(slots[i].itemName);
@@ -104,7 +131,7 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        // new item 
+        // Add new item to an empty slot
         if (!itemAdded)
         {
             for (int i = 0; i < slots.Length; i++)
@@ -112,11 +139,12 @@ public class Inventory : MonoBehaviour
                 if (slots[i].itemName == "")
                 {
                     slots[i].itemName = newItemName;
-                    slots[i].itemInfo = newItemInfo;
+                    slots[i].itemInfo = items[itemIndex].info;
                     slots[i].quantity = 1;
-                    //slots[i].itemText.text = newItemName;
-                    //slots[i].quantityText.text = "1";
-                    //slots[i].itemInfoText.text = newItemInfo;
+                    // Uncomment the lines below if needed
+                    // slots[i].itemText.text = newItemName;
+                    // slots[i].quantityText.text = "1";
+                    // slots[i].itemInfoText.text = items[itemIndex].info;
                     DoubleClickToggleButton.instance.UpdateQuantity(slots[i].quantity); //수량 업데이트
 
                     item_setActive.instance.updateItem(slots[i].itemName);

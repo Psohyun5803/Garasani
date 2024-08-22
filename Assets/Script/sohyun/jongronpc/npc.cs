@@ -76,7 +76,7 @@ public class npc : MonoBehaviour
     string[] jihoonfirst = new string[9] { "정민어, 안녕?", "지훈으아아아아앙!!", "정민엄마랑 아빠는 어디가셨어?", "지훈몰라...엄마아아....", "지훈엄마가 안 보여... 끅....", "정민미아같은데...어떡할까요?","PP(경계할 줄 알았는데... 다행이다.)","정민너는 이름이 뭐야?","지훈...지훈이."};
     string[] stationcontent = new string[4] { "정민앗, 퇴근하셨네...", "....", "정민마지막으로 엄마랑 어디서 헤어졌는지 기억나?","지훈(도리도리)" };
     string[] jobcontent = new string[2] { "자 강아지, 강아지 장난감 있습니다. 360도로 돌아가는 겁니다. \n요 친환경 LED ", "지훈...히끅." };
-    string[] godcontent = new string[8] { "여러분. 저희 예수님께서는 나 하나를 위해\n 십자가에 못이 박혀 돌아가시고....","정민씨", "예에,당연히! 진짜 아니겠습니까. 하나님께서 보우하사....", "PL그거 진짜에요? 아닌 거 같은데....", "정민(안색이 파래졌다)", "PL그럼 저 지옥...", "정민하하,죄송합니다.", "....." };
+    string[] godcontent = new string[8] { "여러분. 저희 신명님께서는 나 하나를 위해\n 이 땅에 거름이 되어 돌아가시고....","정민씨", "예에,당연히! 진짜 아니겠습니까. 신명이시여, 우리를 흙으로 돌아가게 해주소서....", "PL그거 진짜에요? 아닌 거 같은데....", "정민(안색이 파래졌다)", "PL그럼 저 지옥...", "정민하하,죄송합니다.", "....." };
     string[] jihooninter = new string[8] { "PL육회 좋아해?", "지훈....???", "PL아직 어려서 모르나...", "지훈이거....", "PL지훈이 어머니께서 남기신 편지같다.","정민자, 이거 먹고 기운내.","지훈(우물우물)","정민헤헤, 맛있지? 저기 저 착한 사람이 사준거야." };
     string[] jungmininter = new string[3] { "정민그래요?? 세상 좋아졌네...", "정민육회 먹고 싶다. 츄릅", "정민앗, 정말 안 주셔도 되는데, 냠냠"};
     private Vector2 pos;
@@ -1345,6 +1345,7 @@ public class npc : MonoBehaviour
             buttonnum++;
             if (buttonnum>10)
             {
+                content.text = "";
                 talksqu.SetActive(false);
                 buttonnum = 0;
                 interobj = null;
@@ -1356,6 +1357,7 @@ public class npc : MonoBehaviour
             {
                 if(buttonnum>2)
                 {
+                    content.text = "";
                     talksqu.SetActive(false);
                     buttonnum = 0;
                     interobj = null;
@@ -1380,6 +1382,7 @@ public class npc : MonoBehaviour
             {
                 if(buttonnum>7)
                 {
+                    content.text = "";
                     buttonnum = 0;
                     talksqu.SetActive(false);
                     buttonnum = 0;
@@ -1659,6 +1662,7 @@ public class npc : MonoBehaviour
 
             }
         }
+      
     }
     void OnMouseDown()
     {
@@ -1970,6 +1974,9 @@ public class npc : MonoBehaviour
               
                 options.SetActive(true);
                 option3_bt.SetActive(true);
+                option4_bt.SetActive(true);
+                option5_bt.SetActive(true);
+                option6_bt.SetActive(true);
                 button.SetActive(true);
                 
                 option1.text = "> 움직이는 강아지";
@@ -2041,9 +2048,11 @@ public class npc : MonoBehaviour
 
 
 
+        textani.npconClickAction();
+
     }
-// Start is called before the first frame update
-void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         if(station1!=1)
         {

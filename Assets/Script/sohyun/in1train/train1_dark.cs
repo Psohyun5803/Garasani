@@ -46,6 +46,7 @@ public class train1_dark : MonoBehaviour
         talksqu.SetActive(true);
         who.text = "ÁöÈÆ";
         content.text = "¾ö¸¶!!";
+        textani.npconClickAction();
         button.SetActive(true);
         
     }

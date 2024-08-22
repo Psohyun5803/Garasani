@@ -61,7 +61,7 @@ public class jungmin_B2 : MonoBehaviour
         {
 
             transform.position = new Vector3(player.transform.position.x - 1,
-                            player.transform.position.y + 1, 0);
+                            player.transform.position.y, 0);
 
 
         }

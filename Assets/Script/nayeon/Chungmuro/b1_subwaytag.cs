@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class b1_subwaytag : MonoBehaviour
 {
@@ -28,6 +28,13 @@ public class b1_subwaytag : MonoBehaviour
         {
             DialogueManager.instance.name.text = "System";
             DialogueManager.instance.dialogue_text.text = "나의 여정이 기록되었다.";
+            if (JM_b1.instance != null)
+            {
+                Destroy(JM_b1.instance.gameObject);
+                JM_b1.instance = null;
+                Debug.Log("객체 삭제");
+            }
+            SceneManager.LoadScene("Start_Cutsene");
         }
 
     }

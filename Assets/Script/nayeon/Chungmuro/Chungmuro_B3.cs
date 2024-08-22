@@ -161,7 +161,8 @@ public class Chungmuro_B3 : MonoBehaviour
             Debug.LogError("Target animator object not assigned.");
         }
 
-
+        NPCAnimator= GetComponent<Animator>();
+        
         //플레이어 이동 설정 
         customize.sceneflag = 4;
         customize.moveflag = 1;
@@ -182,7 +183,7 @@ public class Chungmuro_B3 : MonoBehaviour
         DataManager.instance.csv_FileName = "Prologue2";
         DataManager.instance.DialogueLoad(); // CSV 파일 로드
 
-        NPCAnimator= GetComponent<Animator>();
+        
 
         Invoke("nothing", 1.5f);
         StartCoroutine(NPCEventCoroutine());

@@ -6,6 +6,7 @@ public class b1_rock3 : MonoBehaviour
 {
     public static b1_rock3 instance;
     public int rockCount = 0;
+    public bool rockFlag = false;
 
     private void Awake()
     {
@@ -35,9 +36,9 @@ public class b1_rock3 : MonoBehaviour
     {
         if(rockCount == 3)
         {
-            Challenge.instance.ch_rock3 = true;
-            Debug.Log("도전 과제 달성");
-            StartCoroutine(Chungmuro_B1.instance.ChungmuroB1_2());
+            //Challenge.instance.ch_rock3 = true;
+            //Debug.Log("도전 과제 달성");
+            rockFlag = true;
         }
     }
 }

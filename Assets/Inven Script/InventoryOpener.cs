@@ -14,33 +14,22 @@ public class InventoryOpener : MonoBehaviour
     void Start()
     {
         inventoryWindow.SetActive(false);
-        //slot.SetActive(false);
-        //selected.SetActive(false);
-        //status.SetActive(false);
+
     }
 
     void Update()
     {
-        // E ?? ??? ?
         if (Input.GetKeyDown(KeyCode.E))
         {
-            // ???? ?? ????? ??, ????? ??.
             if (isEPressed)
             {
                 inventoryWindow.SetActive(false);
-                //slot.SetActive(false);
-                //selected.SetActive(false);
-                //status.SetActive(false);
             }
             else
             {
                 inventoryWindow.SetActive(true);
-                //slot.SetActive(true);
-                //selected.SetActive(true);
-                //status.SetActive(true);
             }
-
-            // ??? ?? ?????.
+            
             isEPressed = !isEPressed;
         }
     }

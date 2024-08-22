@@ -7855,7 +7855,7 @@ MonoBehaviour:
   keyringcontent: {fileID: 918141417}
   airpotcontent: {fileID: 246737950}
   papercontent: {fileID: 1973026943}
-  inventory: {fileID: 0}
+  inventory: {fileID: 1415078986}
 --- !u!1 &236652301
 GameObject:
   m_ObjectHideFlags: 0
@@ -19494,7 +19494,7 @@ MonoBehaviour:
   keyringcontent: {fileID: 918141417}
   airpotcontent: {fileID: 246737950}
   papercontent: {fileID: 1973026943}
-  inventory: {fileID: 0}
+  inventory: {fileID: 1415078986}
 --- !u!1 &645101140
 GameObject:
   m_ObjectHideFlags: 0
@@ -19989,7 +19989,7 @@ MonoBehaviour:
   keyringcontent: {fileID: 918141417}
   airpotcontent: {fileID: 246737950}
   papercontent: {fileID: 1973026943}
-  inventory: {fileID: 0}
+  inventory: {fileID: 1415078986}
 --- !u!1 &669612379
 GameObject:
   m_ObjectHideFlags: 0
@@ -32706,8 +32706,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe31f8bc1734857428682eb9a19b357b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brightnessPanel: {fileID: 0}
-  brightnessSlider: {fileID: 0}
+  brightnessPanel: {fileID: 2091572216}
+  brightnessSlider: {fileID: 373453907}
 --- !u!114 &1173956575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32720,29 +32720,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98cee2ec1bd464b40a5709d5980f4c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui_Phone: {fileID: 0}
-  ui_WikiView: {fileID: 0}
-  ui_TwitterView: {fileID: 0}
-  ui_GalleryView: {fileID: 0}
-  ui_TodoView: {fileID: 0}
-  ui_SettingView: {fileID: 0}
-  Wiki_Button: {fileID: 0}
-  Twitter_Button: {fileID: 0}
-  Gallery_Button: {fileID: 0}
-  Todo_Button: {fileID: 0}
-  Call_Button: {fileID: 0}
-  Message_Button: {fileID: 0}
-  Setting_Button: {fileID: 0}
+  ui_Phone: {fileID: 1377748579}
+  ui_WikiView: {fileID: 870691445}
+  ui_TwitterView: {fileID: 45821653}
+  ui_GalleryView: {fileID: 209331735}
+  ui_TodoView: {fileID: 268241659}
+  ui_SettingView: {fileID: 2100835844}
+  Wiki_Button: {fileID: 1825438010}
+  Twitter_Button: {fileID: 2077471148}
+  Gallery_Button: {fileID: 359928623}
+  Todo_Button: {fileID: 1573038113}
+  Call_Button: {fileID: 1118546603}
+  Message_Button: {fileID: 348075083}
+  Setting_Button: {fileID: 1419806304}
   viewList:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  ui_warning: {fileID: 0}
-  ui_warning_Exit: {fileID: 0}
-  ui_warning_Call: {fileID: 0}
-  ui_LightSet: {fileID: 0}
-  ui_SoundSet: {fileID: 0}
+  ui_warning: {fileID: 1302653996}
+  ui_warning_Exit: {fileID: 226589206}
+  ui_warning_Call: {fileID: 1528785691}
+  ui_LightSet: {fileID: 632023066}
+  ui_SoundSet: {fileID: 467251772}
 --- !u!114 &1173956576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40582,8 +40582,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5aac18095434a8db6c90daac0c4b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSlots: []
-  itemSprites: []
+  itemSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  itemSprites:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1415078986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59827,7 +59878,7 @@ MonoBehaviour:
   keyringcontent: {fileID: 918141417}
   airpotcontent: {fileID: 246737950}
   papercontent: {fileID: 1973026943}
-  inventory: {fileID: 0}
+  inventory: {fileID: 1415078986}
 --- !u!212 &2072680395
 SpriteRenderer:
   m_ObjectHideFlags: 0

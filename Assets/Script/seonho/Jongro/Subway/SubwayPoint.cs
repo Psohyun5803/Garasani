@@ -65,6 +65,7 @@ public class SubwayPoint : MonoBehaviour
         {
             Debug.Log("Loading scene: " + selectedScene);
             SceneManager.LoadScene(selectedScene);
+            Player.playertrans(0, 0);
         }
         else
         {

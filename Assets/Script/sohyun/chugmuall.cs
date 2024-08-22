@@ -39,12 +39,13 @@ public class chunmuroall : MonoBehaviour
             if (StationtoB2 == 1)
             {
                 GameObject upstair = GameObject.Find("b2_upstairs_line4");
+                GameObject jm = GameObject.Find("구정민");
 
                 // null ??
-                if (upstair != null)
+                if (jm != null)
                 {
-                    Debug.Log(upstair.transform.position.x);
-                    Player.playertrans(upstair.transform.position.x - 1, upstair.transform.position.y + 1);
+                    Debug.Log(jm.transform.position.x);
+                    Player.playertrans(jm.transform.position.x -2 , jm.transform.position.y);
                     StationtoB2 = 0;
                 }
                 else

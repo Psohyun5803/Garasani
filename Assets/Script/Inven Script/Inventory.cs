@@ -7,6 +7,7 @@ public struct Item
 {
     public string name;
     public string info;
+    public Sprite itemImage;
 }
 
 [System.Serializable]

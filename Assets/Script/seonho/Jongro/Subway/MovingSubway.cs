@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MovingSubway : MonoBehaviour
 {
@@ -13,18 +14,17 @@ public class MovingSubway : MonoBehaviour
     public float stopDuration = 10f; // 오브젝트가 멈춰있는 시간
     public float initialDelay = 5f; // 초기 대기 시간 (30초)
 
+    public bool IsSubwayStopped { get; private set; } = false;
+    private GameObject currentSubway;
+
     private void Start()
     {
-        // 초기 대기 시간 후 InvokeRepeating 시작
         StartCoroutine(StartAfterDelay(initialDelay));
     }
 
     IEnumerator StartAfterDelay(float delay)
     {
-        // 대기 시간 동안 기다립니다.
         yield return new WaitForSeconds(delay);
-
-        // 1분 간격으로 오브젝트 생성
         InvokeRepeating("SpawnMovingObject", 0f, spawnInterval);
     }
 
@@ -35,26 +35,33 @@ public class MovingSubway : MonoBehaviour
 
     IEnumerator MoveObject()
     {
-        GameObject obj = Instantiate(movingObjectPrefab, spawnPoint.position, Quaternion.identity);
-        Vector3 startPos = obj.transform.position;
+        IsSubwayStopped = false;
+        currentSubway = Instantiate(movingObjectPrefab, spawnPoint.position, Quaternion.identity);
 
         // 오브젝트가 스톱 포인트까지 이동
-        while (Vector3.Distance(obj.transform.position, stopPoint.position) > 0.1f)
+        while (Vector3.Distance(currentSubway.transform.position, stopPoint.position) > 0.1f)
         {
-            obj.transform.position = Vector3.MoveTowards(obj.transform.position, stopPoint.position, moveSpeed * Time.deltaTime);
+            currentSubway.transform.position = Vector3.MoveTowards(currentSubway.transform.position, stopPoint.position, moveSpeed * Time.deltaTime);
             yield return null;
         }
+
+        // 지하철이 스톱 포인트에 도달했을 때 상태 업데이트
+        IsSubwayStopped = true;
+        Debug.Log("Subway has reached the stop point. IsSubwayStopped = " + IsSubwayStopped);
 
         // 10초간 정지
         yield return new WaitForSeconds(stopDuration);
 
+        IsSubwayStopped = false;
+        Debug.Log("Subway is leaving the stop point. IsSubwayStopped = " + IsSubwayStopped);
+
         // 오브젝트가 익스잇 포인트로 이동 후 제거
-        while (Vector3.Distance(obj.transform.position, exitPoint.position) > 0.1f)
+        while (Vector3.Distance(currentSubway.transform.position, exitPoint.position) > 0.1f)
         {
-            obj.transform.position = Vector3.MoveTowards(obj.transform.position, exitPoint.position, moveSpeed * Time.deltaTime);
+            currentSubway.transform.position = Vector3.MoveTowards(currentSubway.transform.position, exitPoint.position, moveSpeed * Time.deltaTime);
             yield return null;
         }
 
-        Destroy(obj);
+        Destroy(currentSubway);
     }
 }

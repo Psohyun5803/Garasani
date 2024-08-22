@@ -691,7 +691,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 64197474}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 531974034}
+        m_TargetAssemblyTypeName: chunmuroall, Assembly-CSharp
+        m_MethodName: opt1down
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &64197473
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5922,7 +5934,6 @@ GameObject:
   - component: {fileID: 500577187}
   - component: {fileID: 500577188}
   - component: {fileID: 500577190}
-  - component: {fileID: 500577189}
   - component: {fileID: 500577191}
   m_Layer: 2
   m_Name: "[\uACC4\uB2E8]\uC9C0\uD558 2\uCE35"
@@ -5940,7 +5951,7 @@ Transform:
   m_GameObject: {fileID: 500577186}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.3993196, y: -2.2307065, z: 0.08237279}
+  m_LocalPosition: {x: 4.3993196, y: -2.2307065, z: 0}
   m_LocalScale: {x: 0.7321597, y: 0.7321597, z: 0.7321597}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5998,33 +6009,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &500577189
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500577186}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!61 &500577190
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6284,9 +6268,9 @@ RectTransform:
   - {fileID: 1894464198}
   m_Father: {fileID: 950329517}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 94.504, y: -226}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &515291816
@@ -6759,37 +6743,22 @@ MonoBehaviour:
   - itemName: 
     itemInfo: 
     quantity: 0
-    itemText: {fileID: 1550050097}
-    quantityText: {fileID: 522970236}
-    itemInfoText: {fileID: 329364039}
     isItem: 0
   - itemName: 
     itemInfo: 
     quantity: 0
-    itemText: {fileID: 416451211}
-    quantityText: {fileID: 2136584934}
-    itemInfoText: {fileID: 1316449710}
     isItem: 0
   - itemName: 
     itemInfo: 
     quantity: 0
-    itemText: {fileID: 940650961}
-    quantityText: {fileID: 1719871117}
-    itemInfoText: {fileID: 1160040910}
     isItem: 0
   - itemName: 
     itemInfo: 
     quantity: 0
-    itemText: {fileID: 1180478218}
-    quantityText: {fileID: 1510209018}
-    itemInfoText: {fileID: 31275478}
     isItem: 0
   - itemName: 
     itemInfo: 
     quantity: 0
-    itemText: {fileID: 105621968}
-    quantityText: {fileID: 961787235}
-    itemInfoText: {fileID: 1348142214}
     isItem: 0
 --- !u!1 &531974033
 GameObject:
@@ -7150,9 +7119,9 @@ RectTransform:
   - {fileID: 1264156426}
   m_Father: {fileID: 950329517}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 94.504, y: -126}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &568402083
@@ -16991,7 +16960,7 @@ Transform:
   m_GameObject: {fileID: 1385178000}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.0306804, y: -3.5307064, z: 0.08237279}
+  m_LocalPosition: {x: -3.0306804, y: -3.5307064, z: 0}
   m_LocalScale: {x: 0.7321597, y: 0.7321597, z: 0.7321597}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18324,7 +18293,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1451832245}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 531974034}
+        m_TargetAssemblyTypeName: chunmuroall, Assembly-CSharp
+        m_MethodName: opt2down
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1451832243
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18998,7 +18979,7 @@ Transform:
   m_GameObject: {fileID: 1498857464}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.0606804, y: -0.5507064, z: 0.08237279}
+  m_LocalPosition: {x: -3.0606804, y: -0.5507064, z: 0}
   m_LocalScale: {x: 0.7321597, y: 0.7321597, z: 0.7321597}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20755,9 +20736,9 @@ RectTransform:
   - {fileID: 1474428197}
   m_Father: {fileID: 950329517}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 94.504, y: -26}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1604374155
@@ -23116,6 +23097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contextList: []
   sign: {fileID: 1263481216}
+  canMove: 0
 --- !u!1 &1794925609
 GameObject:
   m_ObjectHideFlags: 0
@@ -23425,7 +23407,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1824300212}
   - component: {fileID: 1824300213}
-  - component: {fileID: 1824300215}
   - component: {fileID: 1824300214}
   - component: {fileID: 1824300216}
   m_Layer: 2
@@ -23444,7 +23425,7 @@ Transform:
   m_GameObject: {fileID: 1824300211}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.4293194, y: -5.2107067, z: 0.08237279}
+  m_LocalPosition: {x: 4.4293194, y: -5.2107067, z: 0}
   m_LocalScale: {x: 0.7321597, y: 0.7321597, z: 0.7321597}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23547,33 +23528,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
---- !u!50 &1824300215
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1824300211}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!114 &1824300216
 MonoBehaviour:
   m_ObjectHideFlags: 0

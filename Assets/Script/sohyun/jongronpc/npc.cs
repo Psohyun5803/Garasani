@@ -62,6 +62,7 @@ public class npc : MonoBehaviour
     public static string presentcol;
     public static int buttonnum = 0;
     public static int station1 = 0;
+    public static int jungminimage = 0;
 
 
 
@@ -901,6 +902,8 @@ public class npc : MonoBehaviour
                     who.text = "정민";
                     content.text = manjucontent[buttonnum];
                     buttonnum++;
+
+                    Debug.Log(buttonnum);
                 }
                 
             }
@@ -931,6 +934,7 @@ public class npc : MonoBehaviour
                     }
                     
                     buttonnum++;
+                    
                     Debug.Log(buttonnum);
                 }
                 
@@ -976,6 +980,7 @@ public class npc : MonoBehaviour
                     else if(buttonnum==1)
                     {
                         buttonnum++;
+                        Debug.Log(buttonnum);
                         who.text = "정민";
                         content.text = "말랑하고 쫀득하고 고소한 커스타드의 향기를...";
                         //buttonnum++;
@@ -995,6 +1000,7 @@ public class npc : MonoBehaviour
                         who.text = "정민";
                         content.text = "아니! 지하철에서 만쥬를 뿌리치고 가다니...!";
                         buttonnum++;
+                        Debug.Log(buttonnum);
                     }
                     
                 }
@@ -1014,6 +1020,7 @@ public class npc : MonoBehaviour
             if (clofirst==0)
             {
                 buttonnum++;
+                Debug.Log(buttonnum);
                 if (buttonnum > 2)
                 {
                     talksqu.SetActive(false);
@@ -1141,17 +1148,20 @@ public class npc : MonoBehaviour
                     jobflag = 1;
                     buttonnum = 0;
                 }
-                if (jobcontent[buttonnum].Substring(0, 2) == "지훈")
+                else if (jobcontent[buttonnum].Substring(0, 2) == "지훈")
                 {
                     who.text = "지훈";
                     content.text = jobcontent[buttonnum].Substring(2);
+                    buttonnum++;
+                    
                 }
                 else
                 {
                     who.text = "잡상인";
                     content.text = jobcontent[buttonnum];
+                    buttonnum++;
                 }
-                buttonnum++;
+                
             }
         }
         
@@ -1188,6 +1198,7 @@ public class npc : MonoBehaviour
         if (interobj == "헛소리 하는 노인")
         {
             buttonnum++;
+            Debug.Log(buttonnum);
             if (buttonnum > 7)
             {
                 talksqu.SetActive(false);
@@ -1214,6 +1225,7 @@ public class npc : MonoBehaviour
             else
             {
                 buttonnum++;
+                Debug.Log(buttonnum);
                 if (buttonnum > 5)
                 {
                     talksqu.SetActive(false);
@@ -1257,6 +1269,7 @@ public class npc : MonoBehaviour
         else if (interobj == "물건을 훔치는 노인")
         {
             buttonnum++;
+            Debug.Log(buttonnum);
             if (buttonnum > 0)
             {
                
@@ -1277,7 +1290,8 @@ public class npc : MonoBehaviour
         else if (interobj == "지훈2")
         {
             buttonnum++;
-            if(buttonnum>4)
+            Debug.Log(buttonnum);
+            if (buttonnum>4)
             {
                 if (manjutojung == 1)
                 {
@@ -1343,6 +1357,7 @@ public class npc : MonoBehaviour
         else if (interobj == "사이비")
         {
             buttonnum++;
+            Debug.Log(buttonnum);
             if (buttonnum>10)
             {
                 content.text = "";
@@ -1416,6 +1431,7 @@ public class npc : MonoBehaviour
         else if (interobj == "시비거는노인")
         {
             buttonnum++;
+            Debug.Log(buttonnum);
             if (buttonnum > 2)
             {
                 //여기에 안경플래그 추가 예정
@@ -1436,6 +1452,7 @@ public class npc : MonoBehaviour
         else if (interobj == "역무실")
         {
             buttonnum++;
+            Debug.Log(buttonnum);
             if (buttonnum > 3)
             {
 
@@ -1477,11 +1494,13 @@ public class npc : MonoBehaviour
                     who.text = jungmininter[buttonnum].Substring(0, 2);
                     content.text = jungmininter[buttonnum].Substring(2);
                     buttonnum++;
+                    Debug.Log(buttonnum);
                 }
             }
             else if (optnum==2)
             {
                 buttonnum++;
+                Debug.Log(buttonnum);
                 if (buttonnum>2)
                 {
                     talksqu.SetActive(false);
@@ -1512,6 +1531,7 @@ public class npc : MonoBehaviour
                 who.text = "음식 파는 할머니";
                 content.text = "고마우이.";
                 buttonnum++;
+                Debug.Log(buttonnum);
 
             }
             else 
@@ -1543,6 +1563,7 @@ public class npc : MonoBehaviour
                 who.text = "정민";
                 content.text = "(자는 척)";
                 buttonnum++;
+                Debug.Log(buttonnum);
 
             }
             else
@@ -1577,6 +1598,7 @@ public class npc : MonoBehaviour
                 content.text = "같이 가자 지훈아!";
                 jihoon_B2.jihoonmove = 1;
                 buttonnum++;
+                Debug.Log(buttonnum);
             }
             else if(jihoonflag==1&&optnum==1&&buttonnum>9)
             {
@@ -1621,6 +1643,7 @@ public class npc : MonoBehaviour
 
                     content.text = jihoonfirst[buttonnum].Substring(2);
                     buttonnum++;
+                    Debug.Log(buttonnum);
                 }
                 
             }
@@ -1628,6 +1651,7 @@ public class npc : MonoBehaviour
             else if(jihoonflag==0)
             {
                 buttonnum++;
+                Debug.Log(buttonnum);
                 if (jihoonfirst[buttonnum].Substring(0, 2) == "정민" || jihoonfirst[buttonnum].Substring(0, 2) == "지훈")
                 {
                     who.text = jihoonfirst[buttonnum].Substring(0, 2);
@@ -2074,7 +2098,7 @@ public class npc : MonoBehaviour
     {
 
       
-        if(who.text!="player")
+        if (who.text!="player")
         {
             content.alignment = TextAlignmentOptions.Right;
         }

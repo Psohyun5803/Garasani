@@ -97,7 +97,7 @@ public class chunmuroall : MonoBehaviour
 
             if(gameObject.tag == "upstairs")
             {
-                Debug.Log("??? ?? ??");
+           
                 talksqu.SetActive(true);
                 Debug.Log(presentcol);
                 option1_bt.SetActive(true);
@@ -141,12 +141,24 @@ public class chunmuroall : MonoBehaviour
         else if (presentcol == "b2_upstairs_line3")
         {
             B2toStation = 1;
+            GameObject jm = GameObject.Find("구정민");
+            if (jm != null)
+            {
+                // 구정민 객체가 존재할 때만 삭제
+                Destroy(jm);
+            }
             SceneManager.LoadScene("3_Chungmuro_B3");
            
         }
         else if(presentcol == "b2_upstairs_line4")
         {
             B2toStation = 1;
+            GameObject jm = GameObject.Find("구정민");
+            if (jm != null)
+            {
+                // 구정민 객체가 존재할 때만 삭제
+                Destroy(jm);
+            }
             SceneManager.LoadScene("4_Chungmuro_B3");
         }
     }

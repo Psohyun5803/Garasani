@@ -35,34 +35,6 @@ public class JMmove : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(Chungmuro_B2.instance.canMove == true)
-        {
-            //씬 전환 전 객체 삭제 
-            if (JMmove.instance != null)
-            {
-                Destroy(JMmove.instance.gameObject);
-                JMmove.instance = null;
-                Debug.Log("객체 삭제");
-            }
-
-            //4호선 승강장 이동 
-            if (collision.collider.CompareTag("line4"))
-            {
-                Debug.Log("4호선 승강장 이동");
-                StartCoroutine(TalkManager.instacne.isMove("4호선 승강장", "4_Chungmuro_B3"));
-            }
-
-            //3호선 승강장 이동 
-            if (collision.gameObject.tag == "line3")
-            {
-                Debug.Log("3호선 승강장 이동");
-                StartCoroutine(TalkManager.instacne.isMove("3호선 승강장", "3_Chungmuro_B3"));
-            }
-        }
-        
-    }
 
     private void OnMouseDown()
     {

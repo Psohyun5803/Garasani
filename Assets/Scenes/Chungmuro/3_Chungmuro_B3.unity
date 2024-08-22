@@ -13199,9 +13199,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contextList: []
-  upstair: {fileID: 962659112}
+  playerFirst: {fileID: 962659112}
   dest: {fileID: 1510865881}
   speed: 5
+  targetAnimatorObject: {fileID: 1943951411}
+  boolParameterName: Right
 --- !u!114 &928665184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25757,7 +25759,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847812352}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1847812355
 Camera:
   m_ObjectHideFlags: 0

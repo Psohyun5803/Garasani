@@ -36533,10 +36533,10 @@ MonoBehaviour:
   Message_Button: {fileID: 348075083}
   Setting_Button: {fileID: 1419806304}
   viewList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 870691445}
+  - {fileID: 45821653}
+  - {fileID: 268241659}
+  - {fileID: 209331735}
   ui_warning: {fileID: 1302653996}
   ui_warning_Exit: {fileID: 226589206}
   ui_warning_Call: {fileID: 1528785691}
@@ -68248,8 +68248,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 916393958}
   - {fileID: 627910403}
-  - {fileID: 785429979}
   - {fileID: 36072642}
+  - {fileID: 785429979}
   - {fileID: 1173956578}
   - {fileID: 1464138301}
   - {fileID: 1219600199}

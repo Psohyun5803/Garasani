@@ -65,8 +65,7 @@ public class npc : MonoBehaviour
     public static int jungminimage = 0;
 
 
-    public AudioClip[] specialAudioClips;
-    private AudioSource specialAudioSource;
+    
 
 
     public int playercolflag = 0;
@@ -88,7 +87,7 @@ public class npc : MonoBehaviour
 
     private void Awake()
     {
-        specialAudioSource = gameObject.AddComponent<AudioSource>();
+       
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -1136,7 +1135,7 @@ public class npc : MonoBehaviour
         {
             if(buttonnum>9)
             {
-                specialAudioSource.Stop();
+               
                 buttonnum = 0;
                 talksqu.SetActive(false);
                 buttonnum = 0;
@@ -1150,7 +1149,7 @@ public class npc : MonoBehaviour
                 options.SetActive(false);
                 if(buttonnum>1)
                 {
-                    specialAudioSource.Stop();
+                    
                     buttonnum = 0;
                     talksqu.SetActive(false);
                     buttonnum = 0;
@@ -1371,7 +1370,7 @@ public class npc : MonoBehaviour
             Debug.Log(buttonnum);
             if (buttonnum>10)
             {
-                specialAudioSource.Stop();
+               
                 content.text = "";
                 talksqu.SetActive(false);
                 buttonnum = 0;
@@ -1384,7 +1383,8 @@ public class npc : MonoBehaviour
             {
                 if(buttonnum>2)
                 {
-                    specialAudioSource.Stop();
+                   
+
                     content.text = "";
                     talksqu.SetActive(false);
                     buttonnum = 0;
@@ -1565,7 +1565,7 @@ public class npc : MonoBehaviour
         {
             if (buttonnum > 10)
             {
-                specialAudioSource.Stop();
+                
                 talksqu.SetActive(false);
                 buttonnum = 0;
                 content.text = "";
@@ -1582,7 +1582,8 @@ public class npc : MonoBehaviour
             }
             else
             {
-                specialAudioSource.Stop();
+              
+
                 talksqu.SetActive(false);
                 buttonnum = 0;
                 interobj = null;
@@ -1601,7 +1602,7 @@ public class npc : MonoBehaviour
             //buttonnum++;
             if (buttonnum > 14)
             {
-                specialAudioSource.Stop();
+               
                 talksqu.SetActive(false);
                 buttonnum = 0;
                 interobj = null;
@@ -1609,7 +1610,7 @@ public class npc : MonoBehaviour
             }
             else if(buttonnum>13)
             {
-                specialAudioSource.Stop();
+            
                 who.text = "정민";
                 content.text = "같이 가자 지훈아!";
                 jihoon_B2.jihoonmove = 1;
@@ -1899,8 +1900,7 @@ public class npc : MonoBehaviour
 
             if (buttonnum == 0&&jihoonflag==0)
             {
-                specialAudioSource.clip = specialAudioClips[0];
-                specialAudioSource.Play();
+                
                 talksqu.SetActive(true);
                 who.text = jihoonfirst[0].Substring(0, 2);
                 content.text = jihoonfirst[0].Substring(2);
@@ -1956,8 +1956,7 @@ public class npc : MonoBehaviour
 
             if (buttonnum == 0)
             {
-                specialAudioSource.clip = specialAudioClips[0];
-                specialAudioSource.Play();
+               
                 talksqu.SetActive(true);
                 who.text = "사이비";
                 content.text = godcontent[buttonnum];
@@ -2012,8 +2011,7 @@ public class npc : MonoBehaviour
 
             if (buttonnum == 0)
             {
-                specialAudioSource.clip = specialAudioClips[0];
-                specialAudioSource.Play();
+               
                 talksqu.SetActive(true);
                 who.text = "잡상인";
                 content.text = "1000원짜리 두 장, 두 장만 받겠습니다.";
@@ -2070,8 +2068,7 @@ public class npc : MonoBehaviour
 
             if (buttonnum == 0)
             {
-                specialAudioSource.clip = specialAudioClips[0];
-                specialAudioSource.Play();
+                
                 talksqu.SetActive(true);
                 who.text = "앵벌이";
                 content.text = "~..~";
@@ -2102,13 +2099,12 @@ public class npc : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(station1!=1)
-        {
-            talksqu.SetActive(false);
-            options.SetActive(false);
-            button.SetActive(true);
+        
+         talksqu.SetActive(false);
+         options.SetActive(false);
+         button.SetActive(true);
 
-        }
+        
        
         customize.sceneflag = 2;
         customize.moveflag= 1;

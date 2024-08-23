@@ -1559,7 +1559,6 @@ GameObject:
   m_Component:
   - component: {fileID: 317672799}
   - component: {fileID: 317672798}
-  - component: {fileID: 317672800}
   m_Layer: 0
   m_Name: manager
   m_TagString: Untagged
@@ -1594,6 +1593,7 @@ MonoBehaviour:
   option4_bt: {fileID: 0}
   option5_bt: {fileID: 0}
   option6_bt: {fileID: 0}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!4 &317672799
 Transform:
@@ -1610,21 +1610,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &317672800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 317672797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e102d98867971c41bf8479f91fe2b85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sai: {fileID: 0}
-  job: {fileID: 0}
-  ang: {fileID: 0}
 --- !u!1 &335049595
 GameObject:
   m_ObjectHideFlags: 0
@@ -3802,6 +3787,7 @@ MonoBehaviour:
   option4_bt: {fileID: 1554353153}
   option5_bt: {fileID: 1133001627}
   option6_bt: {fileID: 351759713}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!1 &919183456
 GameObject:

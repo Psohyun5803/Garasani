@@ -134,8 +134,40 @@ public class customize : MonoBehaviour
     //[SerializeField] private InputField usernameinput;
     bool IsValidDate(string date, out DateTime validDate)
     {
+        /*validDate = DateTime.MinValue;
+
+        // 입력된 문자열이 null이 아니고 길이가 정확히 4인지 확인
+        if (!string.IsNullOrEmpty(date) && date.Length == 4)
+        {
+            int month, day;
+
+            // 월과 일을 추출하고, 변환 성공 여부를 확인
+            month = int.Parse(date.Substring(0, 2));
+            day = int.Parse(date.Substring(2, 2));
+            Debug.Log(month);
+            Debug.Log(day);
+
+
+            try
+            {
+                // 1997???? ???????? DateTime ????
+                validDate = new DateTime(1997, month, day);
+                return true; // ?????? ?????? ???? true ????
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+
+                return false;
+            }
+        }
+        else
+        {
+            Debug.Log("Input string is null, empty, or not of length 4.");
+        }
+
+        return false; // 유효하지 않은 경우 false 반환*/
         validDate = DateTime.MinValue;
-        if (date != null)
+        if (!string.IsNullOrEmpty(date)&&date.Length == 5)
         {
            
 
@@ -145,6 +177,7 @@ public class customize : MonoBehaviour
             int day = int.Parse(date.Substring(2, 2));
             Debug.Log(month);
             Debug.Log(day);
+            Debug.Log(date.Length);
             try
             {
                 // 1997???? ???????? DateTime ????
@@ -159,10 +192,10 @@ public class customize : MonoBehaviour
         }
         
         return false;
-           
-        
 
-        
+
+
+
     }
 
     private void Awake()
@@ -261,6 +294,7 @@ public class customize : MonoBehaviour
    // public GameObject Player;
     public void prologue() //?????????????? ?????????? ?????? ?????? ??????????. ?????????? ???????? ?????? ?????????? ???????????? ??????????
     {
+        
         if (IsValidDate(playerbirthinput.text,out DateTime validDate))
         {
            
@@ -294,7 +328,7 @@ public class customize : MonoBehaviour
         else
         {
             //playerbirthinput = null;
-            Debug.Log("?????? ????");
+            Debug.Log("1");
             birthwrong.SetActive(true);
         }
        

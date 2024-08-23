@@ -46,6 +46,8 @@ public class inSubway_0 : MonoBehaviour
             Debug.LogError("Target animator object not assigned.");
         }
 
+        
+
         Vector3 newposition = door.transform.position;
         Player.playertrans(newposition.x + 3, newposition.y);
         ui_dialogue.SetActive(false);

@@ -15,7 +15,8 @@ public class Chungmuro_B3 : MonoBehaviour
     public string boolParameterName = "Right";
     private Animator NPCAnimator;
     int  dialogueID = 25;
-    
+    AudioSource daehwa;
+
     public IEnumerator ChungmuroB3_1() //3호선 선택 시 
     {
         Debug.Log(dialogueID);
@@ -40,6 +41,7 @@ public class Chungmuro_B3 : MonoBehaviour
                     break;
 
                 case (26):
+                    daehwa.Play();
                     contextList = DataManager.instance.GetDialogue(52, 52);
                     DialogueManager.instance.processChoose(contextList);
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
@@ -163,6 +165,8 @@ public class Chungmuro_B3 : MonoBehaviour
 
         NPCAnimator= GetComponent<Animator>();
         
+        daehwa = GameObject.Find("daehwa").GetComponent<AudioSource>();
+
         //플레이어 이동 설정 
         customize.sceneflag = 4;
         customize.moveflag = 1;

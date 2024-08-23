@@ -454,6 +454,7 @@ MonoBehaviour:
   option4_bt: {fileID: 2070316782}
   option5_bt: {fileID: 31118979}
   option6_bt: {fileID: 1258755095}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!4 &106751813
 Transform:
@@ -471,6 +472,54 @@ Transform:
   - {fileID: 429091988}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &134455464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 134455466}
+  - component: {fileID: 134455467}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &134455466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134455464}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.9073353, y: 2.956954, z: -0.082613125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &134455467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134455464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f95edae7dec214d8868bfe8e10287a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundMusicClip: {fileID: 8300000, guid: 16687f150269896448fba8344cbd93c5, type: 3}
+  dialogueMusicClip: {fileID: 8300000, guid: 20208f8bb9090e2469897c5b84b820c3, type: 3}
+  fadeDuration: 1
+  targetNPCName: "\uC9C0\uD6C8"
 --- !u!1 &159257034
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +675,7 @@ MonoBehaviour:
   option4_bt: {fileID: 2070316782}
   option5_bt: {fileID: 31118979}
   option6_bt: {fileID: 1258755095}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!50 &199831644
 Rigidbody2D:
@@ -777,6 +827,7 @@ GameObject:
   m_Component:
   - component: {fileID: 252630018}
   - component: {fileID: 252630017}
+  - component: {fileID: 252630019}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -850,6 +901,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &252630019
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252630015}
+  m_Enabled: 1
 --- !u!1 &269600674
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,6 +1067,7 @@ MonoBehaviour:
   option4_bt: {fileID: 2070316782}
   option5_bt: {fileID: 31118979}
   option6_bt: {fileID: 1258755095}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!1 &291052664
 GameObject:
@@ -1246,6 +1306,7 @@ MonoBehaviour:
   option4_bt: {fileID: 2070316782}
   option5_bt: {fileID: 31118979}
   option6_bt: {fileID: 1258755095}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!1 &322046657
 GameObject:
@@ -1405,6 +1466,7 @@ MonoBehaviour:
   option4_bt: {fileID: 2070316782}
   option5_bt: {fileID: 31118979}
   option6_bt: {fileID: 1258755095}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!1 &340515598
 GameObject:
@@ -1633,6 +1695,7 @@ MonoBehaviour:
   option4_bt: {fileID: 2070316782}
   option5_bt: {fileID: 31118979}
   option6_bt: {fileID: 1258755095}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!1 &429091987
 GameObject:
@@ -1965,6 +2028,7 @@ MonoBehaviour:
   option4_bt: {fileID: 2070316782}
   option5_bt: {fileID: 31118979}
   option6_bt: {fileID: 1258755095}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!1 &484384014
 GameObject:
@@ -2677,6 +2741,7 @@ MonoBehaviour:
   option4_bt: {fileID: 2070316782}
   option5_bt: {fileID: 31118979}
   option6_bt: {fileID: 1258755095}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!50 &713370140
 Rigidbody2D:
@@ -3993,6 +4058,7 @@ MonoBehaviour:
   option4_bt: {fileID: 2070316782}
   option5_bt: {fileID: 31118979}
   option6_bt: {fileID: 1258755095}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!1 &1098271447
 GameObject:
@@ -4108,6 +4174,7 @@ MonoBehaviour:
   option4_bt: {fileID: 2070316782}
   option5_bt: {fileID: 31118979}
   option6_bt: {fileID: 1258755095}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!50 &1098271451
 Rigidbody2D:
@@ -4680,6 +4747,11 @@ MonoBehaviour:
   option4_bt: {fileID: 2070316782}
   option5_bt: {fileID: 31118979}
   option6_bt: {fileID: 1258755095}
+  specialAudioClips:
+  - {fileID: 8300000, guid: be4932d9a7353964c8f75c34158dba7d, type: 3}
+  - {fileID: 8300000, guid: a79bdb1cf165ff44298a055ec209158f, type: 3}
+  - {fileID: 8300000, guid: bb2bc765bc889204882795b3cb5b3b86, type: 3}
+  - {fileID: 8300000, guid: 20208f8bb9090e2469897c5b84b820c3, type: 3}
   playercolflag: 0
 --- !u!61 &1327776939
 BoxCollider2D:
@@ -6169,6 +6241,7 @@ MonoBehaviour:
   option4_bt: {fileID: 2070316782}
   option5_bt: {fileID: 31118979}
   option6_bt: {fileID: 1258755095}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!1 &1805594329
 GameObject:
@@ -6520,6 +6593,7 @@ MonoBehaviour:
   option4_bt: {fileID: 2070316782}
   option5_bt: {fileID: 31118979}
   option6_bt: {fileID: 1258755095}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!61 &1928630083
 BoxCollider2D:
@@ -7395,6 +7469,7 @@ MonoBehaviour:
   option4_bt: {fileID: 2070316782}
   option5_bt: {fileID: 31118979}
   option6_bt: {fileID: 1258755095}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -7407,3 +7482,4 @@ SceneRoots:
   - {fileID: 642258679}
   - {fileID: 106751813}
   - {fileID: 1063585734}
+  - {fileID: 134455466}

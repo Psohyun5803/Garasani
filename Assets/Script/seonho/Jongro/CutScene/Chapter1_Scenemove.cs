@@ -11,12 +11,19 @@ public class Chapter1_Scenemove : MonoBehaviour
     public Image fadeImage; // 화면을 어둡게 할 이미지
     public float fadeDuration = 2f; // 화면이 어두워지는 데 걸리는 시간
 
+    public AudioClip audioClip; // 오디오 소스
+    public float audioFadeDuration = 0.7f; // 오디오 페이드아웃 시간
+    private AudioSource audioSource;
+
     private bool isFading = false;
 
     void Start()
     {
         // 시작할 때 이미지의 알파값을 0으로 설정
         SetFadeImageAlpha(0);
+        audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.clip = audioClip;
+        audioSource.Play();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -37,16 +44,20 @@ public class Chapter1_Scenemove : MonoBehaviour
 
         // 이미지 활성화
         fadeImage.gameObject.SetActive(true);
+        float startVolume = audioSource.volume;
 
         // 화면이 천천히 어두워지게 하기
         for (float t = 0; t < fadeDuration; t += Time.deltaTime)
         {
             float alpha = Mathf.Lerp(0, 1, t / fadeDuration);
             SetFadeImageAlpha(alpha);
+            audioSource.volume = Mathf.Lerp(startVolume, 0, t / audioFadeDuration);
             yield return null;
         }
 
         SetFadeImageAlpha(1);
+        audioSource.volume = 0;
+
         Debug.Log("씬 이동 중...");
         // 씬 이동
         SceneManager.LoadScene(nextSceneName);

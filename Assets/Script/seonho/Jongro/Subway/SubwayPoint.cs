@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class SubwayPoint : MonoBehaviour
 {
-    public string[] sceneNames; // 이동할 씬들의 이름
     public string playerObjectName = "Player";
     public MovingSubway movingSubway; // MovingSubway 스크립트에 대한 참조
 
     private bool eventTriggered = false;
+    private string sceneToLoad;
 
     private void Start()
     {
@@ -22,6 +22,19 @@ public class SubwayPoint : MonoBehaviour
             {
                 Debug.LogError("MovingSubway reference is not assigned and no MovingSubway object found in the scene.");
             }
+        }
+
+        if (movingSubway != null)
+        {
+            movingSubway.OnAudioClipPlayed += HandleAudioClipPlayed;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (movingSubway != null)
+        {
+            movingSubway.OnAudioClipPlayed -= HandleAudioClipPlayed;
         }
     }
 
@@ -39,7 +52,7 @@ public class SubwayPoint : MonoBehaviour
             {
                 Debug.Log("Subway is stopped and event is not triggered yet. Triggering event.");
                 eventTriggered = true; // 이벤트 발생 플래그 설정
-                StartCoroutine(TriggerEvent());
+                StartCoroutine(WaitBeforeProcessing());
             }
             else
             {
@@ -48,28 +61,22 @@ public class SubwayPoint : MonoBehaviour
         }
     }
 
-    IEnumerator TriggerEvent()
+    IEnumerator WaitBeforeProcessing()
     {
-        Player.moveflag = 0;
-
         yield return new WaitForSeconds(2f); // 문이 열리는 시간 대기
+        SceneManager.LoadScene(sceneToLoad);
+    }
 
-        // 랜덤으로 씬 선택
-        string selectedScene = sceneNames[Random.Range(0, sceneNames.Length)];
-        Debug.Log("Selected scene: " + selectedScene);
 
-        Player.moveflag = 1;
-
-        // 씬 이동
-        if (!string.IsNullOrEmpty(selectedScene))
+    private void HandleAudioClipPlayed(AudioClip clip)
+    {
+        if (clip == movingSubway.scene1Clip1 || clip == movingSubway.scene1Clip2)
         {
-            Debug.Log("Loading scene: " + selectedScene);
-            SceneManager.LoadScene(selectedScene);
-            Player.playertrans(0, 0);
+            sceneToLoad = movingSubway.scene1Name;
         }
         else
         {
-            Debug.LogError("Selected scene name is invalid.");
+            sceneToLoad = movingSubway.scene2Name;
         }
     }
 }

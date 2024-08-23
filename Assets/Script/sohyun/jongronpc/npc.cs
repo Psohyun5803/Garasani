@@ -65,6 +65,8 @@ public class npc : MonoBehaviour
     public static int jungminimage = 0;
 
 
+    public AudioClip[] specialAudioClips;
+    private AudioSource specialAudioSource;
 
 
     public int playercolflag = 0;
@@ -82,6 +84,13 @@ public class npc : MonoBehaviour
     string[] jungmininter = new string[3] { "정민그래요?? 세상 좋아졌네...", "정민육회 먹고 싶다. 츄릅", "정민앗, 정말 안 주셔도 되는데, 냠냠"};
     private Vector2 pos;
     //string[] jihoonfirst = new string[] = {"정민어, 안녕?","지훈으아아아아아앙!!","정민엄마랑 아빠는 어디가셨어?","지훈몰라...엄마아아...","지훈엄마가 안 보여... 끅....","정민미아같은데...어떡할까요?","선1이름을 물어본다","선2먹을 것을 건넨다")
+
+
+    private void Awake()
+    {
+        specialAudioSource = gameObject.AddComponent<AudioSource>();
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
@@ -1127,6 +1136,7 @@ public class npc : MonoBehaviour
         {
             if(buttonnum>9)
             {
+                specialAudioSource.Stop();
                 buttonnum = 0;
                 talksqu.SetActive(false);
                 buttonnum = 0;
@@ -1140,6 +1150,7 @@ public class npc : MonoBehaviour
                 options.SetActive(false);
                 if(buttonnum>1)
                 {
+                    specialAudioSource.Stop();
                     buttonnum = 0;
                     talksqu.SetActive(false);
                     buttonnum = 0;
@@ -1360,6 +1371,7 @@ public class npc : MonoBehaviour
             Debug.Log(buttonnum);
             if (buttonnum>10)
             {
+                specialAudioSource.Stop();
                 content.text = "";
                 talksqu.SetActive(false);
                 buttonnum = 0;
@@ -1372,6 +1384,7 @@ public class npc : MonoBehaviour
             {
                 if(buttonnum>2)
                 {
+                    specialAudioSource.Stop();
                     content.text = "";
                     talksqu.SetActive(false);
                     buttonnum = 0;
@@ -1552,6 +1565,7 @@ public class npc : MonoBehaviour
         {
             if (buttonnum > 10)
             {
+                specialAudioSource.Stop();
                 talksqu.SetActive(false);
                 buttonnum = 0;
                 content.text = "";
@@ -1568,6 +1582,7 @@ public class npc : MonoBehaviour
             }
             else
             {
+                specialAudioSource.Stop();
                 talksqu.SetActive(false);
                 buttonnum = 0;
                 interobj = null;
@@ -1586,7 +1601,7 @@ public class npc : MonoBehaviour
             //buttonnum++;
             if (buttonnum > 14)
             {
-
+                specialAudioSource.Stop();
                 talksqu.SetActive(false);
                 buttonnum = 0;
                 interobj = null;
@@ -1594,6 +1609,7 @@ public class npc : MonoBehaviour
             }
             else if(buttonnum>13)
             {
+                specialAudioSource.Stop();
                 who.text = "정민";
                 content.text = "같이 가자 지훈아!";
                 jihoon_B2.jihoonmove = 1;
@@ -1883,6 +1899,8 @@ public class npc : MonoBehaviour
 
             if (buttonnum == 0&&jihoonflag==0)
             {
+                specialAudioSource.clip = specialAudioClips[0];
+                specialAudioSource.Play();
                 talksqu.SetActive(true);
                 who.text = jihoonfirst[0].Substring(0, 2);
                 content.text = jihoonfirst[0].Substring(2);
@@ -1938,6 +1956,8 @@ public class npc : MonoBehaviour
 
             if (buttonnum == 0)
             {
+                specialAudioSource.clip = specialAudioClips[0];
+                specialAudioSource.Play();
                 talksqu.SetActive(true);
                 who.text = "사이비";
                 content.text = godcontent[buttonnum];
@@ -1992,6 +2012,8 @@ public class npc : MonoBehaviour
 
             if (buttonnum == 0)
             {
+                specialAudioSource.clip = specialAudioClips[0];
+                specialAudioSource.Play();
                 talksqu.SetActive(true);
                 who.text = "잡상인";
                 content.text = "1000원짜리 두 장, 두 장만 받겠습니다.";
@@ -2048,6 +2070,8 @@ public class npc : MonoBehaviour
 
             if (buttonnum == 0)
             {
+                specialAudioSource.clip = specialAudioClips[0];
+                specialAudioSource.Play();
                 talksqu.SetActive(true);
                 who.text = "앵벌이";
                 content.text = "~..~";

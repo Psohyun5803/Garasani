@@ -8819,8 +8819,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1173956575}
+        m_TargetAssemblyTypeName: Phone, Assembly-CSharp
         m_MethodName: OnClickOff
         m_Mode: 1
         m_Arguments:
@@ -9869,8 +9869,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1173956575}
+        m_TargetAssemblyTypeName: Phone, Assembly-CSharp
         m_MethodName: OnClickPre
         m_Mode: 1
         m_Arguments:
@@ -10672,8 +10672,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1173956575}
+        m_TargetAssemblyTypeName: Phone, Assembly-CSharp
         m_MethodName: OnClickNext
         m_Mode: 1
         m_Arguments:
@@ -13802,8 +13802,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1173956575}
+        m_TargetAssemblyTypeName: Phone, Assembly-CSharp
         m_MethodName: OnClickOff
         m_Mode: 1
         m_Arguments:
@@ -21416,8 +21416,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1173956575}
+        m_TargetAssemblyTypeName: Phone, Assembly-CSharp
         m_MethodName: OnClickNext
         m_Mode: 1
         m_Arguments:
@@ -22474,8 +22474,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1173956575}
+        m_TargetAssemblyTypeName: Phone, Assembly-CSharp
         m_MethodName: OnClickOff
         m_Mode: 1
         m_Arguments:
@@ -22810,8 +22810,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1173956575}
+        m_TargetAssemblyTypeName: Phone, Assembly-CSharp
         m_MethodName: onClickFullScreen
         m_Mode: 1
         m_Arguments:
@@ -24552,8 +24552,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1173956575}
+        m_TargetAssemblyTypeName: Phone, Assembly-CSharp
         m_MethodName: OnClickOff
         m_Mode: 1
         m_Arguments:
@@ -26403,8 +26403,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1173956575}
+        m_TargetAssemblyTypeName: Phone, Assembly-CSharp
         m_MethodName: onClickWarning
         m_Mode: 1
         m_Arguments:
@@ -28980,8 +28980,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1173956575}
+        m_TargetAssemblyTypeName: Phone, Assembly-CSharp
         m_MethodName: OnClickPre
         m_Mode: 1
         m_Arguments:
@@ -41654,8 +41654,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1173956575}
+        m_TargetAssemblyTypeName: Phone, Assembly-CSharp
         m_MethodName: OnClickPre
         m_Mode: 1
         m_Arguments:
@@ -44725,8 +44725,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1173956575}
+        m_TargetAssemblyTypeName: Phone, Assembly-CSharp
         m_MethodName: OnClickNext
         m_Mode: 1
         m_Arguments:
@@ -48950,8 +48950,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1173956575}
+        m_TargetAssemblyTypeName: Phone, Assembly-CSharp
         m_MethodName: OnClickPre
         m_Mode: 1
         m_Arguments:
@@ -55840,8 +55840,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1173956575}
+        m_TargetAssemblyTypeName: Phone, Assembly-CSharp
         m_MethodName: onClickWarning
         m_Mode: 1
         m_Arguments:
@@ -59004,8 +59004,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1173956575}
+        m_TargetAssemblyTypeName: Phone, Assembly-CSharp
         m_MethodName: OnClickNext
         m_Mode: 1
         m_Arguments:
@@ -64123,8 +64123,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1173956575}
+        m_TargetAssemblyTypeName: Phone, Assembly-CSharp
         m_MethodName: OnClickExit
         m_Mode: 1
         m_Arguments:

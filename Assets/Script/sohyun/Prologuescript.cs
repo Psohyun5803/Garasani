@@ -23,6 +23,8 @@ public class Prologuescript : MonoBehaviour
     public GameObject dark;
     public TMP_Text nameplayer;
 
+    public Transform playerFirst;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,14 +66,12 @@ public class Prologuescript : MonoBehaviour
             content.text = text[textflag];
             nameplayer.text = customize.playername;
             textflag++;
-            if (textflag == 1) //????? ??? ???? ?? 
+            if (textflag == 1) 
             {
+                Player.playertrans(playerFirst.transform.position.x, playerFirst.transform.position.y+10);
                 talksqu.SetActive(false);
-                Debug.Log("???? ??? ??? ??? ??");
                 Player.sitdown = 0;
                 Player.lookaround = 1;
-                ///???? ??? ????? ??
-
                 talksqu.SetActive(true);
                
 

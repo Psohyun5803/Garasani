@@ -546,15 +546,4 @@ public class jungmin_B2 : MonoBehaviour
 
 
 
-
-   
-
-
-
-
-
-
-
-
-
 }

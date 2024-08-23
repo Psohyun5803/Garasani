@@ -38,6 +38,7 @@ public class DialogueManager : MonoBehaviour
         contextList = dialogues;
         currentIdx = 0;
         IsDialogueFinished = false;
+        Player.moveflag = 0;
         DisplayDialogue();
     }
 
@@ -51,6 +52,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            Player.moveflag = 1;
             IsDialogueFinished = true;
             Debug.Log("contextlist 없음");
         }
@@ -84,7 +86,6 @@ public class DialogueManager : MonoBehaviour
         }
 
         typingCoroutine = StartCoroutine(textPrint(delay, contextList[currentIdx].contexts));
-
     }
 
     IEnumerator textPrint(float d, string text) //타이핑 효과 코루틴 
@@ -130,8 +131,17 @@ public class DialogueManager : MonoBehaviour
 
     public void OnClickChoose()
     {
-        if (name.text == "System")
-            ui_dialogue.SetActive(false);
+        if (name.text == "System"){
+            if(chosen1_text.text != ""){
+                if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen1") == 0)
+                chooseFlag = 1;
+                else if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen2") == 0)
+                    chooseFlag = 2;
+            }
+            else{
+                ui_dialogue.SetActive(false);
+            }
+        }
         else if (isChosenOne) //선택지 1개인 경우
             clickFlag = true;
         else

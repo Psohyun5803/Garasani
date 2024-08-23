@@ -8,6 +8,7 @@ public class Chungmuro_B1 : MonoBehaviour
     public static Chungmuro_B1 instance;
     public Dialogue[] contextList;
     public GameObject upstair; //위치 설정
+    public jungmin_B2 jungminScript;
 
     public Transform npc;         // 엔피씨 오브젝트
 
@@ -15,12 +16,14 @@ public class Chungmuro_B1 : MonoBehaviour
     public int dialogueID = 31;
     private bool isChungmuroB1_2Running = false;
 
-    public float speed = 1.5f; // 정민 이동 속도
+    public float speed = 2.0f; // 정민 이동 속도
     [SerializeField] private GameObject targetAnimatorObject;
     public string boolParameterName = "Front";
     private Animator NPCAnimator;
-    public Transform stopPoint1;  // 첫 번째 멈추는 지점 (위로 이동)
-    public Transform stopPoint2;  // 두 번째 멈추는 지점 (오른쪽으로 이동, 최종 목적지)
+    //public Transform stopPoint1;  // 첫 번째 멈추는 지점 (위로 이동)
+    //public Transform stopPoint2;  // 두 번째 멈추는 지점 (오른쪽으로 이동, 최종 목적지)
+    public Transform dest;
+    private bool isMoving = false; // 코루틴 실행 상태를 추적하는 변수
 
     private void Awake()
     {
@@ -75,74 +78,53 @@ public class Chungmuro_B1 : MonoBehaviour
         DialogueManager.instance.ui_dialogue.SetActive(false);
         Invoke("nothing", 1.5f);
         isChungmuroB1_2Running = false;
-        StartCoroutine(JMmoving());
+        if (!isMoving)
+        {
+            StartCoroutine(JMmoving());
+        }
+            
     }
 
     IEnumerator JMmoving() // 개찰구로 이동 
     {
+        if (isMoving) yield break; // 이미 실행 중이면 중단
+
+        isMoving = true; // 코루틴 시작
+
         if (NPCAnimator != null)
         {
-            NPCAnimator.SetBool("Front", true);
-            NPCAnimator.SetBool("Front", false);
+            NPCAnimator.SetBool(boolParameterName, true);
         }
 
-        float elapsedTime = 0f;
-        float moveDuration = 0.5f; // 첫 번째 구간의 이동 시간
-        float speed = 2f; // 속도를 설정 (예: 2 유닛/초)
+        float targetYPosition = dest.position.y; // 목표 y 위치
+        float moveDuration = 2.0f; // 이동 목표 시간
 
-        // 1. 첫 번째 지점으로 이동 (위로 이동)
         Vector3 startPosition = targetAnimatorObject.transform.position;
-        Vector3 targetPosition = stopPoint1.position;
-        while (Vector3.Distance(targetAnimatorObject.transform.position, targetPosition) > 0.1f)
-        {
-            targetAnimatorObject.transform.position = Vector3.MoveTowards(targetAnimatorObject.transform.position, targetPosition, speed * Time.deltaTime);
-            yield return null;
-        }
+        Vector3 targetPosition = new Vector3(startPosition.x, targetYPosition, startPosition.z); // y 위치만 변경
+        float elapsedTime = 0f;
 
-        // 첫 번째 지점에서 멈추고 방향 변경
-        if (NPCAnimator != null)
-        {
-            NPCAnimator.SetBool("Right", true);
-            NPCAnimator.SetBool("Front", false);
-        }
-
-        Debug.Log("NPC has stopped at stopPoint1 and changed direction.");
-
-        // 잠시 멈춤
-        yield return new WaitForSeconds(0.5f); // 필요에 따라 대기 시간 조정
-
-        elapsedTime = 0f;
-        moveDuration = 2f; // 두 번째 구간의 이동 시간
-        startPosition = targetAnimatorObject.transform.position;
-        targetPosition = stopPoint2.position;
-
-        // 2. 두 번째 지점으로 이동 (오른쪽으로 이동)
-        if (NPCAnimator != null)
-        {
-            NPCAnimator.SetBool("Front", false);
-            NPCAnimator.SetBool("Right", true);
-        }
+        Debug.Log($"Starting NPC movement from {startPosition} to {targetPosition}");
 
         while (elapsedTime < moveDuration)
         {
-            // 시간에 따른 보간
             targetAnimatorObject.transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / moveDuration);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        // 마지막 위치 조정 (오차 보정)
-        targetAnimatorObject.transform.position = targetPosition;
+        targetAnimatorObject.transform.position = targetPosition; // 정확한 위치로 설정
 
-        // NPC가 최종 목적지에 도착했습니다.
-        Debug.Log("NPC has arrived at the final destination.");
+        Debug.Log($"NPC movement ended at {targetAnimatorObject.transform.position}");
 
         if (NPCAnimator != null)
         {
-            NPCAnimator.SetBool("Right", false);
-            NPCAnimator.SetBool("Front", false);
+            Debug.Log("npc animate false");
+            NPCAnimator.SetBool(boolParameterName, false);
         }
+
+        isMoving = false; // 코루틴 종료
     }
+
 
 
 
@@ -165,6 +147,7 @@ public class Chungmuro_B1 : MonoBehaviour
         //플레이어 이동 설정 
         customize.sceneflag = 4;
         customize.moveflag = 1;
+        Player.frontflag = 1;
 
         //플레이어 위치 설정 
         Vector3 upstairPosition = upstair.transform.position;
@@ -172,7 +155,7 @@ public class Chungmuro_B1 : MonoBehaviour
         {
             // 플레이어 위치 설정
             Debug.Log($"playerFirst 위치: {playerFirst.transform.position}");
-            Player.playertrans(playerFirst.transform.position.x, playerFirst.transform.position.y);
+            Player.playertrans(playerFirst.transform.position.x-3, playerFirst.transform.position.y);
 
         }
         DataManager.instance.csv_FileName = "Prologue2";

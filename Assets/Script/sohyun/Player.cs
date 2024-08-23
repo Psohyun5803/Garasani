@@ -9,10 +9,10 @@ public class Player : MonoBehaviour
     public GameObject player;
     int spriteindex = 0;
   
-    int frontflag = 0;
-    int leftflag = 0;
-    int rightflag = 0;
-    int backflag = 0;
+    public static int frontflag = 0;
+    public static int leftflag = 0;
+    public static int rightflag = 0;
+    public static int backflag = 0;
 
     
     

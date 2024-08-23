@@ -3,31 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class b1_subwaytag : MonoBehaviour
+public class tagcollider : MonoBehaviour
 {
-    public static b1_subwaytag instance;
-    public bool moveB3; //3호선 이동 flag
 
-    private void OnMouseDown()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("개찰구 클릭");
+        if(collision.gameObject.name == "Player")
+        {
+            StartCoroutine(subwayTag());
+        }
+        
+    }
+
+
+    IEnumerator subwayTag()
+    {
+        //개찰구 태그
         // DialogueManager.instance.ui_dialogue.SetActive(true);
         // DialogueManager.instance.name.text = "System";
         // DialogueManager.instance.dialogue_text.text = "교통카드를 태그할까요?";
         // DialogueManager.instance.chosen1_text.text = "네 (-1500)";
         // DialogueManager.instance.chosen2_text.text = "아니요";
-        StartCoroutine(subwayTag());
-
-    }
-
-    IEnumerator subwayTag()
-    {
-        //개찰구 태그
-        DialogueManager.instance.ui_dialogue.SetActive(true);
-        DialogueManager.instance.name.text = "System";
-        DialogueManager.instance.dialogue_text.text = "교통카드를 태그할까요?";
-        DialogueManager.instance.chosen1_text.text = "네 (-1500)";
-        DialogueManager.instance.chosen2_text.text = "아니요";
 
         Debug.Log("대화 시작, chooseFlag 초기값: " + DialogueManager.instance.chooseFlag);
     

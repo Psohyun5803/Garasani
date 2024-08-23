@@ -46,6 +46,11 @@ public class Chungmuro_B1 : MonoBehaviour
         contextList = DataManager.instance.GetDialogue(67, 69);
         yield return StartCoroutine(DialogueManager.instance.processing(contextList));
         dialogueID = 32;
+        contextList = DataManager.instance.GetDialogue(72, 74);
+        yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+        dialogueID = 34;
+        daehwa.Play();
+        SubwaySoundObject.Play();
         DialogueManager.instance.ui_dialogue.SetActive(false);
     }
 
@@ -83,10 +88,10 @@ public class Chungmuro_B1 : MonoBehaviour
         DialogueManager.instance.ui_dialogue.SetActive(false);
         Invoke("nothing", 1.5f);
         isChungmuroB1_2Running = false;
-        if (!isMoving)
-        {
-            StartCoroutine(JMmoving());
-        }
+        // if (!isMoving)
+        // {
+        //     StartCoroutine(JMmoving());
+        // }
             
     }
 

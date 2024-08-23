@@ -38,6 +38,7 @@ public class DialogueManager : MonoBehaviour
         contextList = dialogues;
         currentIdx = 0;
         IsDialogueFinished = false;
+        Player.moveflag = 0;
         DisplayDialogue();
     }
 
@@ -45,14 +46,13 @@ public class DialogueManager : MonoBehaviour
     {
         if (contextList != null && currentIdx < contextList.Length - 1)
         {
-            Player.moveflag = 0;
             currentIdx++;
             DisplayDialogue();
             Debug.Log("next button click");
         }
         else
         {
-            Player.moveflag = 0;
+            Player.moveflag = 1;
             IsDialogueFinished = true;
             Debug.Log("contextlist 없음");
         }

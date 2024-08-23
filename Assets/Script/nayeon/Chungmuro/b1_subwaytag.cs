@@ -23,8 +23,13 @@ public class b1_subwaytag : MonoBehaviour
         DialogueManager.instance.dialogue_text.text = "교통카드를 태그할까요?";
         DialogueManager.instance.chosen1_text.text = "네 (-1500)";
         DialogueManager.instance.chosen2_text.text = "아니요";
+
+        Debug.Log("대화 시작, chooseFlag 초기값: " + DialogueManager.instance.chooseFlag);
+    
         yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
-        Debug.Log("chooseFlag : " + DialogueManager.instance.chooseFlag);
+        
+        Debug.Log("chooseFlag 변경됨: " + DialogueManager.instance.chooseFlag);
+        
         if(DialogueManager.instance.chooseFlag == 1)
         {
             DialogueManager.instance.name.text = "System";

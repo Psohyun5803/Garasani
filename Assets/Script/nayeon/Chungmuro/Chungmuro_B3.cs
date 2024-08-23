@@ -117,7 +117,7 @@ public class Chungmuro_B3 : MonoBehaviour
         }
 
         float targetXPosition = dest.position.x;
-        float moveDuration = 2.0f; // 이동 목표 시간
+        float moveDuration = 3.0f; // 이동 목표 시간
 
         Vector3 startPosition = targetAnimatorObject.transform.position;
         Vector3 targetPosition = new Vector3(targetXPosition, startPosition.y, startPosition.z);
@@ -166,13 +166,14 @@ public class Chungmuro_B3 : MonoBehaviour
         //플레이어 이동 설정 
         customize.sceneflag = 4;
         customize.moveflag = 1;
+        Player.leftflag = 1;
 
         // playerFirst가 null이 아닌지 확인
         if (playerFirst != null)
         {
             // 플레이어 위치 설정
             Debug.Log($"playerFirst 위치: {playerFirst.transform.position}");
-            Player.playertrans(playerFirst.transform.position.x, playerFirst.transform.position.y);
+            Player.playertrans(playerFirst.transform.position.x-2, playerFirst.transform.position.y);
 
         }
         else

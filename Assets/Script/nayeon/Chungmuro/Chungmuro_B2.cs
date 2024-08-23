@@ -105,14 +105,15 @@ public class Chungmuro_B2 : MonoBehaviour
         //플레이어 이동 설정 
         customize.sceneflag = 4;
         customize.moveflag = 1;
-
+        Player.frontflag = 1;
         //플레이어 위치 설정 
         Vector3 signPosition = sign.transform.position;
         GameObject playerObject = GameObject.FindWithTag("Player");
         if(playerObject != null)
         {
-            playerObject.transform.position = new Vector3(signPosition.x-5, signPosition.y-3, signPosition.z);
+            playerObject.transform.position = new Vector3(signPosition.x-4, signPosition.y-3, signPosition.z);
         }
+        Player.frontflag=1;
         // if (playerFirst != null)
         // {
         //     // 플레이어 위치 설정

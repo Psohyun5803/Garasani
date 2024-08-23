@@ -131,8 +131,17 @@ public class DialogueManager : MonoBehaviour
 
     public void OnClickChoose()
     {
-        if (name.text == "System")
-            ui_dialogue.SetActive(false);
+        if (name.text == "System"){
+            if(chosen1_text.text != ""){
+                if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen1") == 0)
+                chooseFlag = 1;
+                else if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen2") == 0)
+                    chooseFlag = 2;
+            }
+            else{
+                ui_dialogue.SetActive(false);
+            }
+        }
         else if (isChosenOne) //선택지 1개인 경우
             clickFlag = true;
         else

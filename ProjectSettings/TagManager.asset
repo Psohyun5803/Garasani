@@ -16,6 +16,7 @@ TagManager:
   - line3
   - line4
   - quantity
+  - upstairs
   layers:
   - Default
   - TransparentFX

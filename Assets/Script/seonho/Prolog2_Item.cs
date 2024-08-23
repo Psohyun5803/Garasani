@@ -16,7 +16,7 @@ public class Prolog2_Item : MonoBehaviour
     public bool hammerflag;
     public Vector3 newPlayerPosition;
     public Vector3 newPlayerScale;
-    public Inventory inventory; // Inventory 
+//    public Inventory inventory; // Inventory 
 
     void Awake()
     {
@@ -80,7 +80,7 @@ public class Prolog2_Item : MonoBehaviour
                 DialogueManager.instance.dialogue_text.text = "[비상망치] : 이걸로 창문을 깨고 나갈 수 있을 것 같다.";
                 hammer.SetActive(false);
                 hammerInfo.SetActive(false);
-                inventory.AddItem("비상망치");
+                //inventory.AddItem("비상망치");
                 JMevent.instance.hammerDialogue = true;
                 Debug.Log("Hammer collected, hammerflag set true");
                 Debug.Log("hammer dialogue : " + JMevent.instance.hammerDialogue);

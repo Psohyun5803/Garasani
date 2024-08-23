@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/PhoneUI.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 5c38ddc7684edc74d99b2246d49606f9
+  - enabled: 1
     path: Assets/Scenes/prologue/prologuebeta.unity
     guid: 7f52f33351642ef4abcf9efba113cbbb
   - enabled: 0
@@ -86,9 +89,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Chungmuro/3_Chungmuro_B3.unity
     guid: ffde7ae0cc9939d4cb88b3fc3dce3c35
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 5c38ddc7684edc74d99b2246d49606f9
   - enabled: 1
     path: Assets/Scenes/jongro/Start_Cutscene.unity
     guid: e71a5e13f50e8844692eef03fd8703e5

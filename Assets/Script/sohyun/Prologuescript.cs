@@ -25,6 +25,15 @@ public class Prologuescript : MonoBehaviour
 
     public Transform playerFirst;
 
+    AudioSource subwaySound;
+    AudioSource subwayEnd;
+    AudioSource subwayTalk;
+    AudioSource kung1;
+    AudioSource kung2;
+    AudioSource kung3;
+    AudioSource zipper; 
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,8 +43,34 @@ public class Prologuescript : MonoBehaviour
         talksqu.SetActive(false);
         dark.SetActive(false);
         Invoke("proscript1", 2f);
-       
+
+        subwaySound = GameObject.Find("SubwaySoundObject").GetComponent<AudioSource>();
+        subwayTalk = GameObject.Find("SubwayTalkObject").GetComponent<AudioSource>();
+        //subwayEnd = GameObject.Find("SubwayEndObject").GetComponent<AudioSource>();
+        kung1 = GameObject.Find("Kung1Object").GetComponent<AudioSource>();
+        kung2 = GameObject.Find("Kung2Object").GetComponent<AudioSource>();
+        kung3 = GameObject.Find("Kung3Object").GetComponent<AudioSource>();
+
+        StartCoroutine(WaitForAudioClip(subwaySound.clip.length));
+        // subwaySound.Play();
+        // //subwayEnd.Play();
+        // subwayTalk.Play();
     }
+
+    IEnumerator WaitForAudioClip(float clipLength)
+    {
+        subwaySound.Play();
+        subwayEnd.Play();
+        subwayTalk.Play();
+        
+        // 오디오 클립의 길이만큼 대기
+        yield return new WaitForSeconds(clipLength);
+        // 대기 후 실행할 코드
+        Debug.Log("Finished waiting for audio clip.");
+        
+    }
+
+
     void proscript1()
     {
         talksqu.SetActive(true);
@@ -43,12 +78,21 @@ public class Prologuescript : MonoBehaviour
         nameplayer.text = customize.playername;
         Player.sitdown = 1;
 
+        
+
+
     }
     public void buttondown1() // content? ??? ??? 
     {
         Debug.Log("버튼 클릭");
         if (textflag > 3)
         {
+            if(textflag == 4){
+                kung2.Play();
+            }
+            else if(textflag == 5){
+                kung3.Play();
+            }
             talksqu.SetActive(false);
             CameraShake.stopsk();
             CancelInvoke("lighton");
@@ -73,9 +117,6 @@ public class Prologuescript : MonoBehaviour
                 Player.sitdown = 0;
                 Player.lookaround = 1;
                 talksqu.SetActive(true);
-               
-
-
 
             }
             if (textflag == 2) // ???? ?? 
@@ -91,10 +132,12 @@ public class Prologuescript : MonoBehaviour
                 spot.SetActive(true);
                 Invoke("spot_nonActive", 1f);
                 Invoke("talksqu_Active", 2f);
+
             }
 
             if (textflag == 3 )
             {
+                kung1.Play();
                 CameraShake.shakeharder();
                 InvokeRepeating("lighton", 0f, 0.001f);
                 InvokeRepeating("lightoff", 0f, 0.008f);

@@ -138,7 +138,7 @@ public class Phone : MonoBehaviour
     {
         string clickIcon = GetParentName();
         Debug.Log(clickIcon.ToString());
-        Debug.Log("Pre ½ÇÇàÁß");
+        Debug.Log("Pre ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 
         int nowView = -1;
         for (int i = 0; i < viewList.Length; i++)
@@ -168,7 +168,7 @@ public class Phone : MonoBehaviour
     {
         string clickIcon = GetParentName();
         int nowView = -1;
-        Debug.Log("Next ½ÇÇàÁß");
+        Debug.Log("Next ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
         Debug.Log(clickIcon);
         for (int i = 0; i < viewList.Length; i++)
         {
@@ -334,11 +334,13 @@ public class Phone : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab) && !isTabPressed)
         {
             checkPhone();
+            Debug.Log("ì¼œì ¸ì•¼í•¨");
             isTabPressed = true;
         }
 
         if (Input.GetKeyUp(KeyCode.Tab))
         {
+            Debug.Log("êº¼ì ¸ì•¼í•¨");
             isTabPressed = false;
         }
 

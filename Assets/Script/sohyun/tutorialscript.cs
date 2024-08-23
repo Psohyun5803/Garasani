@@ -84,7 +84,7 @@ public class tutorialscript : MonoBehaviour
             //스크립트매니저.SetActive(false);
             talksqu.SetActive(false);
             dashicon.SetActive(true);
-            moveicon.SetActive(true);
+            moveicon.SetActive(true);  
         }
     }
 

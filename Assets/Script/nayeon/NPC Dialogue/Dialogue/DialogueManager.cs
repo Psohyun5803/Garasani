@@ -45,12 +45,14 @@ public class DialogueManager : MonoBehaviour
     {
         if (contextList != null && currentIdx < contextList.Length - 1)
         {
+            Player.moveflag = 0;
             currentIdx++;
             DisplayDialogue();
             Debug.Log("next button click");
         }
         else
         {
+            Player.moveflag = 0;
             IsDialogueFinished = true;
             Debug.Log("contextlist 없음");
         }
@@ -84,7 +86,6 @@ public class DialogueManager : MonoBehaviour
         }
 
         typingCoroutine = StartCoroutine(textPrint(delay, contextList[currentIdx].contexts));
-
     }
 
     IEnumerator textPrint(float d, string text) //타이핑 효과 코루틴 

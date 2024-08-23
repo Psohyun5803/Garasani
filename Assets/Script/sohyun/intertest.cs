@@ -59,7 +59,7 @@ public class intertest: MonoBehaviour
             if(playercol==1)
             {
                 Debug.Log("실행");
-                ActiveInteraction();
+                //ActiveInteraction();
             }
            //상태창 on
         }
@@ -69,7 +69,7 @@ public class intertest: MonoBehaviour
     {
         // 마우스가 오브젝트에서 벗어났을 때 플래그를 리셋
         isMouseOver = false;
-        InteractionView.SetActive(false);
+        //InteractionView.SetActive(false);
        
     }
 
@@ -78,7 +78,7 @@ public class intertest: MonoBehaviour
     public void ActiveInteraction()
     {
         //InteractionView.transform.position = (worldPosition); //오브젝트 커서 위치로 상태창 이동 
-        InteractionView.SetActive(true); //커서 감지 시 상태창 on
+        //InteractionView.SetActive(true); //커서 감지 시 상태창 on
     }
 
     void Start()

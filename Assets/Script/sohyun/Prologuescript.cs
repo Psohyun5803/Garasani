@@ -51,25 +51,10 @@ public class Prologuescript : MonoBehaviour
         kung2 = GameObject.Find("Kung2Object").GetComponent<AudioSource>();
         kung3 = GameObject.Find("Kung3Object").GetComponent<AudioSource>();
 
-        StartCoroutine(WaitForAudioClip(subwaySound.clip.length));
-        // subwaySound.Play();
-        // //subwayEnd.Play();
-        // subwayTalk.Play();
-    }
 
-    IEnumerator WaitForAudioClip(float clipLength)
-    {
         subwaySound.Play();
-        subwayEnd.Play();
         subwayTalk.Play();
-        
-        // 오디오 클립의 길이만큼 대기
-        yield return new WaitForSeconds(clipLength);
-        // 대기 후 실행할 코드
-        Debug.Log("Finished waiting for audio clip.");
-        
     }
-
 
     void proscript1()
     {
@@ -77,8 +62,6 @@ public class Prologuescript : MonoBehaviour
         content.text = text[textflag++];
         nameplayer.text = customize.playername;
         Player.sitdown = 1;
-
-        
 
 
     }
@@ -141,8 +124,6 @@ public class Prologuescript : MonoBehaviour
                 CameraShake.shakeharder();
                 InvokeRepeating("lighton", 0f, 0.001f);
                 InvokeRepeating("lightoff", 0f, 0.008f);
-
-
 
             }
         }

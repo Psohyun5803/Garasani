@@ -30752,7 +30752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1018692785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30933,58 +30933,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5aac18095434a8db6c90daac0c4b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSlots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  itemSprites:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!224 &1018692788
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48507,8 +48455,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b5aac18095434a8db6c90daac0c4b87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSlots: []
-  itemSprites: []
 --- !u!114 &1674382277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49986,7 +49932,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 049224704a5e4e04cb29bb37c3441c68, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -50016,7 +49962,6 @@ MonoBehaviour:
   hammerflag: 0
   newPlayerPosition: {x: 0, y: 0, z: 0}
   newPlayerScale: {x: 0, y: 0, z: 0}
-  inventory: {fileID: 1674382277}
 --- !u!1 &1724252127
 GameObject:
   m_ObjectHideFlags: 0
@@ -52479,7 +52424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1811035301
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -59404,7 +59349,6 @@ MonoBehaviour:
   hammerflag: 0
   newPlayerPosition: {x: 0, y: 0, z: 0}
   newPlayerScale: {x: 0, y: 0, z: 0}
-  inventory: {fileID: 1674382277}
 --- !u!1 &2048823373
 GameObject:
   m_ObjectHideFlags: 0

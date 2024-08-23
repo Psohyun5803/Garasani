@@ -9,6 +9,9 @@ public class inSubway_1 : MonoBehaviour
     public Dialogue[] contextList;
     public GameObject blackPanel;
 
+    AudioSource JMbgm;
+
+
     public void Awake()
     {
         if (instance == null)
@@ -30,6 +33,7 @@ public class inSubway_1 : MonoBehaviour
             switch (inSubway_0.instance.dialogueID)
             {
                 case (4):
+                    JMbgm.Play();
                     contextList = DataManager.instance.GetDialogue(5, 11);
                     DialogueManager.instance.processChoose(contextList);
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
@@ -119,6 +123,7 @@ public class inSubway_1 : MonoBehaviour
                     break;
 
                 case (14):
+                    JMbgm.Stop();
                     contextList = DataManager.instance.GetDialogue(33, 33);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     inSubway_0.instance.dialogueID = 15;
@@ -182,7 +187,10 @@ public class inSubway_1 : MonoBehaviour
 
     void Start()
     {
-        blackPanel.SetActive(false);    
+        blackPanel.SetActive(false);
+        JMbgm = GameObject.Find("JMbgm").GetComponent<AudioSource>();
+    
+    
     }
 
 

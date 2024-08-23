@@ -18,6 +18,8 @@ public class Prolog2_Item : MonoBehaviour
     public Vector3 newPlayerScale;
 //    public Inventory inventory; // Inventory 
 
+    AudioSource zipper; 
+
     void Awake()
     {
         if (instance == null)
@@ -32,6 +34,7 @@ public class Prolog2_Item : MonoBehaviour
     {
         hammerflag = false;
         SceneManager.sceneLoaded += OnSceneLoaded; // 씬 로드 이벤트 구독
+        zipper= GameObject.Find("zipper").GetComponent<AudioSource>();    
     }
 
     void OnDestroy()
@@ -78,6 +81,7 @@ public class Prolog2_Item : MonoBehaviour
                 talkBubble.SetActive(true);
                 DialogueManager.instance.name.text = "System";
                 DialogueManager.instance.dialogue_text.text = "[비상망치] : 이걸로 창문을 깨고 나갈 수 있을 것 같다.";
+                zipper.Play();
                 hammer.SetActive(false);
                 hammerInfo.SetActive(false);
                 //inventory.AddItem("비상망치");

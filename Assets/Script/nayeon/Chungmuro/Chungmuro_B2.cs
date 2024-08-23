@@ -12,6 +12,8 @@ public class Chungmuro_B2 : MonoBehaviour
     public GameObject sign; //표지판
     public bool canMove = false; //대화 끝나야 다른 층 이동 가능
 
+    
+
     private void Awake()
     {
         if (instance == null)
@@ -123,6 +125,8 @@ public class Chungmuro_B2 : MonoBehaviour
         // }
         DataManager.instance.csv_FileName = "Prologue2";
         DataManager.instance.DialogueLoad(); // CSV 파일 로드
+
+    
 
     }
 

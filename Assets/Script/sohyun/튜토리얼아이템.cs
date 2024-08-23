@@ -25,18 +25,23 @@ public class 튜토리얼아이템 : MonoBehaviour
     public GameObject keyring;
     public GameObject oddairpot;
     public GameObject paper;
-    public GameObject keyringcontent;
-    public GameObject airpotcontent;
-    public GameObject papercontent;
+    // public GameObject keyringcontent;
+    // public GameObject airpotcontent;
+    // public GameObject papercontent;
+
+    AudioSource zipper;
 
     //public Inventory inventory; // Inventory 스크립트 참조
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        zipper = GameObject.Find("zipper").GetComponent<AudioSource>();
     }
 
+    void nothing(){ //아무것도 안함 
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -83,7 +88,7 @@ public class 튜토리얼아이템 : MonoBehaviour
             who.text = "System";
             context.text = "[찢겨진 부적] : 영문을 알 수 없는 글씨가 쓰여진 종이. 섬뜩하게 찢겨져있다. ";
             paper.SetActive(false);
-            papercontent.SetActive(false);
+            //papercontent.SetActive(false);
             tutorialscript.gotoflag++;
             //inventory.AddItem("찢겨진부적");
             
@@ -93,9 +98,10 @@ public class 튜토리얼아이템 : MonoBehaviour
         {
             talksqu.SetActive(true);
             who.text = "System";
+            zipper.Play();
             context.text = "[누군가 두고 내린 에어팟 한쪽]을 가방에 챙겼다";
             oddairpot.SetActive(false);
-            airpotcontent.SetActive(false);
+            //airpotcontent.SetActive(false);
             tutorialscript.gotoflag++;
             //inventory.AddItem(intertest.colitemname);
             airpotflag = 1;
@@ -104,9 +110,10 @@ public class 튜토리얼아이템 : MonoBehaviour
         {
             talksqu.SetActive(true);
             who.text = "System";
+            zipper.Play();
             context.text = "[누군가 흘린 키링]을 가방에 챙겼다.";
             keyring.SetActive(false);
-            keyringcontent.SetActive(false);
+            //keyringcontent.SetActive(false);
             tutorialscript.gotoflag++;
             //inventory.AddItem("키링");
             keyringflag = 1;

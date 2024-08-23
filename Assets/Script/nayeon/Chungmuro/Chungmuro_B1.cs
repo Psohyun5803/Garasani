@@ -25,6 +25,9 @@ public class Chungmuro_B1 : MonoBehaviour
     public Transform dest;
     private bool isMoving = false; // 코루틴 실행 상태를 추적하는 변수
 
+    AudioSource daehwa;
+    AudioSource SubwaySoundObject ;
+
     private void Awake()
     {
         if (instance == null)
@@ -66,6 +69,8 @@ public class Chungmuro_B1 : MonoBehaviour
                     contextList = DataManager.instance.GetDialogue(72, 74);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     dialogueID = 34;
+                    daehwa.Play();
+                    SubwaySoundObject.Play();
                     break;
 
                 default:
@@ -143,6 +148,9 @@ public class Chungmuro_B1 : MonoBehaviour
         }
 
         NPCAnimator= GetComponent<Animator>();
+
+        daehwa = GameObject.Find("daehwa").GetComponent<AudioSource>();
+        SubwaySoundObject = GameObject.Find("SubwaySoundObject").GetComponent<AudioSource>();
 
         //플레이어 이동 설정 
         customize.sceneflag = 4;

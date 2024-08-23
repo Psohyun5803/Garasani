@@ -30,6 +30,8 @@ public class tutorial2 : MonoBehaviour
     private bool jmeventFlag = false; //정민 이벤트 시작 플래그
     private bool isStart = false; //정민 이벤트 대화 한번만 시작하도록 하는 플래그 
                                    
+    AudioSource kung;
+    AudioSource doorSound;
 
     string[] text = new string[4] { "...?", "...이게 무슨 소리지...?", "앞쪽에서 점점 다가오고 있어...", "...!" };
     // Start is called before the first frame update
@@ -44,6 +46,9 @@ public class tutorial2 : MonoBehaviour
         {
             Debug.LogError("Target animator object not assigned.");
         }
+
+        kung= GameObject.Find("kung").GetComponent<AudioSource>();
+        doorSound= GameObject.Find("doorSound").GetComponent<AudioSource>();
 
         Vector3 newposition = door.transform.position;
         Player.playertrans(newposition.x+3, newposition.y);
@@ -68,6 +73,7 @@ public class tutorial2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        kung.Play();
         StartCoroutine(darkandlight);
         if (Input.GetMouseButtonDown(0))
         {
@@ -82,6 +88,7 @@ public class tutorial2 : MonoBehaviour
                     talksqu.SetActive(true);
                     who.text = "System";
                     content.text = "무언가에 걸린듯 문이 열리지 않는다.";
+                    doorSound.Play();
                     textflag++;
 
                     //SceneManager.LoadScene("Dialogue"); 정민 이벤트 시작 

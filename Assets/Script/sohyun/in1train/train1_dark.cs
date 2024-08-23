@@ -19,6 +19,11 @@ public class train1_dark : MonoBehaviour
     public GameObject talksqu;
     public GameObject dark;
     public GameObject image01;
+    public GameObject image02;
+
+    public GameObject gif01;
+    public GameObject gif02;
+    public Image gif03;
     public GameObject button;
     public TMP_Text who;
     public TMP_Text option1;
@@ -38,10 +43,13 @@ public class train1_dark : MonoBehaviour
     public static int index = 0;
     int optnum = 0;
     int darkflag = 0;
+    public float fadeDuration = 1f; 
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("에잉?");
         image01.SetActive(false);
+        image02.SetActive(false);
         dark.SetActive(true);
         talksqu.SetActive(true);
         who.text = "지훈";
@@ -64,6 +72,8 @@ public class train1_dark : MonoBehaviour
             content.fontSize = 3;
             content.text = "안내 말씀드립니다. 저희 열차는 ....";
             button.SetActive(false);
+          
+            StartCoroutine(TransitionToScene());
             //씬이동이 들어갈 곳 
         }
         else
@@ -75,7 +85,7 @@ public class train1_dark : MonoBehaviour
                 if (optnum == 0)
                 {
 
-                    who.text = "player";
+                    who.text = customize.playername;
                     content.text = "";
                     talksqu.SetActive(true);
                     options.SetActive(true);
@@ -111,7 +121,7 @@ public class train1_dark : MonoBehaviour
             {
                 if (station1talk[index].Substring(0, 2) == "PL")
                 {
-                    who.text = "player";
+                    who.text = customize.playername;
                 }
                 else
                 {
@@ -124,10 +134,39 @@ public class train1_dark : MonoBehaviour
 
             
     }
+    IEnumerator TransitionToScene()
+    {
+
+        // 2초 대기
         
+        yield return new WaitForSeconds(2f);
+        talksqu.SetActive(false);
+        image02.SetActive(true);
+        StartCoroutine(gifplayer());
+        StartCoroutine(FadeInAndOut());
+        // 지정된 씬으로 이동
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    IEnumerator gifplayer()
+    {
+
+        // 2초 대기
+        yield return new WaitForSeconds(0.2f);
+        gif02.SetActive(false);
+        gif01.SetActive(true);
+        // 지정된 씬으로 이동
+        yield return new WaitForSeconds(0.2f);
+        gif02.SetActive(true);
+        gif01.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        
+    }
 
 
-    
+
+
     public void opt2()
 
     {
@@ -223,4 +262,45 @@ public class train1_dark : MonoBehaviour
        
         
     }
+    IEnumerator FadeInAndOut()
+    {
+        // 페이드 인
+        yield return StartCoroutine(FadeIn());
+
+        // 페이드 아웃
+        yield return StartCoroutine(FadeOut());
+    }
+
+    IEnumerator FadeIn()
+    {
+        float elapsedTime = 0f;
+        Color color = gif03.color;
+        color.a = 0f; // 초기 알파 값 0 (투명)
+        gif03.color = color;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            color.a = Mathf.Clamp01(elapsedTime / fadeDuration);
+            gif03.color = color;
+            yield return null;
+        }
+    }
+
+    IEnumerator FadeOut()
+    {
+        float elapsedTime = 0f;
+        Color color = gif03.color;
+        color.a = 1f; // 초기 알파 값 1 (불투명)
+        gif03.color = color;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            color.a = Mathf.Clamp01(1f - elapsedTime / fadeDuration);
+            gif03.color = color;
+            yield return null;
+        }
+    }
 }
+

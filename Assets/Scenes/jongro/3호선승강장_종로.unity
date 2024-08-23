@@ -267,6 +267,7 @@ MonoBehaviour:
   option4_bt: {fileID: 1610833313}
   option5_bt: {fileID: 393655353}
   option6_bt: {fileID: 1521397495}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!1 &77125698
 GameObject:
@@ -2371,6 +2372,7 @@ MonoBehaviour:
   option4_bt: {fileID: 1610833313}
   option5_bt: {fileID: 393655353}
   option6_bt: {fileID: 1521397495}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!1 &393655353
 GameObject:
@@ -2669,6 +2671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 513454725}
   - component: {fileID: 513454726}
+  - component: {fileID: 513454727}
   m_Layer: 0
   m_Name: "\uC4F0\uB808\uAE30\uD1B501"
   m_TagString: Untagged
@@ -2743,6 +2746,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &513454727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513454724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd873891272b524a8d186b2e1f29099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &544489811
 GameObject:
   m_ObjectHideFlags: 0
@@ -3856,6 +3871,7 @@ GameObject:
   m_Component:
   - component: {fileID: 786776159}
   - component: {fileID: 786776160}
+  - component: {fileID: 786776161}
   m_Layer: 0
   m_Name: "\uC790\uD310\uAE3001"
   m_TagString: Untagged
@@ -3930,6 +3946,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &786776161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786776158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd873891272b524a8d186b2e1f29099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &797521676
 GameObject:
   m_ObjectHideFlags: 0
@@ -4612,6 +4640,7 @@ GameObject:
   - component: {fileID: 1013675322}
   - component: {fileID: 1013675321}
   - component: {fileID: 1013675320}
+  - component: {fileID: 1013675325}
   m_Layer: 0
   m_Name: "\uB9AC\uC5B4\uCE74 \uB044\uB294 \uB178\uC778"
   m_TagString: Untagged
@@ -4676,6 +4705,7 @@ MonoBehaviour:
   option4_bt: {fileID: 1610833313}
   option5_bt: {fileID: 393655353}
   option6_bt: {fileID: 1521397495}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!61 &1013675322
 BoxCollider2D:
@@ -4801,6 +4831,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1013675325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013675318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd873891272b524a8d186b2e1f29099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1025364601
 GameObject:
   m_ObjectHideFlags: 0
@@ -5817,6 +5859,7 @@ MonoBehaviour:
   option4_bt: {fileID: 1610833313}
   option5_bt: {fileID: 393655353}
   option6_bt: {fileID: 1521397495}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!4 &1213112823
 Transform:
@@ -6388,6 +6431,7 @@ GameObject:
   - component: {fileID: 1490624313}
   - component: {fileID: 1490624312}
   - component: {fileID: 1490624316}
+  - component: {fileID: 1490624317}
   m_Layer: 0
   m_Name: "\uC2DC\uBE44\uAC70\uB294\uB178\uC778"
   m_TagString: Untagged
@@ -6437,6 +6481,7 @@ MonoBehaviour:
   option4_bt: {fileID: 1610833313}
   option5_bt: {fileID: 393655353}
   option6_bt: {fileID: 1521397495}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!61 &1490624313
 BoxCollider2D:
@@ -6577,6 +6622,18 @@ MonoBehaviour:
   bodymove:
   - {fileID: -415487262, guid: 921e9602eb71d4d4f9c2d6302e139d57, type: 3}
   - {fileID: 312508429, guid: 921e9602eb71d4d4f9c2d6302e139d57, type: 3}
+--- !u!114 &1490624317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490624310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd873891272b524a8d186b2e1f29099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1501341287
 GameObject:
   m_ObjectHideFlags: 0

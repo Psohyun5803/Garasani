@@ -1121,6 +1121,7 @@ MonoBehaviour:
   option4_bt: {fileID: 793805905}
   option5_bt: {fileID: 1365576927}
   option6_bt: {fileID: 181241864}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!50 &244394322
 Rigidbody2D:
@@ -1954,6 +1955,7 @@ MonoBehaviour:
   option4_bt: {fileID: 793805905}
   option5_bt: {fileID: 1365576927}
   option6_bt: {fileID: 181241864}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!4 &499552421
 Transform:
@@ -2084,6 +2086,7 @@ MonoBehaviour:
   option4_bt: {fileID: 793805905}
   option5_bt: {fileID: 1365576927}
   option6_bt: {fileID: 181241864}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!61 &574583757
 BoxCollider2D:
@@ -2216,6 +2219,7 @@ GameObject:
   - component: {fileID: 677793572}
   - component: {fileID: 677793571}
   - component: {fileID: 677793570}
+  - component: {fileID: 677793574}
   m_Layer: 0
   m_Name: "\uC815\uBBFC"
   m_TagString: Untagged
@@ -2397,6 +2401,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &677793574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677793568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd873891272b524a8d186b2e1f29099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &689631930
 GameObject:
   m_ObjectHideFlags: 0
@@ -2547,6 +2563,7 @@ GameObject:
   - component: {fileID: 750853629}
   - component: {fileID: 750853628}
   - component: {fileID: 750853632}
+  - component: {fileID: 750853633}
   m_Layer: 0
   m_Name: "\uBB3C\uAC74\uC744 \uD6D4\uCE58\uB294 \uB178\uC778"
   m_TagString: Untagged
@@ -2596,6 +2613,7 @@ MonoBehaviour:
   option4_bt: {fileID: 793805905}
   option5_bt: {fileID: 1365576927}
   option6_bt: {fileID: 0}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!50 &750853629
 Rigidbody2D:
@@ -2738,6 +2756,18 @@ MonoBehaviour:
   - {fileID: -1956493028, guid: d0a381976a5d2fd4b8562fef4af8c323, type: 3}
   - {fileID: -1863708112, guid: d0a381976a5d2fd4b8562fef4af8c323, type: 3}
   - {fileID: 1755194128, guid: d0a381976a5d2fd4b8562fef4af8c323, type: 3}
+--- !u!114 &750853633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750853626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd873891272b524a8d186b2e1f29099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &793805905
 GameObject:
   m_ObjectHideFlags: 0
@@ -3182,6 +3212,7 @@ GameObject:
   - component: {fileID: 1029848095}
   - component: {fileID: 1029848094}
   - component: {fileID: 1029848098}
+  - component: {fileID: 1029848099}
   m_Layer: 0
   m_Name: "\uB3C4\uC6C0\uC774 \uD544\uC694\uD574\uBCF4\uC774\uB294 \uB178\uC778"
   m_TagString: Untagged
@@ -3231,6 +3262,7 @@ MonoBehaviour:
   option4_bt: {fileID: 793805905}
   option5_bt: {fileID: 1365576927}
   option6_bt: {fileID: 181241864}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!61 &1029848095
 BoxCollider2D:
@@ -3371,6 +3403,18 @@ MonoBehaviour:
   bodymove:
   - {fileID: 1013729173, guid: d2e08390f01bbe14f9ba6b950bc20a65, type: 3}
   - {fileID: -2071974600, guid: d2e08390f01bbe14f9ba6b950bc20a65, type: 3}
+--- !u!114 &1029848099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029848092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd873891272b524a8d186b2e1f29099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1231207033
 GameObject:
   m_ObjectHideFlags: 0
@@ -3777,6 +3821,7 @@ GameObject:
   - component: {fileID: 1382559402}
   - component: {fileID: 1382559401}
   - component: {fileID: 1382559405}
+  - component: {fileID: 1382559406}
   m_Layer: 0
   m_Name: "\uD5DB\uC18C\uB9AC \uD558\uB294 \uB178\uC778"
   m_TagString: Untagged
@@ -3826,6 +3871,7 @@ MonoBehaviour:
   option4_bt: {fileID: 793805905}
   option5_bt: {fileID: 1365576927}
   option6_bt: {fileID: 181241864}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!61 &1382559402
 BoxCollider2D:
@@ -3966,6 +4012,18 @@ MonoBehaviour:
   bodymove:
   - {fileID: -900408002, guid: dac63323865b4a948b577ce266f3cd86, type: 3}
   - {fileID: -688024087, guid: dac63323865b4a948b577ce266f3cd86, type: 3}
+--- !u!114 &1382559406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382559399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd873891272b524a8d186b2e1f29099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1626167433
 GameObject:
   m_ObjectHideFlags: 0
@@ -4210,6 +4268,7 @@ MonoBehaviour:
   option4_bt: {fileID: 793805905}
   option5_bt: {fileID: 1365576927}
   option6_bt: {fileID: 181241864}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!4 &2059211398
 Transform:

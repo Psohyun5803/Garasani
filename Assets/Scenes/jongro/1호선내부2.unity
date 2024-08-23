@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 104159670}
   - component: {fileID: 104159669}
   - component: {fileID: 104159668}
+  - component: {fileID: 104159672}
   m_Layer: 0
   m_Name: "\uCDA4\uCD94\uB294 \uCDE8\uAC1D"
   m_TagString: Untagged
@@ -298,6 +299,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &104159672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104159666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd873891272b524a8d186b2e1f29099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &121693905
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,6 +618,7 @@ MonoBehaviour:
   option4_bt: {fileID: 794212680}
   option5_bt: {fileID: 1278622751}
   option6_bt: {fileID: 1657782713}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!1 &142731941
 GameObject:
@@ -4160,6 +4174,7 @@ MonoBehaviour:
   option4_bt: {fileID: 794212680}
   option5_bt: {fileID: 1278622751}
   option6_bt: {fileID: 1657782713}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!61 &978863561
 BoxCollider2D:
@@ -6397,6 +6412,7 @@ GameObject:
   - component: {fileID: 1494300485}
   - component: {fileID: 1494300484}
   - component: {fileID: 1494300483}
+  - component: {fileID: 1494300488}
   m_Layer: 0
   m_Name: "\uB4DC\uB7EC\uB204\uC6CC\uC788\uB294 \uC0AC\uB78C"
   m_TagString: Untagged
@@ -6461,6 +6477,7 @@ MonoBehaviour:
   option4_bt: {fileID: 794212680}
   option5_bt: {fileID: 1278622751}
   option6_bt: {fileID: 1278622751}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!61 &1494300485
 BoxCollider2D:
@@ -6586,6 +6603,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1494300488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494300481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd873891272b524a8d186b2e1f29099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1554950159
 GameObject:
   m_ObjectHideFlags: 0
@@ -8032,6 +8061,7 @@ MonoBehaviour:
   option4_bt: {fileID: 794212680}
   option5_bt: {fileID: 1278622751}
   option6_bt: {fileID: 1657782713}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!4 &1802597096
 Transform:
@@ -8074,6 +8104,7 @@ GameObject:
   - component: {fileID: 1813541422}
   - component: {fileID: 1813541421}
   - component: {fileID: 1813541425}
+  - component: {fileID: 1813541426}
   m_Layer: 0
   m_Name: "\uC2DC\uBE44\uAC70\uB294 \uCDE8\uAC1D"
   m_TagString: Untagged
@@ -8123,6 +8154,7 @@ MonoBehaviour:
   option4_bt: {fileID: 794212680}
   option5_bt: {fileID: 1278622751}
   option6_bt: {fileID: 1657782713}
+  specialAudioClips: []
   playercolflag: 0
 --- !u!61 &1813541422
 BoxCollider2D:
@@ -8265,6 +8297,18 @@ MonoBehaviour:
   - {fileID: -1647836350, guid: fc9710f32a5ae4d449f1e8bfd5e697a1, type: 3}
   - {fileID: -1494598698, guid: fc9710f32a5ae4d449f1e8bfd5e697a1, type: 3}
   - {fileID: 1251376453, guid: fc9710f32a5ae4d449f1e8bfd5e697a1, type: 3}
+--- !u!114 &1813541426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813541418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd873891272b524a8d186b2e1f29099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1816107699
 GameObject:
   m_ObjectHideFlags: 0

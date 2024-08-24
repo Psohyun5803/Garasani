@@ -56,6 +56,7 @@ public class train1_dark : MonoBehaviour
         content.text = "엄마!!";
         textani.npconClickAction();
         button.SetActive(true);
+        Player.moveflag = 0;
         
     }
 

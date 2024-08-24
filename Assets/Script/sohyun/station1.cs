@@ -132,7 +132,7 @@ public class station1 : MonoBehaviour
             {
                 if (station1talk[index].Substring(0, 2) == "PL")
                 {
-                    who.text = "player";
+                    who.text = customize.playername;
                 }
                 else
                 {
@@ -237,7 +237,7 @@ public class station1 : MonoBehaviour
     void Update()
     {
 
-        if (who.text != "player")
+        if (who.text != customize.playername)
         {
             content.alignment = TextAlignmentOptions.Right;
         }

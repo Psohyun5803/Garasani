@@ -13,7 +13,7 @@ using System;
 
 public class station1 : MonoBehaviour
 {
-    string[] station1talk =new string[6] { "ÁöÈÆ¿©±â ÃÊ·Ï»öÀÌ¿¡¿ä?","PLÀÀ?", "ÁöÈÆ¾ö¸¶°¡ ´ÙÀ½¿¡´Â ÃÊ·Ï»ö Å¸¶ó°í Çß´Âµ¥...", "Á¤¹Î!", "PLÃÊ·Ï»öÀÌ¸é...", "Á¤¹Î2È£¼± È¯½Â¿ª¿¡¼­ ±â´Ù¸®°í ÀÖÀ»Áöµµ ¸ğ¸£°Ú³×¿ä." };
+    string[] station1talk =new string[6] { "ì§€í›ˆì—¬ê¸° ì´ˆë¡ìƒ‰ì´ì—ìš”?","PLì‘?", "ì§€í›ˆì—„ë§ˆê°€ ë‹¤ìŒì—ëŠ” ì´ˆë¡ìƒ‰ íƒ€ë¼ê³  í–ˆëŠ”ë°...", "ì •ë¯¼!", "PLì´ˆë¡ìƒ‰ì´ë©´...", "ì •ë¯¼2í˜¸ì„  í™˜ìŠ¹ì—­ì—ì„œ ê¸°ë‹¤ë¦¬ê³  ìˆì„ì§€ë„ ëª¨ë¥´ê² ë„¤ìš”." };
     public TMP_Text content;
     public GameObject talksqu;
     public GameObject button;
@@ -44,7 +44,7 @@ public class station1 : MonoBehaviour
 
 
 
-        if (gameObject.name == "1È£¼±°è´Ü")
+        if (gameObject.name == "1í˜¸ì„ ê³„ë‹¨")
         {
            
             talksqu.SetActive(true);
@@ -52,7 +52,7 @@ public class station1 : MonoBehaviour
             option3_bt.SetActive(false);
             button.SetActive(true);
             who.text = "player";
-            content.text = "¿­Â÷¸¦ Å¸¾ßÇÒ °Í °°´Ù.";
+            content.text = "ì—´ì°¨ë¥¼ íƒ€ì•¼í•  ê²ƒ ê°™ë‹¤.";
             onestair = 1;
         }
 
@@ -73,7 +73,7 @@ public class station1 : MonoBehaviour
         if (npc.B1toS1 == 1)
         {
 
-            GameObject upstair = GameObject.Find("1È£¼±°è´Ü");
+            GameObject upstair = GameObject.Find("1í˜¸ì„ ê³„ë‹¨");
             Debug.Log(upstair.transform.position.x);
             Player.playertrans(upstair.transform.position.x + 10, upstair.transform.position.y);
             npc.B1toS1 = 0;
@@ -82,9 +82,9 @@ public class station1 : MonoBehaviour
         talksqu.SetActive(true);
         if(index==0)
         {
-            who.text = "ÁöÈÆ";
-            Debug.Log("½ÇÇàµÊ");
-            content.text = "¿©±â ÃÊ·Ï»öÀÌ¿¡¿ä?";
+            who.text = "ì§€í›ˆ";
+            Debug.Log("ì‹¤í–‰ë¨");
+            content.text = "ì—¬ê¸° ì´ˆë¡ìƒ‰ì´ì—ìš”?";
             button.SetActive(true);
            
         }
@@ -107,8 +107,8 @@ public class station1 : MonoBehaviour
                 }
                 else
                 {
-                    who.text = "Á¤¹Î";
-                    content.text = "È¯½Â¿ª¿¡ °¡·Á¸é ¹«½¼ ¿­Â÷¸¦ Å¸¾ßÇÒ±î¿ä?";
+                    who.text = "ì •ë¯¼";
+                    content.text = "í™˜ìŠ¹ì—­ì— ê°€ë ¤ë©´ ë¬´ìŠ¨ ì—´ì°¨ë¥¼ íƒ€ì•¼í• ê¹Œìš”?";
                     talksqu.SetActive(true);
                     options.SetActive(true);
                     option3_bt.SetActive(true);
@@ -116,12 +116,12 @@ public class station1 : MonoBehaviour
                     option5_bt.SetActive(true);
                     option6_bt.SetActive(true);
                     button.SetActive(false);
-                    option1.text = "> ÀÎÃµ±ŞÇà";
-                    option2.text = "> ±¸·ÎÇà";
-                    option3.text = "> ¼­µ¿ÅºÇà";
-                    option4.text = "> µ¿¹¦¾ÕÇà";
-                    option5.text = "> ¿µµîÆ÷Çà";
-                    option6.text = "> ¼­¿ï¿ªÇà";
+                    option1.text = "> ì¸ì²œê¸‰í–‰";
+                    option2.text = "> êµ¬ë¡œí–‰";
+                    option3.text = "> ì„œë™íƒ„í–‰";
+                    option4.text = "> ë™ë¬˜ì•í–‰";
+                    option5.text = "> ì˜ë“±í¬í–‰";
+                    option6.text = "> ì„œìš¸ì—­í–‰";
                 }
 
 
@@ -184,8 +184,8 @@ public class station1 : MonoBehaviour
                 option6.text = "";
             }
         }
-        who.text = "Á¤¹Î";
-        content.text = "±×°Å ±â´Ù¸®¸é µÇ°Ú³×¿ä!";
+        who.text = "ì •ë¯¼";
+        content.text = "ê·¸ê±° ê¸°ë‹¤ë¦¬ë©´ ë˜ê² ë„¤ìš”!";
         again = 0;
         options.SetActive(false);
         button.SetActive(true);
@@ -226,8 +226,8 @@ public class station1 : MonoBehaviour
                 option6.text = "";
             }
         }
-        who.text = "Á¤¹Î";
-        content.text = "À½..¾Æ´Ñ °Í °°¾Æ¿ä. ³ë¼±µµ ºÁº¼·¡¿ä?";
+        who.text = "ì •ë¯¼";
+        content.text = "ìŒ..ì•„ë‹Œ ê²ƒ ê°™ì•„ìš”. ë…¸ì„ ë„ ë´ë³¼ë˜ìš”?";
         options.SetActive(false);
         button.SetActive(true);
         again = 1;

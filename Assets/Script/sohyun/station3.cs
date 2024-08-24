@@ -9,7 +9,7 @@ public class station3 : MonoBehaviour
     {
         if(npc.B2to3==1)
         {
-            GameObject upstair = GameObject.Find("3È£¼±½Â°­Àå°è´Ü");
+            GameObject upstair = GameObject.Find("3í˜¸ì„ ìŠ¹ê°•ìž¥ê³„ë‹¨");
             Debug.Log(upstair.transform.position.x);
             Player.playertrans(upstair.transform.position.x +5, upstair.transform.position.y+3);
             npc.B2to3 = 0;

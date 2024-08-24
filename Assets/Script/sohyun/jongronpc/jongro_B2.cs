@@ -9,14 +9,14 @@ public class jongro_B2 : MonoBehaviour
     {
        if(npc.B1toB2==1)
         {
-            GameObject upstair = GameObject.Find("[∞Ë¥‹]_ªÛ¥‹");
+            GameObject upstair = GameObject.Find("[Í≥ÑÎã®]_ÏÉÅÎã®");
             Debug.Log(upstair.transform.position.x);
             Player.playertrans(upstair.transform.position.x, upstair.transform.position.y - 5);
             npc.B1toB2 = 0;
         }
        else if(npc.S3toB2==1)
         {
-            GameObject upstair = GameObject.Find("[∞Ë¥‹]_«œ¥‹");
+            GameObject upstair = GameObject.Find("[Í≥ÑÎã®]_ÌïòÎã®");
             Debug.Log(upstair.transform.position.x);
             Player.playertrans(upstair.transform.position.x, upstair.transform.position.y + 10);
             npc.S3toB2 = 0;

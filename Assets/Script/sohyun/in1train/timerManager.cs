@@ -6,20 +6,20 @@ public class timerManager : MonoBehaviour
 {
     public static timerManager Instance { get; private set; }
 
-    public float timeRemaining = 300f; // Å¸ÀÌ¸Ó ÃÊ±âÈ­ (5ºĞ)
+    public float timeRemaining = 300f; // íƒ€ì´ë¨¸ ì´ˆê¸°í™” (5ë¶„)
     private bool isTimerRunning = false;
 
     void Awake()
     {
-        // ½Ì±ÛÅæ ÆĞÅÏ ±¸Çö
+        // ì‹±ê¸€í†¤ íŒ¨í„´ êµ¬í˜„
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // ¾À ÀüÈ¯ ½Ã¿¡µµ ¿ÀºêÁ§Æ®°¡ ÆÄ±«µÇÁö ¾ÊÀ½
+            DontDestroyOnLoad(gameObject); // ì”¬ ì „í™˜ ì‹œì—ë„ ì˜¤ë¸Œì íŠ¸ê°€ íŒŒê´´ë˜ì§€ ì•ŠìŒ
         }
         else
         {
-            Destroy(gameObject); // ÀÌ¹Ì ÀÎ½ºÅÏ½º°¡ Á¸ÀçÇÏ¸é ÆÄ±«
+            Destroy(gameObject); // ì´ë¯¸ ì¸ìŠ¤í„´ìŠ¤ê°€ ì¡´ì¬í•˜ë©´ íŒŒê´´
         }
     }
 
@@ -40,7 +40,7 @@ public class timerManager : MonoBehaviour
             {
                 isTimerRunning = false;
                 timeRemaining = 0;
-                OnTimerEnd(); // Å¸ÀÌ¸Ó Á¾·á ½Ã È£Ãâ
+                OnTimerEnd(); // íƒ€ì´ë¨¸ ì¢…ë£Œ ì‹œ í˜¸ì¶œ
             }
         }
     }
@@ -52,9 +52,9 @@ public class timerManager : MonoBehaviour
 
     private void OnTimerEnd()
     {
-        // Å¸ÀÌ¸Ó Á¾·á ½Ã ¿øÇÏ´Â Çàµ¿À» ¿©±â¿¡ Ãß°¡
+        // íƒ€ì´ë¨¸ ì¢…ë£Œ ì‹œ ì›í•˜ëŠ” í–‰ë™ì„ ì—¬ê¸°ì— ì¶”ê°€
 
-        SceneManager.LoadScene("1È£¼±Àı¿¬"); // Á¾·á ½Ã ´ÙÀ½ ¾ÀÀ¸·Î ÀüÈ¯
+        SceneManager.LoadScene("1í˜¸ì„ ì ˆì—°"); // ì¢…ë£Œ ì‹œ ë‹¤ìŒ ì”¬ìœ¼ë¡œ ì „í™˜
         Player.playertrans(3.34f, 0.003f);
     }
 }

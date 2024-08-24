@@ -72,10 +72,11 @@ public class station1 : MonoBehaviour
         onestair = 0;
         if (npc.B1toS1 == 1)
         {
-
+            
+            Debug.Log("진입");
             GameObject upstair = GameObject.Find("1호선계단");
             Debug.Log(upstair.transform.position.x);
-            Player.playertrans(upstair.transform.position.x + 10, upstair.transform.position.y-10);
+            Player.playertrans(upstair.transform.position.x + 10, upstair.transform.position.y+1);
             npc.B1toS1 = 0;
         }
         npc.station1 = 1;

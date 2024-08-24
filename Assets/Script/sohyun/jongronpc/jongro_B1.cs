@@ -13,7 +13,7 @@ public class jongro_B1 : MonoBehaviour
            
             GameObject upstair = GameObject.Find("계단_우측중앙");
             Debug.Log(upstair.transform.position.x);
-            Player.playertrans(upstair.transform.position.x - 3, upstair.transform.position.y);
+            Player.playertrans(upstair.transform.position.x-3, upstair.transform.position.y);
             npc.B2toB1 = 0;
         }
       

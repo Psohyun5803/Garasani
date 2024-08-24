@@ -177,7 +177,7 @@ public class Chungmuro_B3 : MonoBehaviour
         {
             // 플레이어 위치 설정
             Debug.Log($"playerFirst 위치: {playerFirst.transform.position}");
-            Player.playertrans(playerFirst.transform.position.x-2, playerFirst.transform.position.y);
+            Player.playertrans(playerFirst.transform.position.x, playerFirst.transform.position.y);
 
         }
         else

@@ -113,7 +113,7 @@ public class Chungmuro_B2 : MonoBehaviour
         GameObject playerObject = GameObject.FindWithTag("Player");
         if(playerObject != null)
         {
-            playerObject.transform.position = new Vector3(signPosition.x-4, signPosition.y-3, signPosition.z);
+            playerObject.transform.position = new Vector3(signPosition.x, signPosition.y-3, signPosition.z);
         }
         Player.frontflag=1;
         // if (playerFirst != null)

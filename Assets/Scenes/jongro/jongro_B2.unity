@@ -1121,7 +1121,6 @@ MonoBehaviour:
   option4_bt: {fileID: 793805905}
   option5_bt: {fileID: 1365576927}
   option6_bt: {fileID: 181241864}
-  specialAudioClips: []
   playercolflag: 0
 --- !u!50 &244394322
 Rigidbody2D:
@@ -1955,7 +1954,6 @@ MonoBehaviour:
   option4_bt: {fileID: 793805905}
   option5_bt: {fileID: 1365576927}
   option6_bt: {fileID: 181241864}
-  specialAudioClips: []
   playercolflag: 0
 --- !u!4 &499552421
 Transform:
@@ -2086,7 +2084,6 @@ MonoBehaviour:
   option4_bt: {fileID: 793805905}
   option5_bt: {fileID: 1365576927}
   option6_bt: {fileID: 181241864}
-  specialAudioClips: []
   playercolflag: 0
 --- !u!61 &574583757
 BoxCollider2D:
@@ -2613,7 +2610,6 @@ MonoBehaviour:
   option4_bt: {fileID: 793805905}
   option5_bt: {fileID: 1365576927}
   option6_bt: {fileID: 0}
-  specialAudioClips: []
   playercolflag: 0
 --- !u!50 &750853629
 Rigidbody2D:
@@ -3262,7 +3258,6 @@ MonoBehaviour:
   option4_bt: {fileID: 793805905}
   option5_bt: {fileID: 1365576927}
   option6_bt: {fileID: 181241864}
-  specialAudioClips: []
   playercolflag: 0
 --- !u!61 &1029848095
 BoxCollider2D:
@@ -3871,7 +3866,6 @@ MonoBehaviour:
   option4_bt: {fileID: 793805905}
   option5_bt: {fileID: 1365576927}
   option6_bt: {fileID: 181241864}
-  specialAudioClips: []
   playercolflag: 0
 --- !u!61 &1382559402
 BoxCollider2D:
@@ -4268,7 +4262,6 @@ MonoBehaviour:
   option4_bt: {fileID: 793805905}
   option5_bt: {fileID: 1365576927}
   option6_bt: {fileID: 181241864}
-  specialAudioClips: []
   playercolflag: 0
 --- !u!4 &2059211398
 Transform:

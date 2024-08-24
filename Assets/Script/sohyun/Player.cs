@@ -176,7 +176,19 @@ public class Player : MonoBehaviour
         }
     }
   
-   
+   private Transform parentTransform;
+
+    void UpdateParentPosition()
+    {
+        // 자식 오브젝트가 움직인 만큼 부모 오브젝트를 이동
+        if (parentTransform != null)
+        {
+            Vector3 offset = transform.localPosition;
+            parentTransform.position += offset;
+            transform.localPosition = Vector3.zero; // 자식의 로컬 위치 초기화
+        }
+
+    }
     public void move()
     {   
         if(customize.sceneflag>1&&moveflag==1)
@@ -184,6 +196,9 @@ public class Player : MonoBehaviour
             float X = Input.GetAxisRaw("Horizontal");
             float Y = Input.GetAxisRaw("Vertical");
             transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
+            parentTransform = transform.parent;
+            UpdateParentPosition();
+
             //Vector3 pos = Camera.main.WorldToViewportPoint(transform.position);
             //if (pos.x < 0f) pos.x = 0f;
             //if (pos.x > 1f) pos.x = 1f;
@@ -191,9 +206,9 @@ public class Player : MonoBehaviour
             //if (pos.y > 1f) pos.y = 1f;
             //transform.position = Camera.main.ViewportToWorldPoint(pos);
             //FindGround();
-           
+
             //player.transform.position = Camera.main.ViewportToWorldPoint(pos); //????
-            
+
 
 
 

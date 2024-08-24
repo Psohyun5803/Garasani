@@ -83,8 +83,8 @@ public class intertest: MonoBehaviour
 
     void Start()
     {
-        interactionViewRectTransform = InteractionView.GetComponent<RectTransform>();
-        InteractionView.SetActive(false);
+        //interactionViewRectTransform = InteractionView.GetComponent<RectTransform>();
+        //InteractionView.SetActive(false);
     }
 
     void Update()

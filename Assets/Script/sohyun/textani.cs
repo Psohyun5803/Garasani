@@ -61,15 +61,32 @@ public class textani : MonoBehaviour
 
     IEnumerator ShowText(string fullText)
     {
-        
-            string currentText = "";
-            for (int i = 0; i < fullText.Length; i++)
+        /*for (int i = 0; i < text.Length; i++)
+        {
+            tmpText.text = text.Substring(0, i + 1);
+            yield return new WaitForSeconds(delay);
+        }
+        typingCoroutine = null; // 코루틴이 끝나면 n*/
+
+        int characterIndex = 0;
+        float timer = 0f;
+
+        while (characterIndex < fullText.Length)
+        {
+            timer += Time.deltaTime;
+
+            if (timer >= delay)
             {
-                currentText = fullText.Substring(0, i + 1);
-                tmpText.text = currentText;
-                yield return new WaitForSeconds(delay);
+                characterIndex++;
+                tmpText.text = fullText.Substring(0, characterIndex);
+                timer = 0f;
             }
-        
+
+            yield return null;  // 다음 프레임까지 대기
+        }
+
+        typingCoroutine = null;  // 코루틴이 끝나면 null로 설정
+
     }
 
 }

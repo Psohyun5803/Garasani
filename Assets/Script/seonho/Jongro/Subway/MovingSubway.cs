@@ -15,11 +15,11 @@ public class MovingSubway : MonoBehaviour
     public float stopDuration = 10f;
     public float initialDelay = 5f;
 
-    public AudioClip[] audioClips; // ¿Àµð¿À Å¬¸³ ¹è¿­
-    public AudioClip scene1Clip1; // 1¹ø ¾ÀÀ¸·Î ÀÌµ¿ÇÒ ¶§ÀÇ ¿Àµð¿À Å¬¸³
-    public AudioClip scene1Clip2; // 1¹ø ¾ÀÀ¸·Î ÀÌµ¿ÇÒ ¶§ÀÇ ¿Àµð¿À Å¬¸³
-    public string scene1Name = "1È£¼±³»ºÎ1"; // 1¹ø ¾À ÀÌ¸§
-    public string scene2Name = "1È£¼±³»ºÎ1_False"; // 2¹ø ¾À ÀÌ¸§
+    public AudioClip[] audioClips; // ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ ï¿½è¿­
+    public AudioClip scene1Clip1; // 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½
+    public AudioClip scene1Clip2; // 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½
+    public string scene1Name = "1í˜¸ì„ ë‚´ë¶€1"; // 1ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì¸ï¿½
+    public string scene2Name = "1í˜¸ì„ ë‚´ë¶€1_False"; // 2ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì¸ï¿½
 
     public delegate void AudioClipPlayedHandler(AudioClip clip);
     public event AudioClipPlayedHandler OnAudioClipPlayed;
@@ -52,39 +52,39 @@ public class MovingSubway : MonoBehaviour
         IsSubwayStopped = false;
         currentSubway = Instantiate(movingObjectPrefab, spawnPoint.position, Quaternion.identity);
 
-        // ·£´ýÀ¸·Î ¿Àµð¿À Å¬¸³ ¼±ÅÃ
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         AudioClip selectedClip = audioClips[Random.Range(0, audioClips.Length)];
         CurrentAudioClip = selectedClip;
         audioSource.clip = selectedClip;
         audioSource.Play();
 
-        // ¿Àµð¿À Å¬¸³ÀÌ Àç»ý ¿Ï·áµÉ ¶§±îÁö ´ë±â
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         while (audioSource.isPlaying)
         {
             yield return null;
         }
 
-        // ¿Àµð¿À Å¬¸³ Àç»ý ¿Ï·á ÈÄ ÀÌº¥Æ® ¹ß»ý
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½ ï¿½ï¿½ ï¿½Ìºï¿½Æ® ï¿½ß»ï¿½
         OnAudioClipPlayed?.Invoke(selectedClip);
 
-        // ¿ÀºêÁ§Æ®°¡ ½ºÅé Æ÷ÀÎÆ®±îÁö ÀÌµ¿
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
         while (Vector3.Distance(currentSubway.transform.position, stopPoint.position) > 0.1f)
         {
             currentSubway.transform.position = Vector3.MoveTowards(currentSubway.transform.position, stopPoint.position, moveSpeed * Time.deltaTime);
             yield return null;
         }
 
-        // ÁöÇÏÃ¶ÀÌ ½ºÅé Æ÷ÀÎÆ®¿¡ µµ´ÞÇßÀ» ¶§ »óÅÂ ¾÷µ¥ÀÌÆ®
+        // ï¿½ï¿½ï¿½ï¿½Ã¶ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         IsSubwayStopped = true;
         Debug.Log("Subway has reached the stop point. IsSubwayStopped = " + IsSubwayStopped);
 
-        // 10ÃÊ°£ Á¤Áö
+        // 10ï¿½Ê°ï¿½ ï¿½ï¿½ï¿½ï¿½
         yield return new WaitForSeconds(stopDuration);
 
         IsSubwayStopped = false;
         Debug.Log("Subway is leaving the stop point. IsSubwayStopped = " + IsSubwayStopped);
 
-        // ¿ÀºêÁ§Æ®°¡ ÀÍ½ºÀÕ Æ÷ÀÎÆ®·Î ÀÌµ¿ ÈÄ Á¦°Å
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Í½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         while (Vector3.Distance(currentSubway.transform.position, exitPoint.position) > 0.1f)
         {
             currentSubway.transform.position = Vector3.MoveTowards(currentSubway.transform.position, exitPoint.position, moveSpeed * Time.deltaTime);

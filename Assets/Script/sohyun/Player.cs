@@ -155,7 +155,7 @@ public class Player : MonoBehaviour
         spriteRenderer.sprite = basebody[spriteindex];
         Debug.Log("??'");
     }
-    private float Speed = 0.84f;
+    private float Speed = 0.5f;
     private float currentSpeed; //현재 스피드 
     
     //[SerializeField] LayerMask layermask;

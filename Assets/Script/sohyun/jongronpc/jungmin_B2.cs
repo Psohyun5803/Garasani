@@ -126,7 +126,7 @@ public class jungmin_B2 : MonoBehaviour
         spriteRenderer.sprite = basebody[spriteindex];
         Debug.Log("??'");
     }
-    private float Speed = 0.82f;//0.42f
+    private float Speed = 0.5f;//0.42f
     //[SerializeField] LayerMask layermask;
     public float distance;
 

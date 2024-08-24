@@ -155,7 +155,7 @@ public class Player : MonoBehaviour
         spriteRenderer.sprite = basebody[spriteindex];
         Debug.Log("??'");
     }
-    private float Speed = 0.82f;//0.42f
+    private float Speed = 0.84f;
     private float currentSpeed; //현재 스피드 
     
     //[SerializeField] LayerMask layermask;
@@ -190,9 +190,12 @@ public class Player : MonoBehaviour
 
     }
     public void move()
-    {   
-        if(customize.sceneflag>1&&moveflag==1)
+    {
+        UpdateParentPosition();
+        if (customize.sceneflag>1&&moveflag==1)
         {
+        
+            UpdateParentPosition();
             float X = Input.GetAxisRaw("Horizontal");
             float Y = Input.GetAxisRaw("Vertical");
             transform.Translate(new Vector2(X, Y) * Time.deltaTime * Speed);
@@ -579,8 +582,9 @@ public class Player : MonoBehaviour
         if (customize.sceneflag > 1 && (collision.transform.CompareTag("ground")))
         {
             pos = transform.position;
-            
-            
+            UpdateParentPosition();
+
+
         }
 
 
@@ -594,9 +598,11 @@ public class Player : MonoBehaviour
             moveflag = 0;
 
             transform.position = pos;
-           
-          
-            
+            UpdateParentPosition();
+
+
+
+
         }
     }
 

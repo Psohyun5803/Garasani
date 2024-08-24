@@ -16,7 +16,7 @@ public class train1_1 : MonoBehaviour
         trainflag = 1;
         if(npc.T2toT1==1)
         {
-            GameObject upstair = GameObject.Find("1È£¼±¹®1");
+            GameObject upstair = GameObject.Find("1í˜¸ì„ ë¬¸1");
             Debug.Log(upstair.transform.position.x);
             Player.playertrans(upstair.transform.position.x-7, upstair.transform.position.y );
             npc.T2toT1 = 0;

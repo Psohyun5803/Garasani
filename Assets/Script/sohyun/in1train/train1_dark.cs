@@ -14,7 +14,7 @@ using System;
 public class train1_dark : MonoBehaviour
 {
 
-    string[] station1talk = new string[5] { "ÁöÈÆ¾ö¸¶!!","Á¤¹Î!","PL!","ÁöÈÆ»ì·ÁÁÖ¼¼¿ä!!","ÁöÈÆ»ì·ÁÁÖ¼¼¿ä!!!!" };
+    string[] station1talk = new string[5] { "ì§€í›ˆì—„ë§ˆ!!","ì •ë¯¼!","PL!","ì§€í›ˆì‚´ë ¤ì£¼ì„¸ìš”!!","ì§€í›ˆì‚´ë ¤ì£¼ì„¸ìš”!!!!" };
     public TMP_Text content;
     public GameObject talksqu;
     public GameObject dark;
@@ -47,13 +47,13 @@ public class train1_dark : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("¿¡À×?");
+        Debug.Log("ì—ì‰?");
         image01.SetActive(false);
         image02.SetActive(false);
         dark.SetActive(true);
         talksqu.SetActive(true);
-        who.text = "ÁöÈÆ";
-        content.text = "¾ö¸¶!!";
+        who.text = "ì§€í›ˆ";
+        content.text = "ì—„ë§ˆ!!";
         textani.npconClickAction();
         button.SetActive(true);
         
@@ -70,11 +70,11 @@ public class train1_dark : MonoBehaviour
         {
             who.text = "system";
             content.fontSize = 3;
-            content.text = "¾È³» ¸»¾¸µå¸³´Ï´Ù. ÀúÈñ ¿­Â÷´Â ....";
+            content.text = "ì•ˆë‚´ ë§ì”€ë“œë¦½ë‹ˆë‹¤. ì €í¬ ì—´ì°¨ëŠ” ....";
             button.SetActive(false);
           
             StartCoroutine(TransitionToScene());
-            //¾ÀÀÌµ¿ÀÌ µé¾î°¥ °÷ 
+            //ì”¬ì´ë™ì´ ë“¤ì–´ê°ˆ ê³³ 
         }
         else
         {
@@ -95,8 +95,8 @@ public class train1_dark : MonoBehaviour
                     option6_bt.SetActive(false);
 
                     button.SetActive(false);
-                    option1.text = "> ¿ì¸®°¡ ²À Ã£¾ÆÁÙ°Ô";
-                    option2.text = "> ÀÌÁ¦ °ÅÀÇ ´Ù ¿Ô¾î";
+                    option1.text = "> ìš°ë¦¬ê°€ ê¼­ ì°¾ì•„ì¤„ê²Œ";
+                    option2.text = "> ì´ì œ ê±°ì˜ ë‹¤ ì™”ì–´";
                 }
                 else
                 {
@@ -137,14 +137,14 @@ public class train1_dark : MonoBehaviour
     IEnumerator TransitionToScene()
     {
 
-        // 2ÃÊ ´ë±â
+        // 2ì´ˆ ëŒ€ê¸°
         
         yield return new WaitForSeconds(2f);
         talksqu.SetActive(false);
         image02.SetActive(true);
         StartCoroutine(gifplayer());
         StartCoroutine(FadeInAndOut());
-        // ÁöÁ¤µÈ ¾ÀÀ¸·Î ÀÌµ¿
+        // ì§€ì •ëœ ì”¬ìœ¼ë¡œ ì´ë™
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("MainMenu");
     }
@@ -152,11 +152,11 @@ public class train1_dark : MonoBehaviour
     IEnumerator gifplayer()
     {
 
-        // 2ÃÊ ´ë±â
+        // 2ì´ˆ ëŒ€ê¸°
         yield return new WaitForSeconds(0.2f);
         gif02.SetActive(false);
         gif01.SetActive(true);
-        // ÁöÁ¤µÈ ¾ÀÀ¸·Î ÀÌµ¿
+        // ì§€ì •ëœ ì”¬ìœ¼ë¡œ ì´ë™
         yield return new WaitForSeconds(0.2f);
         gif02.SetActive(true);
         gif01.SetActive(false);
@@ -204,7 +204,7 @@ public class train1_dark : MonoBehaviour
         }
         optnum = 1;
         image01.SetActive(true);
-        who.text = "Á¤¹Î";
+        who.text = "ì •ë¯¼";
         content.text = "....";
         button.SetActive(true); 
     }
@@ -244,7 +244,7 @@ public class train1_dark : MonoBehaviour
         }
         optnum = 2;
         image01.SetActive(true);
-        who.text = "ÁöÈÆ";
+        who.text = "ì§€í›ˆ";
         content.text = "....";
         button.SetActive(true);
     }
@@ -256,7 +256,7 @@ public class train1_dark : MonoBehaviour
         options.SetActive(false);
         who.text = "system";
         content.fontSize=7;
-        content.text = "Äç!";
+        content.text = "ì¾…!";
         button.SetActive(true);
         darkflag = 1;
        
@@ -264,10 +264,10 @@ public class train1_dark : MonoBehaviour
     }
     IEnumerator FadeInAndOut()
     {
-        // ÆäÀÌµå ÀÎ
+        // í˜ì´ë“œ ì¸
         yield return StartCoroutine(FadeIn());
 
-        // ÆäÀÌµå ¾Æ¿ô
+        // í˜ì´ë“œ ì•„ì›ƒ
         yield return StartCoroutine(FadeOut());
     }
 
@@ -275,7 +275,7 @@ public class train1_dark : MonoBehaviour
     {
         float elapsedTime = 0f;
         Color color = gif03.color;
-        color.a = 0f; // ÃÊ±â ¾ËÆÄ °ª 0 (Åõ¸í)
+        color.a = 0f; // ì´ˆê¸° ì•ŒíŒŒ ê°’ 0 (íˆ¬ëª…)
         gif03.color = color;
 
         while (elapsedTime < fadeDuration)
@@ -291,7 +291,7 @@ public class train1_dark : MonoBehaviour
     {
         float elapsedTime = 0f;
         Color color = gif03.color;
-        color.a = 1f; // ÃÊ±â ¾ËÆÄ °ª 1 (ºÒÅõ¸í)
+        color.a = 1f; // ì´ˆê¸° ì•ŒíŒŒ ê°’ 1 (ë¶ˆíˆ¬ëª…)
         gif03.color = color;
 
         while (elapsedTime < fadeDuration)

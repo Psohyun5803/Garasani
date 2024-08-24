@@ -11,7 +11,7 @@ public class jongro_B1 : MonoBehaviour
         if (npc.B2toB1==1)
         {
            
-            GameObject upstair = GameObject.Find("°è´Ü_¿ìÃøÁß¾Ó");
+            GameObject upstair = GameObject.Find("ê³„ë‹¨_ìš°ì¸¡ì¤‘ì•™");
             Debug.Log(upstair.transform.position.x);
             Player.playertrans(upstair.transform.position.x - 3, upstair.transform.position.y);
             npc.B2toB1 = 0;

@@ -9,7 +9,7 @@ public class train2_1 : MonoBehaviour
     {
         if (npc.T1toT2 == 1)
         {
-            GameObject upstair = GameObject.Find("1È£¼±¹®2");
+            GameObject upstair = GameObject.Find("1í˜¸ì„ ë¬¸2");
             Debug.Log(upstair.transform.position.x);
             Player.playertrans(upstair.transform.position.x +4, upstair.transform.position.y);
             npc.T1toT2 = 0;

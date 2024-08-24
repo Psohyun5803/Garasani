@@ -150,7 +150,7 @@ public class npc : MonoBehaviour
 
 
             }
-            if (gameObject.name == "계단_좌측상단"|| gameObject.name == "계단_좌측하단" || gameObject.name == "계단_우측중앙"|| gameObject.name == "[계단]_상단" || gameObject.name == "[계단]_하단"|| gameObject.name == "3호선승강장계단")
+            if (gameObject.name == "계단_좌측상단"|| gameObject.name == "계단_좌측하단" /*|| gameObject.name == "계단_우측중앙"*/|| gameObject.name == "[계단]_상단" || gameObject.name == "[계단]_하단"|| gameObject.name == "3호선승강장계단")
             {
                 Vector2 pos = transform.position;
                 
@@ -260,14 +260,14 @@ public class npc : MonoBehaviour
             SceneManager.LoadScene("jongro_B2");
             //Player.playertrans(0f, 1351f);
         }
-        if (interobj == "계단_우측중앙")
+        /*if (interobj == "계단_우측중앙")
         {
             button.SetActive(true);
 
             B1toB2 = 1;
             SceneManager.LoadScene("jongro_B2");
           
-        }
+        }*/
         if (interobj=="델리만쥬 가게")
         {
             if(manjufirst!=1)
@@ -463,7 +463,7 @@ public class npc : MonoBehaviour
 
 
         }
-        if (interobj == "계단_좌측상단" || interobj == "계단_좌측하단"||interobj=="계단_우측중앙" || interobj=="[계단]_상단" || interobj=="[계단]_하단" || gameObject.name == "3호선승강장계단")
+        if (interobj == "계단_좌측상단" || interobj == "계단_좌측하단" ||/*interobj=="계단_우측중앙" ||*/ interobj =="[계단]_상단" || interobj=="[계단]_하단" || gameObject.name == "3호선승강장계단")
         {
             button.SetActive(true);
             who.text = customize.playername;
@@ -1090,7 +1090,7 @@ public class npc : MonoBehaviour
 
 
         }
-        if (interobj == "계단_좌측상단" || interobj == "계단_좌측하단" || interobj == "계단_우측중앙" || interobj == "[계단]_상단" || interobj == "[계단]_하단" || gameObject.name == "3호선승강장계단")
+        if (interobj == "계단_좌측상단" || interobj == "계단_좌측하단" || /*interobj == "계단_우측중앙" ||*/ interobj == "[계단]_상단" || interobj == "[계단]_하단" || gameObject.name == "3호선승강장계단")
         {
             talksqu.SetActive(false);
             buttonnum = 0;

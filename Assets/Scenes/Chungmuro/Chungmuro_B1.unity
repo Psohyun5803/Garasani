@@ -9918,9 +9918,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1325880673}
         m_TargetAssemblyTypeName: Phone, Assembly-CSharp
-        m_MethodName: OnClickExit
+        m_MethodName: onClickWarning
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

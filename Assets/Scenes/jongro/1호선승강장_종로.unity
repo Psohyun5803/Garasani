@@ -3888,7 +3888,7 @@ MonoBehaviour:
   stopPoint: {fileID: 585851509}
   exitPoint: {fileID: 1910787798}
   moveSpeed: 10
-  spawnInterval: 0
+  spawnInterval: 50
   stopDuration: 15
   initialDelay: 10
   audioClips:

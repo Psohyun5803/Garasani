@@ -43,8 +43,10 @@ public class Player : MonoBehaviour
     int coroutineflag = 0;
     int coroutineflag2 = 0;
     public static int moveflag = 1;
+    private BoxCollider2D playerCollider; //수정
     void Start ()
     {
+        
         frontflag = 1;
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = basebody[0];
@@ -69,7 +71,10 @@ public class Player : MonoBehaviour
       
 
     }
-    
+    public LayerMask groundLayer; // 바닥 레이어
+    public float groundCheckDistance = 0.1f; // 바닥 확인 거리
+    private bool wasGrounded; // 이전 프레임에서 바닥에 있었는지 여부
+    public float rayDistance = 10f;
     void Update()
     {
 
@@ -121,6 +126,8 @@ public class Player : MonoBehaviour
             backflag = 1;
         }
 
+        // 플레이어의 위치에서 z 축을 포함한 Raycast를 발사
+      
 
         // 플레이어가 상태 이상이 아닐 때만 대쉬 사용
         /*if (!playerState.instance.isTired)
@@ -555,58 +562,60 @@ public class Player : MonoBehaviour
         }
 
     }
-     private ContactPoint2D contact;
+    private ContactPoint2D contact;
      private Vector2 pos;
-     private void OnCollisionEnter2D(Collision2D collision)
-     {
-         
-
-         colflag = 1;
-         if (customize.sceneflag > 1 && (collision.transform.CompareTag("ground")))
-         {
-            moveflag = 1;
-            Vector2 pos = transform.position;
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
 
 
-
-
-        }
-        
-
-           
-
-     }
-     private void OnCollisionStay2D(Collision2D collision)
-     {
-
+        colflag = 1;
         if (customize.sceneflag > 1 && (collision.transform.CompareTag("ground")))
         {
-            pos = transform.position;
-            UpdateParentPosition();
-
-
-        }
-
-
-     }
-
-     private void OnCollisionExit2D(Collision2D collision)
-     {
-
-        if (customize.sceneflag > 1 && (collision.transform.CompareTag("ground")))
-        {
-            moveflag = 0;
-
-            transform.position = pos;
-            UpdateParentPosition();
+           moveflag = 1;
+           Vector2 pos = transform.position;
 
 
 
 
-        }
+       }
+
+
+
+
+    }
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+
+       if (customize.sceneflag > 1 && (collision.transform.CompareTag("ground")))
+       {
+           pos = transform.position;
+           UpdateParentPosition();
+
+
+       }
+
+
     }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
 
+       if (customize.sceneflag > 1 && (collision.transform.CompareTag("ground")))
+       {
+           moveflag = 0;
+
+            transform.position = pos;
+           UpdateParentPosition();
+
+
+
+
+       }
+   }
+
+
+   
+    
 
 
 

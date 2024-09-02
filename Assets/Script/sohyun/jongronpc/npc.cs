@@ -2118,14 +2118,6 @@ public class npc : MonoBehaviour
     {
 
       
-        if (who.text!=customize.playername)
-        {
-            content.alignment = TextAlignmentOptions.Right;
-        }
-        else
-        {
-            content.alignment = TextAlignmentOptions.Left;
-        }
         
     }
 }

@@ -33,7 +33,8 @@ public class jungminemo : MonoBehaviour
     {
         imageComponent=GetComponent<Image>();
         imageComponent.enabled = false;
-        talksqu=GameObject.Find("¸»Ç³¼±");
+        //if()
+        //talksqu=GameObject.Find("¸»Ç³¼±");
        
        
        
@@ -51,7 +52,7 @@ public class jungminemo : MonoBehaviour
                 if (talksqu.activeSelf&&who.text =="Á¤¹Î")
                 {
                     imageComponent.enabled = true;
-            imageComponent.sprite = sprite[1];
+                    imageComponent.sprite = sprite[1];
                     Debug.Log("Parent is active .");
                 }
                 else

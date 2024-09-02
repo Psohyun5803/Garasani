@@ -17,6 +17,7 @@ TagManager:
   - line4
   - quantity
   - upstairs
+  - groundwalk
   layers:
   - Default
   - TransparentFX

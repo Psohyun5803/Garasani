@@ -53,7 +53,7 @@ public class jungminemo : MonoBehaviour
                 {
                     imageComponent.enabled = true;
                     imageComponent.sprite = sprite[1];
-                    Debug.Log("Parent is active .");
+                   
                 }
                 else
                 {

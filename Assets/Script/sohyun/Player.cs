@@ -157,18 +157,18 @@ public class Player : MonoBehaviour
     }
    
     
-    public void apply()
+    /*public void apply()
     {
         spriteRenderer.sprite = basebody[spriteindex];
         Debug.Log("??'");
-    }
+    }*/
     private float Speed = 0.5f;
     private float currentSpeed; //현재 스피드 
     
     //[SerializeField] LayerMask layermask;
     public float distance;
 
-    void FindGround()
+   /* void FindGround()
     {
         RaycastHit hitinfo;
         //hitinfo = Physics2D.Raycast(transform.position, transform.right, distance);
@@ -181,7 +181,7 @@ public class Player : MonoBehaviour
             Debug.Log("??");
 
         }
-    }
+    }*/
   
    private Transform parentTransform;
 
@@ -564,6 +564,7 @@ public class Player : MonoBehaviour
     }
     private ContactPoint2D contact;
      private Vector2 pos;
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
@@ -571,8 +572,12 @@ public class Player : MonoBehaviour
         colflag = 1;
         if (customize.sceneflag > 1 && (collision.transform.CompareTag("ground")))
         {
-           moveflag = 1;
-           Vector2 pos = transform.position;
+           
+          
+                moveflag = 1;
+                Vector2 pos = transform.position;
+            
+           
 
 
 
@@ -588,9 +593,11 @@ public class Player : MonoBehaviour
 
        if (customize.sceneflag > 1 && (collision.transform.CompareTag("ground")))
        {
-           pos = transform.position;
-           UpdateParentPosition();
-
+          
+                pos = transform.position;
+                UpdateParentPosition();
+            
+           
 
        }
 
@@ -602,15 +609,19 @@ public class Player : MonoBehaviour
 
        if (customize.sceneflag > 1 && (collision.transform.CompareTag("ground")))
        {
-           moveflag = 0;
+            
+                moveflag = 0;
 
-            transform.position = pos;
-           UpdateParentPosition();
+                transform.position = pos;
+                UpdateParentPosition();
+
+            }
+            
 
 
 
 
-       }
+       
    }
 
 

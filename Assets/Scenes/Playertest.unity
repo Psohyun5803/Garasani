@@ -3153,8 +3153,8 @@ GameObject:
   - component: {fileID: 540375551}
   - component: {fileID: 540375555}
   - component: {fileID: 540375554}
-  - component: {fileID: 540375553}
   - component: {fileID: 540375552}
+  - component: {fileID: 540375556}
   m_Layer: 2
   m_Name: jihoonemo
   m_TagString: Untagged
@@ -3233,26 +3233,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &540375553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 540375550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d89501ac828c6984d8237235a99a0841, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite:
-  - {fileID: 21300000, guid: 4565afd3728e1e045b184d856724342e, type: 3}
-  - {fileID: 21300000, guid: 68b3a2a2409014348a9ce61c3bb5132f, type: 3}
-  - {fileID: 21300000, guid: de9a4afab9be9844495a2bd878c80ce1, type: 3}
-  - {fileID: 21300000, guid: f0c2678f80828f04094f6677cf632868, type: 3}
-  - {fileID: 21300000, guid: 4c23cf88ca87eb043a036c97741947fd, type: 3}
-  who: {fileID: 765495394}
-  talksqu: {fileID: 291052664}
 --- !u!114 &540375554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3291,6 +3271,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540375550}
   m_CullTransparentMesh: 1
+--- !u!114 &540375556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540375550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f87ef8c018a90c240a8a96ee60ee09c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite:
+  - {fileID: 21300000, guid: 4565afd3728e1e045b184d856724342e, type: 3}
+  - {fileID: 21300000, guid: 68b3a2a2409014348a9ce61c3bb5132f, type: 3}
+  - {fileID: 21300000, guid: de9a4afab9be9844495a2bd878c80ce1, type: 3}
+  - {fileID: 21300000, guid: f0c2678f80828f04094f6677cf632868, type: 3}
+  - {fileID: 21300000, guid: 4c23cf88ca87eb043a036c97741947fd, type: 3}
+  who: {fileID: 765495394}
+  talksqu: {fileID: 291052664}
 --- !u!1 &540996734
 GameObject:
   m_ObjectHideFlags: 0
@@ -6565,9 +6565,10 @@ GameObject:
   - component: {fileID: 1172416254}
   - component: {fileID: 1172416253}
   - component: {fileID: 1172416252}
+  - component: {fileID: 1172416257}
   m_Layer: 2
   m_Name: eye
-  m_TagString: Player
+  m_TagString: groundwalk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6606,7 +6607,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172416251}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -6753,6 +6754,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2100841645}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1172416257
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172416251}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -1.6}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.92, y: 3.84}
+    newSize: {x: 1.92, y: 3.84}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!1 &1258755095
 GameObject:
   m_ObjectHideFlags: 0

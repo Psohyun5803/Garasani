@@ -95,20 +95,20 @@ public class chunmuroall : MonoBehaviour
             presentcol = gameObject.name;
             // Debug.Log("presentcol ??: " + presentcol);
 
-            if(gameObject.tag == "upstairs")
-            {
+            // if(gameObject.tag == "upstairs")
+            // {
            
-                talksqu.SetActive(true);
-                Debug.Log(presentcol);
-                option1_bt.SetActive(true);
-                option2_bt.SetActive(true);
-                who.text = "System";
-                content.text = "이동하시겠습니까?";
-                option1.text = "> 이동하기";
-                option2.text = "> 취소";
+            //     talksqu.SetActive(true);
+            //     Debug.Log(presentcol);
+            //     option1_bt.SetActive(true);
+            //     option2_bt.SetActive(true);
+            //     who.text = "System";
+            //     content.text = "이동하시겠습니까?";
+            //     option1.text = "> 이동하기";
+            //     option2.text = "> 취소";
 
-            }
-
+            // }
+            opt1down(); //물어보지 않고 씬 이동 
         }
 
 
@@ -163,14 +163,14 @@ public class chunmuroall : MonoBehaviour
         }
     }
 
-    public void opt2down()
-    {
-        option1.text = "";
-        option2.text = "";
-        content.text = "";
-        talksqu.SetActive(false);
-        customize.sceneflag = 2;
-        Player.moveflag = 1;
+    // public void opt2down()
+    // {
+    //     option1.text = "";
+    //     option2.text = "";
+    //     content.text = "";
+    //     talksqu.SetActive(false);
+    //     customize.sceneflag = 2;
+    //     Player.moveflag = 1;
 
-    }
+    // }
 }

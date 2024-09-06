@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class playerState : MonoBehaviour
 {
+    /*player 상태 관리 스크립트
+    변수로 상태 추가 */
+
     public static playerState instance;
     public bool isTired; //피로이상 상태 
 

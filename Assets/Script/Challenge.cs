@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Challenge : MonoBehaviour
 {
+    /*도전과제 관리 스크립트*/
     public static Challenge instance;
     public bool ch_rock3 = false; //충무로 b1 돌 3번 이상 밀기
 

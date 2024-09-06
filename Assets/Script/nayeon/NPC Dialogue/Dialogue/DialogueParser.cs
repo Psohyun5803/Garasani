@@ -57,13 +57,23 @@ public class DialogueParser : MonoBehaviour
                 dialogue.chosen2_ID = 0; // 파싱 실패 시 기본값 설정
             }
 
+            dialogue.chosen3 = row[7]; // 선택지2
+
+            if (!int.TryParse(row[8], out dialogue.chosen3_ID))
+            {
+                dialogue.chosen3_ID = 0; // 파싱 실패 시 기본값 설정
+            }
+
 
             dialogue.contexts = dialogue.contexts.Replace("`", ",");
             dialogue.chosen1 = dialogue.chosen1.Replace("`", ",");
             dialogue.chosen2 = dialogue.chosen2.Replace("`", ",");
+            dialogue.chosen3 = dialogue.chosen2.Replace("`", ",");
             dialogue.contexts = dialogue.contexts.Replace("player", customize.playername);
             dialogue.chosen1 = dialogue.chosen1.Replace("player", customize.playername);
             dialogue.chosen2 = dialogue.chosen2.Replace("player", customize.playername);
+            dialogue.chosen3 = dialogue.chosen2.Replace("player", customize.playername);
+
 
             dialogueList.Add(dialogue); //리스트의 각 요소에 dialgoue 객체 저장 
         }

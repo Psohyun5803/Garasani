@@ -29,6 +29,13 @@ public class Dialogue
     // [Tooltip("선택지3")]
     // public string chosen3;
 
+    
+
+    [Tooltip("정민표정")]
+    public int jungminemo;
+
+    [Tooltip("지훈표정")]
+    public int jihoonemo;
     // [Tooltip("선택지3 ID")]
     // public int chosen3_ID;
     

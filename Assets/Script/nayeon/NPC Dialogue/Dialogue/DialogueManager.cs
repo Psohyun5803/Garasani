@@ -13,6 +13,9 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text chosen1_text;
     public TMP_Text chosen2_text;
     //public TMP_Text chosen3_text;
+    public static int jungminemoflag;
+    public static int jihoonemoflag;
+    //public TMP_Text chosen3_text;
 
     public int currentIdx;
     public bool IsDialogueFinished;
@@ -76,15 +79,17 @@ public class DialogueManager : MonoBehaviour
         chosen1_text.text = "";
         chosen2_text.text = "";
         name.text = contextList[currentIdx].name;
-
-        if (name.text == customize.playername || name.text == "System") //npc player 정렬 구분 
+        jihoonemoflag = contextList[currentIdx].jihoonemo;
+        jungminemoflag = contextList[currentIdx].jungminemo;
+        dialogue_text.alignment = TextAlignmentOptions.Left;//둘 다 왼쪽 정렬 -소현수정
+        /*if (name.text == customize.playername || name.text == "System") //npc player 정렬 구분 
         {
             dialogue_text.alignment = TextAlignmentOptions.Left;
         }
         else
         {
             dialogue_text.alignment = TextAlignmentOptions.Right;
-        }
+        }*/
 
         typingCoroutine = StartCoroutine(textPrint(delay, contextList[currentIdx].contexts));
     }
@@ -115,6 +120,7 @@ public class DialogueManager : MonoBehaviour
         {
             chosen1_text.text = contextList[currentIdx].chosen1;
             chosen2_text.text = contextList[currentIdx].chosen2;
+            //chosen3_text.text = contextList[currentIdx].chosen3;
            // chosen3_text.text = contextList[currentIdx].chosen3;
             isChosenOne = false;
         }
@@ -129,6 +135,7 @@ public class DialogueManager : MonoBehaviour
         {
             chosen1_text.text = "";
             chosen2_text.text = "";
+            //chosen3_text.text = "";
            // chosen3_text.text = "";
         }
     }
@@ -179,6 +186,7 @@ public class DialogueManager : MonoBehaviour
     void Update()
     {
         // typing effect
+
         if (isTyping && EventSystem.current.currentSelectedGameObject != null && EventSystem.current.currentSelectedGameObject.name == "말풍선")
         {
             if (typingCoroutine != null)
@@ -191,6 +199,21 @@ public class DialogueManager : MonoBehaviour
             isTyping = false;
 
             ShowChoices();
+        }
+        if (Input.GetKeyDown(KeyCode.Return)) //-소현수정 enter누르면 넘어가게 
+        {
+            if (contextList != null && currentIdx < contextList.Length - 1)
+            {
+                currentIdx++;
+                DisplayDialogue();
+                Debug.Log("next button click");
+            }
+            else
+            {
+                Player.moveflag = 1;
+                IsDialogueFinished = true;
+                Debug.Log("contextlist 없음");
+            }
         }
     }
 }

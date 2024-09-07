@@ -12,6 +12,7 @@ public class train1_1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Player.moveflag = 1;
         jihoon_B2.jihoonmove = 1;
         trainflag = 1;
         if(npc.T2toT1==1)

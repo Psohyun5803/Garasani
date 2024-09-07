@@ -5,12 +5,14 @@ using UnityEngine;
 public class NPCManager : MonoBehaviour
 {
     public int helpCount = 0;
+    public GameObject ui_dialogue; //말풍선
     public Dialogue[] contextList;
     // Start is called before the first frame update
     void Start()
     {
         DataManager.instance.csv_FileName = "NPC";
         DataManager.instance.DialogueLoad(); // CSV 파일 로드
+        Debug.Log("csv load");
     }
 
     void OnMouseDown(){
@@ -20,6 +22,7 @@ public class NPCManager : MonoBehaviour
 
 
    public IEnumerator NpcRoutine(){
+        ui_dialogue.SetActive(true);
         switch(gameObject.name){
                 case "리어카 끄는 노인":
                     //물건 구매 기능 추가
@@ -125,6 +128,7 @@ public class NPCManager : MonoBehaviour
                     }
                     break;
                 default : break;
-            }
+        }
+        ui_dialogue.SetActive(false);
     }
 }

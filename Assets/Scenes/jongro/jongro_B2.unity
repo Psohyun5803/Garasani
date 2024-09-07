@@ -1452,21 +1452,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2059211397}
-        m_TargetAssemblyTypeName: npc, Assembly-CSharp
-        m_MethodName: option1down
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 649396088}
-        m_TargetAssemblyTypeName: textani, Assembly-CSharp
-        m_MethodName: Onclick
+      - m_Target: {fileID: 2059211399}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: OnClickChoose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1655,21 +1643,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2059211397}
-        m_TargetAssemblyTypeName: npc, Assembly-CSharp
-        m_MethodName: option2down
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 649396088}
-        m_TargetAssemblyTypeName: textani, Assembly-CSharp
-        m_MethodName: Onclick
+      - m_Target: {fileID: 2059211399}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: OnClickChoose
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1919,7 +1895,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 499552421}
-  - component: {fileID: 499552420}
+  - component: {fileID: 499552422}
   m_Layer: 0
   m_Name: manager
   m_TagString: Untagged
@@ -1927,34 +1903,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &499552420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499552419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 2059440495}
-  talksqu: {fileID: 1656478984}
-  button: {fileID: 1231207033}
-  who: {fileID: 472635185}
-  option1: {fileID: 330644260}
-  option2: {fileID: 466079651}
-  option3: {fileID: 181275927}
-  option4: {fileID: 793805909}
-  option5: {fileID: 1365576931}
-  option6: {fileID: 181241868}
-  options: {fileID: 806902609}
-  option3_bt: {fileID: 181275923}
-  option4_bt: {fileID: 793805905}
-  option5_bt: {fileID: 1365576927}
-  option6_bt: {fileID: 181241864}
-  playercolflag: 0
 --- !u!4 &499552421
 Transform:
   m_ObjectHideFlags: 0
@@ -1970,6 +1918,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &499552422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499552419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb91749c915546ed8d17b829eb31774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helpCount: 0
+  ui_dialogue: {fileID: 0}
+  contextList: []
 --- !u!1 &574583753
 GameObject:
   m_ObjectHideFlags: 0
@@ -2181,7 +2144,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649396087}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fab48251c5f6d9145b2112cd7ce962f3, type: 3}
   m_Name: 
@@ -2558,9 +2521,9 @@ GameObject:
   - component: {fileID: 750853631}
   - component: {fileID: 750853630}
   - component: {fileID: 750853629}
-  - component: {fileID: 750853628}
   - component: {fileID: 750853632}
   - component: {fileID: 750853633}
+  - component: {fileID: 750853634}
   m_Layer: 0
   m_Name: "\uBB3C\uAC74\uC744 \uD6D4\uCE58\uB294 \uB178\uC778"
   m_TagString: Untagged
@@ -2583,34 +2546,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 148816168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &750853628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 750853626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 2059440495}
-  talksqu: {fileID: 1656478984}
-  button: {fileID: 1231207033}
-  who: {fileID: 472635185}
-  option1: {fileID: 330644260}
-  option2: {fileID: 466079651}
-  option3: {fileID: 181275927}
-  option4: {fileID: 793805909}
-  option5: {fileID: 1365576931}
-  option6: {fileID: 181241868}
-  options: {fileID: 806902609}
-  option3_bt: {fileID: 181275923}
-  option4_bt: {fileID: 793805905}
-  option5_bt: {fileID: 1365576927}
-  option6_bt: {fileID: 0}
-  playercolflag: 0
 --- !u!50 &750853629
 Rigidbody2D:
   serializedVersion: 4
@@ -2764,6 +2699,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd873891272b524a8d186b2e1f29099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &750853634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750853626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb91749c915546ed8d17b829eb31774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helpCount: 0
+  ui_dialogue: {fileID: 1656478984}
+  contextList: []
 --- !u!1 &793805905
 GameObject:
   m_ObjectHideFlags: 0
@@ -3206,9 +3156,9 @@ GameObject:
   - component: {fileID: 1029848097}
   - component: {fileID: 1029848096}
   - component: {fileID: 1029848095}
-  - component: {fileID: 1029848094}
   - component: {fileID: 1029848098}
   - component: {fileID: 1029848099}
+  - component: {fileID: 1029848100}
   m_Layer: 0
   m_Name: "\uB3C4\uC6C0\uC774 \uD544\uC694\uD574\uBCF4\uC774\uB294 \uB178\uC778"
   m_TagString: Untagged
@@ -3231,34 +3181,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 148816168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1029848094
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1029848092}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 2059440495}
-  talksqu: {fileID: 1656478984}
-  button: {fileID: 1231207033}
-  who: {fileID: 472635185}
-  option1: {fileID: 330644260}
-  option2: {fileID: 466079651}
-  option3: {fileID: 181275927}
-  option4: {fileID: 793805909}
-  option5: {fileID: 1365576931}
-  option6: {fileID: 181241868}
-  options: {fileID: 806902609}
-  option3_bt: {fileID: 181275923}
-  option4_bt: {fileID: 793805905}
-  option5_bt: {fileID: 1365576927}
-  option6_bt: {fileID: 181241864}
-  playercolflag: 0
 --- !u!61 &1029848095
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3410,6 +3332,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd873891272b524a8d186b2e1f29099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1029848100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029848092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb91749c915546ed8d17b829eb31774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helpCount: 0
+  ui_dialogue: {fileID: 1656478984}
+  contextList: []
 --- !u!1 &1231207033
 GameObject:
   m_ObjectHideFlags: 0
@@ -3493,21 +3430,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2059211397}
-        m_TargetAssemblyTypeName: npc, Assembly-CSharp
-        m_MethodName: buttondown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 649396088}
-        m_TargetAssemblyTypeName: textani, Assembly-CSharp
-        m_MethodName: Onclick
+      - m_Target: {fileID: 2059211399}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: onClickNextButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3814,9 +3739,9 @@ GameObject:
   - component: {fileID: 1382559404}
   - component: {fileID: 1382559403}
   - component: {fileID: 1382559402}
-  - component: {fileID: 1382559401}
   - component: {fileID: 1382559405}
   - component: {fileID: 1382559406}
+  - component: {fileID: 1382559407}
   m_Layer: 0
   m_Name: "\uD5DB\uC18C\uB9AC \uD558\uB294 \uB178\uC778"
   m_TagString: Untagged
@@ -3839,34 +3764,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 148816168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1382559401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382559399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 2059440495}
-  talksqu: {fileID: 1656478984}
-  button: {fileID: 1231207033}
-  who: {fileID: 472635185}
-  option1: {fileID: 330644260}
-  option2: {fileID: 466079651}
-  option3: {fileID: 181275927}
-  option4: {fileID: 793805909}
-  option5: {fileID: 1365576931}
-  option6: {fileID: 181241868}
-  options: {fileID: 806902609}
-  option3_bt: {fileID: 181275923}
-  option4_bt: {fileID: 793805905}
-  option5_bt: {fileID: 1365576927}
-  option6_bt: {fileID: 181241864}
-  playercolflag: 0
 --- !u!61 &1382559402
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4018,6 +3915,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd873891272b524a8d186b2e1f29099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1382559407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382559399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffb91749c915546ed8d17b829eb31774, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helpCount: 0
+  ui_dialogue: {fileID: 1656478984}
+  contextList: []
 --- !u!1 &1626167433
 GameObject:
   m_ObjectHideFlags: 0
@@ -4286,6 +4198,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2059211398}
   - component: {fileID: 2059211397}
+  - component: {fileID: 2059211399}
   m_Layer: 0
   m_Name: 'Scriptmanager '
   m_TagString: Untagged
@@ -4300,7 +4213,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059211396}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
   m_Name: 
@@ -4337,6 +4250,28 @@ Transform:
   - {fileID: 907734940}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2059211399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059211396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ce2ad026bd845459ed1a5c65793908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui_dialogue: {fileID: 1656478984}
+  dialogue_text: {fileID: 2059440495}
+  name: {fileID: 472635185}
+  chosen1_text: {fileID: 330644260}
+  chosen2_text: {fileID: 466079651}
+  currentIdx: 0
+  IsDialogueFinished: 0
+  contextList: []
+  chooseFlag: 0
+  clickFlag: 0
 --- !u!1 &2059440491
 GameObject:
   m_ObjectHideFlags: 0

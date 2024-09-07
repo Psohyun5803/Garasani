@@ -1512,7 +1512,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 317672799}
-  - component: {fileID: 317672798}
   - component: {fileID: 317672800}
   - component: {fileID: 317672801}
   m_Layer: 0
@@ -1522,34 +1521,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &317672798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 317672797}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 1985822183}
-  talksqu: {fileID: 1920633224}
-  button: {fileID: 617121717}
-  who: {fileID: 410989448}
-  option1: {fileID: 1749712652}
-  option2: {fileID: 1780270385}
-  option3: {fileID: 1160717460}
-  option4: {fileID: 1554353156}
-  option5: {fileID: 1133001630}
-  option6: {fileID: 351759716}
-  options: {fileID: 678556505}
-  option3_bt: {fileID: 1160717457}
-  option4_bt: {fileID: 1554353153}
-  option5_bt: {fileID: 1133001627}
-  option6_bt: {fileID: 351759713}
-  playercolflag: 0
 --- !u!4 &317672799
 Transform:
   m_ObjectHideFlags: 0
@@ -1894,7 +1865,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 891522916}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: npc, Assembly-CSharp
         m_MethodName: option6down
         m_Mode: 1
@@ -2195,8 +2166,6 @@ GameObject:
   - component: {fileID: 410925516}
   - component: {fileID: 410925515}
   - component: {fileID: 410925514}
-  - component: {fileID: 410925513}
-  - component: {fileID: 410925512}
   - component: {fileID: 410925517}
   - component: {fileID: 410925518}
   m_Layer: 0
@@ -2221,49 +2190,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2018601901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &410925512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 410925510}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b22bf0d4cdaf75144898deade34ed8f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodymove:
-  - {fileID: -718624696, guid: 1b2d3b507dbe18345a2187cc63b338f2, type: 3}
-  - {fileID: -1562955467, guid: 1b2d3b507dbe18345a2187cc63b338f2, type: 3}
---- !u!114 &410925513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 410925510}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 1985822183}
-  talksqu: {fileID: 1920633224}
-  button: {fileID: 617121717}
-  who: {fileID: 410989448}
-  option1: {fileID: 1749712652}
-  option2: {fileID: 1780270385}
-  option3: {fileID: 1160717460}
-  option4: {fileID: 1554353156}
-  option5: {fileID: 1133001630}
-  option6: {fileID: 351759716}
-  options: {fileID: 678556505}
-  option3_bt: {fileID: 1160717457}
-  option4_bt: {fileID: 1554353153}
-  option5_bt: {fileID: 1133001627}
-  option6_bt: {fileID: 351759713}
-  playercolflag: 0
 --- !u!61 &410925514
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2859,7 +2785,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 891522916}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: npc, Assembly-CSharp
         m_MethodName: buttondown
         m_Mode: 1
@@ -3754,7 +3680,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 891522915}
-  - component: {fileID: 891522916}
   m_Layer: 0
   m_Name: 'Scriptmanager '
   m_TagString: Untagged
@@ -3778,34 +3703,6 @@ Transform:
   - {fileID: 160563237}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &891522916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891522914}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 1985822183}
-  talksqu: {fileID: 1920633224}
-  button: {fileID: 617121717}
-  who: {fileID: 410989448}
-  option1: {fileID: 1749712652}
-  option2: {fileID: 1780270385}
-  option3: {fileID: 1160717460}
-  option4: {fileID: 1554353156}
-  option5: {fileID: 1133001630}
-  option6: {fileID: 351759716}
-  options: {fileID: 678556505}
-  option3_bt: {fileID: 1160717457}
-  option4_bt: {fileID: 1554353153}
-  option5_bt: {fileID: 1133001627}
-  option6_bt: {fileID: 351759713}
-  playercolflag: 0
 --- !u!1 &919183456
 GameObject:
   m_ObjectHideFlags: 0
@@ -3943,8 +3840,6 @@ GameObject:
   - component: {fileID: 943129707}
   - component: {fileID: 943129706}
   - component: {fileID: 943129705}
-  - component: {fileID: 943129704}
-  - component: {fileID: 943129703}
   - component: {fileID: 943129708}
   m_Layer: 0
   m_Name: "\uC575\uBC8C\uC774"
@@ -3968,49 +3863,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2018601901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &943129703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943129701}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b22bf0d4cdaf75144898deade34ed8f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodymove:
-  - {fileID: -655783746, guid: fa1b4344b052f0941ab96b6a74645878, type: 3}
-  - {fileID: 221241137, guid: fa1b4344b052f0941ab96b6a74645878, type: 3}
---- !u!114 &943129704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 943129701}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 1985822183}
-  talksqu: {fileID: 1920633224}
-  button: {fileID: 617121717}
-  who: {fileID: 410989448}
-  option1: {fileID: 1749712652}
-  option2: {fileID: 1780270385}
-  option3: {fileID: 1160717460}
-  option4: {fileID: 1554353156}
-  option5: {fileID: 1133001630}
-  option6: {fileID: 351759716}
-  options: {fileID: 678556505}
-  option3_bt: {fileID: 1160717457}
-  option4_bt: {fileID: 1554353153}
-  option5_bt: {fileID: 1133001627}
-  option6_bt: {fileID: 351759713}
-  playercolflag: 0
 --- !u!61 &943129705
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4603,7 +4455,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 891522916}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: npc, Assembly-CSharp
         m_MethodName: option5down
         m_Mode: 1
@@ -4806,7 +4658,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 891522916}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: npc, Assembly-CSharp
         m_MethodName: option3down
         m_Mode: 1
@@ -6257,7 +6109,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 891522916}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: npc, Assembly-CSharp
         m_MethodName: option4down
         m_Mode: 1
@@ -6737,8 +6589,6 @@ GameObject:
   - component: {fileID: 1720580096}
   - component: {fileID: 1720580095}
   - component: {fileID: 1720580094}
-  - component: {fileID: 1720580093}
-  - component: {fileID: 1720580092}
   - component: {fileID: 1720580097}
   m_Layer: 0
   m_Name: "\uC7A1\uC0C1\uC778"
@@ -6762,49 +6612,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2018601901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1720580092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720580090}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b22bf0d4cdaf75144898deade34ed8f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodymove:
-  - {fileID: 1507159844, guid: 1baf25d065c792942bbcae151013a7f6, type: 3}
-  - {fileID: 417886054, guid: 1baf25d065c792942bbcae151013a7f6, type: 3}
---- !u!114 &1720580093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1720580090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 1985822183}
-  talksqu: {fileID: 1920633224}
-  button: {fileID: 617121717}
-  who: {fileID: 410989448}
-  option1: {fileID: 1749712652}
-  option2: {fileID: 1780270385}
-  option3: {fileID: 1160717460}
-  option4: {fileID: 1554353156}
-  option5: {fileID: 1133001630}
-  option6: {fileID: 351759716}
-  options: {fileID: 678556505}
-  option3_bt: {fileID: 1160717457}
-  option4_bt: {fileID: 1554353153}
-  option5_bt: {fileID: 1133001627}
-  option6_bt: {fileID: 351759713}
-  playercolflag: 0
 --- !u!61 &1720580094
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7341,7 +7148,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 891522916}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: npc, Assembly-CSharp
         m_MethodName: option1down
         m_Mode: 1
@@ -7544,7 +7351,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 891522916}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: npc, Assembly-CSharp
         m_MethodName: option2down
         m_Mode: 1
@@ -7972,8 +7779,6 @@ GameObject:
   - component: {fileID: 1874833118}
   - component: {fileID: 1874833117}
   - component: {fileID: 1874833116}
-  - component: {fileID: 1874833115}
-  - component: {fileID: 1874833114}
   - component: {fileID: 1874833119}
   m_Layer: 0
   m_Name: "\uC74C\uC2DD \uD30C\uB294 \uD560\uBA38\uB2C8"
@@ -7997,49 +7802,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2018601901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1874833114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1874833112}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b22bf0d4cdaf75144898deade34ed8f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodymove:
-  - {fileID: -953743900, guid: f00aac94a3f494f4199aeb250e6b0f1d, type: 3}
-  - {fileID: -1031117915, guid: f00aac94a3f494f4199aeb250e6b0f1d, type: 3}
---- !u!114 &1874833115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1874833112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 1985822183}
-  talksqu: {fileID: 1920633224}
-  button: {fileID: 617121717}
-  who: {fileID: 410989448}
-  option1: {fileID: 1749712652}
-  option2: {fileID: 1780270385}
-  option3: {fileID: 1160717460}
-  option4: {fileID: 1554353156}
-  option5: {fileID: 1133001630}
-  option6: {fileID: 351759716}
-  options: {fileID: 678556505}
-  option3_bt: {fileID: 1160717457}
-  option4_bt: {fileID: 1554353153}
-  option5_bt: {fileID: 1133001627}
-  option6_bt: {fileID: 351759713}
-  playercolflag: 0
 --- !u!61 &1874833116
 BoxCollider2D:
   m_ObjectHideFlags: 0

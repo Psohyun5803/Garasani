@@ -12,9 +12,11 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text name;
     public TMP_Text chosen1_text;
     public TMP_Text chosen2_text;
-    public TMP_Text chosen3_text;
+    //public TMP_Text chosen3_text;
     public static int jungminemoflag;
     public static int jihoonemoflag;
+    //public TMP_Text chosen3_text;
+
     public int currentIdx;
     public bool IsDialogueFinished;
     public Dialogue[] contextList;
@@ -118,13 +120,14 @@ public class DialogueManager : MonoBehaviour
             chosen1_text.text = contextList[currentIdx].chosen1;
             chosen2_text.text = contextList[currentIdx].chosen2;
             //chosen3_text.text = contextList[currentIdx].chosen3;
+           // chosen3_text.text = contextList[currentIdx].chosen3;
             isChosenOne = false;
         }
         else if (!string.IsNullOrEmpty(contextList[currentIdx].chosen1) && string.IsNullOrEmpty(contextList[currentIdx].chosen2))
         {
             chosen1_text.text = "";
             chosen2_text.text = contextList[currentIdx].chosen1;
-            chosen3_text.text = "";
+          //  chosen3_text.text = "";
             isChosenOne = true;
         }
         else
@@ -132,6 +135,7 @@ public class DialogueManager : MonoBehaviour
             chosen1_text.text = "";
             chosen2_text.text = "";
             //chosen3_text.text = "";
+           // chosen3_text.text = "";
         }
     }
 
@@ -143,8 +147,8 @@ public class DialogueManager : MonoBehaviour
                     chooseFlag = 1;
                 else if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen2") == 0)
                     chooseFlag = 2;
-                else if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen3") == 0)
-                    chooseFlag = 3;
+                //else if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen3") == 0)
+                  //  chooseFlag = 3;
             }
             else{
                 ui_dialogue.SetActive(false);

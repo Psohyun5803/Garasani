@@ -37109,6 +37109,7 @@ MonoBehaviour:
   name: {fileID: 1256643753}
   chosen1_text: {fileID: 246314211}
   chosen2_text: {fileID: 554573017}
+  chosen3_text: {fileID: 0}
   currentIdx: 0
   IsDialogueFinished: 0
   contextList: []
@@ -60432,6 +60433,7 @@ GameObject:
   - component: {fileID: 1982233699}
   - component: {fileID: 1982233701}
   - component: {fileID: 1982233700}
+  - component: {fileID: 1982233702}
   m_Layer: 2
   m_Name: "\uB9D0\uD48D\uC120"
   m_TagString: Untagged
@@ -60503,6 +60505,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982233698}
   m_CullTransparentMesh: 1
+--- !u!114 &1982233702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982233698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c7847c440d428748b11d680cad0620e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  who: {fileID: 0}
+  isfliped: 0
 --- !u!1 &1989050211
 GameObject:
   m_ObjectHideFlags: 0

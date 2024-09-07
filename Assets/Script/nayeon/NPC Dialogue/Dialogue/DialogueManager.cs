@@ -129,7 +129,7 @@ public class DialogueManager : MonoBehaviour
         {
             chosen1_text.text = "";
             chosen2_text.text = "";
-            chosen3_text.text = "";
+            //chosen3_text.text = "";
         }
     }
 

@@ -128,7 +128,7 @@ public class NPCManager : MonoBehaviour
                     }
                     break;
                 default : break;
-            }
+        }
         ui_dialogue.SetActive(false);
     }
 }

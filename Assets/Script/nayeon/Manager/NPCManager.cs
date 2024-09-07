@@ -5,16 +5,19 @@ using UnityEngine;
 public class NPCManager : MonoBehaviour
 {
     public int helpCount = 0;
+    public Dialogue[] contextList;
     // Start is called before the first frame update
     void Start()
     {
-        DataManager.instance.csv_FileName = "npc";
+        DataManager.instance.csv_FileName = "NPC";
         DataManager.instance.DialogueLoad(); // CSV 파일 로드
     }
 
-   void onMouseDown(){
+    void OnMouseDown(){
+        Debug.Log("NPC clicked");
         StartCoroutine(NpcRoutine());
-   }
+    }
+
 
    public IEnumerator NpcRoutine(){
         switch(gameObject.name){

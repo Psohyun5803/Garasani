@@ -618,7 +618,6 @@ MonoBehaviour:
   option4_bt: {fileID: 794212680}
   option5_bt: {fileID: 1278622751}
   option6_bt: {fileID: 1657782713}
-  specialAudioClips: []
   playercolflag: 0
 --- !u!1 &142731941
 GameObject:
@@ -4112,6 +4111,64 @@ Transform:
   - {fileID: 605092818}
   m_Father: {fileID: 984502214}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &973822163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 973822166}
+  - component: {fileID: 973822165}
+  - component: {fileID: 973822164}
+  m_Layer: 0
+  m_Name: Story_dialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &973822164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973822163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10e776c4a704584a8ab2786bc800907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  csv_FileName: prologue2
+--- !u!114 &973822165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973822163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77477a1b45105b84494b98d9509ac911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &973822166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973822163}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5966823, y: -0.56790954, z: 3.663462}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &978863558
 GameObject:
   m_ObjectHideFlags: 0
@@ -4174,7 +4231,6 @@ MonoBehaviour:
   option4_bt: {fileID: 794212680}
   option5_bt: {fileID: 1278622751}
   option6_bt: {fileID: 1657782713}
-  specialAudioClips: []
   playercolflag: 0
 --- !u!61 &978863561
 BoxCollider2D:
@@ -4556,6 +4612,64 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1032952101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1032952104}
+  - component: {fileID: 1032952103}
+  - component: {fileID: 1032952102}
+  m_Layer: 0
+  m_Name: Story_dialogueManager (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1032952102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032952101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10e776c4a704584a8ab2786bc800907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  csv_FileName: prologue2
+--- !u!114 &1032952103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032952101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77477a1b45105b84494b98d9509ac911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1032952104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1032952101}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5966823, y: -0.56790954, z: 3.663462}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1053027022
 GameObject:
   m_ObjectHideFlags: 0
@@ -6477,7 +6591,6 @@ MonoBehaviour:
   option4_bt: {fileID: 794212680}
   option5_bt: {fileID: 1278622751}
   option6_bt: {fileID: 1278622751}
-  specialAudioClips: []
   playercolflag: 0
 --- !u!61 &1494300485
 BoxCollider2D:
@@ -8061,7 +8174,6 @@ MonoBehaviour:
   option4_bt: {fileID: 794212680}
   option5_bt: {fileID: 1278622751}
   option6_bt: {fileID: 1657782713}
-  specialAudioClips: []
   playercolflag: 0
 --- !u!4 &1802597096
 Transform:
@@ -8154,7 +8266,6 @@ MonoBehaviour:
   option4_bt: {fileID: 794212680}
   option5_bt: {fileID: 1278622751}
   option6_bt: {fileID: 1657782713}
-  specialAudioClips: []
   playercolflag: 0
 --- !u!61 &1813541422
 BoxCollider2D:
@@ -8952,3 +9063,5 @@ SceneRoots:
   - {fileID: 1802597096}
   - {fileID: 1053027024}
   - {fileID: 842551537}
+  - {fileID: 973822166}
+  - {fileID: 1032952104}

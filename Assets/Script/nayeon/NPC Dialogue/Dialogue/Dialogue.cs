@@ -26,11 +26,11 @@ public class Dialogue
     [Tooltip("선택지2 ID")]
     public int chosen2_ID;
 
-    [Tooltip("선택지3")]
-    public string chosen3;
+    // [Tooltip("선택지3")]
+    // public string chosen3;
 
-    [Tooltip("선택지3 ID")]
-    public int chosen3_ID;
+    // [Tooltip("선택지3 ID")]
+    // public int chosen3_ID;
     
 }
 

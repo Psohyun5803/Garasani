@@ -81,14 +81,15 @@ public class DialogueManager : MonoBehaviour
         name.text = contextList[currentIdx].name;
         jihoonemoflag = contextList[currentIdx].jihoonemo;
         jungminemoflag = contextList[currentIdx].jungminemo;
-        if (name.text == customize.playername || name.text == "System") //npc player 정렬 구분 
+        dialogue_text.alignment = TextAlignmentOptions.Left;//둘 다 왼쪽 정렬 -소현수정
+        /*if (name.text == customize.playername || name.text == "System") //npc player 정렬 구분 
         {
             dialogue_text.alignment = TextAlignmentOptions.Left;
         }
         else
         {
             dialogue_text.alignment = TextAlignmentOptions.Right;
-        }
+        }*/
 
         typingCoroutine = StartCoroutine(textPrint(delay, contextList[currentIdx].contexts));
     }
@@ -185,7 +186,7 @@ public class DialogueManager : MonoBehaviour
     void Update()
     {
         // typing effect
-        Debug.Log(jungminemoflag);
+
         if (isTyping && EventSystem.current.currentSelectedGameObject != null && EventSystem.current.currentSelectedGameObject.name == "말풍선")
         {
             if (typingCoroutine != null)
@@ -199,7 +200,7 @@ public class DialogueManager : MonoBehaviour
 
             ShowChoices();
         }
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetKeyDown(KeyCode.Return)) //-소현수정 enter누르면 넘어가게 
         {
             if (contextList != null && currentIdx < contextList.Length - 1)
             {

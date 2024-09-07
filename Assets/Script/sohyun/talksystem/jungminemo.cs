@@ -52,7 +52,11 @@ public class jungminemo : MonoBehaviour
                 if (talksqu.activeSelf&&who.text =="Á¤¹Î")
                 {
                     imageComponent.enabled = true;
-                    imageComponent.sprite = sprite[1];
+                    if(DialogueManager.jungminemoflag!=null)
+                    {
+                        imageComponent.sprite = sprite[DialogueManager.jungminemoflag];
+                    }
+                   
                    
                 }
                 else

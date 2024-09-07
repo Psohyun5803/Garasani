@@ -23,7 +23,7 @@ public class DialogueParser : MonoBehaviour
         {
             string[] row = data[i].Split(new char[] { ',' }); //각 csv데이터의 줄을 row array에 할당 
 
-            if (row.Length < 7)
+            if (row.Length < 9)
             {
                 Debug.LogWarning("Row does not have enough columns: " + data[i]);
                 continue; // 다음 줄로 넘어감
@@ -62,6 +62,14 @@ public class DialogueParser : MonoBehaviour
             if (!int.TryParse(row[8], out dialogue.chosen3_ID))
             {
                 dialogue.chosen3_ID = 0; // 파싱 실패 시 기본값 설정
+            }
+            if (!int.TryParse(row[9], out dialogue.jungminemo))
+            {
+                dialogue.jungminemo= 0; // 파싱 실패 시 기본값 설정
+            }
+            if (!int.TryParse(row[10], out dialogue.jihoonemo))
+            {
+                dialogue.jihoonemo= 0; // 파싱 실패 시 기본값 설정
             }
 
 

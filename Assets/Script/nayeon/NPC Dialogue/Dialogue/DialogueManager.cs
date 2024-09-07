@@ -13,7 +13,8 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text chosen1_text;
     public TMP_Text chosen2_text;
     public TMP_Text chosen3_text;
-
+    public static int jungminemoflag;
+    public static int jihoonemoflag;
     public int currentIdx;
     public bool IsDialogueFinished;
     public Dialogue[] contextList;
@@ -76,7 +77,8 @@ public class DialogueManager : MonoBehaviour
         chosen1_text.text = "";
         chosen2_text.text = "";
         name.text = contextList[currentIdx].name;
-
+        jihoonemoflag = contextList[currentIdx].jihoonemo;
+        jungminemoflag = contextList[currentIdx].jungminemo;
         if (name.text == customize.playername || name.text == "System") //npc player 정렬 구분 
         {
             dialogue_text.alignment = TextAlignmentOptions.Left;
@@ -115,7 +117,7 @@ public class DialogueManager : MonoBehaviour
         {
             chosen1_text.text = contextList[currentIdx].chosen1;
             chosen2_text.text = contextList[currentIdx].chosen2;
-            chosen3_text.text = contextList[currentIdx].chosen3;
+            //chosen3_text.text = contextList[currentIdx].chosen3;
             isChosenOne = false;
         }
         else if (!string.IsNullOrEmpty(contextList[currentIdx].chosen1) && string.IsNullOrEmpty(contextList[currentIdx].chosen2))
@@ -179,6 +181,7 @@ public class DialogueManager : MonoBehaviour
     void Update()
     {
         // typing effect
+        Debug.Log(jungminemoflag);
         if (isTyping && EventSystem.current.currentSelectedGameObject != null && EventSystem.current.currentSelectedGameObject.name == "말풍선")
         {
             if (typingCoroutine != null)

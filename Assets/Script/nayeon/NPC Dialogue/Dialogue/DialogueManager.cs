@@ -192,5 +192,20 @@ public class DialogueManager : MonoBehaviour
 
             ShowChoices();
         }
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (contextList != null && currentIdx < contextList.Length - 1)
+            {
+                currentIdx++;
+                DisplayDialogue();
+                Debug.Log("next button click");
+            }
+            else
+            {
+                Player.moveflag = 1;
+                IsDialogueFinished = true;
+                Debug.Log("contextlist 없음");
+            }
+        }
     }
 }

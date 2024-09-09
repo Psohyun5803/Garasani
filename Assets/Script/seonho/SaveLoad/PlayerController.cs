@@ -14,10 +14,10 @@ public class PlayerController : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
+        /*else
         {
             Destroy(gameObject);
-        }
+        }*/
     }
 
     public void SetState(SaveLoadManager.GameState state)

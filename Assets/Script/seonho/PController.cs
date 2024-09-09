@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PController : MonoBehaviour
 {
-    void Start()
+    /*void Start()
     {
         GameObject player = GameObject.Find("Player");
 
@@ -17,5 +17,5 @@ public class PController : MonoBehaviour
         {
             Debug.LogError("Player라는 이름의 오브젝트를 찾을 수 없습니다.");
         }
-    }
+    }*/
 }

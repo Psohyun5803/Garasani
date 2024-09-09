@@ -33,8 +33,15 @@ public class jihoonemo : MonoBehaviour
         if (talksqu.activeSelf && who.text == "지훈")
         {
             imageComponent.enabled = true;
-            imageComponent.sprite = sprite[1];
-            Debug.Log("Parent is active .");
+            if (DialogueManager.jihoonemoflag != null)
+            {
+                imageComponent.sprite = sprite[DialogueManager.jihoonemoflag];
+            }
+            if (SceneManager.GetActiveScene().name == "1호선절연")
+            {
+
+                imageComponent.sprite = sprite[train1_dark.jihoonemodark];
+            }
         }
         else
         {

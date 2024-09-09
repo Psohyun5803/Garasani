@@ -23,7 +23,7 @@ public class DialogueParser : MonoBehaviour
         {
             string[] row = data[i].Split(new char[] { ',' }); //각 csv데이터의 줄을 row array에 할당 
 
-            if (row.Length < 9)
+            if (row.Length < 11)
             {
                 Debug.LogWarning("Row does not have enough columns: " + data[i]);
                 continue; // 다음 줄로 넘어감

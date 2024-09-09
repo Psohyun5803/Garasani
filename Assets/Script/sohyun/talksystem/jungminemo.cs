@@ -48,26 +48,30 @@ public class jungminemo : MonoBehaviour
     void Update()
     {
         // 현재 오브젝트의 부모 오브젝트를 가져옵니다.
-        
-                if (talksqu.activeSelf&&who.text =="정민")
-                {
-                    imageComponent.enabled = true;
-                    if(DialogueManager.jungminemoflag!=null)
-                    {
-                        imageComponent.sprite = sprite[DialogueManager.jungminemoflag];
-                    }
-                   
-                   
-                }
-                else
-                {
-                    imageComponent.enabled = false;
-                }
 
+        if (talksqu.activeSelf && who.text == "정민")
+        {
+            imageComponent.enabled = true;
+            if (DialogueManager.jungminemoflag != null)
+            {
+                imageComponent.sprite = sprite[DialogueManager.jungminemoflag];
+            }
+            if (SceneManager.GetActiveScene().name=="1호선절연")
+            {
                 
-       
-               
-            
-        
+                imageComponent.sprite = sprite[train1_dark.jungminemodark];
+            }
+          
+        }
+        else
+        {
+            imageComponent.enabled = false;
+        }
+
+
+
+
+
+
     }
 }

@@ -14,7 +14,7 @@ using System;
 public class train1_dark : MonoBehaviour
 {
 
-    string[] station1talk = new string[5] { "지훈엄마!!","정민!","PL!","지훈살려주세요!!","지훈살려주세요!!!!" };
+    string[] station1talk = new string[5] { "지훈3엄마!!","정민1!","PL!","지훈3살려주세요!!","지훈3살려주세요!!!!" };
     public TMP_Text content;
     public GameObject talksqu;
     public GameObject dark;
@@ -33,6 +33,8 @@ public class train1_dark : MonoBehaviour
     public TMP_Text option5;
     public TMP_Text option6;
     //
+    public static int jihoonemodark =0;
+    public static int jungminemodark = 0;
     //public TMP_Text exit;
 
     public GameObject options;
@@ -54,6 +56,7 @@ public class train1_dark : MonoBehaviour
         talksqu.SetActive(true);
         who.text = "지훈";
         content.text = "엄마!!";
+        jihoonemodark = 3;
         textani.npconClickAction();
         button.SetActive(true);
         Player.moveflag = 0;
@@ -123,13 +126,28 @@ public class train1_dark : MonoBehaviour
                 if (station1talk[index].Substring(0, 2) == "PL")
                 {
                     who.text = customize.playername;
+                    content.text = station1talk[index].Substring(2);
                 }
                 else
                 {
                     who.text = station1talk[index].Substring(0, 2);
+                    if(who.text=="정민")
+                    {
+                        jungminemodark = int.Parse(station1talk[index].Substring(2, 1));
+                        content.text = station1talk[index].Substring(3);
+                      
+                        
+                    }
+                    else if(who.text=="지훈")
+                    {
+                        jihoonemodark = int.Parse(station1talk[index].Substring(2, 1));
+                        content.text = station1talk[index].Substring(3);
+                        
+                    }
+                  
+                   
                 }
-                content.text = station1talk[index].Substring(2);
-                Debug.Log(content.text = station1talk[index].Substring(2));
+               
             }
         }
 
@@ -207,6 +225,7 @@ public class train1_dark : MonoBehaviour
         image01.SetActive(true);
         who.text = "정민";
         content.text = "....";
+        jungminemodark = 5;
         button.SetActive(true); 
     }
     public void opt1()
@@ -247,6 +266,7 @@ public class train1_dark : MonoBehaviour
         image01.SetActive(true);
         who.text = "지훈";
         content.text = "....";
+        jihoonemodark = 1;
         button.SetActive(true);
     }
     private IEnumerator endofdark()

@@ -37,11 +37,7 @@ public class jihoonemo : MonoBehaviour
             {
                 imageComponent.sprite = sprite[DialogueManager.jihoonemoflag];
             }
-            if (SceneManager.GetActiveScene().name == "1호선절연")
-            {
-
-                imageComponent.sprite = sprite[train1_dark.jihoonemodark];
-            }
+           
         }
         else
         {

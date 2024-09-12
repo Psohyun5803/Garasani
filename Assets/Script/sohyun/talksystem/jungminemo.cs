@@ -56,11 +56,6 @@ public class jungminemo : MonoBehaviour
             {
                 imageComponent.sprite = sprite[DialogueManager.jungminemoflag];
             }
-            if (SceneManager.GetActiveScene().name=="1호선절연")
-            {
-                
-                imageComponent.sprite = sprite[train1_dark.jungminemodark];
-            }
           
         }
         else

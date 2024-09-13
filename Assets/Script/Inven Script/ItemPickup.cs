@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-    public Item item;
-//    public Inventory inventory;
+    public Item item;  // ÁÖ¿ï ¾ÆÀÌÅÛ µ¥ÀÌÅÍ
 
-    //void OnMouseDown()
-    //{
-    //    inventory.AddItem(item);
-    //    Destroy(gameObject); // ì•„ì´í…œì„ ì¸ë²¤í† ë¦¬ì— ì¶”ê°€í•œ í›„, ê²Œì„ ì˜¤ë¸Œì íŠ¸ ì œê±°
-    //}
+    private void OnMouseDown()
+    {
+        InventoryManager inventoryManager = FindObjectOfType<InventoryManager>();
+        if (inventoryManager != null)
+        {
+            inventoryManager.AddItemToSlot(item);
+            Destroy(gameObject); // ¾ÆÀÌÅÛ ¿ÀºêÁ§Æ®¸¦ °ÔÀÓ¿¡¼­ Á¦°Å
+        }
+    }
 }

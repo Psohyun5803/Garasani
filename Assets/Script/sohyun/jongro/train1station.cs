@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class train1station : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class train1station : MonoBehaviour
 
     public Dialogue[] contextList;
     public int dialogueID;
+    int chooseFlag = 0;
 
     public void Awake()
     {
@@ -42,7 +45,10 @@ public class train1station : MonoBehaviour
 
     void Update()
     {
-        
+        if(onclicked.onclickedflag==1)
+        {
+            StartCoroutine(jungminclicked());
+        }
     }
     void dontmove()
     {
@@ -62,22 +68,22 @@ public class train1station : MonoBehaviour
                 case 1:
                     contextList = DataManager.instance.GetDialogue(1, 6);
                     Debug.Log(contextList.Length);
-                    for (int i = 0; i < contextList.Length; i++)
-                    {
-                        Debug.Log(contextList[i].contexts);
-                    }
+                   
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-
+                    
 
                     dialogueID = 2;
                     break;
                 case 2:
                     contextList = DataManager.instance.GetDialogue(7, 7);
-                  
+
                     DialogueManager.instance.processChoose(contextList);
-                    options.SetActive(true);
+                    /*if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen1") == 0)
+                        chooseFlag = 1;
+                    else if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen2") == 0)
+                        chooseFlag = 2;*/
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
-                   
+                    options.SetActive(false);
                     if (DialogueManager.instance.chooseFlag == 1)
                     {
                         dialogueID = 4;
@@ -88,7 +94,6 @@ public class train1station : MonoBehaviour
                     }
                     DialogueManager.instance.chooseFlag = 0;
                     options.SetActive(false);
-
                     break;
                 case 3:
                     contextList = DataManager.instance.GetDialogue(8, 8);
@@ -125,26 +130,59 @@ public class train1station : MonoBehaviour
 
 
     }
-    public IEnumerator jihoonclicked()
+    public IEnumerator jungminclicked()
     {
         onclicked.onclickedflag = 0;
+        dialogueID = 2;
         ui_dialogue.SetActive(true);
-        while (4 < dialogueID && dialogueID < 6)
+        while (2 <= dialogueID && dialogueID < 5)
         {
 
             switch (dialogueID)
             {
-                case 5:
+                case 2:
+                    contextList = DataManager.instance.GetDialogue(7, 7);
 
-                    contextList = DataManager.instance.GetDialogue(8, 9);
+                    DialogueManager.instance.processChoose(contextList);
+                    /*if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen1") == 0)
+                        chooseFlag = 1;
+                    else if (EventSystem.current.currentSelectedGameObject.tag.CompareTo("chosen2") == 0)
+                        chooseFlag = 2;
+                    yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
+                    options.SetActive(false);*/
+                    if (DialogueManager.instance.chooseFlag == 1)
+                    {
+                        dialogueID = 4;
+                    }
+                    if (DialogueManager.instance.chooseFlag == 2)
+                    {
+                        dialogueID = 3;
+                    }
+                    DialogueManager.instance.chooseFlag = 0;
+                    options.SetActive(false);
+
+                    break;
+                case 3:
+                    contextList = DataManager.instance.GetDialogue(8, 8);
+
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
 
+                    dialogueID = 5;
 
-                    dialogueID = 6;
+
                     break;
-                //쪽지 얻는 inventory 함수 넣기 
+                case 4:
+                    contextList = DataManager.instance.GetDialogue(9, 9);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+
+                    dialogueID = 5;
+                    break;
+
                 default:
-                    dialogueID = 6;
+
+                    dialogueID = 5;
+
+
                     break;
 
             }

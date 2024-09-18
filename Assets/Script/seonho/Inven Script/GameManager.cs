@@ -34,10 +34,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void AddGold(int amount)
+    {
+        playerMoney += amount;
+        Debug.Log("골드 추가: " + amount);
+    }
+
+    public List<Item> GetShopItems()
+    {
+        // 상점에 표시할 아이템을 반환하는 메서드
+        return inventoryItems;
+    }
+
+    // 판매할 때 호출되는 메서드
     public void SellItem(Item item)
     {
-        playerMoney += item.itemPrice;  // 판매 가격만큼 골드 추가
-        Debug.Log("판매 완료: " + item.itemName);
-        // 인벤토리에서 해당 아이템 제거 로직 추가 가능
+        // 아이템을 인벤토리에서 제거하고 골드를 추가
+        RemoveItem(item);
+        AddGold(item.itemPrice);
+        Debug.Log("아이템 판매 완료: " + item.itemName);
     }
 }

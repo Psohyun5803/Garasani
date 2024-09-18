@@ -43,6 +43,7 @@ public class DialogueManager : MonoBehaviour
         currentIdx = 0;
         IsDialogueFinished = false;
         Player.moveflag = 0;
+      
         DisplayDialogue();
     }
 

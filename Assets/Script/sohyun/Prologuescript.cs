@@ -39,7 +39,7 @@ public class Prologuescript : MonoBehaviour
     {
         Debug.Log(customize.playername);
         Debug.Log(customize.playerbirth);
-        spot.SetActive(false);
+       // spot.SetActive(false);
         talksqu.SetActive(false);
         dark.SetActive(false);
         Invoke("proscript1", 2f);

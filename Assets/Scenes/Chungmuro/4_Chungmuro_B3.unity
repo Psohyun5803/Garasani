@@ -15866,6 +15866,7 @@ GameObject:
   - component: {fileID: 1165769553}
   - component: {fileID: 1165769552}
   - component: {fileID: 1165769554}
+  - component: {fileID: 1165769555}
   m_Layer: 0
   m_Name: b3_subway_platform
   m_TagString: upstairs
@@ -16031,6 +16032,19 @@ MonoBehaviour:
   option2: {fileID: 2060476087}
   option1_bt: {fileID: 1703751687}
   option2_bt: {fileID: 2060476084}
+--- !u!114 &1165769555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1165769549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d5247189c216bf4a9a0904e9fab2587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetSceneName: Chungmuro_B2
 --- !u!1 &1169458430
 GameObject:
   m_ObjectHideFlags: 0

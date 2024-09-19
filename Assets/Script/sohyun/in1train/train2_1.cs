@@ -10,7 +10,9 @@ public class train2_1 : MonoBehaviour
 
     {
         talksqu = GameObject.Find("말풍선");
-        talksqu.SetActive(true);
+        talksqu.SetActive(false);
+        Player.moveflag = 1;
+        customize.sceneflag = 3;
         if (npc.T1toT2 == 1)
         {
             GameObject upstair = GameObject.Find("1호선문2");

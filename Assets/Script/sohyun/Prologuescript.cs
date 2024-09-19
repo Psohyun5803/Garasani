@@ -37,6 +37,7 @@ public class Prologuescript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Screen.SetResolution(1920, 1080, true);
         Debug.Log(customize.playername);
         Debug.Log(customize.playerbirth);
        // spot.SetActive(false);

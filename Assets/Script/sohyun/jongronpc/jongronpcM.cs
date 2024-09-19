@@ -88,7 +88,7 @@ public class jongronpcM : MonoBehaviour
                  yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                  break;
 
-          
+            
              default: break;
          }
          ui_dialogue.SetActive(false);

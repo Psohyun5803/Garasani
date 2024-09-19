@@ -7,6 +7,7 @@ public class train1_1 : MonoBehaviour
     public GameObject sai;
     public GameObject job;
     public GameObject ang;
+    public GameObject talksqu;
     public static int possibletogo = 0;
     public static int trainflag = 0;
     // Start is called before the first frame update
@@ -14,6 +15,8 @@ public class train1_1 : MonoBehaviour
     {
         //GameObject talksqu = GameObject.Find("말풍선");
         //talksqu.SetActive(false);
+        talksqu = GameObject.Find("말풍선");
+        talksqu.SetActive(false);
         customize.sceneflag = 2;
         Player.moveflag = 1;
         jihoon_B2.jihoonmove = 1;

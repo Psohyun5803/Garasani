@@ -17,7 +17,7 @@ public class Prologuescript : MonoBehaviour
     int textflag = 0;
     public TMP_Text content;
     public GameObject talksqu;
-    public GameObject spot; //???
+   
     public GameObject Button1;
     public GameObject realdark;
     public GameObject dark;
@@ -42,6 +42,7 @@ public class Prologuescript : MonoBehaviour
        // spot.SetActive(false);
         talksqu.SetActive(false);
         dark.SetActive(false);
+        realdark.SetActive(false);
         Invoke("proscript1", 2f);
 
         subwaySound = GameObject.Find("SubwaySoundObject").GetComponent<AudioSource>();
@@ -112,7 +113,7 @@ public class Prologuescript : MonoBehaviour
                 //customize.eyeo();
                 Player.sitdown = 0;
                 Player.shock = 1;
-                spot.SetActive(true);
+                //spot.SetActive(true);
                 Invoke("spot_nonActive", 1f);
                 Invoke("talksqu_Active", 2f);
 
@@ -163,10 +164,10 @@ public class Prologuescript : MonoBehaviour
         talksqu.SetActive(true);
     }
 
-    void spot_nonActive()
+    /*void spot_nonActive()
     {
         spot.SetActive(false);
-    }
+    }*/
     // Update is called once per frame
     void Update()
     {

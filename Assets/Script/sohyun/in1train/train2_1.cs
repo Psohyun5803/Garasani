@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class train2_1 : MonoBehaviour
 {
+    public GameObject talksqu;
     // Start is called before the first frame update
     void Start()
+
     {
+        talksqu = GameObject.Find("말풍선");
+        talksqu.SetActive(true);
         if (npc.T1toT2 == 1)
         {
             GameObject upstair = GameObject.Find("1호선문2");

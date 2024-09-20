@@ -64,6 +64,10 @@ public class jungminemo : MonoBehaviour
                 imageComponent.enabled = false;
             }
         }
+        if(who.text!="Á¤¹Î")
+        {
+            imageComponent.enabled = false;
+        }
 /*
         if (talksqu.activeSelf && who.text.Trim() == "Á¤¹Î")
         {

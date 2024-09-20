@@ -19323,7 +19323,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 73ae5babfe6f0444cb315a3c389df014, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -26229,7 +26229,7 @@ MonoBehaviour:
   Todo_Button: {fileID: 95814711}
   Call_Button: {fileID: 805500043}
   Message_Button: {fileID: 635390674}
-  Setting_Button: {fileID: 0}
+  Setting_Button: {fileID: 1810822076}
   viewList:
   - {fileID: 1546389435}
   - {fileID: 2101286639}

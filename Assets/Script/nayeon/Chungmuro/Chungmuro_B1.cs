@@ -15,7 +15,7 @@ public class Chungmuro_B1 : MonoBehaviour
     public Transform playerFirst;
     public int dialogueID = 31;
     private bool isChungmuroB1_2Running = false;
-
+    public static bool stoneapp = false;
     public float speed = 2.0f; // 정민 이동 속도
     [SerializeField] private GameObject targetAnimatorObject;
     public string boolParameterName = "Front";
@@ -24,6 +24,7 @@ public class Chungmuro_B1 : MonoBehaviour
     //public Transform stopPoint2;  // 두 번째 멈추는 지점 (오른쪽으로 이동, 최종 목적지)
     public Transform dest;
     private bool isMoving = false; // 코루틴 실행 상태를 추적하는 변수
+    public static bool done = false;
 
     AudioSource daehwa;
     AudioSource SubwaySoundObject ;
@@ -43,15 +44,31 @@ public class Chungmuro_B1 : MonoBehaviour
     public IEnumerator ChungmuroB1() //같이 가는 선택지 진행 
     {
         DialogueManager.instance.ui_dialogue.SetActive(true);
-        contextList = DataManager.instance.GetDialogue(67, 69);
-        yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-        dialogueID = 32;
-        contextList = DataManager.instance.GetDialogue(72, 74);
+        while (dialogueID<32)
+        {
+            switch(dialogueID)
+            {
+                case 31:
+                    contextList = DataManager.instance.GetDialogue(67, 69);
+                    Debug.Log("들어왔음");
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    dialogueID = 32;
+                    break;
+                default:
+                    dialogueID = 32;
+                    break;
+
+            }
+           
+        }
+        DialogueManager.instance.ui_dialogue.SetActive(false);
+        stoneapp = true;
+        /*contextList = DataManager.instance.GetDialogue(72, 74);
         yield return StartCoroutine(DialogueManager.instance.processing(contextList));
         dialogueID = 34;
         daehwa.Play();
         SubwaySoundObject.Play();
-        DialogueManager.instance.ui_dialogue.SetActive(false);
+        DialogueManager.instance.ui_dialogue.SetActive(false);*/
     }
 
     public IEnumerator ChungmuroB1_2() //돌 3번 밀고 나서 진행 
@@ -59,6 +76,7 @@ public class Chungmuro_B1 : MonoBehaviour
          if (isChungmuroB1_2Running) yield break; // 이미 실행 중이면 종료
 
         isChungmuroB1_2Running = true;
+        Debug.Log("실행중");
         DialogueManager.instance.ui_dialogue.SetActive(true);
         while (dialogueID < 34)
         {
@@ -88,15 +106,19 @@ public class Chungmuro_B1 : MonoBehaviour
         DialogueManager.instance.ui_dialogue.SetActive(false);
         Invoke("nothing", 1.5f);
         isChungmuroB1_2Running = false;
-        // if (!isMoving)
-        // {
-        //     StartCoroutine(JMmoving());
-        // }
-            
+        if ((!isMoving)&&!done)
+        {
+           
+            StartCoroutine(JMmoving());
+        }
+        done = true;
+
     }
 
     IEnumerator JMmoving() // 개찰구로 이동 
     {
+        StopCoroutine(ChungmuroB1_2());
+        DialogueManager.instance.ui_dialogue.SetActive(false);
         if (isMoving) yield break; // 이미 실행 중이면 중단
 
         isMoving = true; // 코루틴 시작
@@ -106,11 +128,11 @@ public class Chungmuro_B1 : MonoBehaviour
             NPCAnimator.SetBool(boolParameterName, true);
         }
 
-        float targetYPosition = dest.position.y; // 목표 y 위치
+        float targetYPosition = dest.position.x; // 목표 y 위치
         float moveDuration = 2.0f; // 이동 목표 시간
 
         Vector3 startPosition = targetAnimatorObject.transform.position;
-        Vector3 targetPosition = new Vector3(startPosition.x, targetYPosition, startPosition.z); // y 위치만 변경
+        Vector3 targetPosition = new Vector3(targetYPosition, startPosition.y, startPosition.z); // y 위치만 변경
         float elapsedTime = 0f;
 
         Debug.Log($"Starting NPC movement from {startPosition} to {targetPosition}");
@@ -125,14 +147,14 @@ public class Chungmuro_B1 : MonoBehaviour
         targetAnimatorObject.transform.position = targetPosition; // 정확한 위치로 설정
 
         Debug.Log($"NPC movement ended at {targetAnimatorObject.transform.position}");
-
+        isMoving = false;
         if (NPCAnimator != null)
         {
             Debug.Log("npc animate false");
             NPCAnimator.SetBool(boolParameterName, false);
         }
 
-        isMoving = false; // 코루틴 종료
+        isMoving = false;// 코루틴 종료 //종료가 제대로 되지않음...
     }
 
 
@@ -180,9 +202,21 @@ public class Chungmuro_B1 : MonoBehaviour
     void Update()
     {
 
-        if(b1_rock3.instance.rockFlag == true && !isChungmuroB1_2Running){
-            StartCoroutine(ChungmuroB1_2());
+        if(b1_rock3.instance.rockFlag == true && !isChungmuroB1_2Running)//돌 세번 이상 밀었고, 스크립트가 실행 중이 아니면 
+        {
+            Debug.Log("실행시점1");
+            StartCoroutine(ChungmuroB1_2()); //여기가 문제인듯
+            //이 때 rockflag를 false로 만들어주면
+            b1_rock3.instance.rockFlag = false;
+            isChungmuroB1_2Running = true;
         }
+        /*if(done)
+        {
+            StopCoroutine(JMmoving());
+            StopCoroutine(ChungmuroB1_2());
+            Debug.Log(DialogueManager.instance.ui_dialogue.activeSelf);
+            
+        }*/
 
         
     }

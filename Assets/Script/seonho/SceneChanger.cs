@@ -5,13 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
-    public string targetSceneName;  // 이동할 씬의 이름
+    public string playername = "Player";
+    public string nextSceneName;  // 이동할 씬의 이름
 
-    private void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Player"))  // 플레이어와 충돌했는지 확인
+        if (other.gameObject.name == playername)
         {
-            SceneManager.LoadScene(targetSceneName);  // 씬 이동
+            Debug.Log("씬이동");
+            SceneManager.LoadScene(nextSceneName);
         }
     }
 }

@@ -65210,10 +65210,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2072680393}
   - component: {fileID: 2072680395}
-  - component: {fileID: 2072680394}
   - component: {fileID: 2072680397}
-  - component: {fileID: 2072680396}
-  - component: {fileID: 2072680398}
   - component: {fileID: 2072680399}
   m_Layer: 0
   m_Name: "\uC5F4\uCC28\uC0AC\uC774\uBB38"
@@ -65237,24 +65234,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1818400313}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2072680394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072680392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1e15b36897326a4f876ce6fcbd62fdc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  context: {fileID: 1926585509}
-  who: {fileID: 59378085}
-  talksqu: {fileID: 1329170893}
-  keyring: {fileID: 236423636}
-  oddairpot: {fileID: 633335621}
-  paper: {fileID: 661278740}
 --- !u!212 &2072680395
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -65307,33 +65286,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &2072680396
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072680392}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 7
 --- !u!61 &2072680397
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -65363,7 +65315,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -65379,21 +65331,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6, y: 2}
   m_EdgeRadius: 0
---- !u!114 &2072680398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2072680392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21cb37e655ee81040a65c6b85a79543c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InteractionView: {fileID: 172640958}
-  mousePosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &2072680399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65406,7 +65343,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d5247189c216bf4a9a0904e9fab2587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: Pro_map2_2
+  playername: Player
+  nextSceneName: Pro_map2_2
 --- !u!1 &2074650842
 GameObject:
   m_ObjectHideFlags: 0

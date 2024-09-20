@@ -51,7 +51,7 @@ public class talksquswitch : MonoBehaviour
             childScale.x *= -1;
             child.localScale = childScale;
 
-            /*if (child.name =="이름")
+           /* if (child.name =="이름")
             {
                 Vector3 childScale = child.localScale;
                 childScale.x *= -1;

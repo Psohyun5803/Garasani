@@ -6278,34 +6278,34 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1489788361}
     m_ColliderPaths:
-    - - X: 326175872
-        Y: 48217308
+    - - X: 350006752
+        Y: 58941192
       - X: 14181560
-        Y: 48217308
+        Y: 58941192
       - X: 14181560
-        Y: 14181560
-      - X: 326175872
-        Y: 14181560
+        Y: 11202706
+      - X: 350006752
+        Y: 11202706
   - m_Collider: {fileID: 1489788360}
     m_ColliderPaths:
     - - X: 28363120
-        Y: 38290216
+        Y: 58814400
       - X: -170178736
-        Y: 38290216
+        Y: 58814400
       - X: -170178736
-        Y: 12763405
+        Y: 12763391
       - X: 28363120
-        Y: 12763405
+        Y: 12763391
   m_CompositePaths:
     m_Paths:
-    - - {x: 2.8362827, y: 1.2763405}
-      - {x: 2.8363414, y: 1.418156}
-      - {x: 32.617588, y: 1.4181854}
-      - {x: 32.617558, y: 4.821731}
-      - {x: 1.418156, y: 4.8217015}
-      - {x: 1.4181266, y: 3.8290217}
-      - {x: -17.017874, y: 3.8289924}
-      - {x: -17.017845, y: 1.2763405}
+    - - {x: 35.00065, y: 1.1202706}
+      - {x: 35.00065, y: 5.8941193}
+      - {x: 1.418156, y: 5.89409}
+      - {x: 1.4181266, y: 5.88144}
+      - {x: -17.017874, y: 5.881411}
+      - {x: -17.017845, y: 1.2763392}
+      - {x: 1.418156, y: 1.2763097}
+      - {x: 1.4181854, y: 1.1202706}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -6342,7 +6342,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: -2500, y: 900}
+  m_Offset: {x: -2500, y: 1261.8109}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6353,7 +6353,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7000, y: 900}
+  m_Size: {x: 7000, y: 1623.6228}
   m_EdgeRadius: 0
 --- !u!61 &1489788361
 BoxCollider2D:
@@ -6387,7 +6387,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 6000, y: 1100}
+  m_Offset: {x: 6420.1025, y: 1236.5334}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6398,7 +6398,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 11000, y: 1200}
+  m_Size: {x: 11840.205, y: 1683.1182}
   m_EdgeRadius: 0
 --- !u!50 &1489788362
 Rigidbody2D:

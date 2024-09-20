@@ -47,7 +47,7 @@ public class JMevent : MonoBehaviour
     {
         Debug.Log("OnMouseDown 호출됨");
 
-        if (isFirstClick)
+        if (isFirstClick&&inSubway_0.jmovedone)
         {
             // 첫 번째 클릭에서는 이벤트를 설정하고 대화 준비
             if (inSubway_0.instance.jmeventFlag == true && isStart == false)

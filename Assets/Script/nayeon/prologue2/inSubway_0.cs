@@ -13,6 +13,7 @@ public class inSubway_0 : MonoBehaviour
     public TMP_Text context;
     public TMP_Text name;
     public GameObject door;
+    public static bool jmovedone=false;
     public static int doorflag = 0;
 
     [SerializeField] private GameObject targetAnimatorObject;
@@ -158,5 +159,6 @@ public class inSubway_0 : MonoBehaviour
         {
             NPCAnimator.SetBool(boolParameterName, false);
         }
+        jmovedone = true;
     }
 }

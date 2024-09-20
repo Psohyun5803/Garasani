@@ -16,7 +16,7 @@ public class b1_subwaytag : MonoBehaviour
         if(Chungmuro_B1.done)//지하 1층에서의 상호작용이 모두 끝났을 때,
         {
             Debug.Log("개찰구 클릭");
-           
+            //StartCoroutine(tagroutine());
             // DialogueManager.instance.ui_dialogue.SetActive(true);
             // DialogueManager.instance.name.text = "System";
             // DialogueManager.instance.dialogue_text.text = "교통카드를 태그할까요?";
@@ -36,8 +36,8 @@ public class b1_subwaytag : MonoBehaviour
         DialogueManager.instance.ui_dialogue.SetActive(true);
         DialogueManager.instance.name.text = "System";
         DialogueManager.instance.dialogue_text.text = "교통카드를 태그할까요?";
-        DialogueManager.instance.chosen1_text.text = "네 (-1500)";
-        DialogueManager.instance.chosen2_text.text = "아니요";
+        DialogueManager.instance.chosen1_text.text = "> 네 (-1500)";
+        DialogueManager.instance.chosen2_text.text = "> 아니요";
 
         Debug.Log("대화 시작, chooseFlag 초기값: " + DialogueManager.instance.chooseFlag);
     
@@ -117,8 +117,8 @@ public class b1_subwaytag : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
-           
+
+        Debug.Log(dialogueid);
         
        
     }

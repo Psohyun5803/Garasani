@@ -742,6 +742,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 62105139}
   m_CullTransparentMesh: 1
+--- !u!1001 &84860002
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5202865005932431176, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3b1724d301d07de41985379e3e979509, type: 3}
 --- !u!1 &108068615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1375,7 +1432,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1325880671}
+      - m_Target: {fileID: 1342918551}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: OnClickChoose
         m_Mode: 1
@@ -1800,24 +1857,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb30f724327704f4e8e142ef64a9bcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 183220960}
-  itemNameText: {fileID: 1208783151}
-  itemInfoText: {fileID: 887394423}
-  itemName: {fileID: 2097204341}
-  itemInfo: {fileID: 748180236}
-  item_quantity:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &183220960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4235,24 +4274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb30f724327704f4e8e142ef64a9bcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 402640044}
-  itemNameText: {fileID: 1208783151}
-  itemInfoText: {fileID: 887394423}
-  itemName: {fileID: 1958360189}
-  itemInfo: {fileID: 1890929445}
-  item_quantity:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &402640044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6521,18 +6542,22 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -8.115314, y: 9.177947}
-      - {x: -8.00805, y: -3.1218896}
-      - {x: -8.116701, y: -15.175568}
-      - {x: -7.5662103, y: -15.064777}
+    - - {x: -9.13828, y: 13.781297}
+      - {x: -8.989182, y: -0.5391513}
+      - {x: -8.862147, y: -3.1218896}
+      - {x: -9.183389, y: -18.387989}
+      - {x: -8.02869, y: -18.255941}
+      - {x: -7.170162, y: -18.18916}
+      - {x: -5.8905487, y: -18.38452}
       - {x: -6.3795433, y: -5.934746}
-      - {x: -6.7943974, y: -2.4858117}
-      - {x: -6.6354117, y: -2.790421}
+      - {x: -6.0563054, y: -2.9075787}
+      - {x: -5.950041, y: -3.0540254}
       - {x: -5.6254015, y: -3.0130517}
       - {x: -1.9439137, y: -3.1359773}
       - {x: -1.9834063, y: 2.5285473}
-      - {x: -6.747001, y: 2.4590669}
-      - {x: -7.187673, y: 9.011644}
+      - {x: -5.956188, y: 2.406346}
+      - {x: -5.958691, y: 3.893779}
+      - {x: -6.3565125, y: 13.614995}
   m_UseDelaunayMesh: 0
 --- !u!1 &546236427
 GameObject:
@@ -11476,7 +11501,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1325880671}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: onClickNextButton
         m_Mode: 1
@@ -11488,9 +11513,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1581436723}
-        m_TargetAssemblyTypeName: TalkManager, Assembly-CSharp
-        m_MethodName: onClickNext
+      - m_Target: {fileID: 1342918551}
+        m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
+        m_MethodName: onClickNextButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14850,6 +14875,7 @@ GameObject:
   - component: {fileID: 1082110450}
   - component: {fileID: 1082110451}
   - component: {fileID: 1082110452}
+  - component: {fileID: 1082110453}
   m_Layer: 0
   m_Name: "\uB3CC\uBB34\uB354\uAE30"
   m_TagString: Untagged
@@ -14976,7 +15002,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082110447}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c39377b1042444263b6f42e08304a24a, type: 3}
   m_Name: 
@@ -15010,6 +15036,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1082110453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1082110447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 060548d55e02cdf4ba67d4db35ab81eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui_dialogue: {fileID: 321173452}
+  contextList: []
+  firstmove: 1
 --- !u!1 &1090744242
 GameObject:
   m_ObjectHideFlags: 0
@@ -15389,7 +15430,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24476905b7aad4f9fa2355b225054373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  talksqu: {fileID: 321173452}
   moveB3: 0
+  uiflag: 0
+  contextList: []
 --- !u!61 &1119671601
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16392,24 +16436,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb30f724327704f4e8e142ef64a9bcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 1209936521}
-  itemNameText: {fileID: 1208783151}
-  itemInfoText: {fileID: 887394423}
-  itemName: {fileID: 493593375}
-  itemInfo: {fileID: 798339338}
-  item_quantity:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &1209936521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18073,7 +18099,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24476905b7aad4f9fa2355b225054373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  talksqu: {fileID: 321173452}
   moveB3: 0
+  uiflag: 0
+  contextList: []
 --- !u!61 &1316645728
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18402,7 +18431,6 @@ GameObject:
   - component: {fileID: 1325880674}
   - component: {fileID: 1325880673}
   - component: {fileID: 1325880672}
-  - component: {fileID: 1325880671}
   - component: {fileID: 1325880670}
   m_Layer: 0
   m_Name: EventSystem
@@ -18432,29 +18460,7 @@ MonoBehaviour:
   speed: 2
   targetAnimatorObject: {fileID: 1402525044}
   boolParameterName: Right
-  dest: {fileID: 1563850416}
---- !u!114 &1325880671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325880669}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92ce2ad026bd845459ed1a5c65793908, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ui_dialogue: {fileID: 321173452}
-  dialogue_text: {fileID: 221780585}
-  name: {fileID: 819814674}
-  chosen1_text: {fileID: 162958795}
-  chosen2_text: {fileID: 1702110705}
-  currentIdx: 0
-  IsDialogueFinished: 0
-  contextList: []
-  chooseFlag: 0
-  clickFlag: 0
+  dest: {fileID: 1301280947}
 --- !u!114 &1325880672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18641,6 +18647,7 @@ GameObject:
   - component: {fileID: 1342918550}
   - component: {fileID: 1342918549}
   - component: {fileID: 1342918548}
+  - component: {fileID: 1342918551}
   m_Layer: 0
   m_Name: Story_dialogueManager
   m_TagString: Untagged
@@ -18688,6 +18695,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1342918551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342918547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ce2ad026bd845459ed1a5c65793908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui_dialogue: {fileID: 321173452}
+  dialogue_text: {fileID: 221780585}
+  name: {fileID: 819814674}
+  chosen1_text: {fileID: 162958795}
+  chosen2_text: {fileID: 1702110705}
+  currentIdx: 0
+  IsDialogueFinished: 0
+  contextList: []
+  chooseFlag: 0
+  clickFlag: 0
 --- !u!1 &1347007901
 GameObject:
   m_ObjectHideFlags: 0
@@ -21205,7 +21234,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24476905b7aad4f9fa2355b225054373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  talksqu: {fileID: 321173452}
   moveB3: 0
+  uiflag: 0
+  contextList: []
 --- !u!61 &1463184216
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21735,7 +21767,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24476905b7aad4f9fa2355b225054373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  talksqu: {fileID: 321173452}
   moveB3: 0
+  uiflag: 0
+  contextList: []
 --- !u!61 &1511630890
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23147,24 +23182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb30f724327704f4e8e142ef64a9bcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 1628377728}
-  itemNameText: {fileID: 1208783151}
-  itemInfoText: {fileID: 887394423}
-  itemName: {fileID: 108068617}
-  itemInfo: {fileID: 1389704450}
-  item_quantity:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &1628377728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24406,7 +24423,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1325880671}
+      - m_Target: {fileID: 1342918551}
         m_TargetAssemblyTypeName: DialogueManager, Assembly-CSharp
         m_MethodName: OnClickChoose
         m_Mode: 1
@@ -26634,24 +26651,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb30f724327704f4e8e142ef64a9bcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 1916652294}
-  itemNameText: {fileID: 1208783151}
-  itemInfoText: {fileID: 887394423}
-  itemName: {fileID: 1490581207}
-  itemInfo: {fileID: 1386393342}
-  item_quantity:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &1916652294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30214,3 +30213,4 @@ SceneRoots:
   - {fileID: 1158918644}
   - {fileID: 508212928}
   - {fileID: 1905587231}
+  - {fileID: 84860002}

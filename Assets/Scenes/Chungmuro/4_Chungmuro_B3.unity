@@ -6824,12 +6824,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb30f724327704f4e8e142ef64a9bcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 423269394}
-  itemNameText: {fileID: 1706929062}
-  itemInfoText: {fileID: 1417260251}
-  itemName: {fileID: 133043259}
-  itemInfo: {fileID: 843880176}
-  item_quantity: []
 --- !u!114 &423269394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8271,12 +8265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb30f724327704f4e8e142ef64a9bcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 538772887}
-  itemNameText: {fileID: 1706929062}
-  itemInfoText: {fileID: 1417260251}
-  itemName: {fileID: 1135134196}
-  itemInfo: {fileID: 1868507296}
-  item_quantity: []
 --- !u!114 &538772887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11481,12 +11469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb30f724327704f4e8e142ef64a9bcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 780892362}
-  itemNameText: {fileID: 1706929062}
-  itemInfoText: {fileID: 1417260251}
-  itemName: {fileID: 1911766230}
-  itemInfo: {fileID: 1556351015}
-  item_quantity: []
 --- !u!114 &780892362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15070,12 +15052,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb30f724327704f4e8e142ef64a9bcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 1090777296}
-  itemNameText: {fileID: 1706929062}
-  itemInfoText: {fileID: 1417260251}
-  itemName: {fileID: 1484439223}
-  itemInfo: {fileID: 1554062188}
-  item_quantity: []
 --- !u!114 &1090777296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16044,7 +16020,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d5247189c216bf4a9a0904e9fab2587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetSceneName: Chungmuro_B2
+  playername: Player
+  nextSceneName: 
 --- !u!1 &1169458430
 GameObject:
   m_ObjectHideFlags: 0
@@ -16939,7 +16916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be1fb4e6cd75f4aa8bee19f88312fabc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  callWarning: {fileID: 0}
+  callWarning: {fileID: 967630503}
   playerFirst: {fileID: 720446298}
   upstair: {fileID: 1165769549}
 --- !u!1 &1208510116
@@ -18500,8 +18477,8 @@ Transform:
   m_GameObject: {fileID: 1323942191}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.351605, y: -1.6641533, z: -0.0428485}
-  m_LocalScale: {x: 1.304246, y: 1.304246, z: 1.304246}
+  m_LocalPosition: {x: -4.5667, y: -2.234, z: -0.050655}
+  m_LocalScale: {x: 1.6686195, y: 1.6686195, z: 1.6686195}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 889512482}
@@ -29534,12 +29511,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb30f724327704f4e8e142ef64a9bcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 2044415780}
-  itemNameText: {fileID: 1706929062}
-  itemInfoText: {fileID: 1417260251}
-  itemName: {fileID: 1400787334}
-  itemInfo: {fileID: 1292138580}
-  item_quantity: []
 --- !u!114 &2044415780
 MonoBehaviour:
   m_ObjectHideFlags: 0

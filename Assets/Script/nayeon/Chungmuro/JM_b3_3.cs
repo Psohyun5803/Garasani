@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class JM_b3_3 : MonoBehaviour
 {
     public static JM_b3_3 instance;
@@ -46,7 +46,17 @@ public class JM_b3_3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(SceneManager.GetActiveScene().name=="4_Chungmuro_B3") //4호선 승강장에서는 정민이가 없어야하므로 
+        {
+            GameObject persistentObject = GameObject.FindWithTag("jeongmin");
+
+            // 오브젝트가 존재하면 삭제
+            if (persistentObject != null)
+            {
+                Destroy(persistentObject);
+            }
+        }
+      
     }
 
     // Update is called once per frame

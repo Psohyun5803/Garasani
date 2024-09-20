@@ -28,6 +28,7 @@ public class tutorial2 : MonoBehaviour
     public string boolParameterName = "Left";
     private Animator NPCAnimator;
     private bool jmeventFlag = false; //정민 이벤트 시작 플래그
+    public static bool jdone = false; //정민 이동이 끝났나?
     private bool isStart = false; //정민 이벤트 대화 한번만 시작하도록 하는 플래그 
                                    
     AudioSource kung;
@@ -99,7 +100,7 @@ public class tutorial2 : MonoBehaviour
         if (jmeventFlag == true)
         {
             //JMevent.instance.On_uiDialogue();
-            if (Input.GetMouseButtonDown(0) && isStart == false)
+            if (Input.GetMouseButtonDown(0) && isStart == false&&jdone==true)
             {
                 isStart = true; //최초 1번 클릭시 실행 
                 Debug.Log("npc click");
@@ -203,6 +204,7 @@ public class tutorial2 : MonoBehaviour
         {
             NPCAnimator.SetBool(boolParameterName, false);
         }
+        jdone = true;
     }
 
     void dontmove()

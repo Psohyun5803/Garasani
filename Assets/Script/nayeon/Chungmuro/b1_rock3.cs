@@ -16,22 +16,30 @@ public class b1_rock3 : MonoBehaviour
         }
     }
 
-    // private void OnCollisionEnter2D(Collision2D collision)
-    // {
-    //     if(collision.gameObject.name == "Player")
-    //     {
-    //         Rigidbody rb = GetComponent<Rigidbody>();
-    //         if (rb != null)
-    //         {
-    //             rb.velocity = Vector3.zero; // 이동 중지
-    //             rb.angularVelocity = Vector3.zero; // 회전 중지
-    //         }
-    //         rockCount++;
-    //         Debug.Log("돌 미는 중");
-    //     }
+    private void OnCollisionEnter2D(Collision2D collision)
+     {
+         if(collision.gameObject.name == "eye")
+         {
+             Rigidbody rb = GetComponent<Rigidbody>();
+             if (rb != null)
+             {
+                 rb.velocity = Vector3.zero; // 이동 중지
+                 rb.angularVelocity = Vector3.zero; // 회전 중지
+            }
+           
+            Debug.Log("돌 미는 중");
+         }
         
-    // }
-    // Start is called before the first frame update
+     }
+    private void OnCollisionExit2D(Collision2D collsition)
+    {
+        if(Chungmuro_B1.stoneapp)//정민과 대화 후 일때 
+        {
+            rockCount++;
+        }
+       
+    }
+    
     void Start()
     {
         
@@ -40,11 +48,12 @@ public class b1_rock3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(rockCount == 3)
+        if(rockCount > 3)
         {
             //Challenge.instance.ch_rock3 = true;
             //Debug.Log("도전 과제 달성");
             rockFlag = true;
+            
         }
     }
 }

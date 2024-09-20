@@ -8,12 +8,9 @@ public class ShopManager : MonoBehaviour
 {
     public GameObject shopUI;  // 상점 UI
     public ShopSlot[] shopSlots;  // 상점에서 사용할 슬롯 배열
-    public Image backgroundOverlay;  // 배경을 어둡게 처리할 오버레이 이미지
-    public float backgroundOpacity = 0.5f;  // 배경 투명도
 
     private void Start()
     {
-        shopUI.SetActive(false);
         InitializeShopSlots();
     }
 
@@ -22,52 +19,25 @@ public class ShopManager : MonoBehaviour
         // ESC 키를 눌렀을 때 상점 UI를 닫기
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            CloseShop();
+            shopUI.SetActive(false);
+            Player.moveflag = 1;
         }
+        InitializeShopSlots();
     }
 
-    // 상점 오브젝트 클릭 시 상점 UI를 띄움
-    public void OpenShop()
-    {
-        Debug.Log("OpenShop called");
-        shopUI.SetActive(true);
-        SetBackgroundOpacity(true);  // 배경 어둡게 처리
-    }
-
-    // 상점 UI 닫기
-    public void CloseShop()
-    {
-        shopUI.SetActive(false);
-        SetBackgroundOpacity(false);  // 배경 밝기 복원
-    }
-
-    // 배경의 오퍼시티를 조절하는 함수
-    private void SetBackgroundOpacity(bool isActive)
-    {
-        if (isActive)
-        {
-            backgroundOverlay.color = new Color(0, 0, 0, backgroundOpacity);
-        }
-        else
-        {
-            backgroundOverlay.color = new Color(0, 0, 0, 0);  // 배경 밝기 복원
-        }
-    }
-
-    // 상점 슬롯에 GameManager에서 아이템을 가져와 설정
     private void InitializeShopSlots()
     {
-        List<Item> gameItems = GameManager.instance.GetShopItems(); // GameManager에서 아이템 목록 가져옴
+        List<Item> inventoryItems = GameManager.instance.inventoryItems;
 
         for (int i = 0; i < shopSlots.Length; i++)
         {
-            if (i < gameItems.Count)  // 아이템이 슬롯 수보다 적으면 적용
+            if (i < inventoryItems.Count)
             {
-                shopSlots[i].SetItem(gameItems[i]);
+                shopSlots[i].SetItem(inventoryItems[i]);
             }
             else
             {
-                shopSlots[i].ClearSlot();  // 빈 슬롯은 비워둠
+                shopSlots[i].ClearSlot();
             }
         }
     }
@@ -75,33 +45,27 @@ public class ShopManager : MonoBehaviour
     // 아이템을 판매하는 메서드
     public void SellItem(int slotIndex)
     {
-        // 인덱스가 유효한지 확인
+        Debug.Log("판매 시도 슬롯 인덱스: " + slotIndex);
+
         if (slotIndex < 0 || slotIndex >= shopSlots.Length)
         {
-            Debug.LogError("Invalid slot index");
+            Debug.LogError("유효하지 않은 슬롯 인덱스");
             return;
         }
 
-        // 슬롯에서 아이템 가져오기
         ShopSlot slot = shopSlots[slotIndex];
-        if (slot == null || slot.IsEmpty())
+        if (slot.IsEmpty())
         {
-            Debug.LogError("Slot is empty or does not exist");
+            Debug.LogError("비어 있는 슬롯입니다."); // 이 메시지가 뜨는 이유 확인
             return;
         }
 
         Item itemToSell = slot.GetItem();
-        if (itemToSell == null)
+        if (itemToSell != null)
         {
-            Debug.LogError("Item to sell is null");
-            return;
+            GameManager.instance.SellItem(itemToSell); // 아이템을 GameManager에서 판매
+            slot.ClearSlot(); // 슬롯 비우기
+            InitializeShopSlots(); // 상점 슬롯 업데이트
         }
-
-        int itemPrice = itemToSell.itemPrice;  // 아이템 가격 가져오기
-        GameManager.instance.RemoveItem(itemToSell);  // GameManager에서 아이템 제거
-        GameManager.instance.AddGold(itemPrice);  // GameManager에 골드 추가
-
-        // 슬롯 비우기
-        slot.ClearSlot();
     }
 }

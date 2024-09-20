@@ -54,4 +54,10 @@ public class GameManager : MonoBehaviour
         AddGold(item.itemPrice);
         Debug.Log("아이템 판매 완료: " + item.itemName);
     }
+
+    public void RemoveGold(int amount)
+    {
+        playerMoney -= amount;
+        Debug.Log("골드 감소: " + amount);
+    }
 }

@@ -98,4 +98,12 @@ public class InventorySlot : MonoBehaviour
             descriptionUI.SetActive(false);
         }
     }
+
+    public void ClearSlot()
+    {
+        currentItem = null;
+        itemImage.sprite = null;
+        itemNameText.text = "";
+        itemDescriptionText.text = "";
+    }
 }

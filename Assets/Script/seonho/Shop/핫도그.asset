@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ee08332301014a90831535ae82567b4, type: 3}
-  m_Name: "\uD0A4\uB9C1"
+  m_Name: "\uD56B\uB3C4\uADF8"
   m_EditorClassIdentifier: 
-  itemName: "\uD0A4\uB9C1"
-  itemSprite: {fileID: 21300000, guid: 1c3ae989b3d334358aeff166f459638b, type: 3}
-  itemDescription: "\uD0A4\uB9C1\uC774\uB2E4."
+  itemName: "\uD56B\uB3C4\uADF8"
+  itemSprite: {fileID: 21300000, guid: ab53e03405f6843ca89c36360ff4e700, type: 3}
+  itemDescription: ' '
   isEquipable: 1
-  itemCount: 0
+  itemCount: 1
   itemPrice: 500

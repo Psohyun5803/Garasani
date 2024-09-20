@@ -21,6 +21,9 @@ public class NPC_Audio : MonoBehaviour
         audioSource.clip = backgroundMusicClip;
         audioSource.loop = true; // 배경음악을 루프로 설정
         audioSource.Play();
+
+        GameObject upstair = GameObject.Find("계단_우측중앙"); 
+        Player.playertrans(upstair.transform.position.x - 7, upstair.transform.position.y);
     }
 
     void Update()

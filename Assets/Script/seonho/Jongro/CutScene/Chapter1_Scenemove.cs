@@ -17,6 +17,8 @@ public class Chapter1_Scenemove : MonoBehaviour
 
     private bool isFading = false;
 
+    public Transform objectToMove;
+
     void Start()
     {
         // 시작할 때 이미지의 알파값을 0으로 설정
@@ -34,6 +36,7 @@ public class Chapter1_Scenemove : MonoBehaviour
         if (other.gameObject.name == playername && !isFading)
         {
             Debug.Log("플레이어와 충돌 감지됨!"); // 플레이어와 충돌이 감지되었음을 출력
+            Player.moveflag = 0;
             StartCoroutine(FadeAndLoadScene());
         }
     }
@@ -42,11 +45,11 @@ public class Chapter1_Scenemove : MonoBehaviour
     {
         isFading = true;
 
-        // 이미지 활성화
+        yield return MoveObject();
+
         fadeImage.gameObject.SetActive(true);
         float startVolume = audioSource.volume;
 
-        // 화면이 천천히 어두워지게 하기
         for (float t = 0; t < fadeDuration; t += Time.deltaTime)
         {
             float alpha = Mathf.Lerp(0, 1, t / fadeDuration);
@@ -59,8 +62,27 @@ public class Chapter1_Scenemove : MonoBehaviour
         audioSource.volume = 0;
 
         Debug.Log("씬 이동 중...");
-        // 씬 이동
         SceneManager.LoadScene(nextSceneName);
+    }
+
+    IEnumerator MoveObject()
+    {
+        float moveDuration = 3f;
+        float elapsedTime = 0f;
+
+        Vector3 startPosition = objectToMove.position;
+        Vector3 endPosition = startPosition + new Vector3(startPosition.x + 5, startPosition.y, startPosition.z);
+
+        // 오브젝트 이동
+        while (elapsedTime < moveDuration)
+        {
+            objectToMove.position = Vector3.Lerp(startPosition, endPosition, elapsedTime / moveDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // 최종 위치로 설정
+        objectToMove.position = endPosition;
     }
 
     void SetFadeImageAlpha(float alpha)

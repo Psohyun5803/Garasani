@@ -2049,6 +2049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d902f4408fe258241951424c8a142430, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  talksqu: {fileID: 1656478984}
 --- !u!1 &649396087
 GameObject:
   m_ObjectHideFlags: 0

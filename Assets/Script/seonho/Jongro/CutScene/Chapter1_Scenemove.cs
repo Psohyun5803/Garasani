@@ -62,6 +62,7 @@ public class Chapter1_Scenemove : MonoBehaviour
         audioSource.volume = 0;
 
         Debug.Log("æ¿ ¿Ãµø ¡ﬂ...");
+        Player.moveflag = 1;
         SceneManager.LoadScene(nextSceneName);
     }
 

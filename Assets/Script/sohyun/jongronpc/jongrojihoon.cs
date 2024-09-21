@@ -152,6 +152,7 @@ public class jongrojihoon : MonoBehaviour
 
         ui_dialogue.SetActive(false);
         firstflag = 1;
+        jihoon_B2.jihoonmove = 1;
         //StartCoroutine(cameramove.instance.JMmove());
 
 

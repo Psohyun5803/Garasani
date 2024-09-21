@@ -15,7 +15,7 @@ public class ShopSlot : MonoBehaviour
 
     private Item currentItem;  // 현재 슬롯의 아이템
     private float clickTime = 0.0f;  // 클릭 시간
-    private float clickDelay = 0.25f;  // 더블클릭 인식 시간 간격
+    private float clickDelay = 0.5f;  // 더블클릭 인식 시간 간격
     private bool isDoubleClick = false;
 
     void Start()
@@ -30,24 +30,23 @@ public class ShopSlot : MonoBehaviour
         itemImage.sprite = newItem.itemSprite;
         itemNameText.text = newItem.itemName;
         itemPriceText.text = newItem.itemPrice.ToString();  // 아이템 가격 설정
+        Debug.Log("아이템 설정됨: " + newItem.itemName);  // 디버그 메시지 추가
     }
 
-    // 슬롯이 비어있는지 확인
     public bool IsEmpty()
     {
-        return currentItem == null;
+        return currentItem == null;  // currentItem이 null이면 슬롯이 비어 있음
     }
 
-    // 아이템 가져오기
     public Item GetItem()
     {
         return currentItem;
     }
 
     // 슬롯 클릭 시
-    public void OnClick()
+    public void OnClick(int index)
     {
-        if (currentItem == null) return; // 아이템이 없는 경우 무시
+        if (currentItem == null) return;
 
         float currentTime = Time.time;
         float timeSinceLastClick = currentTime - clickTime;
@@ -55,15 +54,29 @@ public class ShopSlot : MonoBehaviour
         if (timeSinceLastClick <= clickDelay)
         {
             isDoubleClick = true;
-            OnDoubleClick();  // 더블클릭으로 간주
+            OnDoubleClick(index);  // 인덱스 전달
         }
         else
         {
             isDoubleClick = false;
-            StartCoroutine(SingleClick());  // 싱글클릭 처리
+            StartCoroutine(SingleClick());
         }
 
         clickTime = currentTime;
+    }
+
+    // 더블클릭 처리
+    private void OnDoubleClick(int index)
+    {
+        if (currentItem != null)
+        {
+            ShopManager shopManager = FindObjectOfType<ShopManager>();
+            if (shopManager != null)
+            {
+                Debug.Log("슬롯 더블클릭, 인덱스: " + index);
+                shopManager.SellItem(index);  // 인덱스를 전달하여 판매
+            }
+        }
     }
 
     // 싱글클릭 처리 (설명 UI 표시)
@@ -76,20 +89,6 @@ public class ShopSlot : MonoBehaviour
             descriptionUI.SetActive(true);  // 설명 UI 활성화
             yield return new WaitForSeconds(descriptionDuration);  // 3초 기다림
             descriptionUI.SetActive(false);  // 설명 UI 비활성화
-        }
-    }
-
-    // 더블클릭하면 아이템 판매
-    private void OnDoubleClick()
-    {
-        if (currentItem != null)
-        {
-            ShopManager shopManager = FindObjectOfType<ShopManager>();
-            if (shopManager != null)
-            {
-                int slotIndex = Array.IndexOf(FindObjectsOfType<ShopSlot>(), this);  // 현재 슬롯 인덱스 찾기
-                shopManager.SellItem(slotIndex);  // 장착된 아이템을 ShopManager에서 관리
-            }
         }
     }
 

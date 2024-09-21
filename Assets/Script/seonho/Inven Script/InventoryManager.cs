@@ -31,6 +31,10 @@ public class InventoryManager : MonoBehaviour
         {
             ToggleInventory();
         }
+        if (isInventoryOpen)
+        {
+            LoadInventory(); // 아이템 리스트를 주기적으로 업데이트
+        }
     }
 
     // 씬에서 Player 오브젝트를 찾아서 플레이어 UI에 반영
@@ -81,15 +85,17 @@ public class InventoryManager : MonoBehaviour
     // 씬 이동 후 인벤토리 상태 로드
     private void LoadInventory()
     {
-        foreach (Item item in GameManager.instance.inventoryItems)
+        List<Item> inventoryItems = GameManager.instance.inventoryItems;
+
+        for (int i = 0; i < slots.Length; i++)
         {
-            foreach (InventorySlot slot in slots)
+            if (i < inventoryItems.Count)
             {
-                if (slot.IsEmpty())
-                {
-                    slot.SetItem(item);
-                    break;
-                }
+                slots[i].SetItem(inventoryItems[i]);
+            }
+            else
+            {
+                slots[i].ClearSlot();
             }
         }
     }

@@ -27963,6 +27963,7 @@ GameObject:
   - component: {fileID: 1943951414}
   - component: {fileID: 1943951413}
   - component: {fileID: 1943951417}
+  - component: {fileID: 1943951418}
   m_Layer: 0
   m_Name: "\uAD6C\uC815\uBBFC"
   m_TagString: jeongmin
@@ -28064,8 +28065,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 366542917
-  m_SortingLayer: 4
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 294623337, guid: eab4837030a4e5b46b95aa46c927f689, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -28103,6 +28104,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74ca5cf3e3e5f4a4dada459ba43d7c0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1943951418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1943951411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd873891272b524a8d186b2e1f29099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1949470695

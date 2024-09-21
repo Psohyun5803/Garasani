@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: "\uBE44\uC0C1\uB9DD\uCE58"
   itemSprite: {fileID: 21300000, guid: 97b0e57a4696644979da3879f4bd2bc4, type: 3}
   itemDescription: "\uBE44\uC0C1\uC6A9 \uB9DD\uCE58\uC774\uB2E4."
-  isEquipable: 0
+  isEquipable: 1
   itemCount: 0
   itemPrice: 0

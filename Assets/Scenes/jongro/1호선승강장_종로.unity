@@ -2061,7 +2061,6 @@ GameObject:
   - component: {fileID: 392861346}
   - component: {fileID: 392861347}
   - component: {fileID: 392861349}
-  - component: {fileID: 392861350}
   - component: {fileID: 392861352}
   - component: {fileID: 392861351}
   m_Layer: 0
@@ -2183,33 +2182,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.59, y: 8.4}
   m_EdgeRadius: 0
---- !u!114 &392861350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 392861345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eece772d9f877d4eacf61e58f05f66c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 126751136}
-  talksqu: {fileID: 948298654}
-  button: {fileID: 713774597}
-  who: {fileID: 2114745126}
-  option1: {fileID: 77125699}
-  option2: {fileID: 653096923}
-  option3: {fileID: 161196299}
-  option4: {fileID: 1610833316}
-  option5: {fileID: 393655356}
-  option6: {fileID: 1521397498}
-  options: {fileID: 1737865001}
-  option3_bt: {fileID: 161196296}
-  option4_bt: {fileID: 1610833313}
-  option5_bt: {fileID: 393655353}
-  option6_bt: {fileID: 1521397495}
 --- !u!114 &392861351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6280,62 +6252,62 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1489788361}
     m_ColliderPaths:
-    - - X: 350006752
+    - - X: -24207508
         Y: 61511716
-      - X: -170581632
+      - X: -170581568
         Y: 61511716
-      - X: -170581632
-        Y: 55834220
-      - X: 350006752
-        Y: 55834220
+      - X: -170581568
+        Y: 55834216
+      - X: -24207508
+        Y: 55834216
   - m_Collider: {fileID: 1489788360}
     m_ColliderPaths:
-    - - X: 28363120
+    - - X: -25335414
         Y: 31734324
-      - X: -170178736
+      - X: -171741520
         Y: 31734324
-      - X: -170178736
+      - X: -171741520
         Y: 10990094
-      - X: 28363120
+      - X: -25335414
         Y: 10990094
   - m_Collider: {fileID: 1489788365}
     m_ColliderPaths:
     - - X: 351705088
-        Y: 58941192
-      - X: -28213606
-        Y: 58941192
-      - X: -28213606
+        Y: 61024904
+      - X: -29776404
+        Y: 61024904
+      - X: -29776404
         Y: 11202706
       - X: 351705088
         Y: 11202706
   - m_Collider: {fileID: 1489788364}
     m_ColliderPaths:
     - - X: -93308496
-        Y: 58941192
+        Y: 58786260
       - X: -171477568
-        Y: 58941192
+        Y: 58786260
       - X: -171477568
-        Y: 24633696
+        Y: 27815678
       - X: -93308496
-        Y: 24633696
+        Y: 27815678
   m_CompositePaths:
     m_Paths:
-    - - {x: 2.8362827, y: 1.0990094}
-      - {x: 2.8363414, y: 1.1202706}
+    - - {x: -2.5335708, y: 1.0990094}
+      - {x: -2.533512, y: 1.1202706}
       - {x: 35.17051, y: 1.1202999}
-      - {x: 35.17048, y: 5.8941193}
-      - {x: 35.000675, y: 5.894149}
-      - {x: 35.00065, y: 6.1511717}
-      - {x: -17.058163, y: 6.1511426}
-      - {x: -17.058191, y: 5.8941193}
-      - {x: -17.147757, y: 5.89409}
-      - {x: -17.147728, y: 2.4633696}
-      - {x: -17.017874, y: 2.4633403}
-      - {x: -17.017845, y: 1.0990094}
-    - - {x: -2.8213606, y: 3.173462}
+      - {x: 35.17048, y: 6.1024904}
+      - {x: -2.4207509, y: 6.10252}
+      - {x: -2.42078, y: 6.1511717}
+      - {x: -17.058157, y: 6.1511426}
+      - {x: -17.058186, y: 5.878626}
+      - {x: -17.147757, y: 5.878597}
+      - {x: -17.147785, y: 3.1734324}
+      - {x: -17.174152, y: 3.1734033}
+      - {x: -17.174124, y: 1.0990094}
+    - - {x: -2.9776404, y: 3.173462}
       - {x: -9.33085, y: 3.173462}
-      - {x: -9.33082, y: 5.583422}
-      - {x: -2.8213606, y: 5.583393}
+      - {x: -9.33082, y: 5.5834217}
+      - {x: -2.9776404, y: 5.583392}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
   m_UseDelaunayMesh: 0
@@ -6372,7 +6344,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: -2500, y: 753.16846}
+  m_Offset: {x: -3474.1758, y: 753.16846}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6383,7 +6355,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7000, y: 731.3803}
+  m_Size: {x: 5161.8477, y: 731.3804}
   m_EdgeRadius: 0
 --- !u!61 &1489788361
 BoxCollider2D:
@@ -6417,7 +6389,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 3163, y: 2068.6357}
+  m_Offset: {x: -3433.8442, y: 2068.6357}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6428,7 +6400,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 18354.41, y: 200.17163}
+  m_Size: {x: 5160.718, y: 200.17188}
   m_EdgeRadius: 0
 --- !u!50 &1489788362
 Rigidbody2D:
@@ -6541,7 +6513,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: -4667.7876, y: 1473.302}
+  m_Offset: {x: -4667.7876, y: 1526.6644}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6552,7 +6524,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2756.011, y: 1209.581}
+  m_Size: {x: 2756.0107, y: 1091.9314}
   m_EdgeRadius: 0
 --- !u!61 &1489788365
 BoxCollider2D:
@@ -6586,7 +6558,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 1
-  m_Offset: {x: 5702.6777, y: 1236.5334}
+  m_Offset: {x: 5675.128, y: 1273.2662}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6597,7 +6569,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 13394.8125, y: 1683.1182}
+  m_Size: {x: 13449.912, y: 1756.5837}
   m_EdgeRadius: 0
 --- !u!1 &1501341287
 GameObject:

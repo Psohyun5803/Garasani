@@ -622,6 +622,7 @@ GameObject:
   - component: {fileID: 199831642}
   - component: {fileID: 199831645}
   - component: {fileID: 199831646}
+  - component: {fileID: 199831647}
   m_Layer: 0
   m_Name: "\uB378\uB9AC\uB9CC\uC96C \uAC00\uAC8C"
   m_TagString: Untagged
@@ -754,6 +755,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd873891272b524a8d186b2e1f29099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &199831647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199831640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9987203f712d84409e57a6678a28879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helpCount: 0
+  ui_dialogue: {fileID: 291052664}
+  contextList: []
+  dialogid: 0
+  manjufirst: 0
+  clothesfirst: 0
 --- !u!1 &206811694
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,7 +1823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3445845223735518772, guid: 704c590884403fa42b26a8609efa4c95, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00024080726
+      value: 0.00075208023
       objectReference: {fileID: 0}
     - target: {fileID: 4423172228593482312, guid: 704c590884403fa42b26a8609efa4c95, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2610,6 +2629,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 642258679}
+  - component: {fileID: 642258678}
   m_Layer: 0
   m_Name: move
   m_TagString: Untagged
@@ -2617,6 +2637,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &642258678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642258677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb10622e7d7c77c48a5098985da7a01e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &642258679
 Transform:
   m_ObjectHideFlags: 0
@@ -2949,6 +2981,7 @@ GameObject:
   - component: {fileID: 713370142}
   - component: {fileID: 713370141}
   - component: {fileID: 713370143}
+  - component: {fileID: 713370144}
   m_Layer: 0
   m_Name: "\uD3B8\uC758\uC810"
   m_TagString: Untagged
@@ -3153,6 +3186,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd873891272b524a8d186b2e1f29099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &713370144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713370136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9987203f712d84409e57a6678a28879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helpCount: 0
+  ui_dialogue: {fileID: 291052664}
+  contextList: []
+  dialogid: 0
+  manjufirst: 0
+  clothesfirst: 0
 --- !u!1 &749483847
 GameObject:
   m_ObjectHideFlags: 0
@@ -4752,6 +4803,7 @@ GameObject:
   - component: {fileID: 1327776942}
   - component: {fileID: 1327776943}
   - component: {fileID: 1327776944}
+  - component: {fileID: 1327776945}
   m_Layer: 0
   m_Name: "\uC9C0\uD6C8"
   m_TagString: Untagged
@@ -4957,6 +5009,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26c7f13511cd89545b30c4a98c06fc8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1327776945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327776935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d1a47d50070c8e4ea1cbb4e266fcb02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ui_dialogue: {fileID: 291052664}
+  context: {fileID: 1584694867}
+  name: {fileID: 765495394}
+  choosen: {fileID: 159257034}
+  contextList: []
+  dialogueID: 0
 --- !u!1 &1419013618
 GameObject:
   m_ObjectHideFlags: 0
@@ -6927,6 +6997,7 @@ GameObject:
   - component: {fileID: 1928630084}
   - component: {fileID: 1928630083}
   - component: {fileID: 1928630080}
+  - component: {fileID: 1928630086}
   m_Layer: 0
   m_Name: "\uC815\uBBFC"
   m_TagString: Untagged
@@ -7108,6 +7179,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1928630086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928630078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9987203f712d84409e57a6678a28879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  helpCount: 0
+  ui_dialogue: {fileID: 0}
+  contextList: []
+  dialogid: 0
+  manjufirst: 0
+  clothesfirst: 0
 --- !u!1 &1972136290
 GameObject:
   m_ObjectHideFlags: 0

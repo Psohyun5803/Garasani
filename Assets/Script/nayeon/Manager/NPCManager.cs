@@ -1,19 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class NPCManager : MonoBehaviour
 {
     public int helpCount = 0;
     public GameObject ui_dialogue; //말풍선
     public Dialogue[] contextList;
+    public static int jobflag = 0;
+    public static int godflag = 0;
+    
     // Start is called before the first frame update
     void Start()
     {
+      
         DataManager.instance.csv_FileName = "NPC";
         DataManager.instance.DialogueLoad(); // CSV 파일 로드
         Debug.Log("csv load");
+        StartCoroutine(jobstart());
     }
+
+    
 
     void OnMouseDown(){
         Debug.Log("NPC clicked");
@@ -21,7 +29,24 @@ public class NPCManager : MonoBehaviour
     }
 
 
-   public IEnumerator NpcRoutine(){
+
+    public IEnumerator jobstart()
+    {
+        if(jobflag==0)
+        {
+            Debug.Log("진행중2");
+            ui_dialogue.SetActive(true);
+
+            //물건 구매 기능 추가
+            contextList = DataManager.instance.GetDialogue(40, 43);
+            yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+
+            ui_dialogue.SetActive(false);
+        }
+       
+    }
+
+    public IEnumerator NpcRoutine(){
         ui_dialogue.SetActive(true);
         switch(gameObject.name){
                 case "리어카 끄는 노인":
@@ -65,7 +90,7 @@ public class NPCManager : MonoBehaviour
                     helpCount ++; //안경 가져다 주기 구현 필요 
                     break;
                 
-                case "사주 봐주눈 노인":
+                case "사주 봐주는 노인":
                     contextList = DataManager.instance.GetDialogue(31, 35);
                     DialogueManager.instance.processChoose(contextList);
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
@@ -86,6 +111,7 @@ public class NPCManager : MonoBehaviour
                     //물건 사지 않는 경우 
                     contextList = DataManager.instance.GetDialogue(45, 46);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    jobflag = 1;
                     break;
 
                 case "사이비" :
@@ -103,6 +129,7 @@ public class NPCManager : MonoBehaviour
                     }
 
                     DialogueManager.instance.chooseFlag = 0;
+                    godflag = 1;
                     break;
                 
                 case "음식 파는 할머니" :
@@ -114,6 +141,7 @@ public class NPCManager : MonoBehaviour
                 case "앵벌이":
                     contextList = DataManager.instance.GetDialogue(60, 60);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                   
                     break;
 
                 

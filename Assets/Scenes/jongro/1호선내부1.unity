@@ -123,6 +123,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &76566671
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5202865005932431176, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767813433691445598, guid: 3b1724d301d07de41985379e3e979509, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3b1724d301d07de41985379e3e979509, type: 3}
 --- !u!1 &79240981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,7 +1611,7 @@ MonoBehaviour:
   sai: {fileID: 410925510}
   job: {fileID: 1720580090}
   ang: {fileID: 943129701}
-  talksqu: {fileID: 0}
+  talksqu: {fileID: 1920633224}
 --- !u!114 &317672801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1568,7 +1625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   helpCount: 0
-  ui_dialogue: {fileID: 0}
+  ui_dialogue: {fileID: 1920633224}
   contextList: []
 --- !u!1001 &327682456
 PrefabInstance:
@@ -2284,6 +2341,7 @@ GameObject:
   - component: {fileID: 410925512}
   - component: {fileID: 410925517}
   - component: {fileID: 410925518}
+  - component: {fileID: 410925519}
   m_Layer: 0
   m_Name: "\uC0AC\uC774\uBE44"
   m_TagString: Untagged
@@ -2472,6 +2530,21 @@ MonoBehaviour:
   helpCount: 0
   ui_dialogue: {fileID: 1920633224}
   contextList: []
+--- !u!114 &410925519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410925510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de702eb132547044a36a5201243996f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstflag: 0
+  target: {fileID: 604478566}
+  moveSpeed: 2.5
 --- !u!1 &410989447
 GameObject:
   m_ObjectHideFlags: 0
@@ -4700,6 +4773,7 @@ GameObject:
   - component: {fileID: 1025289814}
   - component: {fileID: 1025289813}
   - component: {fileID: 1025289816}
+  - component: {fileID: 1025289817}
   m_Layer: 0
   m_Name: Story_dialogueManager
   m_TagString: Untagged
@@ -4769,6 +4843,24 @@ MonoBehaviour:
   contextList: []
   chooseFlag: 0
   clickFlag: 0
+--- !u!114 &1025289817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025289812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff422896e3d15a548b719a6926ca51b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  god: {fileID: 0}
+  ang: {fileID: 0}
+  job: {fileID: 0}
+  ui_dialogue: {fileID: 1920633224}
+  contextList: []
+  firstflag: 0
 --- !u!1 &1038657651
 GameObject:
   m_ObjectHideFlags: 0
@@ -5154,7 +5246,7 @@ GameObject:
   - component: {fileID: 1160717458}
   m_Layer: 2
   m_Name: option3
-  m_TagString: Untagged
+  m_TagString: chosen3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7286,6 +7378,7 @@ GameObject:
   - component: {fileID: 1720580092}
   - component: {fileID: 1720580097}
   - component: {fileID: 1720580098}
+  - component: {fileID: 1720580099}
   m_Layer: 0
   m_Name: "\uC7A1\uC0C1\uC778"
   m_TagString: Untagged
@@ -7474,6 +7567,21 @@ MonoBehaviour:
   helpCount: 0
   ui_dialogue: {fileID: 1920633224}
   contextList: []
+--- !u!114 &1720580099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720580090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6de702eb132547044a36a5201243996f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstflag: 0
+  target: {fileID: 604478566}
+  moveSpeed: 2
 --- !u!1 &1737666215
 GameObject:
   m_ObjectHideFlags: 0
@@ -9810,3 +9918,4 @@ SceneRoots:
   - {fileID: 863809361}
   - {fileID: 684033226}
   - {fileID: 1025289815}
+  - {fileID: 76566671}

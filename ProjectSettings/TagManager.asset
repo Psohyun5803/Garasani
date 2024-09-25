@@ -18,6 +18,9 @@ TagManager:
   - quantity
   - upstairs
   - groundwalk
+  - chosen4
+  - chosen5
+  - chosen6
   layers:
   - Default
   - TransparentFX

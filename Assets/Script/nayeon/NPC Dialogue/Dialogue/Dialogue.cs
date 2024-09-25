@@ -36,9 +36,21 @@ public class Dialogue
 
     [Tooltip("지훈표정")]
     public int jihoonemo;
+
+    [Tooltip("선택지3")]
+    public string chosen3;
+
+    [Tooltip("선택지4")]
+    public string chosen4;
+
+    [Tooltip("선택지5")]
+    public string chosen5;
+
+    [Tooltip("선택지6")]
+    public string chosen6;
     // [Tooltip("선택지3 ID")]
     // public int chosen3_ID;
-    
+
 }
 
 [System.Serializable]

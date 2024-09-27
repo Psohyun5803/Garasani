@@ -216,7 +216,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 36203307}
-  - component: {fileID: 36203308}
   - component: {fileID: 36203309}
   m_Layer: 0
   m_Name: 'Scriptmanager '
@@ -241,34 +240,6 @@ Transform:
   - {fileID: 758679841}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &36203308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 36203306}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 126751136}
-  talksqu: {fileID: 948298654}
-  button: {fileID: 713774597}
-  who: {fileID: 2114745126}
-  option1: {fileID: 77125699}
-  option2: {fileID: 653096923}
-  option3: {fileID: 161196299}
-  option4: {fileID: 1610833316}
-  option5: {fileID: 393655356}
-  option6: {fileID: 1521397498}
-  options: {fileID: 1737865001}
-  option3_bt: {fileID: 161196296}
-  option4_bt: {fileID: 1610833313}
-  option5_bt: {fileID: 393655353}
-  option6_bt: {fileID: 1521397495}
-  playercolflag: 0
 --- !u!114 &36203309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -972,7 +943,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 36203308}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: npc, Assembly-CSharp
         m_MethodName: option3down
         m_Mode: 1
@@ -2720,7 +2691,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 36203308}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: npc, Assembly-CSharp
         m_MethodName: option5down
         m_Mode: 1
@@ -5008,7 +4979,6 @@ GameObject:
   - component: {fileID: 1013675324}
   - component: {fileID: 1013675323}
   - component: {fileID: 1013675322}
-  - component: {fileID: 1013675321}
   - component: {fileID: 1013675320}
   - component: {fileID: 1013675325}
   - component: {fileID: 1013675326}
@@ -5049,34 +5019,6 @@ MonoBehaviour:
   bodymove:
   - {fileID: -391322578, guid: 818c20882d123ef47871aa306426a0de, type: 3}
   - {fileID: 861619614, guid: 818c20882d123ef47871aa306426a0de, type: 3}
---- !u!114 &1013675321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1013675318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 126751136}
-  talksqu: {fileID: 948298654}
-  button: {fileID: 713774597}
-  who: {fileID: 2114745126}
-  option1: {fileID: 77125699}
-  option2: {fileID: 653096923}
-  option3: {fileID: 161196299}
-  option4: {fileID: 1610833316}
-  option5: {fileID: 393655356}
-  option6: {fileID: 1521397498}
-  options: {fileID: 1737865001}
-  option3_bt: {fileID: 161196296}
-  option4_bt: {fileID: 1610833313}
-  option5_bt: {fileID: 393655353}
-  option6_bt: {fileID: 1521397495}
-  playercolflag: 0
 --- !u!61 &1013675322
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6208,7 +6150,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1213112823}
-  - component: {fileID: 1213112822}
   - component: {fileID: 1213112824}
   - component: {fileID: 1213112825}
   m_Layer: 0
@@ -6218,34 +6159,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1213112822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213112821}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916059d70f52c954c8dc4df3594d91b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  content: {fileID: 126751136}
-  talksqu: {fileID: 948298654}
-  button: {fileID: 713774597}
-  who: {fileID: 2114745126}
-  option1: {fileID: 77125699}
-  option2: {fileID: 653096923}
-  option3: {fileID: 161196299}
-  option4: {fileID: 1610833316}
-  option5: {fileID: 393655356}
-  option6: {fileID: 1521397498}
-  options: {fileID: 1737865001}
-  option3_bt: {fileID: 161196296}
-  option4_bt: {fileID: 1610833313}
-  option5_bt: {fileID: 393655353}
-  option6_bt: {fileID: 1521397495}
-  playercolflag: 0
 --- !u!4 &1213112823
 Transform:
   m_ObjectHideFlags: 0
@@ -7077,7 +6990,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 36203308}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: npc, Assembly-CSharp
         m_MethodName: option6down
         m_Mode: 1
@@ -7346,7 +7259,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 36203308}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: npc, Assembly-CSharp
         m_MethodName: option4down
         m_Mode: 1

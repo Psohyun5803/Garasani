@@ -18,7 +18,11 @@ public class NPCManager : MonoBehaviour
         DataManager.instance.csv_FileName = "NPC";
         DataManager.instance.DialogueLoad(); // CSV 파일 로드
         Debug.Log("csv load");
-        StartCoroutine(jobstart());
+        if(SceneManager.GetActiveScene().name == "1호선내부1")
+        {
+            StartCoroutine(jobstart());
+        }
+        
     }
 
     

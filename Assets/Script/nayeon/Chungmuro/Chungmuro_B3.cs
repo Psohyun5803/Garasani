@@ -28,7 +28,7 @@ public class Chungmuro_B3 : MonoBehaviour
             switch (dialogueID)
             {
                 case (25):
-                    contextList = DataManager.instance.GetDialogue(49, 51);
+                    contextList = DataManager.instance.GetDialogue(49, 51);//선택지가 없는대화
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     if(Wiki_Chungmuro.instance.checkWiki == true)
                     {
@@ -43,7 +43,7 @@ public class Chungmuro_B3 : MonoBehaviour
                 case (26):
                     daehwa.Play();
                     contextList = DataManager.instance.GetDialogue(52, 52);
-                    DialogueManager.instance.processChoose(contextList);
+                    DialogueManager.instance.processChoose(contextList);//선택을 한다는 뜻 
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
                     Debug.Log("ChooseFlag after case 1: " + DialogueManager.instance.chooseFlag);
                     if (DialogueManager.instance.chooseFlag == 1)

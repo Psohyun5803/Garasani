@@ -51,7 +51,7 @@ public class jungminemo : MonoBehaviour
         if (talksqu != null && who.text != null)  // null Ã¼Å© Ãß°¡
         {
             
-            if (talksqu.activeSelf && who.text.Trim()== "Á¤¹Î")
+            if (talksqu.activeSelf && who.text.TrimEnd()== "Á¤¹Î")
             {
                 imageComponent.enabled = true;
                 if (DialogueManager.jungminemoflag != null)

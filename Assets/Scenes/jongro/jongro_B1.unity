@@ -448,6 +448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShopManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5842896002406933440, guid: 9865a56ba8bf09643a9d82b47715f14d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6677978439405307620, guid: 9865a56ba8bf09643a9d82b47715f14d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.902842
@@ -1083,7 +1087,7 @@ MonoBehaviour:
   option1: {fileID: 672223666}
   option2: {fileID: 1543606013}
   options: {fileID: 159257034}
-  SaveUI: {fileID: 7343339275062780315}
+  SaveUI: {fileID: 967399975276659032}
 --- !u!1 &291052664
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,7 +1332,7 @@ MonoBehaviour:
   option1: {fileID: 672223666}
   option2: {fileID: 1543606013}
   options: {fileID: 159257034}
-  SaveUI: {fileID: 7343339275062780315}
+  SaveUI: {fileID: 967399975276659032}
 --- !u!1 &322046657
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,7 +1483,7 @@ MonoBehaviour:
   option1: {fileID: 672223666}
   option2: {fileID: 1543606013}
   options: {fileID: 159257034}
-  SaveUI: {fileID: 7343339275062780315}
+  SaveUI: {fileID: 967399975276659032}
 --- !u!1 &340515598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1823,7 +1827,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3445845223735518772, guid: 704c590884403fa42b26a8609efa4c95, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000015053668
+      value: 0.0002487742
       objectReference: {fileID: 0}
     - target: {fileID: 4423172228593482312, guid: 704c590884403fa42b26a8609efa4c95, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1860,6 +1864,10 @@ PrefabInstance:
     - target: {fileID: 8076353924117389584, guid: 704c590884403fa42b26a8609efa4c95, type: 3}
       propertyPath: m_Name
       value: Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 8076353924117389584, guid: 704c590884403fa42b26a8609efa4c95, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5453,7 +5461,7 @@ GameObject:
   - component: {fileID: 1551833670}
   - component: {fileID: 1551833669}
   - component: {fileID: 1551833668}
-  m_Layer: 7
+  m_Layer: 2
   m_Name: "\uC9C0\uD558\uCCA0_\uBC14\uB2E5"
   m_TagString: ground
   m_Icon: {fileID: 0}
@@ -6731,7 +6739,7 @@ MonoBehaviour:
   option1: {fileID: 672223666}
   option2: {fileID: 1543606013}
   options: {fileID: 159257034}
-  SaveUI: {fileID: 7343339275062780315}
+  SaveUI: {fileID: 967399975276659032}
 --- !u!1 &1805594329
 GameObject:
   m_ObjectHideFlags: 0
@@ -7192,7 +7200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   helpCount: 0
-  ui_dialogue: {fileID: 0}
+  ui_dialogue: {fileID: 291052664}
   contextList: []
   dialogid: 0
   manjufirst: 0
@@ -7569,6 +7577,10 @@ PrefabInstance:
     - target: {fileID: 732615279102168741, guid: 6eb8950d41c1e144ea0693781ce0684a, type: 3}
       propertyPath: m_Name
       value: Inventory
+      objectReference: {fileID: 0}
+    - target: {fileID: 732615279102168741, guid: 6eb8950d41c1e144ea0693781ce0684a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7510084080924824005, guid: 6eb8950d41c1e144ea0693781ce0684a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8165,7 +8177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1248718023169196335
 GameObject:
   m_ObjectHideFlags: 0

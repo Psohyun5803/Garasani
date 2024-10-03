@@ -31,7 +31,7 @@ public class NPC_Audio : MonoBehaviour
         if (DialogueManager.instance != null)
         {
             string currentNPCName = DialogueManager.instance.name.text;
-            Debug.Log($"Current NPC Name: {currentNPCName}");
+            //Debug.Log($"Current NPC Name: {currentNPCName}");
 
             if (currentNPCName == targetNPCName)
             {

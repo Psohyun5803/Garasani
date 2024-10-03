@@ -86,6 +86,7 @@ public class jongrojihoon : MonoBehaviour
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
                     if (DialogueManager.instance.chooseFlag == 1)
                     {
+                        Debug.Log("µé¾î¿È");
                         dialogueID = 5;
 
                     }
@@ -93,8 +94,9 @@ public class jongrojihoon : MonoBehaviour
                     {
                         dialogueID = 7;
                     }
+                    Debug.Log(dialogueID);
                     DialogueManager.instance.chooseFlag = 0;
-
+                    Debug.Log(dialogueID);
                     break;
                 case 5:
                     contextList = DataManager.instance.GetDialogue(10, 10);

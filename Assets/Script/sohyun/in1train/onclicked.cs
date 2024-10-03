@@ -14,7 +14,7 @@ public class onclicked : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Debug.Log(onclickedflag);
     }
     void OnMouseDown()
     {

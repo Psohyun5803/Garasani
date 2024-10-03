@@ -24,6 +24,10 @@ public class jongronpcM : MonoBehaviour
          Debug.Log("NPC clicked");
          StartCoroutine(NpcRoutine());
      }
+    void Update()
+    {
+        
+    }
 
 
      public IEnumerator NpcRoutine()
@@ -34,15 +38,15 @@ public class jongronpcM : MonoBehaviour
              case "Á¤¹Î":
                  contextList = DataManager.instance.GetDialogue(1, 1);
                  DialogueManager.instance.processChoose(contextList);
-                 yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
+                 yield return new WaitUntil(() => DialogueManager.instance.clickFlag != false);
 
-                 if (DialogueManager.instance.chooseFlag == 1)
+                 if (DialogueManager.instance.clickFlag== true)
                  { 
                      contextList = DataManager.instance.GetDialogue(2, 3);
                      yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                  }
 
-                 DialogueManager.instance.chooseFlag = 0;
+                 DialogueManager.instance.clickFlag = false;
                 break;
 
              case "¿Ê °¡°Ô":

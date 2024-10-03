@@ -30,7 +30,7 @@ public class ShopSlot : MonoBehaviour
         itemImage.sprite = newItem.itemSprite;
         itemNameText.text = newItem.itemName;
         itemPriceText.text = newItem.itemPrice.ToString();  // 아이템 가격 설정
-        Debug.Log("아이템 설정됨: " + newItem.itemName);  // 디버그 메시지 추가
+       //디버그 메세지 잠시 지웠습니다 ! -소현 
     }
 
     public bool IsEmpty()

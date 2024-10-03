@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SaveInteract : MonoBehaviour
 {
-    public TMP_Text content;
+   public TMP_Text content;
     public GameObject talksqu;
     public GameObject button;
     public TMP_Text who;
@@ -120,7 +120,7 @@ public class SaveInteract : MonoBehaviour
         }
     }
 
-    void Start()
+   void Start()
     {
         talksqu.SetActive(false);
         options.SetActive(false);
@@ -130,14 +130,19 @@ public class SaveInteract : MonoBehaviour
         customize.sceneflag = 2;
         customize.moveflag = 1;
     }
-
+    
     void Update()
     {
-        // 선택지 처리
-        if (DialogueManager.instance.chooseFlag > 0)
+        if(interobj=="개찰구") //이 부분이 제 코드와 충돌이 있어서 살짝 수정했습니다 !
         {
-            ProcessChoice();  // 선택지에 따른 처리
-            DialogueManager.instance.chooseFlag = 0;  // 처리 후 플래그 초기화
+            // 선택지 처리
+            if (DialogueManager.instance.chooseFlag > 0)
+            {
+                //ProcessChoice();  // 선택지에 따른 처리
+                DialogueManager.instance.chooseFlag = 0;  // 처리 후 플래그 초기화
+            }
         }
+    
+       
     }
 }

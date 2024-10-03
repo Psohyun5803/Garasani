@@ -3250,7 +3250,7 @@ GameObject:
   - component: {fileID: 1029848098}
   - component: {fileID: 1029848099}
   - component: {fileID: 1029848100}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\uB3C4\uC6C0\uC774 \uD544\uC694\uD574\uBCF4\uC774\uB294 \uB178\uC778"
   m_TagString: Untagged
   m_Icon: {fileID: 0}

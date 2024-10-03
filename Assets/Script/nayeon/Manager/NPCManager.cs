@@ -22,10 +22,12 @@ public class NPCManager : MonoBehaviour
         {
             StartCoroutine(jobstart());
         }
-        
+      
+
+
     }
 
-    
+   
 
     void OnMouseDown(){
         Debug.Log("NPC clicked");

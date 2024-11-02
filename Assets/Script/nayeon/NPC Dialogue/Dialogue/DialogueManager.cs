@@ -25,7 +25,7 @@ public class DialogueManager : MonoBehaviour
     public bool clickFlag = false; //선택지 1개인경우 click check
     private bool isChosenOne = false; //선택지 1개인 경우 
 
-    private float delay = 0.05f; //타이핑 속도 
+    public static float delay = 0.05f; //타이핑 속도 
     private Coroutine typingCoroutine;
     private bool isTyping = false;
 

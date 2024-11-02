@@ -10,7 +10,7 @@ public class NPCManager : MonoBehaviour
     public Dialogue[] contextList;
     public static int jobflag = 0;
     public static int godflag = 0;
-    
+    int sajuid = 20;
     // Start is called before the first frame update
     void Start()
     {
@@ -96,19 +96,32 @@ public class NPCManager : MonoBehaviour
                     helpCount ++; //안경 가져다 주기 구현 필요 
                     break;
                 
-                case "사주 봐주는 노인":
-                    contextList = DataManager.instance.GetDialogue(31, 35);
-                    DialogueManager.instance.processChoose(contextList);
-                    yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
+                /*case "사주 봐주는 노인":
+                switch (sajuid)
+                {
+                    case 20:
+                        contextList = DataManager.instance.GetDialogue(65, 73);
+                        DialogueManager.instance.processChoose(contextList);
+                        yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
 
-                    if (DialogueManager.instance.chooseFlag == 1){ //사주 보기 선택 
-                        //돈 조정 
-                        contextList = DataManager.instance.GetDialogue(36, 39);
-                        yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    }
+                        if (DialogueManager.instance.chooseFlag == 1)
+                        { //사주 보기 선택 
+                          //돈 조정 
+                            contextList = DataManager.instance.GetDialogue(74, 76);
+                            
+                            yield return StartCoroutine(DialogueManager.instance.processing(contextList));
 
-                    DialogueManager.instance.chooseFlag = 0;
-                    break;
+                        }
+                        else
+                        {
+                            DialogueManager.instance.chooseFlag = 0;
+                            break;
+                        }
+                      
+
+                }*/
+              
+                   
                 
                 case "잡상인":
                     //물건 사는 경우

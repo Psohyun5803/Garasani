@@ -33,7 +33,18 @@ public class GameManager : MonoBehaviour
             inventoryItems.Remove(itemToRemove);
         }
     }
-
+    public bool SearchItem(string itemname)
+    {
+        foreach(Item item in inventoryItems)
+        {
+            if(item.name == itemname)
+            {
+                return true;
+            }
+            
+        }
+        return false;
+    }
     public void AddGold(int amount)
     {
         playerMoney += amount;

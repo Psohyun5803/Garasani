@@ -7,13 +7,16 @@ public class sajunpc : MonoBehaviour
     public GameObject ui_dialogue; //말풍선
     public Dialogue[] contextList;
     public TMP_Text text;//텍스트
-    public static int sajuid = 20;
+    public static double sajuid = 20;
     public static bool ing = false;
-    public static bool firstflag = true; 
+    public static bool firstflag = true;
+    public TMP_FontAsset notoSansCJKFont;
+    public TMP_FontAsset originalFont;
 
     void Start()
     {
-
+        customize.sceneflag = 4;
+        Player.moveflag = 3;
         DataManager.instance.csv_FileName = "NPC";
         DataManager.instance.DialogueLoad(); // CSV 파일 로드
         Debug.Log("csv load");
@@ -38,7 +41,18 @@ public class sajunpc : MonoBehaviour
             switch (sajuid)
             {
                 case 20:
-                    contextList = DataManager.instance.GetDialogue(65, 73);
+                    contextList = DataManager.instance.GetDialogue(65, 71);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    sajuid = 20.5;
+                    break;
+                case 20.5:
+                    // 한자폰트 출력 --> 구현대기
+                    contextList = DataManager.instance.GetDialogue(72, 72);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                    sajuid = 20.7;
+                    break;
+                case 20.7:
+                    contextList = DataManager.instance.GetDialogue(73, 73);
                     DialogueManager.instance.processChoose(contextList);
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
                     if (DialogueManager.instance.chooseFlag == 1)
@@ -49,7 +63,7 @@ public class sajunpc : MonoBehaviour
                     }
                     else if (DialogueManager.instance.chooseFlag == 2)
                     { sajuid = 40; 
-                        }
+                    }
                     
                     DialogueManager.instance.chooseFlag = 0;
                     break;
@@ -66,74 +80,74 @@ public class sajunpc : MonoBehaviour
                     sajuid = Random.Range(23, 35);
                     break;
                 case 23:
-                    contextList = DataManager.instance.GetDialogue(78, 83);
+                    contextList = DataManager.instance.GetDialogue(79, 83);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     sajuid = 35;
                     break;
                 case 24:
-                    contextList = DataManager.instance.GetDialogue(84, 91);
+                    contextList = DataManager.instance.GetDialogue(85, 91);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     sajuid = 35;
                     break;
                 case 25:
-                    contextList = DataManager.instance.GetDialogue(92, 98);
+                    contextList = DataManager.instance.GetDialogue(93, 98);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     sajuid = 35;
                     break;
                 case 26:
-                    contextList = DataManager.instance.GetDialogue(99, 103);
+                    contextList = DataManager.instance.GetDialogue(100, 103);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     sajuid = 35;
                     break;
                 case 27:
-                    contextList = DataManager.instance.GetDialogue(104, 109);
+                    contextList = DataManager.instance.GetDialogue(101, 109);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     sajuid = 35;
                     break;
                 case 28:
-                    contextList = DataManager.instance.GetDialogue(110, 115);
+                    contextList = DataManager.instance.GetDialogue(111, 115);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     sajuid = 35;
                     break;
                 case 29:
-                    contextList = DataManager.instance.GetDialogue(116, 123);
+                    contextList = DataManager.instance.GetDialogue(117, 123);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     sajuid = 35;
                     break;
                 case 30:
-                    contextList = DataManager.instance.GetDialogue(124, 128);
+                    contextList = DataManager.instance.GetDialogue(125, 128);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     sajuid = 35;
                     break;
                 case 31:
-                    contextList = DataManager.instance.GetDialogue(129, 134);
+                    contextList = DataManager.instance.GetDialogue(130, 134);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     sajuid = 35;
                     break;
                 case 32:
-                    contextList = DataManager.instance.GetDialogue(135, 138);
+                    contextList = DataManager.instance.GetDialogue(136, 138);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     sajuid = 35;
                     break;
                 case 33:
-                    contextList = DataManager.instance.GetDialogue(139, 145);
+                    contextList = DataManager.instance.GetDialogue(137, 145);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     sajuid = 35;
                     break;
                 case 34:
-                    contextList = DataManager.instance.GetDialogue(146, 148);
+                    contextList = DataManager.instance.GetDialogue(147, 148);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     sajuid = 35;
                     break;
                 case 35:
-                    contextList = DataManager.instance.GetDialogue(148, 154);
+                    contextList = DataManager.instance.GetDialogue(149, 154);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     sajuid = 36;
                     break;
                    
                 case 36:
                     contextList = DataManager.instance.GetDialogue(155, 155);//와다닥 연출
-                    DialogueManager.delay = 0.02f;
+                    DialogueManager.delay = 0.05f;
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     DialogueManager.delay = 0.05f;
                     sajuid = 37;

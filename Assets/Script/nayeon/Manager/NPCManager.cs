@@ -80,20 +80,24 @@ public class NPCManager : MonoBehaviour
                     if(helpCount == 0){
                         contextList = DataManager.instance.GetDialogue(20, 22);
                         yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                        helpCount = 1;
+                        
+                        
                     }
-                    else if(helpCount == 1){
+                    else if(helpCount == 1&& GameManager.instance.SearchItem("안경")){
                         contextList = DataManager.instance.GetDialogue(23, 28);
                         yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                        helpCount = 2;
                     }
-                    else if(helpCount == 2){
-                        contextList = DataManager.instance.GetDialogue(29, 29);
+                    else if(helpCount == 1 && !GameManager.instance.SearchItem("안경"))
+                    {
+                        helpCount = 0;
+                    }
+                    else
+                    { 
+                        contextList = DataManager.instance.GetDialogue(29, 30);
                         yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     }
-                    else{
-                        contextList = DataManager.instance.GetDialogue(30, 30);
-                        yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    }
-                    helpCount ++; //안경 가져다 주기 구현 필요 
                     break;
                 
                 /*case "사주 봐주는 노인":
@@ -164,7 +168,7 @@ public class NPCManager : MonoBehaviour
                     break;
 
                 
-                case "시비거는 취객":
+                /*case "시비거는 취객":
                     contextList = DataManager.instance.GetDialogue(61, 61);
                     DialogueManager.instance.processChoose(contextList);
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
@@ -173,7 +177,7 @@ public class NPCManager : MonoBehaviour
                         contextList = DataManager.instance.GetDialogue(62, 62); //이겼을 때 대사 
                         yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     }
-                    break;
+                    break;*/
                 default : break;
         }
         ui_dialogue.SetActive(false);

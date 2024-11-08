@@ -8618,12 +8618,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1813541418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffb91749c915546ed8d17b829eb31774, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e5271f8957415248bd9f826f73f2265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  helpCount: 0
   ui_dialogue: {fileID: 131463825}
   contextList: []
+  text: {fileID: 209584095}
 --- !u!1 &1816107699
 GameObject:
   m_ObjectHideFlags: 0

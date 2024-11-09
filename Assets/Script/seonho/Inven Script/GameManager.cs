@@ -45,6 +45,23 @@ public class GameManager : MonoBehaviour
         }
         return false;
     }
+    public void RemoveItemString(string itemname)
+    {
+       
+        List<Item> itemsToRemove = new List<Item>();
+        foreach (Item item in inventoryItems)
+        {
+            if (item.name == itemname)
+            {
+                itemsToRemove.Add(item);
+            }
+        }
+
+        foreach (Item item in itemsToRemove)
+        {
+            inventoryItems.Remove(item);
+        }
+    }
     public void AddGold(int amount)
     {
         playerMoney += amount;

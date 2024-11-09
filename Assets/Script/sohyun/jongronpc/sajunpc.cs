@@ -10,7 +10,7 @@ public class sajunpc : MonoBehaviour
     public static double sajuid = 20;
     public static bool ing = false;
     public static bool firstflag = true;
-    public TMP_FontAsset notoSansCJKFont;
+    public TMP_FontAsset hanjafont;
     public TMP_FontAsset originalFont;
 
     void Start()
@@ -46,12 +46,14 @@ public class sajunpc : MonoBehaviour
                     sajuid = 20.5;
                     break;
                 case 20.5:
+                    text.font = hanjafont;
                     // 한자폰트 출력 --> 구현대기
                     contextList = DataManager.instance.GetDialogue(72, 72);
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                     sajuid = 20.7;
                     break;
                 case 20.7:
+                    text.font = originalFont;
                     contextList = DataManager.instance.GetDialogue(73, 73);
                     DialogueManager.instance.processChoose(contextList);
                     yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);

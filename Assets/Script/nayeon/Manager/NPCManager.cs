@@ -87,6 +87,7 @@ public class NPCManager : MonoBehaviour
                     else if(helpCount == 1&& GameManager.instance.SearchItem("안경")){
                         contextList = DataManager.instance.GetDialogue(23, 28);
                         yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                        GameManager.instance.RemoveItemString("안경");
                         helpCount = 2;
                     }
                     else if(helpCount == 1 && !GameManager.instance.SearchItem("안경"))

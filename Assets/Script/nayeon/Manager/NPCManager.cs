@@ -166,19 +166,25 @@ public class NPCManager : MonoBehaviour
                     yield return StartCoroutine(DialogueManager.instance.processing(contextList));
                    
                     break;
+                case "소화전":
+                    juckinter.juckactive = true;
+                    contextList = DataManager.instance.GetDialogue(178, 178);
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
 
-                
-                /*case "시비거는 취객":
-                    contextList = DataManager.instance.GetDialogue(61, 61);
-                    DialogueManager.instance.processChoose(contextList);
-                    yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
+                    break;
 
-                    if (DialogueManager.instance.chooseFlag == 1){ //가위바위보 구현 필요 
-                        contextList = DataManager.instance.GetDialogue(62, 62); //이겼을 때 대사 
-                        yield return StartCoroutine(DialogueManager.instance.processing(contextList));
-                    }
-                    break;*/
-                default : break;
+
+            /*case "시비거는 취객":
+                contextList = DataManager.instance.GetDialogue(61, 61);
+                DialogueManager.instance.processChoose(contextList);
+                yield return new WaitUntil(() => DialogueManager.instance.chooseFlag != 0);
+
+                if (DialogueManager.instance.chooseFlag == 1){ //가위바위보 구현 필요 
+                    contextList = DataManager.instance.GetDialogue(62, 62); //이겼을 때 대사 
+                    yield return StartCoroutine(DialogueManager.instance.processing(contextList));
+                }
+                break;*/
+            default : break;
         }
         ui_dialogue.SetActive(false);
     }

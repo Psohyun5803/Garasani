@@ -35,6 +35,7 @@ public class DataManager : MonoBehaviour
         for (int i = 0; i < dialogues.Length; i++)
         {
             dialogueDic.Add(i + 1, dialogues[i]);
+            
         }
         isFinish = true;
         //foreach (var kvp in dialogueDic)

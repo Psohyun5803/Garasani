@@ -6,12 +6,33 @@ using TMPro;
 
 public class SellManager : MonoBehaviour
 {
+    public static SellManager instance;  // 싱글톤 인스턴스
+    public bool sellitem = false;
     public GameObject itemSlotPrefab;  // 아이템 슬롯 프리팹
     public Transform contentArea;  // 아이템 슬롯이 배치될 영역
     public List<Item> availableItems = new List<Item>();  // 구매할 수 있는 아이템 목록 (외부에서 설정)
 
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            Debug.Log("SellManager instance 설정 완료.");
+        }
+        else
+        {
+            Debug.LogWarning("SellManager instance가 이미 존재합니다.");
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
+        LoadAvailableItems();
+    }
+    public void putinlist(List<Item> items)
+    {
+        availableItems = items;
         LoadAvailableItems();
     }
 
@@ -20,8 +41,9 @@ public class SellManager : MonoBehaviour
         availableItems = items;
         LoadAvailableItems();
     }
+   
 
-    private void LoadAvailableItems()
+    private void  LoadAvailableItems()
     {
         foreach (Transform child in contentArea)
         {
@@ -72,5 +94,6 @@ public class SellManager : MonoBehaviour
         GameManager.instance.AddItem(itemSlot.item);  // 아이템을 GameManager에 추가 (구매)
         GameManager.instance.AddGold(-itemSlot.item.itemPrice);  // 아이템 가격만큼 돈 차감
         Debug.Log("아이템 구매 완료: " + itemSlot.item.itemName);
+        sellitem = true;
     }
 }

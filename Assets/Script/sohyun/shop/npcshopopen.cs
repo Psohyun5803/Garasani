@@ -10,6 +10,7 @@ public class npcshopopen : MonoBehaviour
     public static bool jobcouflag = false;//코루틴 중복방지
     public static bool grandcouflag = false;//코루틴 중복방지
     public static bool angcouflag = false;//코루틴 중복방지
+    public static bool recouflag = false;
     bool coufirst = true;
     public static string nowinter;
 
@@ -40,46 +41,47 @@ public class npcshopopen : MonoBehaviour
     }
     void Update()
     {
-      
-        if (SellManager.instance != null && SellManager.instance.sellitem)
+
+        Debug.Log(nowinter);
+        Debug.Log(SellManager.instance.sellitem);
+        if (SellManager.instance != null && SellManager.instance.sellitem) //샀을 때 
         {
             sellflag = 1;
         }
-        if(Input.GetKeyDown(KeyCode.Escape) && sellflag == 1)
+        if (Input.GetKeyDown(KeyCode.Escape) && sellflag == 1)
         {
-            if (coufirst == true)
+
+            // NPCManager.instance가 null인지 확인
+
+            if (nowinter == "잡상인")
             {
-                coufirst = false;
-
-                // NPCManager.instance가 null인지 확인
-
-                if (nowinter == "잡상인")
-                {
-                    jobcouflag = true;
-                }
-                else if (nowinter == "음식 파는 할머니")
-                {
-                    grandcouflag = true;
-                }
-                else if (nowinter == "앵벌이")
-                {
-                    angcouflag = true;
-                }
-
+                jobcouflag = true;
             }
+            else if (nowinter == "음식 파는 할머니")
+            {
+                Debug.Log("들어옴");
+                grandcouflag = true;
+            }
+            else if (nowinter == "리어카 끄는 노인")
+            {
+                Debug.Log("들어옴");
+                recouflag = true;
+            }
+            else if (nowinter == "앵벌이")
+            {
+                angcouflag = true;
+            }
+
+
         }
 
         // ESC 키 입력 처리
-        if (Input.GetKeyDown(KeyCode.Escape) && sellflag != 1)
+        if (Input.GetKeyDown(KeyCode.Escape) && sellflag != 1) // 안샀을 때
         {
             sellflag = 2;
 
-            if (coufirst == true)
-            {
-                coufirst = false;
 
-            }
-            else if (nowinter == "잡상인")
+            if (nowinter == "잡상인")
             {
                 jobcouflag = true;
             }
@@ -89,8 +91,9 @@ public class npcshopopen : MonoBehaviour
             }
 
 
-            }
+
         }
+    }
 
 
     }

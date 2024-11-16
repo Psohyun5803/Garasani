@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
+    public static InventoryManager instance;
     public GameObject inventoryUI;   // 인벤토리 UI
     public Transform playerUI;  // 플레이어 오브젝트를 나타낼 위치(UI)
     private GameObject playerInstance;  // 씬의 Player 오브젝트 인스턴스
@@ -18,6 +19,20 @@ public class InventoryManager : MonoBehaviour
     public bool isInventoryOpen = false; // 인벤토리 UI 상태
     public Item equippedItem;
 
+    
+     private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+           
+        }
+        else
+        {
+         
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
         inventoryUI.SetActive(false);

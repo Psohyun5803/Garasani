@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ee08332301014a90831535ae82567b4, type: 3}
-  m_Name: "\uCE74\uC138\uD2B8 32"
+  m_Name: "\uC81C 3\uCC28 \uB300\uC804 \uC608\uACE0\uC11C"
   m_EditorClassIdentifier: 
-  itemName: "\uCE74\uC138\uD2B8 32"
-  itemSprite: {fileID: 21300000, guid: 1deacb648842b944286c74f2041e09c0, type: 3}
+  itemName: "\uC81C 3\uCC28 \uB300\uC804 \uC608\uACE0\uC11C"
+  itemSprite: {fileID: 21300000, guid: 5afa914f51dfc6145a4306de639a164b, type: 3}
   itemDescription: 
   isEquipable: 0
   itemCount: 0
-  itemPrice: 500
+  itemPrice: 0

@@ -18,9 +18,9 @@ public class train1_dark : MonoBehaviour
   
     public GameObject dark;
     public GameObject image01;
-  
+    public Transform playerposition;
     public GameObject background;
-
+    public GameObject Player;
    
 
     public static int gifnum = 0;
@@ -34,6 +34,8 @@ public class train1_dark : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Player = GameObject.Find("Player");
+        Player.transform.position = playerposition.position;
         dark.SetActive(true);
         image01.SetActive(false);
         background.SetActive(false);

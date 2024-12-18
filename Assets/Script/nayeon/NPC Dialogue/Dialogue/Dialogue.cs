@@ -37,6 +37,9 @@ public class Dialogue
     [Tooltip("지훈표정")]
     public int jihoonemo;
 
+    [Tooltip("광석엽표정")]
+    public int kwangemo;
+
     [Tooltip("선택지3")]
     public string chosen3;
 

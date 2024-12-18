@@ -25,6 +25,7 @@ public class SaveInteract : MonoBehaviour
         {
             if (gameObject.name == "개찰구" && gointer == 0)
             {
+                
                 pos = transform.position;
                 interobj = "개찰구";
                 Player.moveflag = 0;
@@ -128,12 +129,13 @@ public class SaveInteract : MonoBehaviour
         SaveUI.SetActive(false);
 
         customize.sceneflag = 2;
-        customize.moveflag = 1;
+        Player.moveflag = 1;
     }
     
     void Update()
     {
-        if(interobj=="개찰구") //이 부분이 제 코드와 충돌이 있어서 살짝 수정했습니다 !
+       
+        if (interobj=="개찰구") //이 부분이 제 코드와 충돌이 있어서 살짝 수정했습니다 !
         {
             // 선택지 처리
             if (DialogueManager.instance.chooseFlag > 0)

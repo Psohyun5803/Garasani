@@ -2287,6 +2287,7 @@ GameObject:
   - component: {fileID: 410925518}
   - component: {fileID: 410925519}
   - component: {fileID: 410925520}
+  - component: {fileID: 410925521}
   m_Layer: 0
   m_Name: "\uC0AC\uC774\uBE44"
   m_TagString: Untagged
@@ -2503,6 +2504,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 0649cd3d303ac3944bab31ccf993c129, type: 2}
+--- !u!95 &410925521
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410925510}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9c709783b4cfb1c4fb7483feaee7111d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &410989447
 GameObject:
   m_ObjectHideFlags: 0
@@ -4365,6 +4387,7 @@ GameObject:
   - component: {fileID: 943129708}
   - component: {fileID: 943129709}
   - component: {fileID: 943129710}
+  - component: {fileID: 943129711}
   m_Layer: 0
   m_Name: "\uC575\uBC8C\uC774"
   m_TagString: Untagged
@@ -4570,6 +4593,27 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 72b5d5c827f0c954bb84c2b13d6be2bd, type: 2}
   - {fileID: 11400000, guid: ad4e5d1d484f5284ca7c03ea63a151c1, type: 2}
   ShopUI: {fileID: 1748460444}
+--- !u!95 &943129711
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943129701}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 76c6cb86503c18d4d8b26c18758c3687, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1009373659
 GameObject:
   m_ObjectHideFlags: 0
@@ -7501,6 +7545,7 @@ GameObject:
   - component: {fileID: 1720580098}
   - component: {fileID: 1720580099}
   - component: {fileID: 1720580100}
+  - component: {fileID: 1720580101}
   m_Layer: 0
   m_Name: "\uC7A1\uC0C1\uC778"
   m_TagString: Untagged
@@ -7722,6 +7767,27 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 55904bedfaf72d340bc6173be4f67d9b, type: 2}
   - {fileID: 11400000, guid: e721cf06f4cb2f649a6981cc6b4c47c4, type: 2}
   ShopUI: {fileID: 1748460444}
+--- !u!95 &1720580101
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720580090}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 79b1bff403fbebf49a27c4e8e8b5c099, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1737666215
 GameObject:
   m_ObjectHideFlags: 0
@@ -8028,7 +8094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3445845223735518772, guid: 704c590884403fa42b26a8609efa4c95, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000025998714
+      value: 0.00009830489
       objectReference: {fileID: 0}
     - target: {fileID: 4423172228593482312, guid: 704c590884403fa42b26a8609efa4c95, type: 3}
       propertyPath: m_AnchorMax.x

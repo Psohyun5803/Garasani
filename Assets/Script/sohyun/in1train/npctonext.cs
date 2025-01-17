@@ -6,13 +6,13 @@ public class npctonext : MonoBehaviour //npc°¡ ´ëÈ­¸¦ ³¡ ¸¶Ä¡°í ¿·Ä­À¸·Î ÀÌµ¿ÇÏ°
 {
     public int firstflag=0;
     public Transform target;
-
+    Animator animator;
     // ÀÌµ¿ ¼Óµµ
     public float moveSpeed = 3f;
     // Start is called before the first frame update
     void Start()
     {
-       
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -23,6 +23,7 @@ public class npctonext : MonoBehaviour //npc°¡ ´ëÈ­¸¦ ³¡ ¸¶Ä¡°í ¿·Ä­À¸·Î ÀÌµ¿ÇÏ°
             if (firstflag == 0 && NPCManager.jobflag == 1)
             {
                 firstflag = 1;
+                animator.SetBool("right", true);
                 StartCoroutine(move(target.position));
 
 
@@ -34,6 +35,7 @@ public class npctonext : MonoBehaviour //npc°¡ ´ëÈ­¸¦ ³¡ ¸¶Ä¡°í ¿·Ä­À¸·Î ÀÌµ¿ÇÏ°
             if (firstflag == 0 && NPCManager.godflag == 1)
             {
                 firstflag = 1;
+                animator.SetBool("right", true);
                 StartCoroutine(move(target.position));
 
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class saigive : MonoBehaviour
 {
@@ -20,5 +21,6 @@ public class saigive : MonoBehaviour
             given = 1;
             InventoryManager.instance.AddItemToSlot(item);
         }
+       
     }
 }

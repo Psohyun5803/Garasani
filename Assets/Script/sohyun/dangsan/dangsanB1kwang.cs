@@ -94,14 +94,15 @@ public class dangsanB1kwang : MonoBehaviour
         }
 
         ui_dialogue.SetActive(false);
-        if(InventoryManager.instance.equippedItem!=null) // 아이템을 장착하고 말을 걸었다면 
+        twoflag = true;//테스트용
+        /*if(InventoryManager.instance.equippedItem!=null) // 아이템을 장착하고 말을 걸었다면 
         {
             twoflag = true;
-        }
-        
-        
-        
-       
+        }*/
+
+
+
+
 
     }
 

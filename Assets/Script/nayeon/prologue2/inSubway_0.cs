@@ -24,6 +24,7 @@ public class inSubway_0 : MonoBehaviour
 
     public Dialogue[] contextList;
     public int dialogueID;
+    public static int wikidialogue;
 
     public void Awake()
     {

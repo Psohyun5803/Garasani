@@ -21,9 +21,9 @@ public class SNS_ChungmuroB2 : MonoBehaviour
 
     private void Update()
     {
-        if(inSubway_0.instance.dialogueID == 20)
-        {
+        //if(inSubway_0.instance.dialogueID == 20)
+        //{
             twitUpdate();
-        }
+        //}
     }
 }

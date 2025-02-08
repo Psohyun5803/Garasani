@@ -30,6 +30,7 @@ public class kwangemo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (talksqu.activeSelf && who.text == "±¤¼®¿±")
         {
             imageComponent.enabled = true;

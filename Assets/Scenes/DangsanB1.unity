@@ -2211,8 +2211,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite:
-  - {fileID: 21300000, guid: 4c23cf88ca87eb043a036c97741947fd, type: 3}
-  - {fileID: 21300000, guid: 4565afd3728e1e045b184d856724342e, type: 3}
+  - {fileID: 21300000, guid: 156de1f6ce48fc54bb554ecac9ceaa1b, type: 3}
+  - {fileID: 21300000, guid: 156de1f6ce48fc54bb554ecac9ceaa1b, type: 3}
   who: {fileID: 2112286407}
   talksqu: {fileID: 1078174622}
 --- !u!212 &659198293
@@ -2287,7 +2287,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5ef82cb86c348284aa152ffbdd2457c2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 156de1f6ce48fc54bb554ecac9ceaa1b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

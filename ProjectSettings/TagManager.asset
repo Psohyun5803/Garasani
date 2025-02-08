@@ -18,6 +18,7 @@ TagManager:
   - quantity
   - upstairs
   - groundwalk
+  - SNS_SINDORIM
   layers:
   - Default
   - TransparentFX
